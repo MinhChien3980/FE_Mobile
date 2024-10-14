@@ -1,3 +1,5 @@
+import { useNavigation } from "@/router/NavigationContext";
+import { MaterialIcons } from "@expo/vector-icons";
 import {
   Box,
   Button,
@@ -14,43 +16,83 @@ import {
   WarningOutlineIcon,
 } from "native-base";
 import React, { useState } from "react";
-import { Alert } from "react-native";
+import { Alert, Pressable } from "react-native";
 
 export default function Login() {
+  const { navigate } = useNavigation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [show, setShow] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = React.useState({});
+  const handleNavigate = () => {
+    navigate("Register");
+    console.log("Bấm nút");
+  };
+  const validate = () => {
+    let isValid = true;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
 
-  const login = async () => {
-    if (!email || !password) {
-      Alert.alert("Lỗi đăng nhập", "Hãy điền đầy đủ thông tin đăng nhập!");
-      return; // Thêm return để dừng thực hiện nếu thiếu thông tin
+    // Reset errors trước khi kiểm tra
+    setErrors({});
+
+    // Kiểm tra email
+    if (!email) {
+      setErrors((prevError: any) => ({
+        ...prevError,
+        email: "Hãy nhập email của bạn",
+      }));
+      isValid = false;
+    } else if (!emailRegex.test(email)) {
+      setErrors((prevError: any) => ({
+        ...prevError,
+        email: "Email không hợp lệ",
+      }));
+      isValid = false;
     }
 
-    try {
-      const response = await fetch("https://your-api-url.com/loginApi", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: email,
-          password: password,
-        }),
-      });
+    // Kiểm tra mật khẩu
+    if (!password) {
+      setErrors((prevError: any) => ({
+        ...prevError,
+        password: "Hãy nhập mật khẩu của bạn",
+      }));
+      isValid = false;
+    } else if (!passwordRegex.test(password)) {
+      setErrors((prevError: any) => ({
+        ...prevError,
+        password:
+          "Mật khẩu phải chứa ít nhất 8 ký tự, bao gồm chữ in hoa, chữ in thường và số",
+      }));
+      isValid = false;
+    }
 
-      if (!response.ok) {
-        // Nếu phản hồi không thành công, ném ra lỗi
-        const errorData = await response.json();
-        throw new Error(errorData.message || "Vui lòng thử lại");
+    return isValid;
+  };
+  const handleLogin = async () => {
+    if (validate()) {
+      try {
+        const response = await fetch("đăng nhập", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: email,
+            password: password,
+          }),
+        });
+
+        if (!response.ok) {
+          const errorData = await response.json();
+          throw new Error(errorData.message || "Vui lòng thử lại");
+        }
+
+        const data = await response.json();
+        Alert.alert("Chào mừng", "Đăng nhập thành công!");
+      } catch (error: any) {
+        Alert.alert("Thất bại", error.message || "Lỗi kết nối");
       }
-
-      const data = await response.json();
-      Alert.alert("Chào mừng", "Đăng nhập thành công!");
-      // Bạn có thể lưu token vào AsyncStorage nếu cần
-    } catch (error: any) {
-      Alert.alert("Thất bại", error.message || "Lỗi kết nối");
     }
   };
 
@@ -80,27 +122,70 @@ export default function Login() {
         </Heading>
 
         <VStack space={3} mt="5">
-          <FormControl isRequired isInvalid={"name" in errors}>
+          <FormControl isRequired isInvalid={"email" in errors}>
             <FormControl.Label>Email</FormControl.Label>
             <Input
               value={email}
+              onChangeText={setEmail}
+              w={{
+                base: "100%",
+                md: "25%",
+              }}
+              InputLeftElement={
+                <Icon
+                  as={<MaterialIcons name="email" />}
+                  size={5}
+                  ml="2"
+                  color="muted.400"
+                />
+              }
               keyboardType="email-address"
-              onChangeText={(emailInput) => setEmail(emailInput)}
             />
+            {"email" in errors ? (
+              <FormControl.ErrorMessage>
+                {errors.email}
+              </FormControl.ErrorMessage>
+            ) : null}
           </FormControl>
-          <FormControl>
+          <FormControl isRequired isInvalid={"password" in errors}>
             <FormControl.Label>Mật khẩu</FormControl.Label>
             <Input
-              type="password"
+              InputLeftElement={
+                <Icon
+                  as={<MaterialIcons name="password" />}
+                  size={5}
+                  ml="2"
+                  color="muted.400"
+                />
+              }
               value={password}
-              onChangeText={(passwordInput) => setPassword(passwordInput)}
+              onChangeText={setPassword}
+              w={{
+                base: "100%",
+                md: "25%",
+              }}
+              type={showPassword ? "text" : "password"}
+              InputRightElement={
+                <Pressable onPress={() => setShowPassword(!showPassword)}>
+                  <Icon
+                    as={
+                      <MaterialIcons
+                        name={showPassword ? "visibility" : "visibility-off"}
+                      />
+                    }
+                    size={5}
+                    mr="2"
+                    color="muted.400"
+                  />
+                </Pressable>
+              }
+              placeholder=""
             />
-            <FormControl.ErrorMessage
-              leftIcon={<WarningOutlineIcon size="xs" />}
-            >
-              Try different from previous passwords.
-            </FormControl.ErrorMessage>
-
+            {"password" in errors ? (
+              <FormControl.ErrorMessage>
+                {errors.password}
+              </FormControl.ErrorMessage>
+            ) : null}
             <Link
               _text={{
                 fontSize: "xs",
@@ -113,7 +198,7 @@ export default function Login() {
               Quên mật khẩu?
             </Link>
           </FormControl>
-          <Button mt="2" colorScheme="indigo" onPress={login}>
+          <Button mt="2" colorScheme="indigo" onPress={handleLogin}>
             Đăng nhập
           </Button>
           <HStack mt="6" justifyContent="center">
@@ -132,7 +217,7 @@ export default function Login() {
                 fontWeight: "medium",
                 fontSize: "sm",
               }}
-              href="#"
+              onPress={() => handleNavigate()}
             >
               Đăng kí ngay
             </Link>
