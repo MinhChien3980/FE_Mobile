@@ -1,7 +1,9 @@
 import UserInfor from "@/components/UserInfor/UserInforForm";
-import { Box, Button, Center, Heading } from "native-base";
+import { useNavigation } from "@/router/NavigationContext";
+import { Box, Button, Center, Heading, Link } from "native-base";
 
 export default function Register() {
+  const { goBack } = useNavigation();
   const handleRegister = (data: any) => {
     console.log("Đăng ký: ", data);
   };
@@ -35,6 +37,16 @@ export default function Register() {
           buttonLabel="Đăng ký"
         />
       </Box>
+      <Link
+        _text={{
+          color: "indigo.500",
+          fontWeight: "medium",
+          fontSize: "sm",
+        }}
+        onPress={goBack}
+      >
+        Quay về
+      </Link>
     </Center>
   );
 }
