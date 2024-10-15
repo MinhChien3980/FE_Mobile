@@ -19,7 +19,7 @@ import React, { useState } from "react";
 import { Alert, Pressable } from "react-native";
 
 export default function Login() {
-  const { navigate } = useNavigation();
+  const { navigate, goBack } = useNavigation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -70,6 +70,7 @@ export default function Login() {
     return isValid;
   };
   const handleLogin = async () => {
+    //Kiểm tra dữ liệu nhập vào có hợp lệ không
     if (validate()) {
       try {
         const response = await fetch("đăng nhập", {
@@ -224,6 +225,16 @@ export default function Login() {
           </HStack>
         </VStack>
       </Box>
+      <Link
+        _text={{
+          color: "red.500",
+          fontWeight: "medium",
+          fontSize: "sm",
+        }}
+        onPress={goBack}
+      >
+        Quay về trang trước đó
+      </Link>
     </Center>
   );
 }
