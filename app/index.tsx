@@ -1,18 +1,4 @@
-// import React from "react";
-// import {NativeBaseProvider, Text, Box} from "native-base";
-// import Login from "@/pages/Login/Login";
-// import Home from "@/pages/Home/Home";
-// import Contact from "@/pages/Contact/Contact";
-//
-// export default function App() {
-//     return (
-//         <NativeBaseProvider>
-//             {/*<Login></Login>*/}
-//             {/*{<Home></Home>}*/}
-//             <Contact></Contact>
-//         </NativeBaseProvider>
-//     );
-// }
+
 import React from 'react';
 
 import {createStackNavigator} from '@react-navigation/stack';
@@ -23,6 +9,7 @@ const Stack = createStackNavigator();
 
 const App = () => {
     return (
+       <NativeBaseProvider>
         <Stack.Navigator initialRouteName="ProductList">
             <Stack.Screen
                 name="ProductList"
@@ -35,8 +22,10 @@ const App = () => {
                 options={{title: 'Danh sách yêu thích'}}
             />
         </Stack.Navigator>
+         </NativeBaseProvider>
 
     );
 };
 
 export default App;
+
