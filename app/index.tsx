@@ -1,18 +1,31 @@
-import React from "react";
-import { NativeBaseProvider, Text, Box } from "native-base";
-import Login from "@/pages/Login/Login";
-import { NavigationProvider } from "@/router/NavigationContext";
-import { Navigator } from "@/router/Navigator";
-import { SafeAreaView } from "react-native";
 
-export default function App() {
-  return (
-    <NativeBaseProvider>
-      <NavigationProvider>
-        <SafeAreaView style={{ flex: 1 }}>
-          <Navigator />
-        </SafeAreaView>
-      </NavigationProvider>
-    </NativeBaseProvider>
-  );
-}
+import React from 'react';
+
+import {createStackNavigator} from '@react-navigation/stack';
+import ProductListScreen from '../pages/WishList/ProductListScreen';
+import FavoritesScreen from '../pages/WishList/FavoritesScreen';
+
+const Stack = createStackNavigator();
+
+const App = () => {
+    return (
+       <NativeBaseProvider>
+        <Stack.Navigator initialRouteName="ProductList">
+            <Stack.Screen
+                name="ProductList"
+                component={ProductListScreen}
+                options={{title: 'Danh sách sản phẩm'}}
+            />
+            <Stack.Screen
+                name="Favorites"
+                component={FavoritesScreen}
+                options={{title: 'Danh sách yêu thích'}}
+            />
+        </Stack.Navigator>
+         </NativeBaseProvider>
+
+    );
+};
+
+export default App;
+
