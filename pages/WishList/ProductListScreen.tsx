@@ -1,40 +1,30 @@
 import React, {useState, useEffect} from 'react';
 import {View, Text, FlatList, TouchableOpacity, StyleSheet, Alert, Image} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {NavigationProp} from '@react-navigation/native';
+import {useNavigation, NavigationProp, useFocusEffect} from '@react-navigation/native';
+import {useCallback} from 'react';
+import {RootStackParamList} from "@/app";
+import style from '../../style';
 
-// Định nghĩa kiểu dữ liệu cho sản phẩm
+// Define the Product interface
 interface Product {
     id: string;
     name: string;
     price: number;
-    image: string;
+    image: any;
 }
 
-// Định nghĩa kiểu dữ liệu cho navigation
-type RootStackParamList = {
-    ProductList: undefined; // không có tham số truyền vào
-    Favorites: undefined;   // không có tham số truyền vào
-};
-
-// Khai báo kiểu cho navigation
-interface Props {
-    navigation: NavigationProp<RootStackParamList>;
-}
-
+// Sample product list with local images
 const productList: Product[] = [
-    {id: '1', name: 'Sản phẩm A', price: 100, image: ''},
-    {id: '2', name: 'Sản phẩm B', price: 200, image: ''},
-    {id: '3', name: 'Sản phẩm C', price: 300, image: ''},
-    {id: '4', name: 'Sản phẩm D', price: 400, image: ''},
+    {id: '1', name: 'Sản phẩm A', price: 100, image: require('../../assets/images/proFake_1.jpeg')},
+    {id: '2', name: 'Sản phẩm B', price: 200, image: require('../../assets/images/proFake_2.jpeg')},
+    {id: '3', name: 'Sản phẩm C', price: 300, image: require('../../assets/images/proFake_3.jpeg')},
+    {id: '4', name: 'Sản phẩm D', price: 400, image: require('../../assets/images/proFake_4.jpeg')},
 ];
 
-const ProductListScreen: React.FC<Props> = ({navigation}) => {
+const ProductListScreen = () => {
+    const navigation = useNavigation<NavigationProp<RootStackParamList>>();
     const [favorites, setFavorites] = useState<Product[]>([]);
-
-    useEffect(() => {
-        loadFavorites();
-    }, []);
 
     const loadFavorites = async () => {
         try {
@@ -46,6 +36,12 @@ const ProductListScreen: React.FC<Props> = ({navigation}) => {
             console.error('Failed to load favorites', error);
         }
     };
+
+    useFocusEffect(
+        useCallback(() => {
+            loadFavorites();
+        }, [])
+    );
 
     const toggleFavorite = async (product: Product) => {
         let updatedFavorites: Product[];
@@ -67,11 +63,11 @@ const ProductListScreen: React.FC<Props> = ({navigation}) => {
 
         return (
             <View style={styles.productContainer}>
-                <Image source={{uri: item.image}} style={styles.productImage}/>
+                <Image source={item.image} style={styles.productImage}/>
                 <Text style={styles.productName}>{item.name}</Text>
                 <Text style={styles.productPrice}>Giá: {item.price} VNĐ</Text>
                 <TouchableOpacity onPress={() => toggleFavorite(item)}>
-                    <Text style={styles.favoriteButton}>{isFavorite ? '🟤' : '🤍'}</Text>
+                    <Text style={styles.favoriteButton}>{isFavorite ? '🤎' : '🤍'}</Text>
                 </TouchableOpacity>
             </View>
         );
@@ -104,7 +100,7 @@ const styles = StyleSheet.create({
     productPrice: {fontSize: 14, marginBottom: 10},
     favoriteButton: {fontSize: 24},
     row: {justifyContent: 'space-between'},
-    goToFavoritesButton: {marginTop: 20, backgroundColor: '#007BFF', padding: 10, alignItems: 'center'},
+    goToFavoritesButton: {marginTop: 20, backgroundColor: style.primaryColor, padding: 10, alignItems: 'center'},
     goToFavoritesText: {color: '#fff', fontWeight: 'bold'},
 });
 
