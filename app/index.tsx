@@ -6,6 +6,7 @@ import { NativeBaseProvider } from "native-base";
 import Login from "@/pages/Login/Login";
 import Register from "@/pages/Register/Register";
 import Verify from "@/pages/Verify";
+import Tracking from "@/pages/tracking/Tracking";
 
 const Stack = createStackNavigator();
 
@@ -23,7 +24,12 @@ const App = () => {
     <NativeBaseProvider>
       <Stack.Navigator initialRouteName="Login">
         <Stack.Screen
-          name="ProductList"
+          name="tracking"
+          component={Tracking}
+          options={{ title: "track order" }}
+        />
+        <Stack.Screen
+          name="FavorProductListScreenites"
           component={ProductListScreen}
           options={{ title: "Danh sách sản phẩm" }}
         />
