@@ -67,7 +67,7 @@ const ProductListScreen = () => {
                 <Text style={styles.productName}>{item.name}</Text>
                 <Text style={styles.productPrice}>Giá: {item.price} VNĐ</Text>
                 <TouchableOpacity onPress={() => toggleFavorite(item)}>
-                    <Text style={styles.favoriteButton}>{isFavorite ? '🤎' : '🤍'}</Text>
+                    <Text style={styles.favoriteButton}>{isFavorite ? '❤️' : '🤍'}</Text>
                 </TouchableOpacity>
             </View>
         );

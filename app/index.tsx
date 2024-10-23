@@ -1,11 +1,15 @@
+
+
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import ProductListScreen from "../pages/WishList/ProductListScreen";
 import FavoritesScreen from "../pages/WishList/FavoritesScreen";
 import { NativeBaseProvider } from "native-base";
+import Home from "@/pages/Home/Home";
 import Login from "@/pages/Login/Login";
 import Register from "@/pages/Register/Register";
 import Verify from "@/pages/Verify";
+
 
 const Stack = createStackNavigator();
 
@@ -17,6 +21,7 @@ export type RootStackParamList = {
   Login: undefined;
   Verify: undefined;
 };
+
 
 const App = () => {
   return (
