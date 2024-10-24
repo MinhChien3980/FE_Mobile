@@ -23,29 +23,32 @@ export type RootStackParamList = {
   Register: undefined;
   Login: undefined;
   Verify: undefined;
+  Profile: undefined;
+  Order: undefined;
+  Tracking: undefined;
 };
 
 
 const App = () => {
   return (
     <NativeBaseProvider>
-      <Stack.Navigator initialRouteName="Login">
+      <Stack.Navigator initialRouteName="Profile">
       <Stack.Screen
-          name="profile"
+          name="Profile"
           component={Profile}
           options={{ title: "thông tin cá nhân" }}
         />
       <Stack.Screen
-          name="order"
+          name="Order"
           component={OrderHistory}
           options={{ title: "lịch sử mua hàng" }}
         />
         <Stack.Screen
-          name="tracking"
+          name="Tracking"
           component={Tracking}
           options={{ title: "track order" }}
         />
-        {/* <Stack.Screen
+        <Stack.Screen
           name="FavorProductListScreenites"
           component={ProductListScreen}
           options={{ title: "Danh sách sản phẩm" }}
@@ -69,7 +72,7 @@ const App = () => {
           name="Register"
           component={Register}
           options={{ title: "Đăng kí" }}
-        /> */}
+        />
       </Stack.Navigator>
     </NativeBaseProvider>
   );

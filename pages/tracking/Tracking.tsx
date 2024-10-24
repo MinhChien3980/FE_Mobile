@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, Image, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { NavigationProp, useNavigation } from "@react-navigation/native";
 
 interface Status {
   title: string;
@@ -52,6 +53,7 @@ const fakeTrackingData: TrackingData = {
 };
 
 const Tracking = () => {
+  const navigation = useNavigation();
   const [trackingData, setTrackingData] = useState<TrackingData | null>(null);
 
   useEffect(() => {
@@ -64,7 +66,7 @@ const Tracking = () => {
     // Tạo bản sao của statuses và chuyển đổi trạng thái
     const updatedStatuses = trackingData.statuses.map((status, idx) => {
       if (idx === index) {
-        return { ...status, completed: !status.completed }; // Chuyển đổi trạng thái
+        return { ...status, completed: !status.completed }; 
       }
       return status;
     });
@@ -82,7 +84,9 @@ const Tracking = () => {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.header}>
-        <Ionicons name="arrow-back" size={24} color="black" />
+        <Text onPress={() => navigation.goBack()}>
+          <Ionicons name="arrow-back" size={24} color="black" />
+        </Text>
         <Text style={styles.headerTitle}>Track Order</Text>
       </View>
 
