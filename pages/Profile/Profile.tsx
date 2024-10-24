@@ -9,6 +9,9 @@ import {
 } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 import { Ionicons } from "@expo/vector-icons";
+import { NavigationProp, useNavigation } from "@react-navigation/native";
+import { RootStackParamList } from "@/app";
+import { launchImageLibrary, ImageLibraryOptions, Asset } from "react-native-image-picker"; 
 
 interface FakeProfileData {
   name: string;
@@ -27,6 +30,7 @@ const fakeProfileData: FakeProfileData = {
 };
 
 const ProfileCompletionScreen = () => {
+  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
   const [name, setName] = useState<string>(fakeProfileData.name);
   const [phoneNumber, setPhoneNumber] = useState<string>(
     fakeProfileData.phoneNumber
@@ -35,6 +39,7 @@ const ProfileCompletionScreen = () => {
   const [countryCode, setCountryCode] = useState<string>(
     fakeProfileData.countryCode
   );
+  const [avatarUrl, setAvatarUrl] = useState<string>(fakeProfileData.avatarUrl);
 
   // set up lỗi required
   const [nameError, setNameError] = useState<boolean>(false);
@@ -71,12 +76,41 @@ const ProfileCompletionScreen = () => {
     }
   };
 
+  const handleChangeAvatar = () => {
+    const options : ImageLibraryOptions = {
+      mediaType: 'photo',
+      quality: 1,
+    };
+
+    launchImageLibrary(options, (response) => {
+      if (response.didCancel) {
+        console.log("User cancelled image picker");
+      } else if (response.errorMessage) {
+        console.log("ImagePicker Error: ", response.errorMessage);
+      } else if (response.assets) {
+        const source = response.assets[0].uri; // Accessing uri directly without type assertion
+        setAvatarUrl(source || ""); // Update avatar URL with the selected image
+      }
+    });
+  };
+
   const countryCodes = Array.from({ length: 99 }, (_, i) => `+${i + 1}`);
+
+  const handleBack = () => {
+    let hasError = false;
+    if (!hasError) {
+      console.log("Profile Completed");
+    }
+    console.log("quay lại trang trước");
+    navigation.navigate("Tracking");
+  };
 
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.backButton}>
-        <Ionicons name="arrow-back" size={24} color="black" />
+        <Text onPress={() => handleBack()}>
+          <Ionicons name="arrow-back" size={24} color="black"/>
+        </Text>
       </TouchableOpacity>
 
       <Text style={styles.title}>Complete Your Profile</Text>
@@ -87,11 +121,13 @@ const ProfileCompletionScreen = () => {
 
       <View style={styles.avatarContainer}>
         <Image
-          source={{ uri: fakeProfileData.avatarUrl }}
+          source={{ uri: avatarUrl }}
           style={styles.avatar}
         />
         <TouchableOpacity style={styles.editIconContainer}>
-          <Ionicons name="pencil" size={16} color="white" />
+          <Text onPress={handleChangeAvatar}>
+            <Ionicons name="pencil" size={16} color="white" />
+          </Text>
         </TouchableOpacity>
       </View>
 
