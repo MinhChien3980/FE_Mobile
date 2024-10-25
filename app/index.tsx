@@ -9,6 +9,9 @@ import Home from "@/pages/Home/Home";
 import Login from "@/pages/Login/Login";
 import Register from "@/pages/Register/Register";
 import Verify from "@/pages/Verify";
+import Tracking from "@/pages/tracking/Tracking";
+import OrderHistory from "@/pages/Order/OrderHistory";
+import Profile from "@/pages/Profile/Profile";
 
 
 const Stack = createStackNavigator();
@@ -20,15 +23,33 @@ export type RootStackParamList = {
   Register: undefined;
   Login: undefined;
   Verify: undefined;
+  Profile: undefined;
+  Order: undefined;
+  Tracking: undefined;
 };
 
 
 const App = () => {
   return (
     <NativeBaseProvider>
-      <Stack.Navigator initialRouteName="Login">
+      <Stack.Navigator initialRouteName="Profile">
+      <Stack.Screen
+          name="Profile"
+          component={Profile}
+          options={{ title: "thông tin cá nhân" }}
+        />
+      <Stack.Screen
+          name="Order"
+          component={OrderHistory}
+          options={{ title: "lịch sử mua hàng" }}
+        />
         <Stack.Screen
-          name="ProductList"
+          name="Tracking"
+          component={Tracking}
+          options={{ title: "track order" }}
+        />
+        <Stack.Screen
+          name="FavorProductListScreenites"
           component={ProductListScreen}
           options={{ title: "Danh sách sản phẩm" }}
         />
