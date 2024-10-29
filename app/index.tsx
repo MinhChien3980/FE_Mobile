@@ -9,9 +9,14 @@ import Home from "@/pages/Home/Home";
 import Login from "@/pages/Login/Login";
 import Register from "@/pages/Register/Register";
 import Verify from "@/pages/Verify";
+
+import ProductList from "@/components/Product/ProductList/ProductList";
+import Products from "@/pages/ProductList/Products";
+
 import Tracking from "@/pages/tracking/Tracking";
 import OrderHistory from "@/pages/Order/OrderHistory";
 import Profile from "@/pages/Profile/Profile";
+
 
 
 const Stack = createStackNavigator();
@@ -23,15 +28,25 @@ export type RootStackParamList = {
   Register: undefined;
   Login: undefined;
   Verify: undefined;
+
+  Products: undefined;
+
   Profile: undefined;
   Order: undefined;
   Tracking: undefined;
+
 };
 
 
 const App = () => {
   return (
     <NativeBaseProvider>
+
+      <Stack.Navigator initialRouteName="Products">
+        <Stack.Screen
+          name="Products"
+          component={Products}
+
       <Stack.Navigator initialRouteName="Profile">
       <Stack.Screen
           name="Profile"
@@ -51,6 +66,7 @@ const App = () => {
         <Stack.Screen
           name="FavorProductListScreenites"
           component={ProductListScreen}
+
           options={{ title: "Danh sách sản phẩm" }}
         />
         <Stack.Screen
