@@ -1,5 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {View, Image, StyleSheet, TouchableOpacity, Animated, Dimensions, Text} from 'react-native';
+import style from '../../style';
 
 interface Banner {
     id: number;
@@ -11,7 +12,7 @@ const banners: Banner[] = [
     {id: 2, image: require('../../assets/images/banner_2.jpg')},
     {id: 3, image: require('../../assets/images/banner_5.jpg')},
     {id: 4, image: require('../../assets/images/banner_1.jpeg')},
-    {id: 5, image: require('../../assets/images/banner_5.jpg')},
+    {id: 5, image: require('../../assets/images/banner_4.jpeg')},
 ];
 
 // Get screen width
@@ -88,17 +89,6 @@ export function SlideBanner(): JSX.Element {
                 ))}
             </View>
 
-            {/* Navigation buttons */}
-            <TouchableOpacity style={styles.prevButton} onPress={goToPreviousSlide}>
-                <View style={styles.buttonContent}>
-                    <Text style={styles.buttonText}>{"<"}</Text>
-                </View>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.nextButton} onPress={goToNextSlide}>
-                <View style={styles.buttonContent}>
-                    <Text style={styles.buttonText}>{">"}</Text>
-                </View>
-            </TouchableOpacity>
         </View>
     );
 }
@@ -137,11 +127,12 @@ const styles = StyleSheet.create({
         width: 10,
         height: 10,
         borderRadius: 5,
-        backgroundColor: '#fff',
+        backgroundColor: '#aeabab',
         marginHorizontal: 5,
+        borderColor: style.primaryColor
     },
     activeDot: {
-        backgroundColor: '#ff0000', // Change to desired color for active dot
+        backgroundColor: style.primaryColor,
     },
     prevButton: {
         position: 'absolute',
