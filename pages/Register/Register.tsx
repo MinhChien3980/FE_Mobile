@@ -2,16 +2,18 @@ import { RootStackParamList } from "@/app";
 import UserInfor from "@/components/UserInfor/UserInforForm";
 import { userRegister } from "@/interface/user";
 import { NavigationProp, useNavigation } from "@react-navigation/native";
-import { Box, Button, Center, Heading, Link, ScrollView } from "native-base";
+import { Box, Center, Heading, ScrollView } from "native-base";
+import { useState } from "react";
 
 export default function Register() {
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
   const handleRegister = (data: userRegister) => {
     console.log("Đăng ký: ", data);
   };
+
   return (
     <ScrollView>
-      <Center mt="10%" w="100%">
+      <Center w="100%">
         <Box safeArea p="2" w="90%" maxW="290" py="8">
           <Heading
             size="lg"

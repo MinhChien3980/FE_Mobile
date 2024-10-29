@@ -1,85 +1,77 @@
 import axios, { AxiosResponse } from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-//Class này sẽ chứa các api mẫu dùng chung
-//Như là crud kèm theo token, riêng cái login thì chỉ cần gửi data là email và pass
-export default class ApiSerVice {
-  private readonly baseUrl: string = "http://192.168.1.131:8080/";
 
-  // Hàm chung để gọi GET API
-  protected async get(endpoint: string): Promise<AxiosResponse<any>> {
-    const token = await this.getToken();
-    return axios({
-      url: `${this.baseUrl}${endpoint}`,
-      method: "GET",
-      headers: {
-        Authorization: token ? `Bearer ${token}` : undefined, // Nếu không có token, để undefined
-      },
-    });
-  }
+// Base URL cho API
+const baseUrl: string = "http://192.168.88.105:8080/";
 
-  // Hàm chung để gọi POST API
-  protected async post(
-    endpoint: string,
-    data: any
-  ): Promise<AxiosResponse<any>> {
-    const token = await this.getToken();
-    return axios({
-      url: `${this.baseUrl}${endpoint}`,
-      method: "POST",
-      data,
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: token ? `Bearer ${token}` : undefined, // Nếu không có token, để undefined
-      },
-    });
-  }
+// Hàm lấy token từ AsyncStorage
+const getToken = async (): Promise<string | null> => {
+  return AsyncStorage.getItem("token");
+};
 
-  // Hàm gọi login, không cần token
-  protected async login(
-    endpoint: string,
-    data: any
-  ): Promise<AxiosResponse<any>> {
-    return axios({
-      url: `${this.baseUrl}${endpoint}`,
-      method: "POST",
-      data,
+// Hàm gọi API chung
+const request = async <T>(
+  method: "GET" | "POST" | "PUT" | "DELETE",
+  endpoint: string,
+  data?: any,
+  useToken: boolean = true // Tham số để xác định có sử dụng token hay không
+): Promise<AxiosResponse<T>> => {
+  try {
+    const config: any = {
+      method,
+      url: `${baseUrl}${endpoint}`,
       headers: {
         "Content-Type": "application/json",
       },
-    });
-  }
+      ...(data && { data }), // Chỉ thêm data nếu có
+    };
 
-  // Hàm chung để gọi PUT API
-  protected async put(
-    endpoint: string,
-    data: any
-  ): Promise<AxiosResponse<any>> {
-    const token = await this.getToken();
-    return axios({
-      url: `${this.baseUrl}${endpoint}`,
-      method: "PUT",
-      data,
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: token ? `Bearer ${token}` : undefined, // Nếu không có token, để undefined
-      },
-    });
-  }
+    // Nếu cần token, thêm vào header
+    if (useToken) {
+      const token = await getToken();
+      if (token) {
+        config.headers.Authorization = `Bearer ${token}`;
+      }
+    }
 
-  // Hàm chung để gọi DELETE API
-  protected async delete(endpoint: string): Promise<AxiosResponse<any>> {
-    const token = await this.getToken();
-    return axios({
-      url: `${this.baseUrl}${endpoint}`,
-      method: "DELETE",
-      headers: {
-        Authorization: token ? `Bearer ${token}` : undefined, // Nếu không có token, để undefined
-      },
-    });
+    return await axios(config);
+  } catch (error) {
+    // Xử lý lỗi nếu có
+    console.error("API Error: ", error);
+    throw error; // Ném lại lỗi để xử lý ở nơi khác nếu cần
   }
+};
 
-  // Lấy token từ AsyncStorage
-  private async getToken(): Promise<string | null> {
-    return await AsyncStorage.getItem("token");
-  }
-}
+// Hàm gọi GET API
+export const get = async <T>(endpoint: string): Promise<AxiosResponse<T>> => {
+  return request<T>("GET", endpoint);
+};
+
+// Hàm gọi POST API
+export const post = async <T>(
+  endpoint: string,
+  data: any
+): Promise<AxiosResponse<T>> => {
+  return request<T>("POST", endpoint, data);
+};
+
+// Hàm gọi PUT API
+export const put = async <T>(
+  endpoint: string,
+  data: any
+): Promise<AxiosResponse<T>> => {
+  return request<T>("PUT", endpoint, data);
+};
+
+// Hàm gọi DELETE API
+export const del = async <T>(endpoint: string): Promise<AxiosResponse<T>> => {
+  return request<T>("DELETE", endpoint);
+};
+
+// Hàm gọi login, không cần token
+export const login = async <T>(
+  endpoint: string,
+  data: any
+): Promise<AxiosResponse<T>> => {
+  return request<T>("POST", endpoint, data, false); // Không dùng token khi login
+};

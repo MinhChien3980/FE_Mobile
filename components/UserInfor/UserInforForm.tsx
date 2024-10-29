@@ -16,6 +16,7 @@ import { useState } from "react";
 import { FlatList, Platform } from "react-native";
 import { userData, userRegister } from "@/interface/user";
 import DateTimePicker from "@react-native-community/datetimepicker";
+import Test from "../Test/TestDateTime";
 interface UserInforProps {
   isRegister: boolean;
   onSubmit: (data: any) => void;
@@ -297,7 +298,7 @@ const UserInfor = ({
           ) : null}
         </FormControl>
       )}
-      <FormControl isRequired isInvalid={"birthdate" in errors}>
+      {/* <FormControl isRequired isInvalid={"birthdate" in errors}>
         <FormControl.Label>Ngày sinh</FormControl.Label>
         <Input
           variant="rounded"
@@ -310,7 +311,7 @@ const UserInfor = ({
             />
           }
           onPress={showDatepicker}
-          value={date + ""}
+          value={date.setFullYear + ""}
           onChangeText={setRePass}
         />
         {"birthdate" in errors ? (
@@ -322,7 +323,7 @@ const UserInfor = ({
           <DateTimePicker
             testID="dateTimePicker"
             value={date}
-            mode="date"
+            mode="datetime"
             display="default"
             onChange={onChange}
           />
@@ -332,7 +333,7 @@ const UserInfor = ({
             {errors.birthdate}
           </FormControl.ErrorMessage>
         ) : null}
-      </FormControl>
+      </FormControl> */}
       {/* //Chọn tỉnh */}
       <FormControl isRequired isInvalid={"province" in errors}>
         <FormControl.Label>Tỉnh</FormControl.Label>
