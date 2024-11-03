@@ -28,15 +28,15 @@ const App = () => {
   return (
     <NativeBaseProvider>
       <Stack.Navigator initialRouteName="Profile">
-      <Stack.Screen
-          name="Profile"
-          component={Profile}
-          options={{ title: "thông tin cá nhân" }}
-        />
-      <Stack.Screen
+        <Stack.Screen
           name="Order"
           component={OrderHistory}
           options={{ title: "lịch sử mua hàng" }}
+        />
+        <Stack.Screen
+          name="Profile"
+          component={Profile}
+          options={{ title: "thông tin cá nhân" }}
         />
         <Stack.Screen
           name="Tracking"
