@@ -1,8 +1,8 @@
-import api from "@/api/ApiService";
-import { userApi } from "@/api/UserApiService";
+import { getUserToken } from "@/api/UserApiService";
 import { RootStackParamList } from "@/app";
 import color from "@/assets/color/color";
 import Loading from "@/components/Animation/Loading";
+import useShowToast from "@/components/Toast/Toast";
 import { userLogin } from "@/interface/user";
 import { AntDesign, MaterialIcons } from "@expo/vector-icons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -24,11 +24,14 @@ import {
   WarningOutlineIcon,
   Modal,
   View,
+  useToast,
 } from "native-base";
 import React, { useState } from "react";
 import { Alert, Pressable, StyleSheet } from "react-native";
 
 export default function Login() {
+  const showToast = useShowToast();
+
   const [modalVisible, setModalVisible] = useState(false);
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
   const [email, setEmail] = useState("");
@@ -91,21 +94,29 @@ export default function Login() {
     console.log(loginData);
 
     try {
-      const response = await userApi.getUserToken(loginData);
+      const response = await getUserToken(loginData);
       console.log(response);
       if (response.status === 200) {
         const data = response.data.data;
 
         await AsyncStorage.setItem("token", data.token);
         console.log(data.token);
-        // await (<Loading />);
         navigation.navigate("ProductList");
+        showToast({
+          type: "success",
+          message: "Đăng nhập thành công",
+        });
       }
     } catch (error: any) {
       // Kiểm tra nếu lỗi là từ response
       const errorMessage =
         error.response?.data?.message || error.message || "Lỗi kết nối";
-      Alert.alert("Thất bại", errorMessage);
+
+      showToast({
+        type: "error",
+        message: errorMessage,
+      });
+      // Alert.alert("Thất bại", errorMessage);
       console.log(error);
     }
   };
