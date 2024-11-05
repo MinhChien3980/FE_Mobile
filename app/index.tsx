@@ -7,9 +7,12 @@ import Home from "@/pages/Home/Home";
 import Login from "@/pages/Login/Login";
 import Register from "@/pages/Register/Register";
 import Verify from "@/pages/Verify";
-import {SafeAreaView} from "react-native";
 import EmailForm from "@/pages/Contact/EmailForm";
-import Contact from "@/pages/Contact/Contact";
+import ProductList from "@/components/Product/ProductList/ProductList";
+import Products from "@/pages/ProductList/Products";
+import Tracking from "@/pages/tracking/Tracking";
+import OrderHistory from "@/pages/Order/OrderHistory";
+import Profile from "@/pages/Profile/Profile";
 
 const Stack = createStackNavigator();
 
@@ -20,42 +23,69 @@ export type RootStackParamList = {
     Register: undefined;
     Login: undefined;
     Verify: undefined;
-};
 
+    Products: undefined;
+    Profile: undefined;
+    Order: undefined;
+    Tracking: undefined;
+
+};
 
 const App = () => {
     return (
         <NativeBaseProvider>
             <Stack.Navigator initialRouteName="Login">
                 <Stack.Screen
-                    name="Verify"
-                    component={Verify}
-                    options={{title: "Xác nhận mã"}}
+
+                    name="Products"
+                    component={Products}
                 />
                 <Stack.Screen
-                    name="Login"
-                    component={Login}
-                    options={{title: "Đăng nhập"}}
+                    name="Profile"
+                    component={Profile}
+                    options={{ title: "Thông tin cá nhân" }}
                 />
                 <Stack.Screen
-                    name="Register"
-                    component={Register}
-                    options={{title: "Đăng kí"}}
+                    name="Order"
+                    component={OrderHistory}
+                    options={{ title: "Lịch sử mua hàng" }}
                 />
                 <Stack.Screen
-                    name="ProductList"
+                    name="Tracking"
+                    component={Tracking}
+                    options={{ title: "Track order" }}
+                />
+                <Stack.Screen
+                    name="ProductListScreen"
                     component={ProductListScreen}
-                    options={{title: "Danh sách sản phẩm"}}
+                    options={{ title: "Danh sách sản phẩm" }}
+
                 />
                 <Stack.Screen
                     name="Favorites"
                     component={FavoritesScreen}
-                    options={{title: "Danh sách yêu thích"}}
+
+                    options={{ title: "Danh sách yêu thích" }}
                 />
                 <Stack.Screen
+                    name="Verify"
+                    component={Verify}
+                    options={{ title: "Xác nhận mã" }}
+                />
+                <Stack.Screen
+                    name="Login"
+                    component={Login}
+                    options={{ title: "Đăng nhập" }}
+                />
+                <Stack.Screen
+                    name="Register"
+                    component={Register}
+                    options={{ title: "Đăng ký" }}
+                />
+               <Stack.Screen
                     name="Contact"
-                    component={Contact}
-                    options={{title: "Liên hệ"}}
+                    component={EmailForm}
+                    options={{ title: "Liên " }}
                 />
             </Stack.Navigator>
         </NativeBaseProvider>

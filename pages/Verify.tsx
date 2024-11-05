@@ -1,3 +1,4 @@
+// import userApi  from "@/api/UserApiService";
 import { Box, Button, Center } from "native-base";
 import React, { useState } from "react";
 import {
@@ -43,13 +44,17 @@ const Verify = () => {
     setValue,
   });
 
-  const handleVerify = () => {
+  const handleVerify = async () => {
     if (value.length < CELL_COUNT) {
       Alert.alert("Mã xác nhận không hợp lệ", "Hãy nhập đầy đủ mã xác nhận");
     }
+    const response =
+        // await userApi.getVerifyCode(value);
+
+
     console.log(value);
   };
-
+  const checkVerifyCode = () => {};
   return (
     <SafeAreaView style={styles.root}>
       <CodeField
