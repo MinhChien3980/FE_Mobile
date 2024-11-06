@@ -55,12 +55,12 @@ const RangeSlider: React.FC<RangeSliderProps> = ({
               fontStyle: "italic",
               textAlign: "left",
               fontSize: 14,
-              color: "#D2D2D2",
+              color: "#704F38",
             }}
           >
             Min
           </Text>
-          <Text style={{ fontWeight: "bold", fontSize: 18, color: "#000000" }}>
+          <Text style={{ fontWeight: "bold", fontSize: 18, color: "#704F38" }}>
             {low}đ
           </Text>
         </View>
@@ -70,12 +70,12 @@ const RangeSlider: React.FC<RangeSliderProps> = ({
               fontStyle: "italic",
               textAlign: "right",
               fontSize: 14,
-              color: "#D2D2D2",
+              color: "#704F38",
             }}
           >
             Max
           </Text>
-          <Text style={{ fontWeight: "bold", fontSize: 18, color: "#000000" }}>
+          <Text style={{ fontWeight: "bold", fontSize: 18, color: "#704F38" }}>
             {high}đ
           </Text>
         </View>
