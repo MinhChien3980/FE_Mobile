@@ -99,6 +99,11 @@ const ProfileCompletionScreen = () => {
 
   const countryCodes = Array.from({ length: 99 }, (_, i) => `+${i + 1}`);
 
+  const handlePhoneNumberChange = (text: string) => {
+    const numericText = text.replace(/[^0-9]/g, ''); // Remove non-numeric characters
+    setPhoneNumber(numericText);
+  };
+
   const handleBack = () => {
     let hasError = false;
     if (!hasError) {
@@ -165,13 +170,16 @@ const ProfileCompletionScreen = () => {
             ))}
           </Picker>
         </View>
-        <TextInput
-          style={styles.phoneInput}
-          placeholder="Enter Phone Number"
-          value={phoneNumber}
-          onChangeText={setPhoneNumber}
-          keyboardType="phone-pad"
-        />
+        <View style={styles.phoneSetNumber}>
+          <Text style={styles.countryCode}>{countryCode}</Text>
+          <TextInput
+            style={styles.phoneInput}
+            placeholder="Enter Phone Number"
+            value={`${phoneNumber}`}
+            onChangeText={handlePhoneNumberChange}
+            keyboardType="numeric"
+          />
+        </View>
       </View>
       {phoneNumberError && (
         <Text style={styles.errorText}>* Thông tin này là bắt buộc</Text>
@@ -282,8 +290,14 @@ const styles = StyleSheet.create({
     height: 35,
     width: 107,
   },
+  phoneSetNumber:{
+    // display: "flex",
+    alignItems: "center",
+    flexDirection: "row",
+  },
   phoneInput: {
     // flex: 0.8,
+    marginLeft: 5,
     fontSize: 16,
     height: 35,
   },
