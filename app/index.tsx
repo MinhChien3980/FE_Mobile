@@ -1,12 +1,13 @@
 import React from "react";
-import { createStackNavigator } from "@react-navigation/stack";
+import {createStackNavigator} from "@react-navigation/stack";
 import ProductListScreen from "../pages/WishList/ProductListScreen";
 import FavoritesScreen from "../pages/WishList/FavoritesScreen";
-import { NativeBaseProvider } from "native-base";
+import {NativeBaseProvider} from "native-base";
 import Home from "@/pages/Home/Home";
 import Login from "@/pages/Login/Login";
 import Register from "@/pages/Register/Register";
 import Verify from "@/pages/Verify";
+import EmailForm from "@/pages/Contact/EmailForm";
 import ProductList from "@/components/Product/ProductList/ProductList";
 import Products from "@/pages/ProductList/Products";
 import Tracking from "@/pages/tracking/Tracking";
@@ -22,10 +23,12 @@ export type RootStackParamList = {
     Register: undefined;
     Login: undefined;
     Verify: undefined;
+
     Products: undefined;
     Profile: undefined;
     Order: undefined;
     Tracking: undefined;
+
 };
 
 const App = () => {
@@ -33,6 +36,7 @@ const App = () => {
         <NativeBaseProvider>
             <Stack.Navigator initialRouteName="Profile">
                 <Stack.Screen
+
                     name="Products"
                     component={Products}
                 />
@@ -55,10 +59,12 @@ const App = () => {
                     name="ProductListScreen"
                     component={ProductListScreen}
                     options={{ title: "Danh sách sản phẩm" }}
+
                 />
                 <Stack.Screen
                     name="Favorites"
                     component={FavoritesScreen}
+
                     options={{ title: "Danh sách yêu thích" }}
                 />
                 <Stack.Screen
@@ -76,8 +82,14 @@ const App = () => {
                     component={Register}
                     options={{ title: "Đăng ký" }}
                 />
+               <Stack.Screen
+                    name="Contact"
+                    component={EmailForm}
+                    options={{ title: "Liên " }}
+                />
             </Stack.Navigator>
         </NativeBaseProvider>
+
     );
 };
 
