@@ -31,7 +31,7 @@ export type RootStackParamList = {
 const App = () => {
     return (
         <NativeBaseProvider>
-            <Stack.Navigator initialRouteName="Login">
+            <Stack.Navigator initialRouteName="Profile">
                 <Stack.Screen
                     name="Products"
                     component={Products}
