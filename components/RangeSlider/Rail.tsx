@@ -10,6 +10,6 @@ const styles = StyleSheet.create({
     flex: 1,
     height: 5,
     borderRadius: 2,
-    backgroundColor: "#E4E4E4",
+    backgroundColor: "#704F38",
   },
 });

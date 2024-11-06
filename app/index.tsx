@@ -18,6 +18,7 @@ const Stack = createStackNavigator();
 
 // Định nghĩa kiểu dữ liệu cho navigation
 export type RootStackParamList = {
+
     ProductList: undefined;
     Favorites: undefined;
     Register: undefined;
@@ -91,6 +92,7 @@ const App = () => {
         </NativeBaseProvider>
 
     );
+
 };
 
 export default App;
