@@ -23,11 +23,12 @@ const SortPrice = ({ onChange }: SortPriceProps) => {
 
   return (
     <Flex direction="row" mb="2.5" mt="1.5" justify="space-between">
-      <Center bg="#704F38" p="3" rounded="md" w="40%">
+      <Center bg="#704F38" p="3" rounded="3xl" w="40%">
         <Text mb="2" color="white">
           Từ
         </Text>
         <Input
+          borderRadius="2xl"
           value={minPrice + ""}
           onChangeText={handleMinPriceChange}
           keyboardType="numeric"
@@ -40,11 +41,12 @@ const SortPrice = ({ onChange }: SortPriceProps) => {
           -
         </Text>
       </Center>
-      <Center bg="#704F38" p="3" rounded="md" w="40%">
+      <Center bg="#704F38" p="3" rounded="3xl" w="40%">
         <Text mb="2" color="white">
           Đến
         </Text>
         <Input
+          borderRadius="2xl"
           value={maxPrice + ""}
           onChangeText={handleMaxPriceChange}
           keyboardType="numeric"

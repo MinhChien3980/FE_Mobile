@@ -28,6 +28,7 @@ export default function SelectedList<T>({
       </Text>
       <Box>
         <Select
+          borderRadius="full"
           selectedValue={selected}
           minWidth="80%"
           accessibilityLabel={label}

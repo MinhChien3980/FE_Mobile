@@ -14,6 +14,9 @@ import {
   Divider,
   Button,
   View,
+  Flex,
+  VStack,
+  HStack,
 } from "native-base";
 import { useEffect, useState } from "react";
 import { Category } from "@/interface/category";
@@ -79,8 +82,10 @@ const manufacturers: Manufacturer[] = [
 ];
 const SortBar = ({
   onApplyFilter,
+  onClearFilters,
 }: {
   onApplyFilter: (filters: any) => void;
+  onClearFilters: () => void;
 }) => {
   const [minPrice, setMinPrice] = useState<number>(0);
   const [maxPrice, setMaxPrice] = useState<number>(1000000000);
@@ -89,7 +94,7 @@ const SortBar = ({
     undefined
   );
   const [modalVisible, setModalVisible] = useState(false);
-
+  // const [isLoading, setIsLoading] = useState(false);
   const handlePriceChange = (newMinPrice: number, newMaxPrice: number) => {
     setMinPrice(newMinPrice);
     setMaxPrice(newMaxPrice);
@@ -119,7 +124,13 @@ const SortBar = ({
     onApplyFilter(filters);
     setModalVisible(false);
   };
-
+  const handleClearFilters = () => {
+    setModalVisible(false);
+    onClearFilters();
+    // setTimeout(() => {
+    //   setIsLoading(false);
+    // }, 2000);
+  };
   return (
     <SafeAreaView>
       <Modal
@@ -159,15 +170,27 @@ const SortBar = ({
             </Box>
           </Modal.Body>
           <Modal.Footer>
-            <Button
-              style={{
-                padding: 12,
-                backgroundColor: "#704F38",
-              }}
-              onPress={handleApplyFilters}
-            >
-              Áp dụng
-            </Button>
+            <HStack width="100%" justifyContent="space-between">
+              <Button
+                // {...(isLoading && { isLoading: true })}
+                justifyContent="flex-start"
+                onPress={handleClearFilters}
+                colorScheme="gray"
+                borderRadius="full"
+              >
+                Xóa bộ lọc
+              </Button>
+              <Button
+                borderRadius="full"
+                style={{
+                  padding: 12,
+                  backgroundColor: "#704F38",
+                }}
+                onPress={handleApplyFilters}
+              >
+                Áp dụng
+              </Button>
+            </HStack>
           </Modal.Footer>
         </Modal.Content>
       </Modal>

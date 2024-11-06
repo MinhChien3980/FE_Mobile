@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { SafeAreaView } from "react-native";
 import ProductList from "@/components/Product/ProductList/ProductList";
 import { SearchBar } from "@/components/SearchBar/SearchBar";
-import { Box, HStack, IconButton, Icon } from "native-base";
+import { Box, HStack, IconButton, Icon, Button } from "native-base";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Product } from "@/interface/product";
 import { Ionicons } from "@expo/vector-icons";
@@ -14,6 +14,8 @@ const Products: React.FC = () => {
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
   const [token, setToken] = useState<string | null>(null);
   const [products, setProducts] = useState<Product[]>([]);
+  const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
+  const [searchQuery, setSearchQuery] = useState<string>("");
 
   useEffect(() => {
     const fetchToken = async () => {
@@ -147,31 +149,49 @@ const Products: React.FC = () => {
   }, []);
 
   const handleApplyFilter = (filters: any) => {
-    let filteredProducts = [...products];
+    let filteredProductsList = [...products];
 
-    // Lọc theo giá
     if (filters.minPrice && filters.maxPrice) {
-      filteredProducts = filteredProducts.filter(
+      filteredProductsList = filteredProductsList.filter(
         (product) =>
           product.price >= filters.minPrice && product.price <= filters.maxPrice
       );
     }
 
-    // Lọc theo loại sản phẩm (nếu có)
     if (filters.category) {
-      filteredProducts = filteredProducts.filter(
+      filteredProductsList = filteredProductsList.filter(
         (product) => product.categoryId === filters.category.id
       );
     }
 
-    // Lọc theo nhà sản xuất (nếu có)
     if (filters.manufacturer) {
-      filteredProducts = filteredProducts.filter(
+      filteredProductsList = filteredProductsList.filter(
         (product) => product.manufacturerId === filters.manufacturer.id
       );
     }
 
-    setProducts(filteredProducts);
+    setFilteredProducts(filteredProductsList);
+  };
+
+  const handleSearch = (query: string) => {
+    setSearchQuery(query); // Cập nhật từ khoá tìm kiếm
+
+    let filtered = products;
+
+    if (query !== "") {
+      filtered = filtered.filter(
+        (product) =>
+          product.name.toLowerCase().includes(query.toLowerCase()) ||
+          product.description?.toLowerCase().includes(query.toLowerCase())
+      );
+    }
+
+    setFilteredProducts(filtered);
+  };
+
+  const handleClearFilters = () => {
+    setSearchQuery("");
+    setFilteredProducts(products);
   };
 
   return (
@@ -184,12 +204,16 @@ const Products: React.FC = () => {
         space={2}
         alignItems="center"
       >
-        <SearchBar />
-        <SortBar onApplyFilter={handleApplyFilter} />
+        <SearchBar onSearch={handleSearch} />
+        <SortBar
+          onApplyFilter={handleApplyFilter}
+          onClearFilters={handleClearFilters}
+        />
       </HStack>
 
       <Box flex={1} w="100%">
-        <ProductList products={products} />
+        <ProductList products={filteredProducts} />{" "}
+        {/* Hiển thị sản phẩm đã lọc */}
       </Box>
 
       <IconButton
