@@ -35,6 +35,11 @@ const App = () => {
     <NativeBaseProvider>
       <Stack.Navigator initialRouteName="Products">
         <Stack.Screen
+                    name="Home"
+                    component={Home}
+                    options={{title: "Trang chủ"}}
+                />
+        <Stack.Screen
           name="Products"
           component={Products}
           options={{ title: "Danh sách sản phẩm" }}
@@ -82,11 +87,12 @@ const App = () => {
         <Stack.Screen
           name="Contact"
           component={EmailForm}
-          options={{ title: "Liên " }}
+          options={{ title: "Liên hệ" }}
         />
       </Stack.Navigator>
     </NativeBaseProvider>
   );
+
 };
 
 export default App;
