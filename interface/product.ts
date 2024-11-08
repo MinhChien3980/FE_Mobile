@@ -2,7 +2,6 @@ export interface Product {
   id: string;
   name: string;
   categoryId: number;
-  manufacturerId: number;
   price: number;
   description?: string;
   mainImg?: string;
@@ -11,6 +10,7 @@ export interface Product {
   createdAt: string;
   updatedAt: string;
   deletedAt?: string;
+  manufacturerName?: string;
 }
 
 export interface ProductList {

@@ -12,7 +12,7 @@ import {
 import { Alert, TouchableOpacity } from "react-native";
 
 interface SearchBarProps {
-  onSearch: (query: string) => void; // Thêm props onSearch để gửi từ khoá tìm kiếm
+  onSearch: (query: string) => void;
 }
 
 export const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
@@ -24,7 +24,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
       py="1"
       px="20"
       fontSize="14"
-      onChangeText={onSearch} // Lắng nghe sự thay đổi và gọi hàm onSearch
+      onChangeText={onSearch} //Gọi hàm khi nhập từ khóa tìm kiếm
       InputRightElement={
         <Icon
           m="2"

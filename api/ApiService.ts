@@ -1,8 +1,8 @@
-import axios, {AxiosResponse} from "axios";
+import axios, { AxiosResponse } from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-
 // Base URL cho API
+
 const baseUrl: string = "http://192.168.88.105:8080/";
 
 // Hàm lấy token từ AsyncStorage
@@ -76,4 +76,3 @@ export const login = async <T>(
 ): Promise<AxiosResponse<T>> => {
   return request<T>("POST", endpoint, data, false); // Không dùng token khi login
 };
-
