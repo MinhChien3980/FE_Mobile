@@ -10,6 +10,7 @@ import { NavigationProp, useNavigation } from "@react-navigation/native";
 import { RootStackParamList } from "@/app";
 import SortBar from "@/components/SortBar/SortBar";
 import { productData } from "@/data/products/ProductData";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const Products: React.FC = () => {
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
@@ -36,16 +37,17 @@ const Products: React.FC = () => {
   //   fetchProducts();
   // }, []);
   useEffect(() => {
+    handleClearFilters();
     const fetchProducts = async () => {
       setProducts(productData);
     };
-
     fetchProducts();
-  }, [productData]);
+  }, [products]);
   useEffect(() => {
     const fetchToken = async () => {
       try {
         const storedToken = await AsyncStorage.getItem("token");
+        console.log("🚀 ~ fetchToken ~ storedToken:", storedToken);
         setToken(storedToken);
       } catch (error) {
         console.error("Error fetching token:", error);
