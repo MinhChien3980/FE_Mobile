@@ -8,7 +8,7 @@ export default memo(RailSelected);
 const styles = StyleSheet.create({
   root: {
     height: 5,
-    backgroundColor: "#FE6600",
+    backgroundColor: "#704F38",
     borderRadius: 2,
   },
 });
