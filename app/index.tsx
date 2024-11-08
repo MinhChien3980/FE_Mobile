@@ -36,56 +36,60 @@ const App = () => {
         <NativeBaseProvider>
             <Stack.Navigator initialRouteName="Login">
                 <Stack.Screen
-
+                    name="Home"
+                    component={Home}
+                    options={{title: "Trang chủ"}}
+                />
+                <Stack.Screen
                     name="Products"
                     component={Products}
                 />
                 <Stack.Screen
                     name="Profile"
                     component={Profile}
-                    options={{ title: "Thông tin cá nhân" }}
+                    options={{title: "Thông tin cá nhân"}}
                 />
                 <Stack.Screen
                     name="Order"
                     component={OrderHistory}
-                    options={{ title: "Lịch sử mua hàng" }}
+                    options={{title: "Lịch sử mua hàng"}}
                 />
                 <Stack.Screen
                     name="Tracking"
                     component={Tracking}
-                    options={{ title: "Track order" }}
+                    options={{title: "Track order"}}
                 />
                 <Stack.Screen
                     name="ProductListScreen"
                     component={ProductListScreen}
-                    options={{ title: "Danh sách sản phẩm" }}
+                    options={{title: "Danh sách sản phẩm"}}
 
                 />
                 <Stack.Screen
                     name="Favorites"
                     component={FavoritesScreen}
 
-                    options={{ title: "Danh sách yêu thích" }}
+                    options={{title: "Danh sách yêu thích"}}
                 />
                 <Stack.Screen
                     name="Verify"
                     component={Verify}
-                    options={{ title: "Xác nhận mã" }}
+                    options={{title: "Xác nhận mã"}}
                 />
                 <Stack.Screen
                     name="Login"
                     component={Login}
-                    options={{ title: "Đăng nhập" }}
+                    options={{title: "Đăng nhập"}}
                 />
                 <Stack.Screen
                     name="Register"
                     component={Register}
-                    options={{ title: "Đăng ký" }}
+                    options={{title: "Đăng ký"}}
                 />
-               <Stack.Screen
+                <Stack.Screen
                     name="Contact"
                     component={EmailForm}
-                    options={{ title: "Liên " }}
+                    options={{title: "Liên hệ"}}
                 />
             </Stack.Navigator>
         </NativeBaseProvider>
