@@ -17,6 +17,7 @@ import { FlatList, Platform } from "react-native";
 import { userData, userRegister } from "@/interface/user";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import Test from "../Test/TestDateTime";
+import { Colors } from "@/assets/color/color";
 interface UserInforProps {
   isRegister: boolean;
   onSubmit: (data: any) => void;
@@ -418,7 +419,7 @@ const UserInfor = ({
         style={{
           borderRadius: 20,
           padding: 12,
-          backgroundColor: "#704F38",
+          backgroundColor: Colors.primary,
         }}
         mt="2"
         colorScheme="indigo"

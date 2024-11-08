@@ -22,8 +22,9 @@ import { useEffect, useState } from "react";
 import { Category } from "@/interface/category";
 import SelectedList from "../SelectedList/SelectedList";
 import SortPrice from "../SortPrice/SortPrice";
-import { Manufacturer } from "@/interface/Manufacturer ";
+import { Manufacturer } from "@/interface/manufacturer ";
 import { max } from "date-fns";
+import { productData } from "@/data/products/ProductData";
 
 const categoryList: Category[] = [
   {
@@ -73,13 +74,6 @@ const categoryList: Category[] = [
   },
 ];
 
-const manufacturers: Manufacturer[] = [
-  { id: 1, name: "Nike", country: "USA" },
-  { id: 2, name: "Adidas", country: "Germany" },
-  { id: 3, name: "Puma", country: "Germany" },
-  { id: 4, name: "Reebok", country: "USA" },
-  { id: 5, name: "New Balance", country: "USA" },
-];
 const SortBar = ({
   onApplyFilter,
   onClearFilters,
@@ -90,11 +84,21 @@ const SortBar = ({
   const [minPrice, setMinPrice] = useState<number>(0);
   const [maxPrice, setMaxPrice] = useState<number>(1000000000);
   const [category, setCategory] = useState<Category | undefined>(undefined);
-  const [manufacturer, setManufacturer] = useState<Manufacturer | undefined>(
+  const [manufacturer, setManufacturer] = useState<string | undefined>(
     undefined
   );
   const [modalVisible, setModalVisible] = useState(false);
   // const [isLoading, setIsLoading] = useState(false);
+  const fetchManufacturer = () => {
+    const manufacturerData = [
+      ...new Set(productData.map((product) => product.manufacturerName)),
+    ].map((manufacturer: any, index: any) => ({
+      id: index.toString(),
+      name: manufacturer,
+    }));
+    // console.log("🚀 ~ fetchManufacturer ~ manufacturerData:", manufacturerData);
+    return manufacturerData;
+  };
   const handlePriceChange = (newMinPrice: number, newMaxPrice: number) => {
     setMinPrice(newMinPrice);
     setMaxPrice(newMaxPrice);
@@ -107,9 +111,10 @@ const SortBar = ({
     setCategory(selectedCategory);
   };
 
-  const handleSortByManufacturer = (id: string) => {
-    const selectedManufacturer = manufacturers.find(
-      (m) => m.id.toString() === id
+  const handleSortByManufacturer = (selectedManufacturer: any) => {
+    console.log(
+      "🚀 ~ handleSortByManufacturer ~ selectedManufacturer:",
+      selectedManufacturer
     );
     setManufacturer(selectedManufacturer);
   };
@@ -127,14 +132,11 @@ const SortBar = ({
   const handleClearFilters = () => {
     setModalVisible(false);
     onClearFilters();
-    // setTimeout(() => {
-    //   setIsLoading(false);
-    // }, 2000);
   };
   return (
     <SafeAreaView>
       <Modal
-        isOpen={modalVisible}
+        isOpen={modalVisible} //Hiển thi modal
         onClose={() => setModalVisible(false)}
         size="xl"
       >
@@ -148,9 +150,11 @@ const SortBar = ({
                   Theo giá(đ)
                 </Text>
               </Center>
+              {/* Component lọc theo giá */}
               <SortPrice onChange={handlePriceChange} />
             </Box>
             <Box mb="5">
+              {/* Lọc theo nhà sản xuất và theo loại dùng chung component là SelectedList */}
               <SelectedList
                 listItem={categoryList}
                 onChangeValue={handleSortByCategory}
@@ -161,12 +165,13 @@ const SortBar = ({
             </Box>
             <Box mb="5">
               <SelectedList
-                listItem={manufacturers}
-                onChangeValue={handleSortByManufacturer}
+                listItem={fetchManufacturer()}
+                onChangeValue={(name) => handleSortByManufacturer(name)}
                 label="Theo nhà sản xuất"
-                labelKey={"name"}
-                valueKey={"id"}
+                labelKey="name"
+                valueKey="name"
               />
+              {/* Lọc theo nhà sản xuất và theo loại dùng chung component là SelectedList */}
             </Box>
           </Modal.Body>
           <Modal.Footer>
@@ -175,7 +180,7 @@ const SortBar = ({
                 // {...(isLoading && { isLoading: true })}
                 justifyContent="flex-start"
                 onPress={handleClearFilters}
-                colorScheme="gray"
+                // colorScheme=""
                 borderRadius="full"
               >
                 Xóa bộ lọc
