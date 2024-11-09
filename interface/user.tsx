@@ -16,3 +16,15 @@ export interface userRegister {
   password: string;
   birthdate: string;
 }
+export interface UserForm {
+  name: string;
+  email: string;
+  phone: string;
+  password: string;
+  confirmPassword: string;
+  province: string;
+  district: string;
+  ward: string;
+  setErrors: (errors: Record<string, string>) => void;
+  setAddress: (address: string) => void;
+}
