@@ -6,13 +6,14 @@ import { NativeBaseProvider } from "native-base";
 import Home from "@/pages/Home/Home";
 import Login from "@/pages/Login/Login";
 import Register from "@/pages/Register/Register";
-import Verify from "@/pages/Verify";
+import Verify from "@/pages/Verify/Verify";
 import EmailForm from "@/pages/Contact/EmailForm";
 import ProductList from "@/components/Product/ProductList/ProductList";
 import Products from "@/pages/ProductList/Products";
 import Tracking from "@/pages/tracking/Tracking";
 import OrderHistory from "@/pages/Order/OrderHistory";
 import Profile from "@/pages/Profile/Profile";
+import NewPassword from "@/pages/NewPassword/NewPassword";
 
 const Stack = createStackNavigator();
 
@@ -28,6 +29,7 @@ export type RootStackParamList = {
   Profile: undefined;
   Order: undefined;
   Tracking: undefined;
+  NewPassword: undefined;
 };
 
 const App = () => {
@@ -38,6 +40,11 @@ const App = () => {
           name="Products"
           component={Products}
           options={{ title: "Danh sách sản phẩm" }}
+        />
+        <Stack.Screen
+          name="NewPassword"
+          component={NewPassword}
+          options={{ title: "Mật khẩu mới" }}
         />
         <Stack.Screen
           name="Profile"

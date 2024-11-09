@@ -34,7 +34,7 @@ const UserInfor = ({
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState(userData?.email || "");
   const [password, setPassword] = useState(userData?.password || "");
-  const [rePass, setRePass] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   //Error
   const [errors, setErrors] = useState<any>({});
   // Address
@@ -110,12 +110,12 @@ const UserInfor = ({
         field: "password",
       },
       {
-        condition: isRegister && !rePass,
+        condition: isRegister && !confirmPassword,
         message: "Hãy nhập lại mật khẩu của bạn",
         field: "rePass",
       },
       {
-        condition: isRegister && password !== rePass,
+        condition: isRegister && password !== confirmPassword,
         message: "Mật khẩu không khớp",
         field: "rePass",
       },
@@ -291,11 +291,13 @@ const UserInfor = ({
               />
             }
             type="password"
-            value={rePass}
-            onChangeText={setRePass}
+            value={confirmPassword}
+            onChangeText={setConfirmPassword}
           />
-          {"rePass" in errors ? (
-            <FormControl.ErrorMessage>{errors.rePass}</FormControl.ErrorMessage>
+          {"confirmPassword" in errors ? (
+            <FormControl.ErrorMessage>
+              {errors.confirmPassword}
+            </FormControl.ErrorMessage>
           ) : null}
         </FormControl>
       )}
