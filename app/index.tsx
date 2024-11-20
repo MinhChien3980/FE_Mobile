@@ -12,6 +12,7 @@ import Products from "@/pages/ProductList/Products";
 import Tracking from "@/pages/tracking/Tracking";
 import OrderHistory from "@/pages/Order/OrderHistory";
 import Profile from "@/pages/Profile/Profile";
+import ProductDetail from "@/pages/ProductDetail/ProductDetail";
 
 const Stack = createStackNavigator();
 
@@ -31,13 +32,14 @@ export type RootStackParamList = {
 const App = () => {
     return (
         <NativeBaseProvider>
-            <Stack.Navigator initialRouteName="Login">
+            <Stack.Navigator initialRouteName="ProductDetail">
                 <Stack.Screen
                     name="Products"
                     component={Products}
                 />
                 <Stack.Screen
-                    name="Profile"
+
+                name="Profile"
                     component={Profile}
                     options={{ title: "Thông tin cá nhân" }}
                 />
@@ -66,15 +68,20 @@ const App = () => {
                     component={Verify}
                     options={{ title: "Xác nhận mã" }}
                 />
+                {/*<Stack.Screen*/}
+                {/*    name="Login"*/}
+                {/*    component={Login}*/}
+                {/*    options={{ title: "Đăng nhập" }}*/}
+                {/*/>*/}
+                {/*<Stack.Screen*/}
+                {/*    name="Register"*/}
+                {/*    component={Register}*/}
+                {/*    options={{ title: "Đăng ký" }}*/}
+                {/*/>*/}
                 <Stack.Screen
-                    name="Login"
-                    component={Login}
-                    options={{ title: "Đăng nhập" }}
-                />
-                <Stack.Screen
-                    name="Register"
-                    component={Register}
-                    options={{ title: "Đăng ký" }}
+                    name="ProductDetail"
+                    component={ProductDetail}
+                    options={{ title: "Chi tiết sản phẩm" }}
                 />
             </Stack.Navigator>
         </NativeBaseProvider>
