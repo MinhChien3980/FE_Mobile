@@ -13,7 +13,9 @@ import Products from "@/pages/ProductList/Products";
 import Tracking from "@/pages/tracking/Tracking";
 import OrderHistory from "@/pages/Order/OrderHistory";
 import Profile from "@/pages/Profile/Profile";
+import ProductDetail from "@/pages/ProductDetail/ProductDetail";
 import NewPassword from "@/pages/NewPassword/NewPassword";
+
 
 const Stack = createStackNavigator();
 
@@ -96,9 +98,15 @@ const App = () => {
           component={EmailForm}
           options={{ title: "Liên hệ" }}
         />
+        <Stack.Screen
+                    name="ProductDetail"
+                    component={ProductDetail}
+                    options={{ title: "Chi tiết sản phẩm" }}
+                />
       </Stack.Navigator>
     </NativeBaseProvider>
   );
+
 
 };
 
