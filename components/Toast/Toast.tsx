@@ -25,13 +25,14 @@ type ToastProps = {
 const useShowToast = () => {
   const toast = useToast();
 
-  const showToast = ({
-    type,
-    // title,
-    message,
-    position = "bottom",
-  }: ToastProps) => {
-    toast.show({
+  let currentToastId: string | null = null;
+
+  const showToast = ({ type, message, position = "bottom" }: ToastProps) => {
+    if (currentToastId && toast.isActive(currentToastId)) {
+      toast.close(currentToastId);
+    }
+
+    currentToastId = toast.show({
       placement: position,
       render: ({ id }) => (
         <AlertComponent id={id} status={type} message={message} />

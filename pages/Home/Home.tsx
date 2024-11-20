@@ -1,8 +1,13 @@
+// Home.tsx
 import React from 'react';
-import {View, Text, StyleSheet, FlatList} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import style from '../../style';
-import {SlideBanner} from "@/pages/Home/SlideBaner"; // Import style
+import {SlideBanner} from "../Home/SlideBaner";
+import {HStack} from "native-base";
+import {SearchBar} from "@/components/SearchBar/SearchBar";
+import SortBar from "@/components/SortBar/SortBar";
+
 const Home = () => {
     return (
         <View style={styles.container}>
@@ -16,14 +21,26 @@ const Home = () => {
                     <Icon name="notifications" size={24} color={style.primaryColor}/>
                 </View>
             </View>
-            {/*thanh tìm kiếm và header ở đây*/}
-            <View> header, search nè</View>
-            {/*banner*/}
-
-            <SlideBanner></SlideBanner>
-
-            {/*loại sp*/}
-            <View> Loại sản phẩm lấy bên productList nè</View>
+            {/* Thanh tìm kiếm và header */}
+            <View>
+                <HStack
+                    ml="10"
+                    m="2%"
+                    w="100%"
+                    alignSelf="center"
+                    space={2}
+                    alignItems="center"
+                >
+                    <SearchBar/>
+                    <SortBar/>
+                </HStack>
+            </View>
+            {/* Banner */}
+            <SlideBanner/>
+            {/* Loại sản phẩm */}
+            <View>
+                <Text>Loại sản phẩm lấy bên productList nè</Text>
+            </View>
         </View>
     );
 };
@@ -47,12 +64,11 @@ const styles = StyleSheet.create({
     },
     locationContainer: {
         marginBottom: 20,
-
     },
     locationText: {
         fontSize: 18,
         marginBottom: 2,
-        marginLeft: 5
+        marginLeft: 5,
     },
     locationDetailsContainer: {
         flexDirection: 'row',
@@ -62,12 +78,6 @@ const styles = StyleSheet.create({
         fontSize: 18,
         marginLeft: 5,
     },
-    productItem: {
-        padding: 10,
-        borderBottomWidth: 1,
-        borderBottomColor: '#ccc',
-    },
-
 });
 
 export default Home;

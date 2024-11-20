@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   View,
   Text,
@@ -11,7 +11,7 @@ import { Picker } from "@react-native-picker/picker";
 import { Ionicons } from "@expo/vector-icons";
 import { NavigationProp, useNavigation } from "@react-navigation/native";
 import { RootStackParamList } from "@/app";
-import { launchImageLibrary, ImageLibraryOptions, Asset } from "react-native-image-picker"; 
+import * as ImagePicker from 'expo-image-picker';
 
 interface FakeProfileData {
   name: string;
@@ -46,6 +46,15 @@ const ProfileCompletionScreen = () => {
   const [phoneNumberError, setPhoneNumberError] = useState<boolean>(false);
   const [genderError, setGenderError] = useState<boolean>(false);
 
+  useEffect(() => {
+    (async () => {
+      const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+      if (status !== 'granted') {
+        alert('Sorry, we need camera roll permissions to make this work!');
+      }
+    })();
+  }, []);
+
   const handleCompleteProfile = () => {
     let hasError = false;
 
@@ -75,26 +84,25 @@ const ProfileCompletionScreen = () => {
       console.log("Profile Completed");
     }
   };
+  
 
-  const handleChangeAvatar = () => {
-    const options : ImageLibraryOptions = {
-      mediaType: 'photo',
+  const handleChangeAvatar = async () => {
+    const result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
       quality: 1,
-    };
-
-    launchImageLibrary(options, (response) => {
-      if (response.didCancel) {
-        console.log("User cancelled image picker");
-      } else if (response.errorMessage) {
-        console.log("ImagePicker Error: ", response.errorMessage);
-      } else if (response.assets) {
-        const source = response.assets[0].uri; // Accessing uri directly without type assertion
-        setAvatarUrl(source || ""); // Update avatar URL with the selected image
-      }
     });
+  
+    if (!result.canceled && result.assets?.[0].uri) {
+      setAvatarUrl(result.assets[0].uri);
+    }
   };
 
   const countryCodes = Array.from({ length: 99 }, (_, i) => `+${i + 1}`);
+
+  const handlePhoneNumberChange = (text: string) => {
+    const numericText = text.replace(/[^0-9]/g, ''); // Remove non-numeric characters
+    setPhoneNumber(numericText);
+  };
 
   const handleBack = () => {
     let hasError = false;
@@ -162,13 +170,16 @@ const ProfileCompletionScreen = () => {
             ))}
           </Picker>
         </View>
-        <TextInput
-          style={styles.phoneInput}
-          placeholder="Enter Phone Number"
-          value={phoneNumber}
-          onChangeText={setPhoneNumber}
-          keyboardType="phone-pad"
-        />
+        <View style={styles.phoneSetNumber}>
+          <Text style={styles.countryCode}>{countryCode}</Text>
+          <TextInput
+            style={styles.phoneInput}
+            placeholder="Enter Phone Number"
+            value={`${phoneNumber}`}
+            onChangeText={handlePhoneNumberChange}
+            keyboardType="numeric"
+          />
+        </View>
       </View>
       {phoneNumberError && (
         <Text style={styles.errorText}>* Thông tin này là bắt buộc</Text>
@@ -240,7 +251,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     right: 0,
     bottom: 0,
-    backgroundColor: "#8B4513", // Màu nâu cho icon
+    backgroundColor: "#8B4513", 
     borderRadius: 20,
     padding: 5,
   },
@@ -249,7 +260,8 @@ const styles = StyleSheet.create({
   input: {
     backgroundColor: "#f9f9f9",
     borderRadius: 8,
-    padding: 12,
+    paddingVertical: 8,
+    paddingHorizontal: 2,
     marginBottom: 16,
     fontSize: 16,
     borderWidth: 1,
@@ -260,25 +272,32 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#f9f9f9",
     borderRadius: 8,
-    padding: 12,
+    paddingVertical: 8,
+    paddingHorizontal: 2,
     marginBottom: 16,
     borderWidth: 1,
     borderColor: "#e0e0e0",
   },
   countryCode: {
-    marginRight: 8,
+    // marginRight: 5,
     fontSize: 16,
     color: "#666",
   },
   countryPickerContainer: {
-    flex: 0.2,
+    // flex: 0.2,
   },
   countryPicker: {
     height: 35,
-    width: "80%",
+    width: 107,
+  },
+  phoneSetNumber:{
+    // display: "flex",
+    alignItems: "center",
+    flexDirection: "row",
   },
   phoneInput: {
-    flex: 0.7,
+    // flex: 0.8,
+    marginLeft: 5,
     fontSize: 16,
     height: 35,
   },

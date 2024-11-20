@@ -10,9 +10,12 @@ import {
   VStack,
 } from "native-base";
 import { Alert, TouchableOpacity } from "react-native";
-import SortBar from "../SortBar/SortBar";
 
-export const SearchBar = () => {
+interface SearchBarProps {
+  onSearch: (query: string) => void;
+}
+
+export const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   return (
     <Input
       w="75%"
@@ -21,17 +24,16 @@ export const SearchBar = () => {
       py="1"
       px="20"
       fontSize="14"
+      onChangeText={onSearch} //Gọi hàm khi nhập từ khóa tìm kiếm
       InputRightElement={
-        <TouchableOpacity onPress={() => Alert.alert("Tìm kiếm")}>
-          <Icon
-            m="2"
-            ml="-5"
-            mr="5"
-            size="6"
-            color="gray.400"
-            as={<MaterialIcons name="search" />}
-          />
-        </TouchableOpacity>
+        <Icon
+          m="2"
+          ml="-5"
+          mr="5"
+          size="6"
+          color="gray.400"
+          as={<MaterialIcons name="search" />}
+        />
       }
     />
   );

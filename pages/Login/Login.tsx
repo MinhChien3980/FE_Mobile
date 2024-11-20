@@ -1,6 +1,6 @@
 import { getUserToken } from "@/api/UserApiService";
 import { RootStackParamList } from "@/app";
-import color from "@/assets/color/color";
+import { Colors } from "@/assets/color/color";
 import Loading from "@/components/Animation/Loading";
 import useShowToast from "@/components/Toast/Toast";
 import { userLogin } from "@/interface/user";
@@ -37,7 +37,7 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [errors, setErrors] = React.useState({});
+  const [errors, setErrors] = useState({});
   const validate = () => {
     let isValid = true;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -244,7 +244,7 @@ export default function Login() {
             style={{
               borderRadius: 20,
               padding: 12,
-              backgroundColor: "#704F38",
+              backgroundColor: Colors.primary,
             }}
           >
             Đăng nhập

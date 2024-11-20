@@ -17,6 +17,7 @@ import { FlatList, Platform } from "react-native";
 import { userData, userRegister } from "@/interface/user";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import Test from "../Test/TestDateTime";
+import { Colors } from "@/assets/color/color";
 interface UserInforProps {
   isRegister: boolean;
   onSubmit: (data: any) => void;
@@ -33,7 +34,7 @@ const UserInfor = ({
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState(userData?.email || "");
   const [password, setPassword] = useState(userData?.password || "");
-  const [rePass, setRePass] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   //Error
   const [errors, setErrors] = useState<any>({});
   // Address
@@ -109,12 +110,12 @@ const UserInfor = ({
         field: "password",
       },
       {
-        condition: isRegister && !rePass,
+        condition: isRegister && !confirmPassword,
         message: "Hãy nhập lại mật khẩu của bạn",
         field: "rePass",
       },
       {
-        condition: isRegister && password !== rePass,
+        condition: isRegister && password !== confirmPassword,
         message: "Mật khẩu không khớp",
         field: "rePass",
       },
@@ -290,11 +291,13 @@ const UserInfor = ({
               />
             }
             type="password"
-            value={rePass}
-            onChangeText={setRePass}
+            value={confirmPassword}
+            onChangeText={setConfirmPassword}
           />
-          {"rePass" in errors ? (
-            <FormControl.ErrorMessage>{errors.rePass}</FormControl.ErrorMessage>
+          {"confirmPassword" in errors ? (
+            <FormControl.ErrorMessage>
+              {errors.confirmPassword}
+            </FormControl.ErrorMessage>
           ) : null}
         </FormControl>
       )}
@@ -418,7 +421,7 @@ const UserInfor = ({
         style={{
           borderRadius: 20,
           padding: 12,
-          backgroundColor: "#704F38",
+          backgroundColor: Colors.primary,
         }}
         mt="2"
         colorScheme="indigo"
