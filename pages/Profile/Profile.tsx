@@ -10,8 +10,8 @@ import {
 import { Picker } from "@react-native-picker/picker";
 import { Ionicons } from "@expo/vector-icons";
 import { NavigationProp, useNavigation } from "@react-navigation/native";
-import { RootStackParamList } from "@/app";
-import * as ImagePicker from 'expo-image-picker';
+import * as ImagePicker from "expo-image-picker";
+import { RootStackParamList } from "../../App";
 
 interface FakeProfileData {
   name: string;
@@ -48,9 +48,10 @@ const ProfileCompletionScreen = () => {
 
   useEffect(() => {
     (async () => {
-      const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
-      if (status !== 'granted') {
-        alert('Sorry, we need camera roll permissions to make this work!');
+      const { status } =
+        await ImagePicker.requestMediaLibraryPermissionsAsync();
+      if (status !== "granted") {
+        alert("Sorry, we need camera roll permissions to make this work!");
       }
     })();
   }, []);
@@ -84,14 +85,13 @@ const ProfileCompletionScreen = () => {
       console.log("Profile Completed");
     }
   };
-  
 
   const handleChangeAvatar = async () => {
     const result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.Images,
       quality: 1,
     });
-  
+
     if (!result.canceled && result.assets?.[0].uri) {
       setAvatarUrl(result.assets[0].uri);
     }
@@ -100,7 +100,7 @@ const ProfileCompletionScreen = () => {
   const countryCodes = Array.from({ length: 99 }, (_, i) => `+${i + 1}`);
 
   const handlePhoneNumberChange = (text: string) => {
-    const numericText = text.replace(/[^0-9]/g, ''); // Remove non-numeric characters
+    const numericText = text.replace(/[^0-9]/g, ""); // Remove non-numeric characters
     setPhoneNumber(numericText);
   };
 
@@ -117,7 +117,7 @@ const ProfileCompletionScreen = () => {
     <View style={styles.container}>
       <TouchableOpacity style={styles.backButton}>
         <Text onPress={() => handleBack()}>
-          <Ionicons name="arrow-back" size={24} color="black"/>
+          <Ionicons name="arrow-back" size={24} color="black" />
         </Text>
       </TouchableOpacity>
 
@@ -128,10 +128,7 @@ const ProfileCompletionScreen = () => {
       </Text>
 
       <View style={styles.avatarContainer}>
-        <Image
-          source={{ uri: avatarUrl }}
-          style={styles.avatar}
-        />
+        <Image source={{ uri: avatarUrl }} style={styles.avatar} />
         <TouchableOpacity style={styles.editIconContainer}>
           <Text onPress={handleChangeAvatar}>
             <Ionicons name="pencil" size={16} color="white" />
@@ -199,7 +196,9 @@ const ProfileCompletionScreen = () => {
         </Picker>
       </View>
       {genderError && (
-        <Text style={[styles.errorText, styles.lastError]}>* Thông tin này là bắt buộc</Text>
+        <Text style={[styles.errorText, styles.lastError]}>
+          * Thông tin này là bắt buộc
+        </Text>
       )}
 
       <TouchableOpacity
@@ -251,12 +250,11 @@ const styles = StyleSheet.create({
     position: "absolute",
     right: 0,
     bottom: 0,
-    backgroundColor: "#8B4513", 
+    backgroundColor: "#8B4513",
     borderRadius: 20,
     padding: 5,
   },
-  form: {
-  },
+  form: {},
   input: {
     backgroundColor: "#f9f9f9",
     borderRadius: 8,
@@ -290,7 +288,7 @@ const styles = StyleSheet.create({
     height: 35,
     width: 107,
   },
-  phoneSetNumber:{
+  phoneSetNumber: {
     // display: "flex",
     alignItems: "center",
     flexDirection: "row",
@@ -334,7 +332,7 @@ const styles = StyleSheet.create({
   },
   lastError: {
     marginBottom: 24,
-  }
+  },
 });
 
 export default ProfileCompletionScreen;

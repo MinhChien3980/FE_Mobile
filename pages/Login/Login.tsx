@@ -1,11 +1,4 @@
-import { getUserToken } from "@/api/UserApiService";
-import { RootStackParamList } from "@/app";
-import { Colors } from "@/assets/color/color";
-import Loading from "@/components/Animation/Loading";
-import useShowToast from "@/components/Toast/Toast";
-import { userLogin } from "@/interface/user";
 import { AntDesign, MaterialIcons } from "@expo/vector-icons";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import { NavigationProp, useNavigation } from "@react-navigation/native";
 import {
   Image,
@@ -28,6 +21,11 @@ import {
 } from "native-base";
 import React, { useState } from "react";
 import { Alert, Pressable, StyleSheet } from "react-native";
+import useShowToast from "../../components/Toast/Toast";
+import { RootStackParamList } from "../../App";
+import { userLogin } from "../../interface/user";
+import { getUserToken } from "../../api/UserApiService";
+import { Colors } from "../../assets/color/color";
 
 export default function Login() {
   const showToast = useShowToast();
@@ -99,7 +97,7 @@ export default function Login() {
       if (response.status === 200) {
         const data = response.data.data;
 
-        await AsyncStorage.setItem("token", data.token);
+        // await AsyncStorage.setItem("token", data.token);
         console.log(data.token);
         navigation.navigate("ProductList");
         showToast({

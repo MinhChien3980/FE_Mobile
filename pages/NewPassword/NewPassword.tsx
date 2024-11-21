@@ -1,4 +1,3 @@
-import { Colors } from "@/assets/color/color";
 import { MaterialIcons } from "@expo/vector-icons";
 import {
   Button,
@@ -12,8 +11,9 @@ import {
   Pressable,
 } from "native-base";
 import { NavigationProp, useNavigation } from "@react-navigation/native";
-import { RootStackParamList } from "@/app";
 import { useState } from "react";
+import { RootStackParamList } from "../../App";
+import { Colors } from "../../assets/color/color";
 interface UserForm {
   password: string;
   confirmPassword: string;

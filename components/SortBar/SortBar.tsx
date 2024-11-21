@@ -1,4 +1,3 @@
-import RangeSlider from "../RangeSlider/RangeSlider";
 import { Ionicons } from "@expo/vector-icons";
 import { SafeAreaView } from "react-native";
 import {
@@ -19,12 +18,10 @@ import {
   HStack,
 } from "native-base";
 import { useEffect, useState } from "react";
-import { Category } from "@/interface/category";
 import SelectedList from "../SelectedList/SelectedList";
 import SortPrice from "../SortPrice/SortPrice";
-import { Manufacturer } from "@/interface/manufacturer ";
-import { max } from "date-fns";
-import { productData } from "@/data/products/ProductData";
+import { Category } from "../../interface/category";
+import { productData } from "../../data/products/ProductData";
 
 const categoryList: Category[] = [
   {

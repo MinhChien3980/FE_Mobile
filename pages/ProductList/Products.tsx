@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { SafeAreaView } from "react-native";
-import ProductList from "@/components/Product/ProductList/ProductList";
-import { SearchBar } from "@/components/SearchBar/SearchBar";
 import { Box, HStack, IconButton, Icon, Button } from "native-base";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { Product } from "@/interface/product";
 import { Ionicons } from "@expo/vector-icons";
 import { NavigationProp, useNavigation } from "@react-navigation/native";
-import { RootStackParamList } from "@/app";
-import SortBar from "@/components/SortBar/SortBar";
-import { productData } from "@/data/products/ProductData";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { RootStackParamList } from "../../App";
+import { Product } from "../../interface/product";
+import { productData } from "../../data/products/ProductData";
+import { SearchBar } from "../../components/SearchBar/SearchBar";
+import SortBar from "../../components/SortBar/SortBar";
+import ProductList from "../../components/Product/ProductList/ProductList";
 
 const Products: React.FC = () => {
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();

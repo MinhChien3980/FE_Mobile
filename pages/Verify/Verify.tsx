@@ -1,6 +1,4 @@
 // import userApi  from "@/api/UserApiService";
-import { Colors } from "@/assets/color/color";
-import useShowToast from "@/components/Toast/Toast";
 import {
   View,
   Button,
@@ -28,7 +26,9 @@ import {
   useClearByFocusCell,
 } from "react-native-confirmation-code-field";
 import { NavigationProp, useNavigation } from "@react-navigation/native";
-import { RootStackParamList } from "@/app";
+import { RootStackParamList } from "../../App";
+import useShowToast from "../../components/Toast/Toast";
+import { Colors } from "../../assets/color/color";
 const styles = StyleSheet.create({
   root: { flex: 1, padding: 20, marginTop: 250 },
   title: { textAlign: "center", fontSize: 30 },
