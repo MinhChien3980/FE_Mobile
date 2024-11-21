@@ -11,10 +11,10 @@ import {
   Center,
 } from "native-base";
 import { Ionicons } from "@expo/vector-icons";
-import useShowToast from "@/components/Toast/Toast";
-import { Product } from "@/interface/product";
-import { loadFavorites, toggleFavorite } from "@/uitls/favoriteUtils";
-import { renderProduct } from "@/uitls/productUtils";
+import { Product } from "../../../interface/product";
+import useShowToast from "../../Toast/Toast";
+import { loadFavorites, toggleFavorite } from "../../../uitls/favoriteUtils";
+import { renderProduct } from "../../../uitls/productUtils";
 
 interface ProductListProps {
   products: Product[] | null;

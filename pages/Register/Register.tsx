@@ -1,9 +1,9 @@
-import { RootStackParamList } from "@/app";
-import UserInfor from "@/components/UserInfor/UserInforForm";
-import { userRegister } from "@/interface/user";
 import { NavigationProp, useNavigation } from "@react-navigation/native";
 import { Box, Center, Heading, ScrollView } from "native-base";
 import { useState } from "react";
+import { userRegister } from "../../interface/user";
+import { RootStackParamList } from "../../App";
+import UserInfor from "../../components/UserInfor/UserInforForm";
 
 export default function Register() {
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();

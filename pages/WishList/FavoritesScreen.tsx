@@ -1,12 +1,12 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { SafeAreaView } from "react-native";
-import ProductList from "@/components/Product/ProductList/ProductList";
 import { Box, HStack } from "native-base";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { Product } from "@/interface/product";
 import { NavigationProp, useNavigation } from "@react-navigation/native";
-import { RootStackParamList } from "@/app";
-import { loadFavorites } from "@/uitls/favoriteUtils";
+import { RootStackParamList } from "../../App";
+import { Product } from "../../interface/product";
+import { loadFavorites } from "../../uitls/favoriteUtils";
+import ProductList from "../../components/Product/ProductList/ProductList";
 
 const FavoritesScreen: React.FC = () => {
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();

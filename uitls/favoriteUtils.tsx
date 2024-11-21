@@ -1,7 +1,7 @@
 // favoritesUtils.ts
 
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { Product } from "@/interface/product";
+import { Product } from "@/app/interface/product";
 import { Box, Icon, IconButton, VStack, Text, Image } from "native-base";
 import { Ionicons } from "@expo/vector-icons";
 

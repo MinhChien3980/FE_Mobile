@@ -14,10 +14,9 @@ import {
 import { MaterialIcons } from "@expo/vector-icons";
 import { useState } from "react";
 import { FlatList, Platform } from "react-native";
-import { userData, userRegister } from "@/interface/user";
-import DateTimePicker from "@react-native-community/datetimepicker";
-import Test from "../Test/TestDateTime";
-import { Colors } from "@/assets/color/color";
+// import Test from "../Test/TestDateTime";
+import { userRegister } from "../../interface/user";
+import { Colors } from "../../assets/color/color";
 interface UserInforProps {
   isRegister: boolean;
   onSubmit: (data: any) => void;
