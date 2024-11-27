@@ -141,7 +141,7 @@ const Products: React.FC = () => {
         zIndex={1}
         colorScheme="white"
         backgroundColor="#704F38"
-        onPress={() => navigation.navigate("Verify")}
+        onPress={() => navigation.navigate("Favorites")}
       />
     </SafeAreaView>
   );
