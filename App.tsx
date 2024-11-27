@@ -37,7 +37,7 @@ const App = () => {
   return (
     <NativeBaseProvider>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="ProductDetail">
+        <Stack.Navigator initialRouteName="Home">
           <Stack.Screen
             name="ProductDetail"
             component={ProductDetail}
