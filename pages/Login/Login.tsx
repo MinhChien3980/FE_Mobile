@@ -26,7 +26,7 @@ import { RootStackParamList } from "../../App";
 import { userLogin } from "../../interface/user";
 import { getUserToken } from "../../api/UserApiService";
 import { Colors } from "../../assets/color/color";
-
+import * as SecureStore from "expo-secure-store";
 export default function Login() {
   const showToast = useShowToast();
 
@@ -88,35 +88,35 @@ export default function Login() {
     }
   };
   const login = async () => {
-    const loginData: userLogin = { email, password };
-    console.log(loginData);
+    navigation.navigate("Home");
+    // const loginData: userLogin = { email, password };
 
-    try {
-      const response = await getUserToken(loginData);
-      console.log(response);
-      if (response.status === 200) {
-        const data = response.data.data;
+    // console.log("🚀 ~ login ~ loginData:", loginData);
+    // try {
+    //   const response = await getUserToken(loginData);
+    //   if (response.status === 200) {
+    //     const data = response.data.data;
+    //     const token = data.token;
+    //     console.log("🚀 ~ login ~ token:", token);
+    //     await SecureStore.setItemAsync("userToken", token);
+    //     navigation.navigate("Home");
+    //     showToast({
+    //       type: "success",
+    //       message: "Đăng nhập thành công",
+    //     });
+    //   }
+    // } catch (error: any) {
+    //   // Kiểm tra nếu lỗi là từ response
+    //   const errorMessage =
+    //     error.response?.data?.message || error.message || "Lỗi kết nối";
 
-        // await AsyncStorage.setItem("token", data.token);
-        console.log(data.token);
-        navigation.navigate("ProductList");
-        showToast({
-          type: "success",
-          message: "Đăng nhập thành công",
-        });
-      }
-    } catch (error: any) {
-      // Kiểm tra nếu lỗi là từ response
-      const errorMessage =
-        error.response?.data?.message || error.message || "Lỗi kết nối";
-
-      showToast({
-        type: "error",
-        message: errorMessage,
-      });
-      // Alert.alert("Thất bại", errorMessage);
-      console.log(error);
-    }
+    //   showToast({
+    //     type: "error",
+    //     message: errorMessage,
+    //   });
+    //   // Alert.alert("Thất bại", errorMessage);
+    //   // console.log(error);
+    // }
   };
   const handleResetPassword = () => {
     navigation.navigate("Verify");
