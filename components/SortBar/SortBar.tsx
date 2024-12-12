@@ -11,65 +11,23 @@ import {
   Text,
   FormControl,
   Divider,
-  Button,
   View,
   Flex,
   VStack,
   HStack,
+  ScrollView,
+  Button,
 } from "native-base";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import SelectedList from "../SelectedList/SelectedList";
 import SortPrice from "../SortPrice/SortPrice";
 import { Category } from "../../interface/category";
-import { productData } from "../../data/products/ProductData";
-
-const categoryList: Category[] = [
-  {
-    id: 1,
-    name: "Running Shoes",
-    genderId: 1, // Hoặc một giá trị tương ứng cho genderId
-    ageGroupId: 2, // Hoặc một giá trị tương ứng cho ageGroupId
-    createdAt: new Date("2023-01-01"),
-    updatedAt: new Date("2023-02-01"),
-  },
-  {
-    id: 2,
-    name: "Casual Shoes",
-    genderId: 2, // Giá trị tương ứng cho genderId
-    ageGroupId: 3, // Giá trị tương ứng cho ageGroupId
-    createdAt: new Date("2023-01-10"),
-    updatedAt: new Date("2023-02-10"),
-  },
-  {
-    id: 3,
-    name: "Basketball Shoes",
-    parentCategoryId: 2,
-    genderId: 1, // Giá trị tương ứng cho genderId
-    ageGroupId: 3, // Giá trị tương ứng cho ageGroupId
-    createdAt: new Date("2023-01-15"),
-    updatedAt: new Date("2023-02-15"),
-    description: "Shoes designed for basketball players",
-  },
-  {
-    id: 4,
-    name: "Boots",
-    genderId: 2, // Giá trị tương ứng cho genderId
-    ageGroupId: 2, // Giá trị tương ứng cho ageGroupId
-    createdAt: new Date("2023-01-20"),
-    updatedAt: new Date("2023-02-20"),
-    description: "Sturdy shoes for outdoor activities",
-  },
-  {
-    id: 5,
-    name: "Formal Shoes",
-    parentCategoryId: 3,
-    genderId: 1, // Giá trị tương ứng cho genderId
-    ageGroupId: 4, // Giá trị tương ứng cho ageGroupId
-    createdAt: new Date("2023-01-25"),
-    updatedAt: new Date("2023-02-25"),
-    deletedAt: new Date("2024-01-01"),
-  },
-];
+import { categoryList, productData } from "../../data/products/ProductData";
+import ButtonList from "../ButtonList/ButtonList";
+import { Manufacturer } from "../../interface/Manufacturer ";
+import { AirbnbRating, Rating } from "react-native-ratings";
+import { StarRating } from "../StarRating/StarRating";
+import { Colors } from "../../assets/color/color";
 
 const SortBar = ({
   onApplyFilter,
@@ -85,51 +43,56 @@ const SortBar = ({
     undefined
   );
   const [modalVisible, setModalVisible] = useState(false);
-  // const [isLoading, setIsLoading] = useState(false);
-  const fetchManufacturer = () => {
+  const fetchManufacturer = useMemo(() => {
     const manufacturerData = [
-      ...new Set(productData.map((product) => product.manufacturerName)),
-    ].map((manufacturer: any, index: any) => ({
-      id: index.toString(),
-      name: manufacturer,
-    }));
-    // console.log("🚀 ~ fetchManufacturer ~ manufacturerData:", manufacturerData);
+      { id: "all", name: "Tất cả" },
+      ...[
+        ...new Set(productData.map((product) => product.manufacturerName)),
+      ].map((manufacturer, index) => ({
+        id: index.toString(),
+        name: manufacturer,
+      })),
+    ];
     return manufacturerData;
-  };
-  const handlePriceChange = (newMinPrice: number, newMaxPrice: number) => {
-    setMinPrice(newMinPrice);
-    setMaxPrice(newMaxPrice);
-  };
+  }, [productData]);
+  const handlePriceChange = useCallback(
+    (newMinPrice: number, newMaxPrice: number) => {
+      setMinPrice(newMinPrice);
+      setMaxPrice(newMaxPrice);
+    },
+    []
+  );
 
-  const handleSortByCategory = (id: string) => {
-    const selectedCategory = categoryList.find(
-      (category) => category.id.toString() === id
+  const handleCategoryChange = useCallback((item: Category) => {
+    setCategory(item);
+  }, []);
+
+  //Change manufacturer
+  const handleManufacturerChange = useCallback((selectedManufacturer: any) => {
+    setManufacturer(
+      selectedManufacturer.id === "all" ? undefined : selectedManufacturer.name
     );
-    setCategory(selectedCategory);
-  };
+  }, []);
 
-  const handleSortByManufacturer = (selectedManufacturer: any) => {
-    console.log(
-      "🚀 ~ handleSortByManufacturer ~ selectedManufacturer:",
-      selectedManufacturer
-    );
-    setManufacturer(selectedManufacturer);
-  };
+  //Apply filter
+  const handleApplyFilters = useCallback(() => {
+    onApplyFilter({ minPrice, maxPrice, category, manufacturer });
+    setModalVisible(false);
+  }, [minPrice, maxPrice, category, manufacturer, onApplyFilter]);
 
-  const handleApplyFilters = () => {
-    const filters = {
-      minPrice,
-      maxPrice,
-      category,
-      manufacturer,
-    };
-    onApplyFilter(filters);
-    setModalVisible(false);
-  };
-  const handleClearFilters = () => {
-    setModalVisible(false);
+  //Rating
+  const handleChangeRating = useCallback((rating: any) => {
+    console.log("Rating is: " + rating);
+  }, []);
+  //clear filter
+  const handleClearFilters = useCallback(() => {
+    setMinPrice(0);
+    setMaxPrice(1000000000);
+    setCategory(undefined);
+    setManufacturer(undefined);
     onClearFilters();
-  };
+    setModalVisible(false);
+  }, [onClearFilters]);
   return (
     <SafeAreaView>
       <Modal
@@ -139,46 +102,72 @@ const SortBar = ({
       >
         <Modal.Content>
           <Modal.CloseButton />
-          <Modal.Header>Lọc sản phẩm</Modal.Header>
+          <Modal.Header>
+            <Text bold fontSize="lg">
+              Lọc sản phẩm
+            </Text>
+          </Modal.Header>
           <Modal.Body>
-            <Box mb="5">
-              <Center>
-                <Text mb="5" bold fontSize="lg" color="#704F38">
-                  Theo giá(đ)
+            <ScrollView
+              showsHorizontalScrollIndicator={false}
+              showsVerticalScrollIndicator={false}
+            >
+              <Box mb="5" mt="3">
+                {/* Lọc theo nhà sản xuất và theo loại dùng chung component là SelectedList */}
+                <Text mb="5" bold fontSize="md" color={Colors.primary}>
+                  Theo nhà sản xuất
                 </Text>
-              </Center>
-              {/* Component lọc theo giá */}
-              <SortPrice onChange={handlePriceChange} />
-            </Box>
-            <Box mb="5">
+                <ButtonList
+                  listItem={fetchManufacturer}
+                  onChangeValue={handleManufacturerChange}
+                  labelKey="name"
+                  valueKey="name"
+                />
+              </Box>
+              <Divider w="100%" />
               {/* Lọc theo nhà sản xuất và theo loại dùng chung component là SelectedList */}
-              <SelectedList
-                listItem={categoryList}
-                onChangeValue={handleSortByCategory}
-                label="Theo loại"
-                labelKey={"name"}
-                valueKey={"id"}
-              />
-            </Box>
-            <Box mb="5">
-              <SelectedList
-                listItem={fetchManufacturer()}
-                onChangeValue={(name) => handleSortByManufacturer(name)}
-                label="Theo nhà sản xuất"
-                labelKey="name"
-                valueKey="name"
-              />
-              {/* Lọc theo nhà sản xuất và theo loại dùng chung component là SelectedList */}
-            </Box>
+              <Box mb="5" mt="3">
+                <Text mb="5" bold fontSize="md" color={Colors.primary}>
+                  Theo loại
+                </Text>
+                <ButtonList
+                  listItem={categoryList}
+                  onChangeValue={handleCategoryChange}
+                  labelKey="name"
+                  valueKey="id"
+                />
+              </Box>
+              <Divider w="100%" />
+              <Box mb="5" mt="3">
+                <Text mb="5" bold fontSize="md" color={Colors.primary}>
+                  Theo giá
+                </Text>
+                {/* Component lọc theo giá */}
+                <SortPrice onChange={handlePriceChange} />
+              </Box>
+              <Divider w="100%" />
+              <Box mb="5" mt="3">
+                <Text mb="5" bold fontSize="md" color={Colors.primary}>
+                  Theo đánh giá
+                </Text>
+                {/* Component lọc theo danh giá */}
+                <Rating
+                  showRating
+                  onFinishRating={handleChangeRating}
+                  style={{ paddingVertical: 10 }}
+                />
+              </Box>
+            </ScrollView>
           </Modal.Body>
           <Modal.Footer>
             <HStack width="100%" justifyContent="space-between">
               <Button
-                // {...(isLoading && { isLoading: true })}
                 justifyContent="flex-start"
                 onPress={handleClearFilters}
-                // colorScheme=""
                 borderRadius="full"
+                _text={{ color: Colors.buttonDelete }}
+                // variant="outline"
+                bg={Colors.backgroundButtonDelete}
               >
                 Xóa bộ lọc
               </Button>
@@ -186,7 +175,7 @@ const SortBar = ({
                 borderRadius="full"
                 style={{
                   padding: 12,
-                  backgroundColor: "#704F38",
+                  backgroundColor: Colors.primary,
                 }}
                 onPress={handleApplyFilters}
               >

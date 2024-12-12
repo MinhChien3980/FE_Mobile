@@ -89,34 +89,34 @@ export default function Login() {
   };
   const login = async () => {
     navigation.navigate("Home");
-    // const loginData: userLogin = { email, password };
+    const loginData: userLogin = { email, password };
 
-    // console.log("🚀 ~ login ~ loginData:", loginData);
-    // try {
-    //   const response = await getUserToken(loginData);
-    //   if (response.status === 200) {
-    //     const data = response.data.data;
-    //     const token = data.token;
-    //     console.log("🚀 ~ login ~ token:", token);
-    //     await SecureStore.setItemAsync("userToken", token);
-    //     navigation.navigate("Home");
-    //     showToast({
-    //       type: "success",
-    //       message: "Đăng nhập thành công",
-    //     });
-    //   }
-    // } catch (error: any) {
-    //   // Kiểm tra nếu lỗi là từ response
-    //   const errorMessage =
-    //     error.response?.data?.message || error.message || "Lỗi kết nối";
+    console.log("🚀 ~ login ~ loginData:", loginData);
+    try {
+      const response = await getUserToken(loginData);
+      if (response.status === 200) {
+        const data = response.data.data;
+        const token = data.token;
+        console.log("🚀 ~ login ~ token:", token);
+        await SecureStore.setItemAsync("userToken", token);
+        navigation.navigate("Home");
+        showToast({
+          type: "success",
+          message: "Đăng nhập thành công",
+        });
+      }
+    } catch (error: any) {
+      // Kiểm tra nếu lỗi là từ response
+      const errorMessage =
+        error.response?.data?.message || error.message || "Lỗi kết nối";
 
-    //   showToast({
-    //     type: "error",
-    //     message: errorMessage,
-    //   });
-    //   // Alert.alert("Thất bại", errorMessage);
-    //   // console.log(error);
-    // }
+      showToast({
+        type: "error",
+        message: errorMessage,
+      });
+      // Alert.alert("Thất bại", errorMessage);
+      // console.log(error);
+    }
   };
   const handleResetPassword = () => {
     navigation.navigate("Verify");
