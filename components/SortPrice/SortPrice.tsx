@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Center, Flex, Input, Text } from "native-base";
+import { Colors } from "../../assets/color/color";
 
 interface SortPriceProps {
   onChange: (minPrice: number, maxPrice: number) => void;
@@ -23,9 +24,9 @@ const SortPrice = ({ onChange }: SortPriceProps) => {
 
   return (
     <Flex direction="row" mb="2.5" mt="1.5" justify="space-between">
-      <Center bg="#704F38" p="3" rounded="3xl" w="40%">
+      <Center bg={Colors.primary} p="3" rounded="3xl" w="40%">
         <Text mb="2" color="white">
-          Từ
+          Từ(đ)
         </Text>
         <Input
           borderRadius="2xl"
@@ -37,13 +38,13 @@ const SortPrice = ({ onChange }: SortPriceProps) => {
         />
       </Center>
       <Center>
-        <Text fontSize="2xl" color="#704F38">
+        <Text fontSize="2xl" color={Colors.primary}>
           -
         </Text>
       </Center>
-      <Center bg="#704F38" p="3" rounded="3xl" w="40%">
+      <Center bg={Colors.primary} p="3" rounded="3xl" w="40%">
         <Text mb="2" color="white">
-          Đến
+          Đến(đ)
         </Text>
         <Input
           borderRadius="2xl"
