@@ -8,7 +8,7 @@ import NewPassword from "./pages/NewPassword/NewPassword";
 import Profile from "./pages/Profile/Profile";
 import OrderHistory from "./pages/Order/OrderHistory";
 import Tracking from "./pages/tracking/Tracking";
-import FavoritesScreen from "./pages/WishList/FavoritesScreen";
+import FavouritesScreen from "./pages/WishList/FavouritesScreen";
 import Verify from "./pages/Verify/Verify";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
@@ -37,7 +37,7 @@ const App = () => {
   return (
     <NativeBaseProvider>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Home">
+        <Stack.Navigator initialRouteName="Products">
           <Stack.Screen
             name="ProductDetail"
             component={ProductDetail}
@@ -75,7 +75,7 @@ const App = () => {
           />
           <Stack.Screen
             name="Favorites"
-            component={FavoritesScreen}
+            component={FavouritesScreen}
             options={{ title: "Danh sách yêu thích" }}
           />
           <Stack.Screen
