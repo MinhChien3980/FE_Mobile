@@ -10,6 +10,7 @@ import SortBar from "../../components/SortBar/SortBar";
 import ProductList from "../../components/Product/ProductList/ProductList";
 import { RootStackParamList } from "../../App";
 import { Ionicons } from "@expo/vector-icons";
+import * as SecureStore from "expo-secure-store";
 
 const Products: React.FC = () => {
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
@@ -30,20 +31,23 @@ const Products: React.FC = () => {
   useEffect(() => {
     const fetchToken = async () => {
       try {
-        const storedToken = await AsyncStorage.getItem("token");
-        console.log("🚀 ~ fetchToken ~ storedToken:", storedToken);
-        setToken(storedToken);
+        const storedToken = await SecureStore.getItem("userToken");
+        if (storedToken !== null) {
+          console.log("🚀 ~ fetchToken ~ storedToken:", storedToken);
+          setToken(storedToken);
+        }
       } catch (error) {
-        console.error("Error fetching token:", error);
+        console.error("Get token error: ", error);
       }
     };
 
     fetchToken();
     handleClearFilters();
-  }, []);
+  }, [token]);
 
   //Hàm áp dụng bộ lọc
   const handleApplyFilter = (filters: any) => {
+    console.log("🚀 ~ handleApplyFilter ~ filters:", filters);
     let filteredProductsList = [...products]; //Lấy dữ liệu từ products đã fetch đưa vào filteredProductsList
     console.log(
       "🚀 ~ handleApplyFilter ~ filteredProductsList:",

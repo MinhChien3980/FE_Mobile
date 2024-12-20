@@ -1,4 +1,4 @@
-import { UserForm } from "@/app/interface/user";
+import { UserForm } from "../interface/user";
 
 export const validateUserForm = ({
   name,

@@ -1,5 +1,52 @@
+import { Category } from "../../interface/category";
 import { Product } from "../../interface/product";
-
+export const categoryList: Category[] = [
+  {
+    id: 1,
+    name: "Running Shoes",
+    genderId: 1, // Hoặc một giá trị tương ứng cho genderId
+    ageGroupId: 2, // Hoặc một giá trị tương ứng cho ageGroupId
+    createdAt: new Date("2023-01-01"),
+    updatedAt: new Date("2023-02-01"),
+  },
+  {
+    id: 2,
+    name: "Casual Shoes",
+    genderId: 2, // Giá trị tương ứng cho genderId
+    ageGroupId: 3, // Giá trị tương ứng cho ageGroupId
+    createdAt: new Date("2023-01-10"),
+    updatedAt: new Date("2023-02-10"),
+  },
+  {
+    id: 3,
+    name: "Basketball Shoes",
+    parentCategoryId: 2,
+    genderId: 1, // Giá trị tương ứng cho genderId
+    ageGroupId: 3, // Giá trị tương ứng cho ageGroupId
+    createdAt: new Date("2023-01-15"),
+    updatedAt: new Date("2023-02-15"),
+    description: "Shoes designed for basketball players",
+  },
+  {
+    id: 4,
+    name: "Boots",
+    genderId: 2, // Giá trị tương ứng cho genderId
+    ageGroupId: 2, // Giá trị tương ứng cho ageGroupId
+    createdAt: new Date("2023-01-20"),
+    updatedAt: new Date("2023-02-20"),
+    description: "Sturdy shoes for outdoor activities",
+  },
+  {
+    id: 5,
+    name: "Formal Shoes",
+    parentCategoryId: 3,
+    genderId: 1, // Giá trị tương ứng cho genderId
+    ageGroupId: 4, // Giá trị tương ứng cho ageGroupId
+    createdAt: new Date("2023-01-25"),
+    updatedAt: new Date("2023-02-25"),
+    deletedAt: new Date("2024-01-01"),
+  },
+];
 export const productData: Product[] = [
   {
     id: "1",

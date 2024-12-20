@@ -26,7 +26,7 @@ import { RootStackParamList } from "../../App";
 import { userLogin } from "../../interface/user";
 import { getUserToken } from "../../api/UserApiService";
 import { Colors } from "../../assets/color/color";
-
+import * as SecureStore from "expo-secure-store";
 export default function Login() {
   const showToast = useShowToast();
 
@@ -88,18 +88,18 @@ export default function Login() {
     }
   };
   const login = async () => {
+    navigation.navigate("Home");
     const loginData: userLogin = { email, password };
-    console.log(loginData);
 
+    console.log("🚀 ~ login ~ loginData:", loginData);
     try {
       const response = await getUserToken(loginData);
-      console.log(response);
       if (response.status === 200) {
         const data = response.data.data;
-
-        // await AsyncStorage.setItem("token", data.token);
-        console.log(data.token);
-        navigation.navigate("ProductList");
+        const token = data.token;
+        console.log("🚀 ~ login ~ token:", token);
+        await SecureStore.setItemAsync("userToken", token);
+        navigation.navigate("Home");
         showToast({
           type: "success",
           message: "Đăng nhập thành công",
@@ -115,7 +115,7 @@ export default function Login() {
         message: errorMessage,
       });
       // Alert.alert("Thất bại", errorMessage);
-      console.log(error);
+      // console.log(error);
     }
   };
   const handleResetPassword = () => {
