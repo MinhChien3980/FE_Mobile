@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback, useMemo, lazy } from "react";
 import { SafeAreaView } from "react-native";
-import { Box, HStack, IconButton, Icon, Button } from "native-base";
+import { Box, HStack, IconButton, Icon } from "native-base";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Ionicons } from "@expo/vector-icons";
 import { NavigationProp, useNavigation } from "@react-navigation/native";
-import { TouchableOpacity } from "react-native-gesture-handler";
 import { RootStackParamList } from "../../App";
 import { Product } from "../../interface/product";
 import { productData } from "../../data/products/ProductData";
@@ -19,103 +18,79 @@ const Products: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
   const [searchQuery, setSearchQuery] = useState<string>("");
+  const [filters, setFilters] = useState<any>({});
 
-  //Khi vừa chuyển đến "Danh sách sản phẩm" sẽ:
-  //-Xóa đi bộ lọc (nếu có)
-  //-Lấy token và danh sách sản phẩm
-  // useEffect(() => {
-  //   const fetchProducts = async () => {
-  //     const productDataString = await AsyncStorage.getItem("products");
-  //     console.log("🚀 ~ fetchProducts ~ productDataString:", productDataString);
-  //     if (productDataString) {
-  //       const productData: Product[] = JSON.parse(productDataString);
-  //       setProducts(productData);
-  //       setFilteredProducts(productData);
-  //       console.log("🚀 ~ fetchProducts ~ productData:", productData);
-  //     }
-  //   };
-
-  //   fetchProducts();
-  // }, []);
-  useEffect(() => {
-    handleClearFilters();
-    const fetchProducts = async () => {
-      setProducts(productData);
-    };
-    fetchProducts();
-  }, [products]);
+  // Fetch token once
   useEffect(() => {
     const fetchToken = async () => {
       try {
         const storedToken = await SecureStore.getItem("userToken");
-        if (storedToken !== null) {
-          console.log("🚀 ~ fetchToken ~ storedToken:", storedToken);
+        if (storedToken) {
           setToken(storedToken);
         }
       } catch (error) {
         console.error("Get token error: ", error);
       }
     };
-
     fetchToken();
-    handleClearFilters();
-  }, [token]);
+  }, []);
 
-  //Hàm áp dụng bộ lọc
-  const handleApplyFilter = (filters: any) => {
-    console.log("🚀 ~ handleApplyFilter ~ filters:", filters);
-    let filteredProductsList = [...products]; //Lấy dữ liệu từ products đã fetch đưa vào filteredProductsList
-    console.log(
-      "🚀 ~ handleApplyFilter ~ filteredProductsList:",
-      filteredProductsList.length
-    );
+  // Fetch products only once
+  useEffect(() => {
+    setProducts(productData);
+    setFilteredProducts(productData); // Initialize filtered list
+  }, []);
 
+  // Apply filters and search query
+  const handleApplyFilter = useCallback((newFilters: any) => {
+    setFilters(newFilters);
+  }, []);
+
+  // Perform filtering when searchQuery or filters change
+  const filteredProductsList = useMemo(() => {
+    let result = [...products];
+
+    // Apply search filter
+    if (searchQuery) {
+      result = result.filter(
+        (product) =>
+          product.name.toLowerCase().includes(searchQuery.toLowerCase())
+        // ||
+        // product.description?.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+      console.log("🚀 ~ filteredProductsList ~ seacrh :", result.length);
+    }
+
+    // Apply other filters
     if (filters.minPrice && filters.maxPrice) {
-      filteredProductsList = filteredProductsList.filter(
+      result = result.filter(
         (product) =>
           product.price >= filters.minPrice && product.price <= filters.maxPrice
       );
+      console.log("🚀 ~ filteredProductsList ~ price :", result.length);
     }
 
     if (filters.category) {
-      filteredProductsList = filteredProductsList.filter(
-        (product) => product.categoryId === filters.category.id
+      result = result.filter(
+        (product) => product.category === filters.category.name
       );
+      console.log("🚀 ~ filteredProductsList ~ category :", result.length);
     }
 
-    if (filters.manufacturer) {
-      filteredProductsList = filteredProductsList.filter(
-        (product) => product.manufacturerName === filters.manufacturer
-      );
-    }
-
-    setFilteredProducts(filteredProductsList);
-  };
+    return result;
+  }, [products, searchQuery, filters]);
 
   const handleSearch = (query: string) => {
-    setSearchQuery(query); // Cập nhật từ khoá tìm kiếm
-
-    let filtered = products;
-
-    if (query !== "") {
-      filtered = filtered.filter(
-        //
-        (product) =>
-          product.name.toLowerCase().includes(query.toLowerCase()) ||
-          product.description?.toLowerCase().includes(query.toLowerCase())
-      );
-    }
-
-    setFilteredProducts(filtered);
+    setSearchQuery(query);
   };
-  // Xóa bộ lọc
+
   const handleClearFilters = () => {
     setSearchQuery("");
-    setFilteredProducts(products);
+    setFilters({});
   };
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex: 1, width: "100%" }}>
       <HStack
         ml="10"
         m="2%"
@@ -132,10 +107,9 @@ const Products: React.FC = () => {
       </HStack>
 
       <Box flex={1} w="100%">
-        <ProductList products={filteredProducts} />
-        {/* Hiển thị sản phẩm đã lọc */}
+        <ProductList products={filteredProductsList} />
       </Box>
-      {/* Chuyển trang sang Sản phẩm yêu thích */}
+
       <IconButton
         icon={<Icon as={Ionicons} name="heart" />}
         position="absolute"

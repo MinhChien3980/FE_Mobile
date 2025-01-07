@@ -9,4 +9,5 @@ export const Colors = {
   backgroundButton: "#EDEDED",
   buttonDelete: "#e84b51",
   backgroundButtonDelete: "#FAD7D9",
+  yellow: "#fcaf23",
 };

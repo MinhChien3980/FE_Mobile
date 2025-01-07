@@ -1,9 +1,19 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { Box, Icon, IconButton, VStack, Text, Image } from "native-base";
+import {
+  Box,
+  Icon,
+  IconButton,
+  VStack,
+  Text,
+  Image,
+  HStack,
+  View,
+  Pressable,
+} from "native-base";
 import { Ionicons } from "@expo/vector-icons";
-import { TouchableOpacity } from "react-native-gesture-handler";
 import { Alert } from "react-native";
 import { Product } from "../interface/product";
+import { Colors } from "../assets/color/color";
 
 export const renderProduct = (
   product: Product,
@@ -22,43 +32,84 @@ export const renderProduct = (
       shadow={2}
       alignItems="center"
     >
-      <Box position="relative" flex={1} m={2} alignItems="center">
-        <TouchableOpacity
-          onPress={() =>
-            Alert.alert(`Chuyển đến Product Detail với id ${product.id}`)
-          }
-        >
-          <Image
-            source={{ uri: product.mainImg }}
-            alt={product.name}
-            style={{
-              width: 100,
-              height: 100,
-              borderRadius: 10,
-            }}
-          />
+      <Box position="relative" flex={1} m={2} alignItems="center" w="full">
+        <Pressable onPress={() => Alert.alert(`${product.id}`)}>
+          <Box w="full">
+            <Image
+              source={{ uri: product.mainImg }}
+              alt={product.name}
+              style={{
+                width: 200,
+                height: 120,
+                borderRadius: 20,
+              }}
+              resizeMode="cover"
+            />
+          </Box>
 
-          <VStack space={1} alignItems="center">
-            <Text fontSize="md" fontWeight="bold">
+          <Box
+            // space={1}
+            // w="full"
+            alignItems="center"
+            // justifyContent="space-between"
+            // flexDirection="column"
+          >
+            <Text mt={3} fontSize="xs" fontWeight="bold">
               {product.name}
             </Text>
-            <Text fontSize="sm" color="gray.500">
-              Giá: {formatCurrency(product.price)}
+
+            <Text
+              mt="3"
+              fontSize="xs"
+              alignItems="center"
+              alignContent="center"
+            >
+              <Box
+                // style={{}}
+                flexDir="row"
+                alignItems="center"
+                justifyContent="space-around"
+              >
+                <Text fontSize="xs" color="gray.500">
+                  {formatCurrency(product.price)}
+                </Text>
+                <Box ml="10"></Box>
+                <Box
+                  // style={{}}
+                  ml="-3"
+                  flexDirection="row"
+                  alignItems="center"
+                  justifyContent="space-around"
+                >
+                  <Icon
+                    as={Ionicons}
+                    name={"star"}
+                    color={Colors.yellow}
+                    fontSize="xs"
+                  />
+
+                  <Text fontSize="xs">4.5</Text>
+                </Box>
+              </Box>
             </Text>
-          </VStack>
-        </TouchableOpacity>
-        <IconButton
-          icon={
-            <Icon as={Ionicons} name={isFavorite ? "heart" : "heart-outline"} />
-          }
-          onPress={() => toggleFavorite(product)}
-          colorScheme={isFavorite ? "danger" : "gray"}
-          variant="ghost"
-          position="absolute"
-          top={-20}
-          right={-35}
-        />
+          </Box>
+        </Pressable>
       </Box>
+      <IconButton
+        borderRadius="full"
+        // borderWidth={0.1}
+        w={1}
+        h={1}
+        icon={
+          <Icon as={Ionicons} name={isFavorite ? "heart" : "heart-outline"} />
+        }
+        onPress={() => toggleFavorite(product)}
+        colorScheme={isFavorite ? "danger" : "gray"}
+        variant="ghost"
+        position="absolute"
+        top={"2%"}
+        right={"2%"}
+      />
     </Box>
   );
 };
