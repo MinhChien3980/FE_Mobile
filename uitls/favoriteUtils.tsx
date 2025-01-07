@@ -1,5 +1,3 @@
-// favoritesUtils.ts
-
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Box, Icon, IconButton, VStack, Text, Image } from "native-base";
 import { Ionicons } from "@expo/vector-icons";
@@ -51,3 +49,4 @@ export const toggleFavorite = async (
     }
   }
 };
+
