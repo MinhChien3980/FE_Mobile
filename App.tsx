@@ -14,7 +14,7 @@ import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import Home from "./pages/Home/Home";
 import ProductDetail from "./pages/ProductDetail/ProductDetail";
-
+import Contact from "./pages/Contact/Contact";
 const Stack = createStackNavigator();
 
 // Định nghĩa kiểu dữ liệu cho navigation
@@ -37,7 +37,7 @@ const App = () => {
   return (
     <NativeBaseProvider>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Products">
+        <Stack.Navigator initialRouteName="Home">
           <Stack.Screen
             name="ProductDetail"
             component={ProductDetail}
@@ -93,6 +93,7 @@ const App = () => {
             component={Register}
             options={{ title: "Đăng ký" }}
           />
+          <Stack.Screen name="Contact" component={Contact} options={{title: "Liên hệ"}}/>
         </Stack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>
