@@ -102,6 +102,7 @@ const ProductDetail: React.FC = () => {
 
     // phương thức addtocart
     const handleAddToCart = () => {
+        navigation.navigate("Cart");
         Alert.alert("Thông báo", "Sản phẩm đã được thêm vào giỏ hàng!");
     };
 
@@ -187,7 +188,7 @@ const ProductDetail: React.FC = () => {
                     {product.colors.map((color) => (
                         <TouchableOpacity
                             key={color}
-                            style={[styles.colorOption, selectedColor === color && { borderWidth: 2, borderColor: "#8B4513" }]}
+                            style={[styles.colorOption, selectedColor === color && { borderWidth: 2, borderColor: "#6b4226" }]}
                             onPress={() => setSelectedColor(color)}
                         >
                             <View
@@ -269,7 +270,7 @@ const styles = StyleSheet.create({
     },
     backButton: {
         fontSize: 16,
-        color: "#8B4513",
+        color: "#6b4226",
     },
     imageContainer: {
         alignItems: "center",
@@ -283,7 +284,7 @@ const styles = StyleSheet.create({
     name: {
         fontSize: 20,
         fontWeight: "bold",
-        color: "#8B4513",
+        color: "#6b4226",
         marginBottom: 8,
     },
     price: {
@@ -303,7 +304,7 @@ const styles = StyleSheet.create({
     selectionTitle: {
         fontSize: 16,
         fontWeight: "bold",
-        color: "#8B4513",
+        color: "#6b4226",
     },
     optionsContainer: {
         flexDirection: "row",
@@ -315,13 +316,13 @@ const styles = StyleSheet.create({
         marginRight: 8,
         marginBottom: 8,
         borderWidth: 1,
-        borderColor: "#8B4513",
+        borderColor: "#6b4226",
     },
     selectedOption: {
-        backgroundColor: "#8B4513",
+        backgroundColor: "#9b6744",
     },
     optionText: {
-        color: "#8B4513",
+        color: "#6b4226",
     },
     colorOptionsContainer: {
         flexDirection: "row",
@@ -338,7 +339,7 @@ const styles = StyleSheet.create({
     },
     quantityInput: {
         borderWidth: 1,
-        borderColor: "#8B4513",
+        borderColor: "#6b4226",
         padding: 8,
         borderRadius: 4,
         width: 100,
@@ -351,14 +352,14 @@ const styles = StyleSheet.create({
     totalPriceLabel: {
         fontSize: 16,
         fontWeight: "bold",
-        color: "#8B4513",
+        color: "#6b4226",
     },
     totalPrice: {
         fontSize: 16,
-        color: "#8B4513",
+        color: "#6b4226",
     },
     addToCartButton: {
-        backgroundColor: "#8B4513",
+        backgroundColor: "#6b4226",
         padding: 12,
         borderRadius: 8,
         alignItems: "center",
@@ -373,7 +374,7 @@ const styles = StyleSheet.create({
     ratingTitle: {
         fontSize: 16,
         fontWeight: "bold",
-        color: "#8B4513",
+        color: "#6b4226",
     },
     starsContainer: {
         flexDirection: "row",
@@ -383,15 +384,15 @@ const styles = StyleSheet.create({
     },
     reviewUser: {
         fontWeight: "bold",
-        color: "#8B4513",
+        color: "#6b4226",
     },
     reviewComment: {
         fontStyle: "italic",
-        color: "#8B4513",
+        color: "#6b4226",
     },
     reviewRating: {
         fontSize: 14,
-        color: "#8B4513",
+        color: "#6b4226",
     },
     reviewInputContainer: {
         marginVertical: 16,
@@ -399,17 +400,17 @@ const styles = StyleSheet.create({
     reviewInputTitle: {
         fontSize: 16,
         fontWeight: "bold",
-        color: "#8B4513",
+        color: "#6b4226",
     },
     reviewInput: {
         borderWidth: 1,
-        borderColor: "#8B4513",
+        borderColor: "#6b4226",
         padding: 8,
         borderRadius: 4,
         marginBottom: 8,
     },
     submitReviewButton: {
-        backgroundColor: "#8B4513",
+        backgroundColor: "#6b4226",
         padding: 12,
         borderRadius: 8,
         alignItems: "center",
