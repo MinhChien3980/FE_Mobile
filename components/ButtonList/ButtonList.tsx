@@ -7,6 +7,7 @@ interface ButtonListProps<T> {
   onChangeValue: (item: T) => void;
   labelKey: keyof T;
   valueKey: keyof T;
+  active: boolean; // Prop active dạng boolean
 }
 
 export default function ButtonList<T>({
@@ -14,12 +15,14 @@ export default function ButtonList<T>({
   onChangeValue,
   labelKey,
   valueKey,
+  active,
 }: ButtonListProps<T>) {
-  const [activeItem, setActiveItem] = useState<T | null>(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-  const handlePress = (item: T) => {
-    setActiveItem(item);
-    onChangeValue(item);
+  const handlePress = (item: T, index: number) => {
+    setActiveIndex(index); // Cập nhật chỉ số của nút đang active
+    onChangeValue(item); // Gửi item về component cha
+    console.log("Selected: ", item);
   };
 
   return (
@@ -30,22 +33,18 @@ export default function ButtonList<T>({
         showsHorizontalScrollIndicator={false}
       >
         <HStack space={2} mt="3" alignItems="center" justifyContent="center">
-          {listItem.map((item) => {
+          {listItem.map((item, index) => {
             const value = String(item[valueKey]);
             const label = String(item[labelKey]);
-            const isActive =
-              activeItem && value === String(activeItem[valueKey]);
+            const isActive = active && index === activeIndex; // Kích hoạt nút nếu active và index khớp
 
             return (
               <Button
                 key={value}
                 borderRadius="full"
-                // variant="outline"
-
-                onPress={() => handlePress(item)}
+                onPress={() => handlePress(item, index)}
                 bg={isActive ? Colors.primary : Colors.backgroundButton}
                 _text={{ color: isActive ? "white" : "black" }}
-                // borderColor={Colors.primary}
               >
                 <Text color={isActive ? "white" : "black"}>{label}</Text>
               </Button>
