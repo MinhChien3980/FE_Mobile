@@ -8,12 +8,13 @@ import NewPassword from "./pages/NewPassword/NewPassword";
 import Profile from "./pages/Profile/Profile";
 import OrderHistory from "./pages/Order/OrderHistory";
 import Tracking from "./pages/tracking/Tracking";
-import FavoritesScreen from "./pages/WishList/FavoritesScreen";
+import FavouritesScreen from "./pages/WishList/FavouritesScreen";
 import Verify from "./pages/Verify/Verify";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import Home from "./pages/Home/Home";
 import ProductDetail from "./pages/ProductDetail/ProductDetail";
+
 import Cart from "./pages/Cart/Cart";
 import checkout from "./pages/Checkout/Checkout";
 import address from "./pages/Checkout/Address";
@@ -21,7 +22,7 @@ import shipping from "./pages/Checkout/Shipping";
 import payment from "./pages/Checkout/Payment";
 import addcard from "./pages/Checkout/Addcard";
 import orderSuccess from "./pages/Checkout/OrderSuccess";
-
+import Contact from "./pages/Contact/Contact";
 
 const Stack = createStackNavigator();
 
@@ -45,7 +46,7 @@ const App = () => {
   return (
     <NativeBaseProvider>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="ProductDetail">
+        <Stack.Navigator initialRouteName="Home">
           <Stack.Screen
             name="ProductDetail"
             component={ProductDetail}
@@ -83,7 +84,7 @@ const App = () => {
           />
           <Stack.Screen
             name="Favorites"
-            component={FavoritesScreen}
+            component={FavouritesScreen}
             options={{ title: "Danh sách yêu thích" }}
           />
           <Stack.Screen
@@ -101,6 +102,7 @@ const App = () => {
             component={Register}
             options={{ title: "Đăng ký" }}
           />
+
           <Stack.Screen
               name="Cart"
               component={Cart}
@@ -136,6 +138,9 @@ const App = () => {
               component={orderSuccess}
               options={{ title: "OrderSuccess" }}
           />
+
+          <Stack.Screen name="Contact" component={Contact} options={{title: "Liên hệ"}}/>
+
         </Stack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>

@@ -1,5 +1,3 @@
-// favoritesUtils.ts
-
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Box, Icon, IconButton, VStack, Text, Image } from "native-base";
 import { Ionicons } from "@expo/vector-icons";
@@ -38,16 +36,17 @@ export const toggleFavorite = async (
 
     try {
       await AsyncStorage.setItem("favorites", JSON.stringify(updatedFavorites));
-      setTimeout(() => {
-        showToast({
-          type: "success",
-          message: isFavorite
-            ? `Đã xóa yêu thích ${product.name}`
-            : `Đã yêu thích ${product.name}`,
-        });
-      }, 50);
+      // setTimeout(() => {
+      //   showToast({
+      //     type: "success",
+      //     message: isFavorite
+      //       ? `Đã xóa yêu thích ${product.name}`
+      //       : `Đã yêu thích ${product.name}`,
+      //   });
+      // }, 50);
     } catch (error) {
       console.error("Failed to save favorites", error);
     }
   }
 };
+

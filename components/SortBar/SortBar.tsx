@@ -17,17 +17,19 @@ import {
   HStack,
   ScrollView,
   Button,
+  CloseIcon,
 } from "native-base";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import SelectedList from "../SelectedList/SelectedList";
 import SortPrice from "../SortPrice/SortPrice";
 import { Category } from "../../interface/category";
-import { categoryList, productData } from "../../data/products/ProductData";
+import { productData } from "../../data/products/ProductData";
 import ButtonList from "../ButtonList/ButtonList";
 import { Manufacturer } from "../../interface/Manufacturer ";
 import { AirbnbRating, Rating } from "react-native-ratings";
 import { StarRating } from "../StarRating/StarRating";
 import { Colors } from "../../assets/color/color";
+import React from "react";
 
 const SortBar = ({
   onApplyFilter,
@@ -38,23 +40,36 @@ const SortBar = ({
 }) => {
   const [minPrice, setMinPrice] = useState<number>(0);
   const [maxPrice, setMaxPrice] = useState<number>(1000000000);
-  const [category, setCategory] = useState<Category | undefined>(undefined);
+  const [category, setCategory] = useState<string | undefined>(undefined);
   const [manufacturer, setManufacturer] = useState<string | undefined>(
     undefined
   );
+
+  const [activeCategoryButton, setActiveCategoryButton] =
+    useState<boolean>(true);
+  const [activeManufacturerButton, setActiveManufacturerButton] =
+    useState<boolean>(true);
+
   const [modalVisible, setModalVisible] = useState(false);
-  const fetchManufacturer = useMemo(() => {
-    const manufacturerData = [
-      { id: "all", name: "Tất cả" },
-      ...[
-        ...new Set(productData.map((product) => product.manufacturerName)),
-      ].map((manufacturer, index) => ({
-        id: index.toString(),
-        name: manufacturer,
-      })),
-    ];
-    return manufacturerData;
-  }, [productData]);
+  // const fetchManufacturer = useMemo(() => {
+  //   const manufacturerData = [
+  //     ...[
+  //       ...new Set(productData.map((product) => product.manufacturerName)),
+  //     ].map((manufacturer, index) => ({
+  //       id: index.toString(),
+  //       name: manufacturer,
+  //     })),
+  //   ];
+  //   return manufacturerData;
+  // }, [productData]);
+  const fetchCategoryData = useMemo(() => {
+    return Array.from(
+      new Set(productData.map((product) => product.category))
+    ).map((category, index) => ({
+      id: index.toString(),
+      name: category,
+    }));
+  }, []);
   const handlePriceChange = useCallback(
     (newMinPrice: number, newMaxPrice: number) => {
       setMinPrice(newMinPrice);
@@ -63,14 +78,22 @@ const SortBar = ({
     []
   );
 
-  const handleCategoryChange = useCallback((item: Category) => {
+  const handleCategoryChange = useCallback((item: any) => {
     setCategory(item);
+    setActiveCategoryButton(false);
+    console.log(
+      "🚀 ~ handelActiveCateButton ~ activeCategoryButton:",
+      activeCategoryButton
+    );
   }, []);
 
   //Change manufacturer
   const handleManufacturerChange = useCallback((selectedManufacturer: any) => {
-    setManufacturer(
-      selectedManufacturer.id === "all" ? undefined : selectedManufacturer.name
+    setManufacturer(selectedManufacturer.name);
+    setActiveManufacturerButton(false);
+    console.log(
+      "🚀 ~ handelActiveCateButton ~ activeCategoryButton:",
+      activeCategoryButton
     );
   }, []);
 
@@ -86,13 +109,50 @@ const SortBar = ({
   }, []);
   //clear filter
   const handleClearFilters = useCallback(() => {
-    setMinPrice(0);
-    setMaxPrice(1000000000);
-    setCategory(undefined);
-    setManufacturer(undefined);
+    handleClearPrice();
+    handleClearCategory();
+    handleClearManufacturer();
     onClearFilters();
     setModalVisible(false);
   }, [onClearFilters]);
+  //Clear price filter
+  const handleClearPrice = useCallback(() => {
+    if (minPrice !== 0 && maxPrice !== 1000000000) {
+      setMinPrice(0);
+      setMaxPrice(1000000000);
+    }
+  }, [minPrice, maxPrice]);
+  //Clear category filter
+  const handleClearCategory = useCallback(() => {
+    if (category !== undefined) {
+      setCategory(undefined);
+    }
+  }, [category]);
+  //Clear manufacturer filter
+  const handleClearManufacturer = useCallback(() => {
+    if (manufacturer !== undefined) {
+      setManufacturer(undefined);
+    }
+  }, [manufacturer]);
+  const handelActiveCateButton = () => {
+    handleClearCategory();
+    setActiveCategoryButton(!activeCategoryButton);
+    console.log("🚀 ~ category:", category);
+    console.log(
+      "🚀 ~ handelActiveCateButton ~ activeCategoryButton:",
+      activeCategoryButton
+    );
+  };
+
+  const handleActiveManuButton = () => {
+    handleClearManufacturer();
+    setActiveManufacturerButton(!activeManufacturerButton);
+    console.log("🚀 ~ manufacturer:", manufacturer);
+    console.log(
+      "🚀 ~ handleActiveManuButton ~ activeManufacturerButton:",
+      activeManufacturerButton
+    );
+  };
   return (
     <SafeAreaView>
       <Modal
@@ -115,27 +175,70 @@ const SortBar = ({
               <Box mb="5" mt="3">
                 {/* Lọc theo nhà sản xuất và theo loại dùng chung component là SelectedList */}
                 <Text mb="5" bold fontSize="md" color={Colors.primary}>
-                  Theo nhà sản xuất
+                  Theo nhà sản xuất{" "}
                 </Text>
-                <ButtonList
-                  listItem={fetchManufacturer}
-                  onChangeValue={handleManufacturerChange}
-                  labelKey="name"
-                  valueKey="name"
-                />
+                <HStack space={2} alignItems="center" justifyContent="center">
+                  <Button
+                    mt="2"
+                    ml="16"
+                    borderRadius="full"
+                    onPress={handleActiveManuButton}
+                    bg={
+                      activeManufacturerButton
+                        ? Colors.primary
+                        : Colors.backgroundButton
+                    }
+                    _text={{
+                      color: activeManufacturerButton ? "white" : "black",
+                    }}
+                    borderColor={Colors.primary}
+                  >
+                    <Text color={activeManufacturerButton ? "white" : "black"}>
+                      All
+                    </Text>
+                  </Button>
+                  <ButtonList
+                    listItem={fetchCategoryData}
+                    onChangeValue={handleManufacturerChange}
+                    labelKey="name"
+                    valueKey="name"
+                    active={!activeManufacturerButton}
+                  />
+                </HStack>
               </Box>
+
               <Divider w="100%" />
               {/* Lọc theo nhà sản xuất và theo loại dùng chung component là SelectedList */}
               <Box mb="5" mt="3">
                 <Text mb="5" bold fontSize="md" color={Colors.primary}>
                   Theo loại
                 </Text>
-                <ButtonList
-                  listItem={categoryList}
-                  onChangeValue={handleCategoryChange}
-                  labelKey="name"
-                  valueKey="id"
-                />
+                <HStack space={2} alignItems="center" justifyContent="center">
+                  <Button
+                    mt="2"
+                    ml="16"
+                    borderRadius="full"
+                    onPress={handelActiveCateButton}
+                    bg={
+                      activeCategoryButton
+                        ? Colors.primary
+                        : Colors.backgroundButton
+                    }
+                    _text={{ color: activeCategoryButton ? "white" : "black" }}
+                    borderColor={Colors.primary}
+                  >
+                    <Text color={activeCategoryButton ? "white" : "black"}>
+                      All
+                    </Text>
+                  </Button>
+                  <ButtonList
+                    listItem={fetchCategoryData}
+                    onChangeValue={handleCategoryChange}
+                    labelKey="name"
+                    valueKey="name"
+                    active={!activeCategoryButton}
+                  />
+                </HStack>
               </Box>
               <Divider w="100%" />
               <Box mb="5" mt="3">
@@ -198,4 +301,4 @@ const SortBar = ({
   );
 };
 
-export default SortBar;
+export default React.memo(SortBar);
