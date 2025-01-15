@@ -14,7 +14,16 @@ import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import Home from "./pages/Home/Home";
 import ProductDetail from "./pages/ProductDetail/ProductDetail";
+
+import Cart from "./pages/Cart/Cart";
+import checkout from "./pages/Checkout/Checkout";
+import address from "./pages/Checkout/Address";
+import shipping from "./pages/Checkout/Shipping";
+import payment from "./pages/Checkout/Payment";
+import addcard from "./pages/Checkout/Addcard";
+import orderSuccess from "./pages/Checkout/OrderSuccess";
 import Contact from "./pages/Contact/Contact";
+
 const Stack = createStackNavigator();
 
 // Định nghĩa kiểu dữ liệu cho navigation
@@ -93,7 +102,45 @@ const App = () => {
             component={Register}
             options={{ title: "Đăng ký" }}
           />
+
+          <Stack.Screen
+              name="Cart"
+              component={Cart}
+              options={{ title: "Giỏ hàng" }}
+          />
+          <Stack.Screen
+              name="Checkout"
+              component={checkout}
+              options={{ title: "Checkout" }}
+          />
+          <Stack.Screen
+              name="Address"
+              component={address}
+              options={{ title: "Address" }}
+          />
+          <Stack.Screen
+              name="Shipping"
+              component={shipping}
+              options={{ title: "Shipping" }}
+          />
+          <Stack.Screen
+              name="Payment"
+              component={payment}
+              options={{ title: "Payment" }}
+          />
+          <Stack.Screen
+              name="Addcard"
+              component={addcard}
+              options={{ title: "AddCard" }}
+          />
+          <Stack.Screen
+              name="Ordersuccess"
+              component={orderSuccess}
+              options={{ title: "OrderSuccess" }}
+          />
+
           <Stack.Screen name="Contact" component={Contact} options={{title: "Liên hệ"}}/>
+
         </Stack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>
