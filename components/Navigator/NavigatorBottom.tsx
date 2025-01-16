@@ -1,102 +1,94 @@
-import React, { useEffect, useState } from "react";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { createStackNavigator } from "@react-navigation/stack";
+import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import Icon from "react-native-vector-icons/MaterialIcons";
-import * as SecureStore from "expo-secure-store";
-import { Center, Spinner } from "native-base";
-import Cart from "../../pages/Cart/Cart";
+import { createStackNavigator } from "@react-navigation/stack";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import Ionicons from "react-native-vector-icons/Ionicons";
+
+// Import các màn hình
 import Home from "../../pages/Home/Home";
-import Login from "../../pages/Login/Login";
 import Products from "../../pages/ProductList/Products";
+import Cart from "../../pages/Cart/Cart";
+import Favorites from "../../pages/WishList/FavouritesScreen";
 import Profile from "../../pages/Profile/Profile";
+import Login from "../../pages/Login/Login";
 import Register from "../../pages/Register/Register";
-import Verify from "../../pages/Verify/Verify";
-import { useAuth } from "./Auth";
 
-const Tab = createBottomTabNavigator();
+// Tạo các navigator
 const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
-const strings = {
-  login: "Đăng nhập",
-  register: "Đăng ký",
-  home: "Trang chủ",
-  products: "Danh sách sản phẩm",
-  cart: "Giỏ hàng",
-  profile: "Cá nhân",
-};
-
-const MainTabs = () => (
+// Tab Navigator cho các tab chính
+const TabNavigator = () => (
   <Tab.Navigator
     screenOptions={({ route }) => ({
-      tabBarIcon: ({ color, size }) => {
-        let iconName = "help";
+      tabBarIcon: ({ focused, color, size }) => {
+        let iconName: string = "";
+
         if (route.name === "Home") iconName = "home";
-        else if (route.name === "Products") iconName = "category";
-        else if (route.name === "Cart") iconName = "shopping-cart";
+        else if (route.name === "Products") iconName = "list";
+        else if (route.name === "Cart") iconName = "cart";
+        else if (route.name === "Favorites") iconName = "heart";
         else if (route.name === "Profile") iconName = "person";
-        return <Icon name={iconName} size={size} color={color} />;
+
+        const iconColor = focused ? "#704F38" : "#aaa";
+
+        return <Ionicons name={iconName} size={size} color={iconColor} />;
       },
-      tabBarActiveTintColor: "#6200ee",
-      tabBarInactiveTintColor: "gray",
+      tabBarLabelStyle: {
+        fontSize: 12,
+        fontWeight: "600",
+      },
+      tabBarActiveTintColor: "#704F38",
+      tabBarInactiveTintColor: "#aaa",
+      tabBarStyle: {
+        backgroundColor: "#fff",
+        borderTopColor: "#ccc",
+        height: 60,
+        paddingBottom: 5,
+      },
     })}
   >
-    <Tab.Screen name="Home" component={Home} options={{ title: strings.home }} />
-    <Tab.Screen
-      name="Products"
-      component={Products}
-      options={{ title: strings.products }}
-    />
-    <Tab.Screen name="Cart" component={Cart} options={{ title: strings.cart }} />
-    <Tab.Screen
-      name="Profile"
-      component={Profile}
-      options={{ title: strings.profile }}
-    />
+    <Tab.Screen name="Home" component={Home} />
+    <Tab.Screen name="Products" component={Products} />
+    <Tab.Screen name="Cart" component={Cart} />
+    <Tab.Screen name="Favorites" component={Favorites} />
+    <Tab.Screen name="Profile" component={Profile} />
   </Tab.Navigator>
 );
 
+// Stack Navigator cho điều hướng chính
 const AppNavigator = () => {
-    const { isLoggedIn, setIsLoggedIn } = useAuth();
-    const [loading, setLoading] = useState(true);
-  
-    useEffect(() => {
-      const checkToken = async () => {
-        try {
-          const token = await SecureStore.getItemAsync("userToken");
-          if (token) setIsLoggedIn(true);
-        } catch (error) {
-          console.error("Failed to retrieve token", error);
-        } finally {
-          setLoading(false);
-        }
-      };
-      checkToken();
-    }, []);
-  
-    if (loading) {
-      return (
-        <Center flex={1}>
-          <Spinner size="lg" />
-        </Center>
-      );
-    }
-  
-    return (
-      <NavigationContainer>
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
-          {isLoggedIn ? (
-            <Stack.Screen name="MainTabs" component={MainTabs} />
-          ) : (
-            <>
-              <Stack.Screen name="Login" component={Login} />
-              <Stack.Screen name="Register" component={Register} />
-              <Stack.Screen name="Verify" component={Verify} />
-            </>
-          )}
-        </Stack.Navigator>
-      </NavigationContainer>
-    );
-  };
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Login">
+        {/* Màn hình Login */}
+        <Stack.Screen
+          name="Login"
+          component={Login}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{ headerShown: false }}
+        />
+
+        {/* Màn hình Register */}
+        <Stack.Screen
+          name="Register"
+          component={Register}
+          options={{ headerShown: false }}
+        />
+
+        {/* Tab Navigator (Main App) */}
+        <Stack.Screen
+          name="TabNavigator"
+          component={TabNavigator}
+          options={{ headerShown: false }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
 
 export default AppNavigator;

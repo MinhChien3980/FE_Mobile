@@ -3,7 +3,7 @@ import * as SecureStore from "expo-secure-store";
 
 // Base URL cho API
 
-const baseUrl: string = "http://10.0.1.243:8080/";
+const baseUrl: string = "http://10.0.0.119:8080/";
 
 // Hàm lấy token từ AsyncStorage
 const getToken = async (): Promise<string | null> => {

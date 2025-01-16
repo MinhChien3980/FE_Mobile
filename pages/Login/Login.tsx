@@ -22,15 +22,15 @@ import {
 import React, { useState } from "react";
 import { Alert, Pressable, StyleSheet } from "react-native";
 import useShowToast from "../../components/Toast/Toast";
-import { RootStackParamList } from "../../App";
 import { userLogin } from "../../interface/user";
 import { getMyInfo, getUserToken } from "../../api/UserApiService";
 import { Colors } from "../../assets/color/color";
 import * as SecureStore from "expo-secure-store";
 import { post } from "../../api/ApiService";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useAuth } from "../../components/Navigator/Auth";
+import { RootStackParamList } from "../../App";
 export default function Login() {
-  const { setIsLoggedIn } = useAuth();
   const showToast = useShowToast();
 
   const [modalVisible, setModalVisible] = useState(false);
@@ -39,6 +39,7 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = useState({});
+  const { setIsLoggedIn } = useAuth();
   const validate = () => {
     let isValid = true;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -72,32 +73,68 @@ export default function Login() {
       isValid = false;
       return;
     }
+    // else if (!passwordRegex.test(password)) {
+    //   setErrors((prevError: any) => ({
+    //     ...prevError,
+    //     password:
+    //       "Mật khẩu phải chứa ít nhất 8 ký tự, bao gồm chữ in hoa, chữ in thường và số",
+    //   }));
+    //   isValid = false;
+    //   return;
+    // }
 
     return isValid;
   };
   const handleLogin = () => {
+    //Kiểm tra dữ liệu nhập vào có hợp lệ không
     if (validate()) {
       login();
     }
   };
   const login = async () => {
-    const loginData: { email: string; password: string } = { email, password };
+    // navigation.navigate("Home");
+    const loginData: userLogin = { email, password };
+
+    console.log("🚀 ~ login ~ loginData:", loginData);
     try {
       const response = await getUserToken(loginData);
+      if (response.status === 200) {
+        // console.log("🚀 ~ login ~ response:", response);
+        const data = response.data.data;
+        // console.log("🚀 ~ login ~ response:", response);
+        const token = data.token;
+        console.log("🚀 ~ login ~ token:", token);
 
-      if (response.status === 200 && response.data?.token) {
-        await SecureStore.setItemAsync("userToken", response.data.token);
-        showToast({ type: "success", message: "Đăng nhập thành công" });
-        setIsLoggedIn(true); // Update global login state
-      } else {
-        showToast({ type: "error", message: "Thông tin đăng nhập không chính xác" });
+        if (token) {
+          processToken(token);
+
+          showToast({
+            type: "success",
+            message: "Đăng nhập thành công",
+          });
+          navigation.reset({
+            index: 0,
+            routes: [{ name: "TabNavigator" }], // Đặt Login là màn hình đầu tiên
+          });
+          // navigation.navigate("TabNavigator");
+        }
       }
-    } catch (error) {
-      console.error('Login error:', error);
-      showToast({ type: "error", message: "Đã xảy ra lỗi, vui lòng thử lại!" });
+    } catch (error: any) {
+      // Kiểm tra nếu lỗi là từ response
+      // const errorMessage =
+      //   error.response?.data?.message || error.message || "Lỗi kết nối";
+      // showToast({
+      //   type: "error",
+      //   message: errorMessage,
+      // });
+      // Alert.alert("Thất bại", errorMessage);
+      // console.log(error);
+
+      setIsLoggedIn(true);
     }
   };
   const processToken = async (token: any) => {
+    console.log("🚀 ~ processToken ~ token:", token);
     await SecureStore.setItemAsync("userToken", token);
     const response = await getMyInfo();
 
@@ -322,7 +359,3 @@ export default function Login() {
     </Center>
   );
 }
-function setIsLoggedIn(arg0: boolean) {
-  throw new Error("Function not implemented.");
-}
-
