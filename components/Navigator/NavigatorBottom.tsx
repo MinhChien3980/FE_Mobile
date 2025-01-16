@@ -4,23 +4,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import * as SecureStore from "expo-secure-store";
-import {
-  Center,
-  Spinner,
-  useToast,
-  Button,
-  FormControl,
-  Input,
-  Heading,
-  VStack,
-  Box,
-  HStack,
-  Text,
-  Modal,
-  Link,
-  Pressable,
-  Icon as NBIcon,
-} from "native-base";
+import { Center, Spinner } from "native-base";
 import Cart from "../../pages/Cart/Cart";
 import Home from "../../pages/Home/Home";
 import Login from "../../pages/Login/Login";
@@ -72,46 +56,46 @@ const MainTabs = () => (
 );
 
 const AppNavigator = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const checkToken = async () => {
-      try {
-        const token = await SecureStore.getItemAsync("userToken");
-        setIsLoggedIn(!!token);
-      } catch (error) {
-        console.error("Failed to retrieve token", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    checkToken();
-  }, []);
-
-  if (loading) {
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [loading, setLoading] = useState(true);
+  
+    useEffect(() => {
+      const checkToken = async () => {
+        try {
+          const token = await SecureStore.getItemAsync("userToken");
+          setIsLoggedIn(!!token);
+        } catch (error) {
+          console.error("Failed to retrieve token", error);
+        } finally {
+          setLoading(false);
+        }
+      };
+      checkToken();
+    }, []);
+  
+    if (loading) {
+      return (
+        <Center flex={1}>
+          <Spinner size="lg" />
+        </Center>
+      );
+    }
+  
     return (
-      <Center flex={1}>
-        <Spinner size="lg" />
-      </Center>
+      <NavigationContainer>
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+          {isLoggedIn ? (
+            <Stack.Screen name="MainTabs" component={MainTabs} />
+          ) : (
+            <>
+              <Stack.Screen name="Login" component={Login} />
+              <Stack.Screen name="Register" component={Register} />
+              <Stack.Screen name="Verify" component={Verify} />
+            </>
+          )}
+        </Stack.Navigator>
+      </NavigationContainer>
     );
-  }
-
-  return (
-    <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
-        {isLoggedIn ? (
-          <Stack.Screen name="MainTabs" component={MainTabs} />
-        ) : (
-          <>
-            <Stack.Screen name="Login" component={Login} />
-            <Stack.Screen name="Register" component={Register} />
-            <Stack.Screen name="Verify" component={Verify} />
-          </>
-        )}
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-};
+  };  
 
 export default AppNavigator;

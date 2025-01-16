@@ -70,42 +70,32 @@ export default function Login() {
       isValid = false;
       return;
     }
-    // else if (!passwordRegex.test(password)) {
-    //   setErrors((prevError: any) => ({
-    //     ...prevError,
-    //     password:
-    //       "Mật khẩu phải chứa ít nhất 8 ký tự, bao gồm chữ in hoa, chữ in thường và số",
-    //   }));
-    //   isValid = false;
-    //   return;
-    // }
 
     return isValid;
   };
   const handleLogin = () => {
-    //Kiểm tra dữ liệu nhập vào có hợp lệ không
     if (validate()) {
       login();
     }
   };
+  
   const login = async () => {
-    const loginData: userLogin = { email, password };
+    const loginData: { email: string; password: string } = { email, password };
     try {
       const response = await getUserToken(loginData);
-      const token = response?.data?.data?.token;
-      if (response.status === 200 && token) {
-        await SecureStore.setItemAsync("userToken", token);
+  
+      if (response.status === 200 && response.data?.token) {
+        await SecureStore.setItemAsync("userToken", response.data.token);
         showToast({ type: "success", message: "Đăng nhập thành công" });
-        navigation.reset({ index: 0, routes: [{ name: "MainTabs" }] });
+        setIsLoggedIn(true);
       } else {
         showToast({ type: "error", message: "Thông tin đăng nhập không chính xác" });
       }
     } catch (error) {
-      console.error("Login error:", error);
+      console.error('Login error:', error);
       showToast({ type: "error", message: "Đã xảy ra lỗi, vui lòng thử lại!" });
-    }    
-  };
-  
+    }
+  };  
   const handleResetPassword = () => {
     navigation.navigate("Verify");
     // if (validate()) {
@@ -319,3 +309,7 @@ export default function Login() {
     </Center>
   );
 }
+function setIsLoggedIn(arg0: boolean) {
+  throw new Error("Function not implemented.");
+}
+
