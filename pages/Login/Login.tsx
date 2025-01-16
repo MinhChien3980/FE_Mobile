@@ -24,10 +24,11 @@ import { Alert, Pressable, StyleSheet } from "react-native";
 import useShowToast from "../../components/Toast/Toast";
 import { RootStackParamList } from "../../App";
 import { userLogin } from "../../interface/user";
-import { getUserToken } from "../../api/UserApiService";
+import { getMyInfo, getUserToken } from "../../api/UserApiService";
 import { Colors } from "../../assets/color/color";
 import * as SecureStore from "expo-secure-store";
 import { post } from "../../api/ApiService";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 export default function Login() {
   const showToast = useShowToast();
 
@@ -96,12 +97,14 @@ export default function Login() {
     try {
       const response = await getUserToken(loginData);
       if (response.status === 200) {
+        // console.log("🚀 ~ login ~ response:", response);
         const data = response.data.data;
+        // console.log("🚀 ~ login ~ response:", response);
         const token = data.token;
         console.log("🚀 ~ login ~ token:", token);
 
         if (token) {
-          await SecureStore.setItemAsync("userToken", token);
+          processToken(token);
 
           showToast({
             type: "success",
@@ -121,6 +124,18 @@ export default function Login() {
       // Alert.alert("Thất bại", errorMessage);
       // console.log(error);
       // navigation.navigate("Home");
+    }
+  };
+  const processToken = async (token: any) => {
+    await SecureStore.setItemAsync("userToken", token);
+    const response = await getMyInfo();
+
+    if (response.status === 200) {
+      const data = response.data.data;
+
+      AsyncStorage.setItem("fName", "fName" + data.id);
+      const name = await AsyncStorage.getItem("fName");
+      console.log("🚀 ~ processToken ~ data", name);
     }
   };
   const handleResetPassword = () => {

@@ -11,6 +11,9 @@ import Profile from "../../pages/Profile/Profile";
 
 const Tab = createBottomTabNavigator();
 
+// Định nghĩa kiểu dữ liệu cho navigation
+
+
 const BottomTabNavigator = () => {
   return (
     <NavigationContainer>
@@ -29,16 +32,32 @@ const BottomTabNavigator = () => {
               iconName = "person";
             }
 
-            return <Icon name="iconName" size={size} color={color}></Icon>
+            return <Icon name="iconName" size={size} color={color}></Icon>;
           },
           tabBarActiveTintColor: "#6200ee",
           tabBarInactiveTintColor: "gray",
         })}
       >
-        <Tab.Screen name="Home" component={Home} options={{ title: "Trang chủ" }} />
-        <Tab.Screen name="Products" component={Products} options={{ title: "Sản phẩm" }} />
-        <Tab.Screen name="Cart" component={Cart} options={{ title: "Giỏ hàng" }} />
-        <Tab.Screen name="Profile" component={Profile} options={{ title: "Cá nhân" }} />
+        <Tab.Screen
+          name="Home"
+          component={Home}
+          options={{ title: "Trang chủ" }}
+        />
+        <Tab.Screen
+          name="Products"
+          component={Products}
+          options={{ title: "Sản phẩm" }}
+        />
+        <Tab.Screen
+          name="Cart"
+          component={Cart}
+          options={{ title: "Giỏ hàng" }}
+        />
+        <Tab.Screen
+          name="Profile"
+          component={Profile}
+          options={{ title: "Cá nhân" }}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );
