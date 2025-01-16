@@ -12,6 +12,7 @@ import Products from "../../pages/ProductList/Products";
 import Profile from "../../pages/Profile/Profile";
 import Register from "../../pages/Register/Register";
 import Verify from "../../pages/Verify/Verify";
+import { useAuth } from "./Auth";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -56,14 +57,14 @@ const MainTabs = () => (
 );
 
 const AppNavigator = () => {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const { isLoggedIn, setIsLoggedIn } = useAuth();
     const [loading, setLoading] = useState(true);
   
     useEffect(() => {
       const checkToken = async () => {
         try {
           const token = await SecureStore.getItemAsync("userToken");
-          setIsLoggedIn(!!token);
+          if (token) setIsLoggedIn(true);
         } catch (error) {
           console.error("Failed to retrieve token", error);
         } finally {
@@ -96,6 +97,6 @@ const AppNavigator = () => {
         </Stack.Navigator>
       </NavigationContainer>
     );
-  };  
+  };
 
 export default AppNavigator;

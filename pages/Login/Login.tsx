@@ -28,7 +28,9 @@ import { getUserToken } from "../../api/UserApiService";
 import { Colors } from "../../assets/color/color";
 import * as SecureStore from "expo-secure-store";
 import { post } from "../../api/ApiService";
+import { useAuth } from "../../components/Navigator/Auth";
 export default function Login() {
+  const { setIsLoggedIn } = useAuth();
   const showToast = useShowToast();
 
   const [modalVisible, setModalVisible] = useState(false);
@@ -78,16 +80,15 @@ export default function Login() {
       login();
     }
   };
-  
   const login = async () => {
     const loginData: { email: string; password: string } = { email, password };
     try {
       const response = await getUserToken(loginData);
-  
+
       if (response.status === 200 && response.data?.token) {
         await SecureStore.setItemAsync("userToken", response.data.token);
         showToast({ type: "success", message: "Đăng nhập thành công" });
-        setIsLoggedIn(true);
+        setIsLoggedIn(true); // Update global login state
       } else {
         showToast({ type: "error", message: "Thông tin đăng nhập không chính xác" });
       }
@@ -95,7 +96,7 @@ export default function Login() {
       console.error('Login error:', error);
       showToast({ type: "error", message: "Đã xảy ra lỗi, vui lòng thử lại!" });
     }
-  };  
+  };
   const handleResetPassword = () => {
     navigation.navigate("Verify");
     // if (validate()) {
