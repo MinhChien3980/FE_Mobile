@@ -23,6 +23,12 @@ import FavouritesScreen from "../pages/WishList/FavouritesScreen";
 
 // Import your screens
 
+const strings = {
+    login: "Đăng nhập",
+    register: "Đăng ký",
+    home: "Trang chủ",
+    // Add other strings here...
+  };
 const Stack = createStackNavigator();
 
 const AppNavigator = () => {
@@ -38,7 +44,7 @@ const AppNavigator = () => {
         <Stack.Screen name="Tracking" component={Tracking} options={{ title: "Track order" }} />
         <Stack.Screen name="Favorites" component={FavouritesScreen} options={{ title: "Danh sách yêu thích" }} />
         <Stack.Screen name="Verify" component={Verify} options={{ title: "Xác nhận mã" }} />
-        <Stack.Screen name="Login" component={Login} options={{ title: "Đăng nhập" }} />
+        <Stack.Screen name="Login" component={Login} options={{ title: strings.login }} />;
         <Stack.Screen name="Register" component={Register} options={{ title: "Đăng ký" }} />
         <Stack.Screen name="Cart" component={Cart} options={{ title: "Giỏ hàng" }} />
         <Stack.Screen name="Checkout" component={Checkout} options={{ title: "Checkout" }} />

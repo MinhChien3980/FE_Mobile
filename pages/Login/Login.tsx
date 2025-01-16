@@ -92,21 +92,18 @@ export default function Login() {
     const loginData: userLogin = { email, password };
     try {
       const response = await getUserToken(loginData);
-      if (response.status === 200) {
-        const token = response.data.data.token;
-        if (token) {
-          await SecureStore.setItemAsync("userToken", token);
-          console.log(token)
-          showToast({ type: "success", message: "Đăng nhập thành công" });
-          navigation.reset({
-            index: 0,
-            routes: [{ name: "MainTabs" }],
-          });
-        }
+      const token = response?.data?.data?.token;
+      if (response.status === 200 && token) {
+        await SecureStore.setItemAsync("userToken", token);
+        showToast({ type: "success", message: "Đăng nhập thành công" });
+        navigation.reset({ index: 0, routes: [{ name: "MainTabs" }] });
+      } else {
+        showToast({ type: "error", message: "Thông tin đăng nhập không chính xác" });
       }
     } catch (error) {
       console.error("Login error:", error);
-    }
+      showToast({ type: "error", message: "Đã xảy ra lỗi, vui lòng thử lại!" });
+    }    
   };
   
   const handleResetPassword = () => {
