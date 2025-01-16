@@ -1,6 +1,5 @@
 import React from "react";
 import { NativeBaseProvider } from "native-base";
-import BottomTabNavigator from "./components/Navigator/NavigatorBottom";
 import AppNavigator from "./components/Navigator/NavigatorBottom";
 export type RootStackParamList = {
   Home: undefined;
@@ -15,7 +14,8 @@ export type RootStackParamList = {
   Tracking: undefined;
   NewPassword: undefined;
   ProductDetail: undefined;
-  MainTabs: undefined;
+  TabNavigator: undefined;
+  Cart: undefined;
 };
 const App = () => {
   return (

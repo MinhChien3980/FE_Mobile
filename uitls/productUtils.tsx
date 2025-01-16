@@ -21,6 +21,9 @@ export const renderProduct = (
   toggleFavorite: Function
 ) => {
   const isFavorite = favorites.some((favorite) => favorite.id === product.id);
+  const handleNavigateDetail = (productId: any) => {
+    Alert.alert("Product Detail", `Product ID: ${productId}`);
+  };
 
   return (
     <Box
@@ -33,7 +36,7 @@ export const renderProduct = (
       alignItems="center"
     >
       <Box position="relative" flex={1} m={2} alignItems="center" w="full">
-        <Pressable onPress={() => Alert.alert(`${product.id}`)}>
+        <Pressable onPress={() => handleNavigateDetail(product.id)}>
           <Box w="full">
             <Image
               source={{ uri: product.mainImg }}
