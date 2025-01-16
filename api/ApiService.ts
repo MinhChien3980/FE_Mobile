@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from "axios";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import * as SecureStore from "expo-secure-store";
 
 // Base URL cho API
 
@@ -7,7 +7,7 @@ const baseUrl: string = "http://10.0.1.243:8080/";
 
 // Hàm lấy token từ AsyncStorage
 const getToken = async (): Promise<string | null> => {
-  return AsyncStorage.getItem("token");
+  return SecureStore.getItemAsync("userToken");
 };
 
 // Hàm gọi API chung

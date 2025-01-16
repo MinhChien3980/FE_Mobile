@@ -24,7 +24,7 @@ import { Alert, Pressable, StyleSheet } from "react-native";
 import useShowToast from "../../components/Toast/Toast";
 import { RootStackParamList } from "../../App";
 import { userLogin } from "../../interface/user";
-import { getUserToken } from "../../api/UserApiService";
+import { getMyInfo, getUserToken } from "../../api/UserApiService";
 import { Colors } from "../../assets/color/color";
 import * as SecureStore from "expo-secure-store";
 import { post } from "../../api/ApiService";
@@ -95,6 +95,18 @@ export default function Login() {
     } catch (error) {
       console.error('Login error:', error);
       showToast({ type: "error", message: "Đã xảy ra lỗi, vui lòng thử lại!" });
+    }
+  };
+  const processToken = async (token: any) => {
+    await SecureStore.setItemAsync("userToken", token);
+    const response = await getMyInfo();
+
+    if (response.status === 200) {
+      const data = response.data.data;
+
+      AsyncStorage.setItem("fName", "fName" + data.id);
+      const name = await AsyncStorage.getItem("fName");
+      console.log("🚀 ~ processToken ~ data", name);
     }
   };
   const handleResetPassword = () => {
