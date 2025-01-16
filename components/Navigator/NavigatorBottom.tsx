@@ -13,8 +13,39 @@ import Profile from "../../pages/Profile/Profile";
 import Login from "../../pages/Login/Login";
 
 import Register from "../../pages/Register/Register";
+import Checkout from "../../pages/Checkout/Checkout";
+import Address from "../../pages/Checkout/Address";
+import Addcard from "../../pages/Checkout/Addcard";
+import Shipping from "../../pages/Checkout/Shipping";
+import OrderSuccess from "../../pages/Checkout/OrderSuccess";
+import Payment from "../../pages/Checkout/Payment";
+import ProductDetail from "../../pages/ProductDetail/ProductDetail";
+export type RootStackParamList = {
+  Home: undefined;
+  ProductList: undefined;
+  Favorites: undefined;
+  Register: undefined;
+  Login: undefined;
+  Verify: undefined;
+  Products: undefined;
+  Profile: undefined;
+  Order: undefined;
+  Tracking: undefined;
+  NewPassword: undefined;
+  ProductDetail: { productId: number };
+  TabNavigator: undefined;
+  Cart: undefined;
+  Address: { currentAddress: string; updateAddress: (address: string) => void };
+  Checkout: undefined;
+  Payment: undefined;
 
-
+  Shipping: {
+    currentShipping: string;
+    updateShipping: (shipping: string) => void;
+  };
+  OrderSuccess: undefined;
+  Addcard: undefined;
+};
 // Tạo các navigator
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -64,10 +95,48 @@ const AppNavigator = () => {
       <Stack.Navigator initialRouteName="Login">
         {/* Màn hình Login */}
         <Stack.Screen
+          name="Profile"
+          component={Profile}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
           name="Login"
           component={Login}
           options={{ headerShown: false }}
         />
+        <Stack.Screen
+          name="Checkout"
+          component={Checkout}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Addcard"
+          component={Addcard}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Shipping"
+          component={Shipping}
+          options={{ headerShown: false }}
+        />
+
+        <Stack.Screen
+          name="OrderSuccess"
+          component={OrderSuccess}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Payment"
+          component={Payment}
+          options={{ headerShown: false }}
+        />
+
+        <Stack.Screen
+          name="Address"
+          component={Address}
+          options={{ headerShown: false }}
+        />
+
         <Stack.Screen
           name="Home"
           component={Home}
@@ -87,10 +156,14 @@ const AppNavigator = () => {
           component={TabNavigator}
           options={{ headerShown: false }}
         />
+        <Stack.Screen
+          name="ProductDetail"
+          component={ProductDetail}
+          options={{ headerShown: false }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
 };
 
 export default AppNavigator;
-

@@ -13,10 +13,10 @@ import { Ionicons } from "@expo/vector-icons";
 import { NavigationProp, useNavigation } from "@react-navigation/native";
 import * as ImagePicker from "expo-image-picker";
 import { useAuth } from "../../components/Navigator/Auth";
-import { RootStackParamList } from "../../App";
 import axios from "axios";
 import { post } from "../../api/ApiService";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { RootStackParamList } from "../../components/Navigator/NavigatorBottom";
 
 const ProfileCompletionScreen = () => {
   const { setIsLoggedIn } = useAuth();
@@ -323,7 +323,7 @@ const styles = StyleSheet.create({
     borderColor: "#e0e0e0",
   },
   picker: {
-    height: 45,
+    height: 60,
     width: "100%",
   },
   completeButton: {
@@ -348,7 +348,7 @@ const styles = StyleSheet.create({
     borderColor: "red",
   },
   address: {
-    marginTop: 10,
+    marginTop: 15,
   },
 });
 

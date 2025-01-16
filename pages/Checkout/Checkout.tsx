@@ -1,232 +1,137 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
-    View,
-    Text,
-    StyleSheet,
-    ScrollView,
-    Image,
-    TouchableOpacity,
-    Alert,
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  Image,
+  TouchableOpacity,
+  ActivityIndicator,
 } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import axios from "axios";
+import { NavigationProp, useNavigation } from "@react-navigation/native";
+import { RootStackParamList } from "../../components/Navigator/NavigatorBottom";
+
+interface CartItem {
+  id: string;
+  name: string;
+  price: number;
+  quantity: number;
+  productMedia: string[];
+}
 
 const Checkout = () => {
-    const [address, setAddress] = useState("1901 Thornridge Cir, Shiloh, Hawaii 81063");
-    const [shippingType, setShippingType] = useState("Economy");
-    const navigation = useNavigation();
+  const [cartItems, setCartItems] = useState<CartItem[]>([]); // Lưu danh sách giỏ hàng
+  const [loading, setLoading] = useState(true); // Trạng thái tải
+  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
-    const cartItems = [
-        {
-            id: "1",
-            name: "Brown Jacket",
-            category: "Clothing",
-            price: 83.97,
-            quantity: 1,
-            main_img: require("../../assets/images/proFake_3.jpeg"),
-        },
-        {
-            id: "2",
-            name: "Brown Suite",
-            category: "Clothing",
-            price: 120,
-            quantity: 1,
-            main_img: require("../../assets/images/proFake_2.jpeg"),
-        },
-        {
-            id: "3",
-            name: "Brown Jacket",
-            category: "Clothing",
-            price: 83.97,
-            quantity: 1,
-            main_img: require("../../assets/images/proFake_3.jpeg"),
-        },
-    ];
+  // Hàm gọi API
+  const fetchCartItems = async () => {
+    try {
+      const response = await axios.get("https://api.example.com/cart");
+      setCartItems(response.data); // Lưu dữ liệu giỏ hàng vào state
+    } catch (error) {
+      console.error("Lỗi khi lấy dữ liệu giỏ hàng:", error);
+    } finally {
+      setLoading(false); // Tắt trạng thái tải
+    }
+  };
 
-    const calculateTotalCost = () => {
-        return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
-    };
+  // Gọi API khi component được render
+  useEffect(() => {
+    fetchCartItems();
+  }, []);
 
-    const handlePlaceOrder = () => {
-        navigation.navigate("Payment");
-        // Alert.alert(
-        //     "Order Placed Successfully",
-        //     `Thank you for your purchase! Your order is being processed.`,
-        //     [{ text: "OK" }]
-        // );
-    };
+  // Tính tổng tiền
+  const calculateTotalCost = () => {
+    return cartItems
+      .reduce((total, item) => total + item.price * item.quantity, 0)
+      .toFixed(2);
+  };
 
-    return (
-        <View style={styles.container}>
-            {/* Header Section */}
-            {/*<View style={styles.headerSection}>*/}
-            {/*    <Text style={styles.headerTitle}>Checkout</Text>*/}
-            {/*</View>*/}
+  const handlePlaceOrder = () => {
+    navigation.navigate("Payment");
+    // Alert.alert(
+    //     "Order Placed Successfully",
+    //     `Thank you for your purchase! Your order is being processed.`,
+    //     [{ text: "OK" }]
+    // );
+  };
 
-            {/* Shipping Address Section */}
-            <View style={styles.sectionContainer}>
-                <Text style={styles.sectionTitle}>Shipping Address</Text>
-                <View style={styles.shippingAddressBox}>
-                    <Text style={styles.addressText}>{address}</Text>
-                    <TouchableOpacity
-                        onPress={() =>
-                            navigation.navigate("Address", {
-                                currentAddress: address,
-                                updateAddress: (newAddress) => setAddress(newAddress),
-                            })
-                        }
-                    >
-                        <Text style={styles.changeText}>Change</Text>
-                    </TouchableOpacity>
-                </View>
+  return (
+    <View style={styles.container}>
+      <Text style={styles.header}>Checkout</Text>
+      <ScrollView style={styles.orderListContainer}>
+        <Text style={styles.sectionTitle}>Order List</Text>
+        {loading ? (
+          <ActivityIndicator size="large" color="#6b4226" />
+        ) : cartItems.length > 0 ? (
+          cartItems.map((item) => (
+            <View key={item.id} style={styles.orderItem}>
+              <Image
+                source={{ uri: item.productMedia[0] }}
+                style={styles.orderItemImage}
+              />
+              <View style={styles.orderItemDetails}>
+                <Text style={styles.orderItemName}>{item.name}</Text>
+                <Text style={styles.orderItemPrice}>
+                  ${item.price.toFixed(2)}
+                </Text>
+                <Text style={styles.orderItemQuantity}>
+                  Quantity: {item.quantity}
+                </Text>
+              </View>
             </View>
-
-            {/* Shipping Type Section */}
-            <View style={styles.sectionContainer}>
-                <Text style={styles.sectionTitle}>Choose Shipping Type</Text>
-                <View style={styles.shippingTypeBox}>
-                    <Text style={styles.shippingTypeText}>{shippingType}</Text>
-                    <Text style={styles.estimatedArrivalText}>Estimated Arrival: 25 August 2023</Text>
-                    <TouchableOpacity
-                        onPress={() =>
-                            navigation.navigate("Shipping", {
-                                currentShipping: shippingType,
-                                updateShipping: setShippingType,
-                            })
-                        }
-                    >
-                        <Text style={styles.changeText}>Change</Text>
-                    </TouchableOpacity>
-                </View>
-            </View>
-
-            {/* Order List Section */}
-            <ScrollView style={styles.orderListContainer}>
-                <Text style={styles.sectionTitle}>Order List</Text>
-                {cartItems.map((item) => (
-                    <View key={item.id} style={styles.orderItem}>
-                        <Image source={item.main_img} style={styles.orderItemImage} />
-                        <View style={styles.orderItemDetails}>
-                            <Text style={styles.orderItemName}>{item.name}</Text>
-                            <Text style={styles.orderItemPrice}>${item.price.toFixed(2)}</Text>
-                        </View>
-                    </View>
-                ))}
-            </ScrollView>
-
-            {/* Footer Section */}
-            <View style={styles.footerSection}>
-                <Text style={styles.totalText}>Total: ${calculateTotalCost().toFixed(2)}</Text>
-                <TouchableOpacity style={styles.paymentButton} onPress={handlePlaceOrder}>
-                    <Text style={styles.paymentButtonText}>Continue to Payment</Text>
-                </TouchableOpacity>
-            </View>
-        </View>
-    );
+          ))
+        ) : (
+          <Text>No items in cart.</Text>
+        )}
+      </ScrollView>
+      <View style={styles.footer}>
+        <Text style={styles.totalText}>Total: ${calculateTotalCost()}</Text>
+        <TouchableOpacity
+          style={styles.paymentButton}
+          onPress={handlePlaceOrder}
+        >
+          <Text style={styles.paymentButtonText}>Continue to Payment</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
 };
 
-// Styles
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: "#fff",
-    },
-    headerSection: {
-        backgroundColor: "#6b4226",
-        padding: 20,
-        alignItems: "center",
-    },
-    headerTitle: {
-        fontSize: 24,
-        color: "#fff",
-        fontWeight: "bold",
-    },
-    sectionContainer: {
-        padding: 20,
-    },
-    sectionTitle: {
-        fontSize: 18,
-        fontWeight: "bold",
-    },
-    shippingAddressBox: {
-        padding: 15,
-        backgroundColor: "#f5f5f5",
-        borderRadius: 8,
-        marginVertical: 10,
-        borderWidth: 1,
-        borderColor: "#ddd",
-    },
-    addressText: {
-        fontSize: 16,
-        marginBottom: 10,
-    },
-    shippingTypeBox: {
-        padding: 15,
-        backgroundColor: "#f5f5f5",
-        borderRadius: 8,
-        marginVertical: 10,
-        borderWidth: 1,
-        borderColor: "#ddd",
-    },
-    shippingTypeText: {
-        fontSize: 16,
-        marginBottom: 10,
-    },
-    estimatedArrivalText: {
-        fontSize: 14,
-        color: "#555",
-    },
-    changeText: {
-        fontSize: 16,
-        color: "#6b4226",
-    },
-    orderListContainer: {
-        flex: 1,
-        marginBottom: 20,
-    },
-    orderItem: {
-        flexDirection: "row",
-        paddingVertical: 15,
-        borderBottomWidth: 1,
-        borderBottomColor: "#ddd",
-    },
-    orderItemImage: {
-        width: 60,
-        height: 60,
-        marginRight: 10,
-    },
-    orderItemDetails: {
-        flex: 1,
-        justifyContent: "center",
-    },
-    orderItemName: {
-        fontSize: 16,
-        fontWeight: "bold",
-    },
-    orderItemPrice: {
-        fontSize: 14,
-        color: "#555",
-    },
-    footerSection: {
-        padding: 20,
-        backgroundColor: "#f8f8f8",
-        alignItems: "center",
-    },
-    totalText: {
-        fontSize: 18,
-        fontWeight: "bold",
-    },
-    paymentButton: {
-        backgroundColor: "#6b4226",
-        paddingVertical: 15,
-        borderRadius: 20,
-        width: "100%",
-        alignItems: "center",
-        marginTop: 20,
-    },
-    paymentButtonText: {
-        fontSize: 16,
-        color: "#fff",
-    },
+  container: { flex: 1, backgroundColor: "#fff", padding: 16 },
+  header: {
+    fontSize: 24,
+    fontWeight: "bold",
+    color: "#6b4226",
+    marginBottom: 20,
+  },
+  sectionTitle: { fontSize: 18, fontWeight: "bold", marginBottom: 10 },
+  orderListContainer: { flex: 1, marginBottom: 20 },
+  orderItem: {
+    flexDirection: "row",
+    marginBottom: 16,
+    borderBottomWidth: 1,
+    borderBottomColor: "#ddd",
+    paddingBottom: 10,
+  },
+  orderItemImage: { width: 60, height: 60, marginRight: 10 },
+  orderItemDetails: { flex: 1 },
+  orderItemName: { fontSize: 16, fontWeight: "bold" },
+  orderItemPrice: { fontSize: 14, color: "#555" },
+  orderItemQuantity: { fontSize: 14, color: "#777" },
+  footer: { padding: 16, backgroundColor: "#f8f8f8", alignItems: "center" },
+  totalText: { fontSize: 18, fontWeight: "bold", marginBottom: 10 },
+  paymentButton: {
+    backgroundColor: "#6b4226",
+    padding: 12,
+    borderRadius: 8,
+    alignItems: "center",
+    width: "100%",
+  },
+  paymentButtonText: { color: "#fff", fontSize: 16, fontWeight: "bold" },
 });
 
 export default Checkout;

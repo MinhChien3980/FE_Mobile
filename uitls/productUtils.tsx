@@ -14,15 +14,19 @@ import { Ionicons } from "@expo/vector-icons";
 import { Alert } from "react-native";
 import { Product } from "../interface/product";
 import { Colors } from "../assets/color/color";
+import { RootStackParamList } from "../components/Navigator/NavigatorBottom";
+import { NavigationProp, useNavigation } from "@react-navigation/native";
 
 export const renderProduct = (
   product: Product,
   favorites: Product[],
-  toggleFavorite: Function
+  toggleFavorite: Function,
+  navigation: NavigationProp<RootStackParamList> // Nhận navigation từ props
 ) => {
   const isFavorite = favorites.some((favorite) => favorite.id === product.id);
-  const handleNavigateDetail = (productId: any) => {
-    Alert.alert("Product Detail", `Product ID: ${productId}`);
+
+  const handleNavigateDetail = (productId: number) => {
+    navigation.navigate("ProductDetail", { productId }); // Sử dụng navigation từ props
   };
 
   return (
@@ -39,7 +43,7 @@ export const renderProduct = (
         <Pressable onPress={() => handleNavigateDetail(product.id)}>
           <Box w="full">
             <Image
-              source={{ uri: product.mainImg }}
+              source={{ uri: product.productMediaUrls[1] }}
               alt={product.name}
               style={{
                 width: 200,
@@ -49,18 +53,10 @@ export const renderProduct = (
               resizeMode="cover"
             />
           </Box>
-
-          <Box
-            // space={1}
-            // w="full"
-            alignItems="center"
-            // justifyContent="space-between"
-            // flexDirection="column"
-          >
+          <Box alignItems="center">
             <Text mt={3} fontSize="xs" fontWeight="bold">
               {product.name}
             </Text>
-
             <Text
               mt="3"
               fontSize="xs"
@@ -68,7 +64,6 @@ export const renderProduct = (
               alignContent="center"
             >
               <Box
-                // style={{}}
                 flexDir="row"
                 alignItems="center"
                 justifyContent="space-around"
@@ -78,7 +73,6 @@ export const renderProduct = (
                 </Text>
                 <Box ml="10"></Box>
                 <Box
-                  // style={{}}
                   ml="-3"
                   flexDirection="row"
                   alignItems="center"
@@ -90,7 +84,6 @@ export const renderProduct = (
                     color={Colors.yellow}
                     fontSize="xs"
                   />
-
                   <Text fontSize="xs">4.5</Text>
                 </Box>
               </Box>
@@ -100,7 +93,6 @@ export const renderProduct = (
       </Box>
       <IconButton
         borderRadius="full"
-        // borderWidth={0.1}
         w={1}
         h={1}
         icon={
@@ -116,6 +108,7 @@ export const renderProduct = (
     </Box>
   );
 };
+
 export const formatCurrency = (price: number): string => {
   return price.toLocaleString("vi-VN", {
     style: "currency",

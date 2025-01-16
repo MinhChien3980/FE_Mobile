@@ -29,7 +29,7 @@ import * as SecureStore from "expo-secure-store";
 import { post } from "../../api/ApiService";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useAuth } from "../../components/Navigator/Auth";
-import { RootStackParamList } from "../../App";
+import { RootStackParamList } from "../../components/Navigator/NavigatorBottom";
 export default function Login() {
   const showToast = useShowToast();
 

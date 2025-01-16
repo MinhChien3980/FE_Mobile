@@ -32,6 +32,8 @@ const request = async <T>(
       const token = await getToken();
       if (token) {
         config.headers.Authorization = `Bearer ${token}`;
+
+        console.log("🚀 ~ token:", token);
       }
     }
 
@@ -45,7 +47,7 @@ const request = async <T>(
 
 // Hàm gọi GET API
 export const get = async <T>(endpoint: string): Promise<AxiosResponse<T>> => {
-  return request<T>("GET", endpoint);
+  return request<T>("GET", endpoint, true);
 };
 
 // Hàm gọi POST API
@@ -54,6 +56,14 @@ export const post = async <T>(
   data: any
 ): Promise<AxiosResponse<T>> => {
   return request<T>("POST", endpoint, data);
+};
+
+export const getWithData = async <T>(
+  endpoint: string,
+  params: any // Sử dụng params thay vì data
+): Promise<AxiosResponse<T>> => {
+  const queryString = new URLSearchParams(params).toString(); // Chuyển params thành query string
+  return request<T>("GET", `${endpoint}?${queryString}`); // Đính kèm query string vào URL
 };
 
 // Hàm gọi PUT API

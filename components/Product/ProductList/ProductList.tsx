@@ -1,6 +1,10 @@
 import React, { useState, useCallback, useEffect } from "react";
 import { FlatList } from "react-native";
-import { useFocusEffect } from "@react-navigation/native";
+import {
+  NavigationProp,
+  useFocusEffect,
+  useNavigation,
+} from "@react-navigation/native";
 import {
   Box,
   VStack,
@@ -14,9 +18,12 @@ import { Ionicons } from "@expo/vector-icons";
 import useShowToast from "../../Toast/Toast";
 import { Product } from "../../../interface/product";
 
-import {renderProduct} from "../../../uitls/productUtils";
-import {loadFavorites, toggleFavorite} from "../../../pages/WishList/Favourite";
-
+import { renderProduct } from "../../../uitls/productUtils";
+import {
+  loadFavorites,
+  toggleFavorite,
+} from "../../../pages/WishList/Favourite";
+import { RootStackParamList } from "../../Navigator/NavigatorBottom";
 
 interface ProductListProps {
   products: Product[] | null;
@@ -25,6 +32,7 @@ interface ProductListProps {
 const ProductList: React.FC<ProductListProps> = ({ products }) => {
   const showToast = useShowToast();
   const [favorites, setFavorites] = useState<Product[]>([]);
+  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
   useFocusEffect(
     useCallback(() => {
@@ -42,11 +50,15 @@ const ProductList: React.FC<ProductListProps> = ({ products }) => {
         <FlatList
           data={products}
           renderItem={({ item }) =>
-            renderProduct(item, favorites, (product: Product) =>
-              toggleFavorite(product, favorites, setFavorites, showToast)
+            renderProduct(
+              item,
+              favorites,
+              (product: Product) =>
+                toggleFavorite(product, favorites, setFavorites, showToast),
+              navigation
             )
           }
-          keyExtractor={(item) => item.id}
+          keyExtractor={(item) => item.id.toString()}
           numColumns={2}
           columnWrapperStyle={{ justifyContent: "space-between" }}
           initialNumToRender={6}

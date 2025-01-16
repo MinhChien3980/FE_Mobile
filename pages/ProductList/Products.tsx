@@ -10,7 +10,7 @@ import { SearchBar } from "../../components/SearchBar/SearchBar";
 import SortBar from "../../components/SortBar/SortBar";
 import ProductList from "../../components/Product/ProductList/ProductList";
 import * as SecureStore from "expo-secure-store";
-import { RootStackParamList } from "../../App";
+import { RootStackParamList } from "../../components/Navigator/NavigatorBottom";
 
 const Products: React.FC = () => {
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
@@ -70,12 +70,12 @@ const Products: React.FC = () => {
       console.log("🚀 ~ filteredProductsList ~ price :", result.length);
     }
 
-    if (filters.category) {
-      result = result.filter(
-        (product) => product.category === filters.category.name
-      );
-      console.log("🚀 ~ filteredProductsList ~ category :", result.length);
-    }
+    // if (filters.category) {
+    //   result = result.filter(
+    //     (product) => product.category === filters.category.name
+    //   );
+    //   console.log("🚀 ~ filteredProductsList ~ category :", result.length);
+    // }
 
     return result;
   }, [products, searchQuery, filters]);
