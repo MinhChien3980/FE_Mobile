@@ -27,6 +27,7 @@ import { userLogin } from "../../interface/user";
 import { getUserToken } from "../../api/UserApiService";
 import { Colors } from "../../assets/color/color";
 import * as SecureStore from "expo-secure-store";
+import { post } from "../../api/ApiService";
 export default function Login() {
   const showToast = useShowToast();
 
@@ -88,7 +89,7 @@ export default function Login() {
     }
   };
   const login = async () => {
-    navigation.navigate("Home");
+    // navigation.navigate("Home");
     const loginData: userLogin = { email, password };
 
     console.log("🚀 ~ login ~ loginData:", loginData);
@@ -98,24 +99,28 @@ export default function Login() {
         const data = response.data.data;
         const token = data.token;
         console.log("🚀 ~ login ~ token:", token);
-        await SecureStore.setItemAsync("userToken", token);
-        navigation.navigate("Home");
-        showToast({
-          type: "success",
-          message: "Đăng nhập thành công",
-        });
+
+        if (token) {
+          await SecureStore.setItemAsync("userToken", token);
+
+          showToast({
+            type: "success",
+            message: "Đăng nhập thành công",
+          });
+          navigation.navigate("Home");
+        }
       }
     } catch (error: any) {
       // Kiểm tra nếu lỗi là từ response
-      const errorMessage =
-        error.response?.data?.message || error.message || "Lỗi kết nối";
-
-      showToast({
-        type: "error",
-        message: errorMessage,
-      });
+      // const errorMessage =
+      //   error.response?.data?.message || error.message || "Lỗi kết nối";
+      // showToast({
+      //   type: "error",
+      //   message: errorMessage,
+      // });
       // Alert.alert("Thất bại", errorMessage);
       // console.log(error);
+      // navigation.navigate("Home");
     }
   };
   const handleResetPassword = () => {
