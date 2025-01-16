@@ -6,6 +6,7 @@ import Cart from "../../pages/Cart/Cart";
 import Home from "../../pages/Home/Home";
 import Products from "../../pages/ProductList/Products";
 import Profile from "../../pages/Profile/Profile";
+import Login from "../../pages/Login/Login";
 
 // Screens
 
@@ -13,54 +14,60 @@ const Tab = createBottomTabNavigator();
 
 // Định nghĩa kiểu dữ liệu cho navigation
 
-
 const BottomTabNavigator = () => {
-  return (
-    <NavigationContainer>
-      <Tab.Navigator
-        screenOptions={({ route }) => ({
-          tabBarIcon: ({ color, size }) => {
-            let iconName;
+    return (
+        <NavigationContainer>
+            <Tab.Navigator
+                screenOptions={({ route }) => ({
+                    tabBarIcon: ({ color, size }) => {
+                        let iconName;
 
-            if (route.name === "Home") {
-              iconName = "home";
-            } else if (route.name === "Products") {
-              iconName = "category";
-            } else if (route.name === "Cart") {
-              iconName = "shopping-cart";
-            } else if (route.name === "Profile") {
-              iconName = "person";
-            }
+                        if (route.name === "Home") {
+                            iconName = "home";
+                        } else if (route.name === "Products") {
+                            iconName = "category";
+                        } else if (route.name === "Cart") {
+                            iconName = "shopping-cart";
+                        } else if (route.name === "Profile") {
+                            iconName = "person";
+                        } else if (route.name === "Login") {
+                            iconName = "login";
+                        }
 
-            return <Icon name="iconName" size={size} color={color}></Icon>;
-          },
-          tabBarActiveTintColor: "#6200ee",
-          tabBarInactiveTintColor: "gray",
-        })}
-      >
-        <Tab.Screen
-          name="Home"
-          component={Home}
-          options={{ title: "Trang chủ" }}
-        />
-        <Tab.Screen
-          name="Products"
-          component={Products}
-          options={{ title: "Sản phẩm" }}
-        />
-        <Tab.Screen
-          name="Cart"
-          component={Cart}
-          options={{ title: "Giỏ hàng" }}
-        />
-        <Tab.Screen
-          name="Profile"
-          component={Profile}
-          options={{ title: "Cá nhân" }}
-        />
-      </Tab.Navigator>
-    </NavigationContainer>
-  );
+                        return <Icon name="iconName" size={size} color={color}></Icon>;
+                    },
+                    tabBarActiveTintColor: "#6200ee",
+                    tabBarInactiveTintColor: "gray",
+                })}
+            >
+                <Tab.Screen
+                    name="Login"
+                    component={Login}
+                    options={{ title: "Trang chủ" }}
+                />
+                <Tab.Screen
+                    name="Home"
+                    component={Home}
+                    options={{ title: "Trang chủ" }}
+                />
+                <Tab.Screen
+                    name="Products"
+                    component={Products}
+                    options={{ title: "Sản phẩm" }}
+                />
+                <Tab.Screen
+                    name="Cart"
+                    component={Cart}
+                    options={{ title: "Giỏ hàng" }}
+                />
+                <Tab.Screen
+                    name="Profile"
+                    component={Profile}
+                    options={{ title: "Cá nhân" }}
+                />
+            </Tab.Navigator>
+        </NavigationContainer>
+    );
 };
 
 export default BottomTabNavigator;
