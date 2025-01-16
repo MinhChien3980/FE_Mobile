@@ -1,3 +1,4 @@
+import React, { Component } from "react";
 import {
   Button,
   FormControl,
@@ -12,424 +13,296 @@ import {
   ScrollView,
 } from "native-base";
 import { MaterialIcons } from "@expo/vector-icons";
-import { useState } from "react";
-import { FlatList, Platform } from "react-native";
-// import Test from "../Test/TestDateTime";
+import { Platform } from "react-native";
 import { userRegister } from "../../interface/user";
 import { Colors } from "../../assets/color/color";
+
 interface UserInforProps {
   isRegister: boolean;
   onSubmit: (data: any) => void;
   userData?: userRegister;
   buttonLabel: string;
 }
-// Component này có thể dùng ở trang đăng kí và trang account/profile(dùng để thay đổi thông tin người dùng)
-const UserInfor = ({
-  isRegister,
-  onSubmit,
-  userData,
-  buttonLabel,
-}: UserInforProps) => {
-  const [showPassword, setShowPassword] = useState(false);
-  const [email, setEmail] = useState(userData?.email || "");
-  const [password, setPassword] = useState(userData?.password || "");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  //Error
-  const [errors, setErrors] = useState<any>({});
-  // Address
-  const [province, setProvince] = useState("");
-  const [district, setDistrict] = useState("");
-  const [ward, setWard] = useState("");
-  const [address, setAddress] = useState(userData?.address || "");
-  //BirthDate
-  const [date, setDate] = useState(new Date());
-  const [show, setShow] = useState(false);
 
-  //Name
-  const [name, setName] = useState(userData?.name || "");
-  //Phone
-  const [phone, setPhone] = useState(userData?.phone || "");
-  //Thay đổi
-  const onChange = (event: any, selectedDate?: Date) => {
-    const currentDate = selectedDate || date;
-    setShow(Platform.OS === "ios");
-    if (selectedDate) {
-      // setDateString(selectedDate.toISOString);
-      setDate(selectedDate);
+interface UserInforState {
+  showPassword: boolean;
+  email: string;
+  password: string;
+  confirmPassword: string;
+  errors: any;
+  provinces: any[];
+  districts: any[];
+  wards: any[];
+  province: string;
+  district: string;
+  ward: string;
+  address: string;
+  name: string;
+  phone: string;
+  date: Date;
+  show: boolean;
+}
+
+class UserInfor extends Component<UserInforProps, UserInforState> {
+  constructor(props: UserInforProps) {
+    super(props);
+    this.state = {
+      showPassword: false,
+      email: props.userData?.email || "",
+      password: props.userData?.password || "",
+      confirmPassword: "",
+      errors: {},
+      provinces: [],
+      districts: [],
+      wards: [],
+      province: "",
+      district: "",
+      ward: "",
+      address: props.userData?.address || "",
+      name: props.userData?.name || "",
+      phone: props.userData?.phone || "",
+      date: new Date(),
+      show: false,
+    };
+  }
+
+  componentDidMount() {
+    this.fetchProvinces();
+  }
+
+  fetchProvinces = async () => {
+    try {
+      const response = await fetch("https://provinces.open-api.vn/api/?depth=3");
+      const data = await response.json();
+      this.setState({ provinces: data });
+    } catch (error) {
+      console.error("Error fetching provinces:", error);
     }
   };
 
-  const showDatepicker = () => {
-    setShow(!show);
+  handleProvinceChange = (itemValue: string) => {
+    this.setState({ province: itemValue, district: "", ward: "" }, this.updateDistricts);
   };
-  //Validation thông tin người dùng/ tài khoản
-  const validate = () => {
+
+  updateDistricts = () => {
+    const { province, provinces } = this.state;
+    const selectedProvince = provinces.find((p: any) => p.name === province);
+    if (selectedProvince) {
+      this.setState({ districts: selectedProvince.districts });
+    }
+  };
+
+  handleDistrictChange = (itemValue: string) => {
+    this.setState({ district: itemValue }, this.updateWards);
+  };
+
+  updateWards = () => {
+    const { district, districts } = this.state;
+    const selectedDistrict = districts.find((d: any) => d.name === district);
+    if (selectedDistrict) {
+      this.setState({ wards: selectedDistrict.wards });
+    }
+  };
+
+  onChange = (event: any, selectedDate?: Date) => {
+    const currentDate = selectedDate || this.state.date;
+    this.setState({ show: Platform.OS === "ios", date: currentDate });
+  };
+
+  showDatepicker = () => {
+    this.setState({ show: !this.state.show });
+  };
+
+  validate = () => {
     let isValid = true;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
     const phoneRegex = /^(?:\+84|0)(\d{9})$/;
 
-    setErrors({});
+    this.setState({ errors: {} });
 
     const validations = [
-      {
-        condition: !name,
-        message: "Hãy nhập tên của bạn",
-        field: "name",
-      },
-      {
-        condition: !phone,
-        message: "Hãy nhập số điện thoại",
-        field: "phone",
-      },
-      {
-        condition: phone && !phoneRegex.test(phone),
-        message: "Số điện thoại không hợp lệ",
-        field: "phone",
-      },
-      {
-        condition: !email,
-        message: "Hãy nhập email của bạn",
-        field: "email",
-      },
-      {
-        condition: email && !emailRegex.test(email),
-        message: "Email không hợp lệ",
-        field: "email",
-      },
-      {
-        condition: !password,
-        message: "Hãy nhập mật khẩu của bạn",
-        field: "password",
-      },
-      {
-        condition: password && !passwordRegex.test(password),
-        message:
-          "Mật khẩu phải chứa ít nhất 8 ký tự, bao gồm chữ in hoa, chữ in thường và số",
-        field: "password",
-      },
-      {
-        condition: isRegister && !confirmPassword,
-        message: "Hãy nhập lại mật khẩu của bạn",
-        field: "rePass",
-      },
-      {
-        condition: isRegister && password !== confirmPassword,
-        message: "Mật khẩu không khớp",
-        field: "rePass",
-      },
-      {
-        condition: !province,
-        message: "Hãy chọn tỉnh của bạn",
-        field: "province",
-      },
-      {
-        condition: !district,
-        message: "Hãy chọn quận/huyện của bạn",
-        field: "district",
-      },
-      {
-        condition: !ward,
-        message: "Hãy chọn phường/xã của bạn",
-        field: "ward",
-      },
+      { condition: !this.state.name, message: "Hãy nhập tên của bạn", field: "name" },
+      { condition: !this.state.phone, message: "Hãy nhập số điện thoại", field: "phone" },
+      { condition: this.state.phone && !phoneRegex.test(this.state.phone), message: "Số điện thoại không hợp lệ", field: "phone" },
+      { condition: !this.state.email, message: "Hãy nhập email của bạn", field: "email" },
+      { condition: this.state.email && !emailRegex.test(this.state.email), message: "Email không hợp lệ", field: "email" },
+      { condition: !this.state.password, message: "Hãy nhập mật khẩu của bạn", field: "password" },
+      { condition: this.state.password && !passwordRegex.test(this.state.password), message: "Mật khẩu không hợp lệ", field: "password" },
+      { condition: this.props.isRegister && !this.state.confirmPassword, message: "Hãy nhập lại mật khẩu của bạn", field: "rePass" },
+      { condition: this.props.isRegister && this.state.password !== this.state.confirmPassword, message: "Mật khẩu không khớp", field: "rePass" },
+      { condition: !this.state.province, message: "Hãy chọn tỉnh của bạn", field: "province" },
+      { condition: !this.state.district, message: "Hãy chọn quận/huyện của bạn", field: "district" },
+      { condition: !this.state.ward, message: "Hãy chọn phường/xã của bạn", field: "ward" },
     ];
 
     for (const { condition, message, field } of validations) {
       if (condition) {
-        setErrors((prevError: any) => ({ ...prevError, [field]: message }));
+        this.setState((prevState) => ({
+          errors: { ...prevState.errors, [field]: message },
+        }));
         isValid = false;
         break;
       }
-      setAddress(province + ", " + district + ", " + ward);
+      this.setState({
+        address: `${this.state.province}, ${this.state.district}, ${this.state.ward}`,
+      });
     }
-    console.log(address);
 
     return isValid;
   };
 
-  const handleSubmit = () => {
-    if (validate()) {
+  handleSubmit = () => {
+    if (this.validate()) {
       const data: userRegister = {
-        email: email,
-        name: name,
-        address: address,
-        password: password,
-        birthdate: date + "",
-        phone: phone,
+        email: this.state.email,
+        name: this.state.name,
+        address: this.state.address,
+        password: this.state.password,
+        birthdate: this.state.date + "",
+        phone: this.state.phone,
       };
-
-      onSubmit(data);
+      this.props.onSubmit(data);
     }
   };
 
-  return (
-    <VStack space={3} mt="5">
-      <FormControl isRequired isInvalid={"name" in errors}>
-        <FormControl.Label>Tên người dùng</FormControl.Label>
-        <Input
-          variant="rounded"
-          value={name}
-          onChangeText={setName}
-          w={{
-            base: "100%",
-            md: "25%",
-          }}
-          InputLeftElement={
-            <Icon
-              as={<MaterialIcons name="person" />}
-              size={5}
-              ml="2"
-              color="muted.400"
-            />
-          }
-          keyboardType="default"
-        />
-        {"name" in errors ? (
-          <FormControl.ErrorMessage>{errors.name}</FormControl.ErrorMessage>
-        ) : null}
-      </FormControl>
-      <FormControl isRequired isInvalid={"phone" in errors}>
-        <FormControl.Label>Số điện thoại</FormControl.Label>
-        <Input
-          variant="rounded"
-          value={phone}
-          onChangeText={setPhone}
-          w={{
-            base: "100%",
-            md: "25%",
-          }}
-          InputLeftElement={
-            <Icon
-              as={<MaterialIcons name="phone" />}
-              size={5}
-              ml="2"
-              color="muted.400"
-            />
-          }
-          keyboardType="phone-pad"
-        />
-        {"phone" in errors ? (
-          <FormControl.ErrorMessage>{errors.phone}</FormControl.ErrorMessage>
-        ) : null}
-      </FormControl>
-      <FormControl isRequired isInvalid={"email" in errors}>
-        <FormControl.Label>Email</FormControl.Label>
-        <Input
-          variant="rounded"
-          value={email}
-          onChangeText={setEmail}
-          w={{
-            base: "100%",
-            md: "25%",
-          }}
-          InputLeftElement={
-            <Icon
-              as={<MaterialIcons name="email" />}
-              size={5}
-              ml="2"
-              color="muted.400"
-            />
-          }
-          keyboardType="email-address"
-        />
-        {"email" in errors ? (
-          <FormControl.ErrorMessage>{errors.email}</FormControl.ErrorMessage>
-        ) : null}
-      </FormControl>
-      <FormControl isRequired isInvalid={"password" in errors}>
-        <FormControl.Label>Mật khẩu</FormControl.Label>
-        <Input
-          variant="rounded"
-          InputLeftElement={
-            <Icon
-              as={<MaterialIcons name="password" />}
-              size={5}
-              ml="2"
-              color="muted.400"
-            />
-          }
-          value={password}
-          onChangeText={setPassword}
-          w={{
-            base: "100%",
-            md: "25%",
-          }}
-          type={showPassword ? "text" : "password"}
-          InputRightElement={
-            <Pressable onPress={() => setShowPassword(!showPassword)}>
-              <Icon
-                as={
-                  <MaterialIcons
-                    name={showPassword ? "visibility" : "visibility-off"}
-                  />
-                }
-                size={5}
-                mr="2"
-                color="muted.400"
-              />
-            </Pressable>
-          }
-          placeholder=""
-        />
-        {"password" in errors ? (
-          <FormControl.ErrorMessage>{errors.password}</FormControl.ErrorMessage>
-        ) : null}
-      </FormControl>
-      {isRegister && (
-        <FormControl isRequired isInvalid={"rePass" in errors}>
-          <FormControl.Label>Nhập lại mật khẩu</FormControl.Label>
-          <Input
-            variant="rounded"
-            InputLeftElement={
-              <Icon
-                as={<MaterialIcons name="password" />}
-                size={5}
-                ml="2"
-                color="muted.400"
-              />
-            }
-            type="password"
-            value={confirmPassword}
-            onChangeText={setConfirmPassword}
-          />
-          {"confirmPassword" in errors ? (
-            <FormControl.ErrorMessage>
-              {errors.confirmPassword}
-            </FormControl.ErrorMessage>
-          ) : null}
-        </FormControl>
-      )}
-      {/* <FormControl isRequired isInvalid={"birthdate" in errors}>
-        <FormControl.Label>Ngày sinh</FormControl.Label>
-        <Input
-          variant="rounded"
-          InputLeftElement={
-            <Icon
-              as={<MaterialIcons name="calendar-month" />}
-              size={5}
-              ml="2"
-              color="muted.400"
-            />
-          }
-          onPress={showDatepicker}
-          value={date.setFullYear + ""}
-          onChangeText={setRePass}
-        />
-        {"birthdate" in errors ? (
-          <FormControl.ErrorMessage>
-            {errors.birthdate}
-          </FormControl.ErrorMessage>
-        ) : null}
-        {show && (
-          <DateTimePicker
-            testID="dateTimePicker"
-            value={date}
-            mode="datetime"
-            display="default"
-            onChange={onChange}
-          />
-        )}
-        {"birthdate" in errors ? (
-          <FormControl.ErrorMessage>
-            {errors.birthdate}
-          </FormControl.ErrorMessage>
-        ) : null}
-      </FormControl> */}
-      {/* //Chọn tỉnh */}
-      <FormControl isRequired isInvalid={"province" in errors}>
-        <FormControl.Label>Tỉnh</FormControl.Label>
-        <Select
-          variant="rounded"
-          selectedValue={province}
-          minWidth="200"
-          // accessibilityLabel="Choose Service"
-          placeholder="Chọn tỉnh"
-          _selectedItem={{
-            bg: "teal.600",
-            endIcon: <CheckIcon size="5" />,
-          }}
-          mt={1}
-          onValueChange={(itemValue) => setProvince(itemValue)}
-        >
-          <Select.Item label="UX Research" value="ux" />
-          <Select.Item label="Web Development" value="web" />
-          <Select.Item label="Cross Platform Development" value="cross" />
-          <Select.Item label="UI Designing" value="ui" />
-          <Select.Item label="Backend Development" value="backend" />
-        </Select>
-        {"province" in errors ? (
-          <FormControl.ErrorMessage>{errors.province}</FormControl.ErrorMessage>
-        ) : null}
-      </FormControl>
-      {/* //Chọn quận/huyện */}
-      <FormControl isRequired isInvalid={"district" in errors}>
-        <FormControl.Label>Quận/huyện</FormControl.Label>
-        <Select
-          variant="rounded"
-          selectedValue={district}
-          minWidth="200"
-          // accessibilityLabel="Choose Service"
-          placeholder="Chọn quận/huyện"
-          _selectedItem={{
-            bg: "teal.600",
-            endIcon: <CheckIcon size="5" />,
-          }}
-          mt={1}
-          onValueChange={(itemValue) => setDistrict(itemValue)}
-        >
-          <Select.Item label="UX Research" value="ux" />
-          <Select.Item label="Web Development" value="web" />
-          <Select.Item label="Cross Platform Development" value="cross" />
-          <Select.Item label="UI Designing" value="ui" />
-          <Select.Item label="Backend Development" value="backend" />
-        </Select>
-        {"district" in errors ? (
-          <FormControl.ErrorMessage>{errors.district}</FormControl.ErrorMessage>
-        ) : null}
-      </FormControl>
-      {/* //Chọn phường/xã */}
-      <FormControl isRequired isInvalid={"ward" in errors}>
-        <FormControl.Label>Phường/xã</FormControl.Label>
-        <Select
-          variant="rounded"
-          selectedValue={ward}
-          minWidth="200"
-          // accessibilityLabel="Choose Service"
-          placeholder="Chọn phường/xã"
-          _selectedItem={{
-            bg: "teal.600",
-            endIcon: <CheckIcon size="5" />,
-          }}
-          mt={1}
-          onValueChange={(itemValue) => setWard(itemValue)}
-        >
-          <Select.Item label="UX Research" value="ux" />
-          <Select.Item label="Web Development" value="web" />
-          <Select.Item label="Cross Platform Development" value="cross" />
-          <Select.Item label="UI Designing" value="ui" />
-          <Select.Item label="Backend Development" value="backend" />
-        </Select>
-        {"ward" in errors ? (
-          <FormControl.ErrorMessage>{errors.ward}</FormControl.ErrorMessage>
-        ) : null}
-      </FormControl>
+  render() {
+    const { provinces, districts, wards, errors } = this.state;
 
-      <Button
-        marginTop={5}
-        style={{
-          borderRadius: 20,
-          padding: 12,
-          backgroundColor: Colors.primary,
-        }}
-        mt="2"
-        colorScheme="indigo"
-        onPress={handleSubmit}
-      >
-        {buttonLabel}
-      </Button>
-    </VStack>
-  );
-};
+    return (
+        <VStack space={3} mt="5">
+          {/* Name Field */}
+          <FormControl isRequired isInvalid={"name" in errors}>
+            <FormControl.Label>Tên người dùng</FormControl.Label>
+            <Input
+                variant="rounded"
+                value={this.state.name}
+                onChangeText={(text) => this.setState({ name: text })}
+                w={{ base: "100%", md: "25%" }}
+                InputLeftElement={<Icon as={<MaterialIcons name="person" />} size={5} ml="2" color="muted.400" />}
+                keyboardType="default"
+            />
+            {"name" in errors ? <FormControl.ErrorMessage>{errors.name}</FormControl.ErrorMessage> : null}
+          </FormControl>
+
+          {/* Phone Field */}
+          <FormControl isRequired isInvalid={"phone" in errors}>
+            <FormControl.Label>Số điện thoại</FormControl.Label>
+            <Input
+                variant="rounded"
+                value={this.state.phone}
+                onChangeText={(text) => this.setState({ phone: text })}
+                w={{ base: "100%", md: "25%" }}
+                InputLeftElement={<Icon as={<MaterialIcons name="phone" />} size={5} ml="2" color="muted.400" />}
+                keyboardType="phone-pad"
+            />
+            {"phone" in errors ? <FormControl.ErrorMessage>{errors.phone}</FormControl.ErrorMessage> : null}
+          </FormControl>
+
+          {/* Email Field */}
+          <FormControl isRequired isInvalid={"email" in errors}>
+            <FormControl.Label>Email</FormControl.Label>
+            <Input
+                variant="rounded"
+                value={this.state.email}
+                onChangeText={(text) => this.setState({ email: text })}
+                w={{ base: "100%", md: "25%" }}
+                InputLeftElement={<Icon as={<MaterialIcons name="email" />} size={5} ml="2" color="muted.400" />}
+                keyboardType="email-address"
+            />
+            {"email" in errors ? <FormControl.ErrorMessage>{errors.email}</FormControl.ErrorMessage> : null}
+          </FormControl>
+
+          {/* Password Field */}
+          <FormControl isRequired isInvalid={"password" in errors}>
+            <FormControl.Label>Mật khẩu</FormControl.Label>
+            <Input
+                variant="rounded"
+                InputLeftElement={<Icon as={<MaterialIcons name="password" />} size={5} ml="2" color="muted.400" />}
+                value={this.state.password}
+                onChangeText={(text) => this.setState({ password: text })}
+                w={{ base: "100%", md: "25%" }}
+                type={this.state.showPassword ? "text" : "password"}
+                InputRightElement={
+                  <Pressable onPress={() => this.setState({ showPassword: !this.state.showPassword })}>
+                    <Icon as={<MaterialIcons name={this.state.showPassword ? "visibility" : "visibility-off"} />} size={5} mr="2" color="muted.400" />
+                  </Pressable>
+                }
+                placeholder=""
+            />
+            {"password" in errors ? <FormControl.ErrorMessage>{errors.password}</FormControl.ErrorMessage> : null}
+          </FormControl>
+
+          {/*tỉnh*/}
+          <FormControl isRequired isInvalid={"province" in errors}>
+            <FormControl.Label>Tỉnh</FormControl.Label>
+            <Select
+                variant="rounded"
+                selectedValue={this.state.province}
+                minWidth="200"
+                placeholder="Chọn tỉnh"
+                _selectedItem={{ bg: "teal.600", endIcon: <CheckIcon size="5" /> }}
+                mt={1}
+                onValueChange={this.handleProvinceChange}
+            >
+              {provinces.map((item: any) => (
+                  <Select.Item key={item.code} label={item.name} value={item.name} />
+              ))}
+            </Select>
+            {"province" in errors ? <FormControl.ErrorMessage>{errors.province}</FormControl.ErrorMessage> : null}
+          </FormControl>
+
+          {/*Huyện*/}
+          <FormControl isRequired isInvalid={"district" in errors}>
+            <FormControl.Label>Quận/huyện</FormControl.Label>
+            <Select
+                variant="rounded"
+                selectedValue={this.state.district}
+                minWidth="200"
+                placeholder="Chọn quận/huyện"
+                _selectedItem={{ bg: "teal.600", endIcon: <CheckIcon size="5" /> }}
+                mt={1}
+                onValueChange={this.handleDistrictChange}
+            >
+              {districts.map((item: any) => (
+                  <Select.Item key={item.code} label={item.name} value={item.name} />
+              ))}
+            </Select>
+            {"district" in errors ? <FormControl.ErrorMessage>{errors.district}</FormControl.ErrorMessage> : null}
+          </FormControl>
+
+          {/*xã*/}
+          <FormControl isRequired isInvalid={"ward" in errors}>
+            <FormControl.Label>Phường/xã</FormControl.Label>
+            <Select
+                variant="rounded"
+                selectedValue={this.state.ward}
+                minWidth="200"
+                placeholder="Chọn phường/xã"
+                _selectedItem={{ bg: "teal.600", endIcon: <CheckIcon size="5" /> }}
+                mt={1}
+                onValueChange={(itemValue: string) => this.setState({ ward: itemValue })}
+            >
+              {wards.map((item: any) => (
+                  <Select.Item key={item.code} label={item.name} value={item.name} />
+              ))}
+            </Select>
+            {"ward" in errors ? <FormControl.ErrorMessage>{errors.ward}</FormControl.ErrorMessage> : null}
+          </FormControl>
+
+          {/* Submit Button */}
+          <Button
+              marginTop={5}
+              style={{ borderRadius: 20, padding: 12, backgroundColor: Colors.primary }}
+              mt="2"
+              colorScheme="indigo"
+              onPress={this.handleSubmit}
+          >
+            {this.props.buttonLabel}
+          </Button>
+        </VStack>
+    );
+  }
+}
 
 export default UserInfor;
