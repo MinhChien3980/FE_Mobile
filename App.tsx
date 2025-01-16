@@ -15,6 +15,7 @@ export type RootStackParamList = {
   Tracking: undefined;
   NewPassword: undefined;
   ProductDetail: undefined;
+  MainTabs: undefined;
 };
 const App = () => {
   return (

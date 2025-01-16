@@ -89,40 +89,26 @@ export default function Login() {
     }
   };
   const login = async () => {
-    // navigation.navigate("Home");
     const loginData: userLogin = { email, password };
-
-    console.log("🚀 ~ login ~ loginData:", loginData);
     try {
       const response = await getUserToken(loginData);
       if (response.status === 200) {
-        const data = response.data.data;
-        const token = data.token;
-        console.log("🚀 ~ login ~ token:", token);
-
+        const token = response.data.data.token;
         if (token) {
           await SecureStore.setItemAsync("userToken", token);
-
-          showToast({
-            type: "success",
-            message: "Đăng nhập thành công",
+          console.log(token)
+          showToast({ type: "success", message: "Đăng nhập thành công" });
+          navigation.reset({
+            index: 0,
+            routes: [{ name: "MainTabs" }],
           });
-          navigation.navigate("Home");
         }
       }
-    } catch (error: any) {
-      // Kiểm tra nếu lỗi là từ response
-      // const errorMessage =
-      //   error.response?.data?.message || error.message || "Lỗi kết nối";
-      // showToast({
-      //   type: "error",
-      //   message: errorMessage,
-      // });
-      // Alert.alert("Thất bại", errorMessage);
-      // console.log(error);
-      // navigation.navigate("Home");
+    } catch (error) {
+      console.error("Login error:", error);
     }
   };
+  
   const handleResetPassword = () => {
     navigation.navigate("Verify");
     // if (validate()) {

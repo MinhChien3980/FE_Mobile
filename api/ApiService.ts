@@ -3,7 +3,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 // Base URL cho API
 
-const baseUrl: string = "http://192.168.88.105:8080/";
+const baseUrl: string = "http://10.0.1.243:8080/";
 
 // Hàm lấy token từ AsyncStorage
 const getToken = async (): Promise<string | null> => {
