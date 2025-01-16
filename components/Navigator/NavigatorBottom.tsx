@@ -11,7 +11,9 @@ import Cart from "../../pages/Cart/Cart";
 import Favorites from "../../pages/WishList/FavouritesScreen";
 import Profile from "../../pages/Profile/Profile";
 import Login from "../../pages/Login/Login";
+
 import Register from "../../pages/Register/Register";
+
 
 // Tạo các navigator
 const Stack = createStackNavigator();
@@ -23,7 +25,6 @@ const TabNavigator = () => (
     screenOptions={({ route }) => ({
       tabBarIcon: ({ focused, color, size }) => {
         let iconName: string = "";
-
         if (route.name === "Home") iconName = "home";
         else if (route.name === "Products") iconName = "list";
         else if (route.name === "Cart") iconName = "cart";
@@ -92,3 +93,4 @@ const AppNavigator = () => {
 };
 
 export default AppNavigator;
+
