@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   View,
   Text,
@@ -10,46 +10,77 @@ import {
 import { Picker } from "@react-native-picker/picker";
 import { Ionicons } from "@expo/vector-icons";
 import { NavigationProp, useNavigation } from "@react-navigation/native";
-import { RootStackParamList } from "@/app";
-import { launchImageLibrary, ImageLibraryOptions, Asset } from "react-native-image-picker"; 
-
-interface FakeProfileData {
-  name: string;
-  phoneNumber: string;
-  gender: string;
-  avatarUrl: string;
-  countryCode: string;
-}
-
-const fakeProfileData: FakeProfileData = {
-  name: "John Doe",
-  phoneNumber: "",
-  gender: "Select",
-  avatarUrl: "../../assets/images/proFake_2.jpeg",
-  countryCode: "+1",
-};
+import * as ImagePicker from "expo-image-picker";
+import { RootStackParamList } from "../../App";
 
 const ProfileCompletionScreen = () => {
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
-  const [name, setName] = useState<string>(fakeProfileData.name);
-  const [phoneNumber, setPhoneNumber] = useState<string>(
-    fakeProfileData.phoneNumber
-  );
-  const [gender, setGender] = useState<string>(fakeProfileData.gender);
-  const [countryCode, setCountryCode] = useState<string>(
-    fakeProfileData.countryCode
-  );
-  const [avatarUrl, setAvatarUrl] = useState<string>(fakeProfileData.avatarUrl);
+  const [name, setName] = useState<string>("John Doe");
+  const [phoneNumber, setPhoneNumber] = useState<string>("");
+  const [gender, setGender] = useState<string>("Select");
+  const [avatarUrl, setAvatarUrl] = useState<string>("");
 
-  // set up lỗi required
+  // Lỗi required
   const [nameError, setNameError] = useState<boolean>(false);
   const [phoneNumberError, setPhoneNumberError] = useState<boolean>(false);
   const [genderError, setGenderError] = useState<boolean>(false);
+  const [addressError, setAddressError] = useState<boolean>(false);
+
+  // State cho API địa chỉ
+  const [provinces, setProvinces] = useState<any[]>([]);
+  const [districts, setDistricts] = useState<any[]>([]);
+  const [wards, setWards] = useState<any[]>([]);
+
+  const [province, setProvince] = useState<string>("Select");
+  const [district, setDistrict] = useState<string>("Select");
+  const [ward, setWard] = useState<string>("Select");
+
+  useEffect(() => {
+    (async () => {
+      const { status } =
+          await ImagePicker.requestMediaLibraryPermissionsAsync();
+      if (status !== "granted") {
+        alert("Sorry, we need camera roll permissions to make this work!");
+      }
+    })();
+
+    fetchProvinces();
+  }, []);
+
+  const fetchProvinces = async () => {
+    try {
+      const response = await fetch("https://provinces.open-api.vn/api/?depth=3");
+      const data = await response.json();
+      setProvinces(data);
+    } catch (error) {
+      console.error("Error fetching provinces:", error);
+    }
+  };
+
+  useEffect(() => {
+    if (province !== "Select") {
+      const selectedProvince = provinces.find(
+          (prov) => prov.code === Number(province)
+      );
+      setDistricts(selectedProvince?.districts || []);
+      setDistrict("Select");
+      setWard("Select");
+    }
+  }, [province]);
+
+  useEffect(() => {
+    if (district !== "Select") {
+      const selectedDistrict = districts.find(
+          (dist) => dist.code === Number(district)
+      );
+      setWards(selectedDistrict?.wards || []);
+      setWard("Select");
+    }
+  }, [district]);
 
   const handleCompleteProfile = () => {
     let hasError = false;
 
-    // Kiểm tra từng trường xem có bỏ trống không
     if (!name.trim()) {
       setNameError(true);
       hasError = true;
@@ -71,133 +102,134 @@ const ProfileCompletionScreen = () => {
       setGenderError(false);
     }
 
+    if (province === "Select" || district === "Select" || ward === "Select") {
+      setAddressError(true);
+      hasError = true;
+    } else {
+      setAddressError(false);
+    }
+
     if (!hasError) {
       console.log("Profile Completed");
     }
   };
 
-  const handleChangeAvatar = () => {
-    const options : ImageLibraryOptions = {
-      mediaType: 'photo',
+  const handleChangeAvatar = async () => {
+    const result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
       quality: 1,
-    };
-
-    launchImageLibrary(options, (response) => {
-      if (response.didCancel) {
-        console.log("User cancelled image picker");
-      } else if (response.errorMessage) {
-        console.log("ImagePicker Error: ", response.errorMessage);
-      } else if (response.assets) {
-        const source = response.assets[0].uri; // Accessing uri directly without type assertion
-        setAvatarUrl(source || ""); // Update avatar URL with the selected image
-      }
     });
-  };
 
-  const countryCodes = Array.from({ length: 99 }, (_, i) => `+${i + 1}`);
-
-  const handleBack = () => {
-    let hasError = false;
-    if (!hasError) {
-      console.log("Profile Completed");
+    if (!result.canceled && result.assets?.[0].uri) {
+      setAvatarUrl(result.assets[0].uri);
     }
-    console.log("quay lại trang trước");
-    navigation.navigate("Tracking");
   };
 
   return (
-    <View style={styles.container}>
-      <TouchableOpacity style={styles.backButton}>
-        <Text onPress={() => handleBack()}>
-          <Ionicons name="arrow-back" size={24} color="black"/>
-        </Text>
-      </TouchableOpacity>
-
-      <Text style={styles.title}>Complete Your Profile</Text>
-      <Text style={styles.subtitle}>
-        Don't worry, only you can see your personal data. No one else will be
-        able to see it.
-      </Text>
-
-      <View style={styles.avatarContainer}>
-        <Image
-          source={{ uri: avatarUrl }}
-          style={styles.avatar}
-        />
-        <TouchableOpacity style={styles.editIconContainer}>
-          <Text onPress={handleChangeAvatar}>
-            <Ionicons name="pencil" size={16} color="white" />
+      <View style={styles.container}>
+        <TouchableOpacity style={styles.backButton}>
+          <Text onPress={() => navigation.goBack()}>
+            <Ionicons name="arrow-back" size={24} color="black" />
           </Text>
         </TouchableOpacity>
-      </View>
 
-      <Text>Tên</Text>
-      <View style={styles.form}>
-        <TextInput
-          style={[styles.input, nameError && styles.errorInput]}
-          placeholder="Name"
-          value={name}
-          onChangeText={setName}
-        />
-      </View>
-      {nameError && (
-        <Text style={styles.errorText}>* Thông tin này là bắt buộc</Text>
-      )}
+        <Text style={styles.title}>Complete Your Profile</Text>
 
-      <Text>Số điện thoại</Text>
-      <View
-        style={[
-          styles.phoneInputContainer,
-          phoneNumberError && styles.errorInput,
-        ]}
-      >
-        <View style={styles.countryPickerContainer}>
-          <Picker
-            selectedValue={countryCode}
-            onValueChange={(itemValue) => setCountryCode(itemValue)}
-            style={styles.countryPicker}
-          >
-            {countryCodes.map((code) => (
-              <Picker.Item key={code} label={code} value={code} />
-            ))}
-          </Picker>
+        <View style={styles.avatarContainer}>
+          <Image source={{ uri: avatarUrl }} style={styles.avatar} />
+          <TouchableOpacity style={styles.editIconContainer}>
+            <Text onPress={handleChangeAvatar}>
+              <Ionicons name="pencil" size={16} color="white" />
+            </Text>
+          </TouchableOpacity>
         </View>
-        <TextInput
-          style={styles.phoneInput}
-          placeholder="Enter Phone Number"
-          value={phoneNumber}
-          onChangeText={setPhoneNumber}
-          keyboardType="phone-pad"
-        />
-      </View>
-      {phoneNumberError && (
-        <Text style={styles.errorText}>* Thông tin này là bắt buộc</Text>
-      )}
 
-      <Text>Giới tính</Text>
-      <View style={[styles.pickerContainer, genderError && styles.errorInput]}>
+        <Text>Tên</Text>
+        <TextInput
+            style={[styles.input, nameError && styles.errorInput]}
+            placeholder="Name"
+            value={name}
+            onChangeText={setName}
+        />
+        {nameError && <Text style={styles.errorText}>* Thông tin này là bắt buộc</Text>}
+
+        <Text>Số điện thoại</Text>
+        <TextInput
+            style={[styles.input, phoneNumberError && styles.errorInput]}
+            placeholder="Enter Phone Number"
+            value={phoneNumber}
+            onChangeText={setPhoneNumber}
+            keyboardType="numeric"
+        />
+        {phoneNumberError && <Text style={styles.errorText}>* Thông tin này là bắt buộc</Text>}
+
+        <Text>Giới tính</Text>
         <Picker
-          selectedValue={gender}
-          onValueChange={(itemValue) => setGender(itemValue)}
-          style={styles.picker}
+            selectedValue={gender}
+            onValueChange={(itemValue) => setGender(itemValue)}
+            style={styles.picker}
         >
           <Picker.Item label="Chọn" value="Select" />
           <Picker.Item label="Nam" value="Male" />
           <Picker.Item label="Nữ" value="Female" />
           <Picker.Item label="Khác" value="Other" />
         </Picker>
-      </View>
-      {genderError && (
-        <Text style={[styles.errorText, styles.lastError]}>* Thông tin này là bắt buộc</Text>
-      )}
+        {genderError && <Text style={styles.errorText}>* Thông tin này là bắt buộc</Text>}
 
-      <TouchableOpacity
-        style={styles.completeButton}
-        onPress={handleCompleteProfile}
-      >
-        <Text style={styles.completeButtonText}>Xác nhận</Text>
-      </TouchableOpacity>
-    </View>
+        <Text style={styles.address}>Tỉnh/Thành phố</Text>
+        <Picker
+            selectedValue={province}
+            onValueChange={(itemValue) => setProvince(itemValue)}
+            style={styles.picker}
+        >
+          <Picker.Item label="Chọn Tỉnh/Thành phố" value="Select" />
+          {provinces.map((prov) => (
+              <Picker.Item
+                  key={prov.code}
+                  label={prov.name}
+                  value={String(prov.code)}
+              />
+          ))}
+        </Picker>
+
+        <Text style={styles.address}>Quận/Huyện</Text>
+        <Picker
+            selectedValue={district}
+            onValueChange={(itemValue) => setDistrict(itemValue)}
+            style={styles.picker}
+            enabled={province !== "Select"}
+        >
+          <Picker.Item label="Chọn Quận/Huyện" value="Select" />
+          {districts.map((dist) => (
+              <Picker.Item
+                  key={dist.code}
+                  label={dist.name}
+                  value={String(dist.code)}
+              />
+          ))}
+        </Picker>
+
+        <Text style = {styles.address} >Phường/Xã</Text>
+        <Picker
+            selectedValue={ward}
+            onValueChange={(itemValue) => setWard(itemValue)}
+            style={styles.picker}
+            enabled={district !== "Select"}
+        >
+          <Picker.Item label="Chọn Phường/Xã" value="Select" />
+          {wards.map((w) => (
+              <Picker.Item key={w.code} label={w.name} value={String(w.code)} />
+          ))}
+        </Picker>
+        {addressError && <Text style={styles.errorText}>* Thông tin địa chỉ là bắt buộc</Text>}
+
+        <TouchableOpacity
+            style={styles.completeButton}
+            onPress={handleCompleteProfile}
+        >
+          <Text style={styles.completeButtonText}>Xác nhận</Text>
+        </TouchableOpacity>
+      </View>
   );
 };
 
@@ -219,12 +251,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginBottom: 8,
   },
-  subtitle: {
-    textAlign: "center",
-    color: "#666",
-    marginBottom: 24,
-    paddingHorizontal: 16,
-  },
   avatarContainer: {
     alignSelf: "center",
     marginBottom: 24,
@@ -240,64 +266,30 @@ const styles = StyleSheet.create({
     position: "absolute",
     right: 0,
     bottom: 0,
-    backgroundColor: "#8B4513", // Màu nâu cho icon
+    backgroundColor: "#8B4513",
     borderRadius: 20,
     padding: 5,
-  },
-  form: {
   },
   input: {
     backgroundColor: "#f9f9f9",
     borderRadius: 8,
-    padding: 12,
+    paddingVertical: 8,
+    paddingHorizontal: 2,
     marginBottom: 16,
     fontSize: 16,
     borderWidth: 1,
     borderColor: "#e0e0e0",
-  },
-  phoneInputContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    backgroundColor: "#f9f9f9",
-    borderRadius: 8,
-    padding: 12,
-    marginBottom: 16,
-    borderWidth: 1,
-    borderColor: "#e0e0e0",
-  },
-  countryCode: {
-    marginRight: 8,
-    fontSize: 16,
-    color: "#666",
-  },
-  countryPickerContainer: {
-    flex: 0.2,
-  },
-  countryPicker: {
-    height: 35,
-    width: "80%",
-  },
-  phoneInput: {
-    flex: 0.7,
-    fontSize: 16,
-    height: 35,
-  },
-  pickerContainer: {
-    backgroundColor: "#f9f9f9",
-    borderRadius: 8,
-    borderWidth: 1,
-    borderColor: "#e0e0e0",
-    marginBottom: 16,
   },
   picker: {
     height: 45,
     width: "100%",
   },
   completeButton: {
-    backgroundColor: "#8B4513", // Màu nâu cho nút hoàn thành
+    backgroundColor: "#8B4513",
     borderRadius: 8,
     paddingVertical: 14,
     alignItems: "center",
+    marginTop: 10
   },
   completeButtonText: {
     color: "#fff",
@@ -313,8 +305,8 @@ const styles = StyleSheet.create({
   errorInput: {
     borderColor: "red",
   },
-  lastError: {
-    marginBottom: 24,
+  address: {
+    marginTop: 10
   }
 });
 

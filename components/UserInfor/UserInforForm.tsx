@@ -14,8 +14,9 @@ import {
 import { MaterialIcons } from "@expo/vector-icons";
 import { useState } from "react";
 import { FlatList, Platform } from "react-native";
-import { userData, userRegister } from "@/interface/user";
-import DateTimePicker from "@react-native-community/datetimepicker";
+// import Test from "../Test/TestDateTime";
+import { userRegister } from "../../interface/user";
+import { Colors } from "../../assets/color/color";
 interface UserInforProps {
   isRegister: boolean;
   onSubmit: (data: any) => void;
@@ -32,7 +33,7 @@ const UserInfor = ({
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState(userData?.email || "");
   const [password, setPassword] = useState(userData?.password || "");
-  const [rePass, setRePass] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   //Error
   const [errors, setErrors] = useState<any>({});
   // Address
@@ -108,12 +109,12 @@ const UserInfor = ({
         field: "password",
       },
       {
-        condition: isRegister && !rePass,
+        condition: isRegister && !confirmPassword,
         message: "Hãy nhập lại mật khẩu của bạn",
         field: "rePass",
       },
       {
-        condition: isRegister && password !== rePass,
+        condition: isRegister && password !== confirmPassword,
         message: "Mật khẩu không khớp",
         field: "rePass",
       },
@@ -289,15 +290,17 @@ const UserInfor = ({
               />
             }
             type="password"
-            value={rePass}
-            onChangeText={setRePass}
+            value={confirmPassword}
+            onChangeText={setConfirmPassword}
           />
-          {"rePass" in errors ? (
-            <FormControl.ErrorMessage>{errors.rePass}</FormControl.ErrorMessage>
+          {"confirmPassword" in errors ? (
+            <FormControl.ErrorMessage>
+              {errors.confirmPassword}
+            </FormControl.ErrorMessage>
           ) : null}
         </FormControl>
       )}
-      <FormControl isRequired isInvalid={"birthdate" in errors}>
+      {/* <FormControl isRequired isInvalid={"birthdate" in errors}>
         <FormControl.Label>Ngày sinh</FormControl.Label>
         <Input
           variant="rounded"
@@ -310,7 +313,7 @@ const UserInfor = ({
             />
           }
           onPress={showDatepicker}
-          value={date + ""}
+          value={date.setFullYear + ""}
           onChangeText={setRePass}
         />
         {"birthdate" in errors ? (
@@ -322,7 +325,7 @@ const UserInfor = ({
           <DateTimePicker
             testID="dateTimePicker"
             value={date}
-            mode="date"
+            mode="datetime"
             display="default"
             onChange={onChange}
           />
@@ -332,7 +335,7 @@ const UserInfor = ({
             {errors.birthdate}
           </FormControl.ErrorMessage>
         ) : null}
-      </FormControl>
+      </FormControl> */}
       {/* //Chọn tỉnh */}
       <FormControl isRequired isInvalid={"province" in errors}>
         <FormControl.Label>Tỉnh</FormControl.Label>
@@ -417,7 +420,7 @@ const UserInfor = ({
         style={{
           borderRadius: 20,
           padding: 12,
-          backgroundColor: "#704F38",
+          backgroundColor: Colors.primary,
         }}
         mt="2"
         colorScheme="indigo"

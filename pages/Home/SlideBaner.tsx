@@ -1,6 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {View, Image, StyleSheet, TouchableOpacity, Animated, Dimensions, Text} from 'react-native';
-import style from '../../style';
+import {View, Image, StyleSheet, TouchableOpacity, Animated, Dimensions, PanResponder} from 'react-native';
+import style from "../../assets/styles/style";
 
 interface Banner {
     id: number;
@@ -15,13 +15,38 @@ const banners: Banner[] = [
     {id: 5, image: require('../../assets/images/banner_4.jpeg')},
 ];
 
-// Get screen width
 const {width} = Dimensions.get('window');
 
 export function SlideBanner(): JSX.Element {
-    const [currentSlide, setCurrentSlide] = useState<number>(0);
+    const [currentSlide, setCurrentSlide] = useState<number>(1); // Bắt đầu từ slide "giả" thứ 2
+    const translateX = useRef(new Animated.Value(-width)).current; // Dịch chuyển đến slide "thực" đầu tiên
     const slideInterval = useRef<NodeJS.Timeout | null>(null);
-    const translateX = useRef(new Animated.Value(0)).current;
+    const isSwiping = useRef(false);
+
+    const panResponder = PanResponder.create({
+        onMoveShouldSetPanResponder: (_, gestureState) => Math.abs(gestureState.dx) > 10,
+        onPanResponderGrant: () => {
+            if (slideInterval.current) {
+                clearInterval(slideInterval.current);
+            }
+            isSwiping.current = true;
+        },
+        onPanResponderMove: (_, gestureState) => {
+            translateX.setValue(-currentSlide * width + gestureState.dx);
+        },
+        onPanResponderRelease: (_, gestureState) => {
+            const swipeThreshold = width / 4;
+            if (gestureState.dx > swipeThreshold) {
+                goToSlide(currentSlide - 1);
+            } else if (gestureState.dx < -swipeThreshold) {
+                goToSlide(currentSlide + 1);
+            } else {
+                goToSlide(currentSlide);
+            }
+            isSwiping.current = false;
+            startSlideShow();
+        }
+    });
 
     useEffect(() => {
         startSlideShow();
@@ -30,65 +55,76 @@ export function SlideBanner(): JSX.Element {
                 clearInterval(slideInterval.current);
             }
         };
-    }, []);
+    }, [currentSlide]);
 
     const startSlideShow = () => {
-        slideInterval.current = setInterval(() => {
-            goToNextSlide();
-        }, 3000);
+        if (!isSwiping.current) {
+            slideInterval.current = setInterval(() => {
+                goToNextSlide();
+            }, 3000);
+        }
     };
 
     const goToSlide = (index: number) => {
-        setCurrentSlide(index);
         Animated.timing(translateX, {
             toValue: -index * width,
             duration: 300,
             useNativeDriver: true,
-        }).start();
-
-        if (slideInterval.current) {
-            clearInterval(slideInterval.current);
-        }
-        startSlideShow();
+        }).start(() => {
+            // Điều chỉnh vị trí nếu vuốt qua slide giả
+            if (index === 0) {
+                setCurrentSlide(banners.length);
+                translateX.setValue(-banners.length * width);
+            } else if (index === banners.length + 1) {
+                setCurrentSlide(1);
+                translateX.setValue(-width);
+            } else {
+                setCurrentSlide(index);
+            }
+        });
     };
 
     const goToNextSlide = () => {
-        const nextSlide = currentSlide === banners.length - 1 ? 0 : currentSlide + 1;
-        goToSlide(nextSlide);
-    };
-
-    const goToPreviousSlide = () => {
-        const prevSlide = currentSlide === 0 ? banners.length - 1 : currentSlide - 1;
-        goToSlide(prevSlide);
+        goToSlide(currentSlide + 1);
     };
 
     return (
-        <View style={styles.slider}>
+        <View style={styles.slider} {...panResponder.panHandlers}>
             <Animated.View
                 style={[
                     styles.slides,
                     {
                         transform: [{translateX}],
-                    }
+                    },
                 ]}
             >
+                {/* Slide cuối cùng thêm vào đầu */}
+                <View style={styles.slide}>
+                    <Image source={banners[banners.length - 1].image} style={styles.image} resizeMode="contain"/>
+                </View>
+
+                {/* Các slide thực */}
                 {banners.map((banner) => (
                     <View key={banner.id} style={styles.slide}>
-                        <Image source={banner.image} style={styles.image} resizeMode="contain"/> {/* Change here */}
+                        <Image source={banner.image} style={styles.image} resizeMode="contain"/>
                     </View>
                 ))}
+
+                {/* Slide đầu tiên thêm vào cuối */}
+                <View style={styles.slide}>
+                    <Image source={banners[0].image} style={styles.image} resizeMode="contain"/>
+                </View>
             </Animated.View>
 
             <View style={styles.dots}>
                 {banners.map((_, index) => (
                     <TouchableOpacity
                         key={index}
-                        style={[styles.dot, index === currentSlide && styles.activeDot]}
-                        onPress={() => goToSlide(index)}
+                        style={[styles.dot, index === currentSlide - 1 && styles.activeDot]}
+                        onPress={() => goToSlide(index + 1)}
                     />
                 ))}
             </View>
-
         </View>
     );
 }
@@ -108,12 +144,12 @@ const styles = StyleSheet.create({
     slide: {
         width: width,
         height: '100%',
-        justifyContent: 'center', // Center the image vertically
-        alignItems: 'center', // Center the image horizontally
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     image: {
-        width: '100%', // Fill the width of the container
-        height: '100%', // Fill the height of the container
+        width: '100%',
+        height: '100%',
     },
     dots: {
         position: 'absolute',
@@ -129,32 +165,11 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         backgroundColor: '#aeabab',
         marginHorizontal: 5,
-        borderColor: style.primaryColor
+        borderColor: style.primaryColor,
     },
     activeDot: {
         backgroundColor: style.primaryColor,
     },
-    prevButton: {
-        position: 'absolute',
-        left: 10,
-        top: '50%',
-        transform: [{translateY: -50}],
-        zIndex: 1,
-    },
-    nextButton: {
-        position: 'absolute',
-        right: 10,
-        top: '50%',
-        transform: [{translateY: -50}],
-        zIndex: 1,
-    },
-    buttonContent: {
-        backgroundColor: 'rgba(0, 0, 0, 0.5)',
-        borderRadius: 20,
-        padding: 10,
-    },
-    buttonText: {
-        color: '#fff',
-        fontSize: 20,
-    },
 });
+
+export default SlideBanner;

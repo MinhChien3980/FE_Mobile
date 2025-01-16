@@ -1,0 +1,5644 @@
+{
+    "Sheet1": [
+      {
+        "id": 1,
+        "tỉnh": "An Giang ",
+        "huyện": " Huyện Chợ Mới",
+        "normal_tỉnh": "An Giang ",
+        "normal_huyện": " Huyen Cho Moi",
+        "location_id": 1
+      },
+      {
+        "id": 2,
+        "tỉnh": "An Giang ",
+        "huyện": " Huyện Châu Phú",
+        "normal_tỉnh": "An Giang ",
+        "normal_huyện": " Huyen Chau Phu",
+        "location_id": 1
+      },
+      {
+        "id": 3,
+        "tỉnh": "An Giang ",
+        "huyện": " Huyện Châu Thành",
+        "normal_tỉnh": "An Giang ",
+        "normal_huyện": " Huyen Chau Thanh",
+        "location_id": 1
+      },
+      {
+        "id": 4,
+        "tỉnh": "An Giang ",
+        "huyện": " Huyện Tri Tôn",
+        "normal_tỉnh": "An Giang ",
+        "normal_huyện": " Huyen Tri Ton",
+        "location_id": 1
+      },
+      {
+        "id": 5,
+        "tỉnh": "An Giang ",
+        "huyện": " Huyện Tịnh Biên",
+        "normal_tỉnh": "An Giang ",
+        "normal_huyện": " Huyen Tinh Bien",
+        "location_id": 1
+      },
+      {
+        "id": 6,
+        "tỉnh": "An Giang ",
+        "huyện": " Thành phố Châu Đốc",
+        "normal_tỉnh": "An Giang ",
+        "normal_huyện": " Thanh pho Chau Doc",
+        "location_id": 1
+      },
+      {
+        "id": 7,
+        "tỉnh": "An Giang ",
+        "huyện": " Huyện An Phú",
+        "normal_tỉnh": "An Giang ",
+        "normal_huyện": " Huyen An Phu",
+        "location_id": 1
+      },
+      {
+        "id": 8,
+        "tỉnh": "An Giang ",
+        "huyện": " Thị xã Tân Châu",
+        "normal_tỉnh": "An Giang ",
+        "normal_huyện": " Thi xa Tan Chau",
+        "location_id": 1
+      },
+      {
+        "id": 9,
+        "tỉnh": "An Giang ",
+        "huyện": " Huyện Phú Tân",
+        "normal_tỉnh": "An Giang ",
+        "normal_huyện": " Huyen Phu Tan",
+        "location_id": 1
+      },
+      {
+        "id": 10,
+        "tỉnh": "An Giang ",
+        "huyện": " Thành phố Long Xuyên",
+        "normal_tỉnh": "An Giang ",
+        "normal_huyện": " Thanh pho Long Xuyen",
+        "location_id": 1
+      },
+      {
+        "id": 11,
+        "tỉnh": "An Giang ",
+        "huyện": " Huyện Thoại Sơn",
+        "normal_tỉnh": "An Giang ",
+        "normal_huyện": " Huyen Thoai Son",
+        "location_id": 1
+      },
+      {
+        "id": 12,
+        "tỉnh": "Bà Rịa Vũng Tàu ",
+        "huyện": " Thị xã Phú Mỹ",
+        "normal_tỉnh": "Ba Ria Vung Tau ",
+        "normal_huyện": " Thi xa Phu My",
+        "location_id": 2
+      },
+      {
+        "id": 13,
+        "tỉnh": "Bà Rịa Vũng Tàu ",
+        "huyện": " Thành phố Vũng Tàu",
+        "normal_tỉnh": "Ba Ria Vung Tau ",
+        "normal_huyện": " Thanh pho Vung Tau",
+        "location_id": 2
+      },
+      {
+        "id": 14,
+        "tỉnh": "Bà Rịa Vũng Tàu ",
+        "huyện": " Huyện Châu Đức",
+        "normal_tỉnh": "Ba Ria Vung Tau ",
+        "normal_huyện": " Huyen Chau Duc",
+        "location_id": 2
+      },
+      {
+        "id": 15,
+        "tỉnh": "Bà Rịa Vũng Tàu ",
+        "huyện": " Huyện Đất Đỏ",
+        "normal_tỉnh": "Ba Ria Vung Tau ",
+        "normal_huyện": " Huyen Dat Do",
+        "location_id": 2
+      },
+      {
+        "id": 16,
+        "tỉnh": "Bà Rịa Vũng Tàu ",
+        "huyện": " Huyện Long Điền",
+        "normal_tỉnh": "Ba Ria Vung Tau ",
+        "normal_huyện": " Huyen Long Dien",
+        "location_id": 2
+      },
+      {
+        "id": 17,
+        "tỉnh": "Bà Rịa Vũng Tàu ",
+        "huyện": " Thành phố Bà Rịa",
+        "normal_tỉnh": "Ba Ria Vung Tau ",
+        "normal_huyện": " Thanh pho Ba Ria",
+        "location_id": 2
+      },
+      {
+        "id": 18,
+        "tỉnh": "Bà Rịa Vũng Tàu ",
+        "huyện": " Huyện Xuyên Mộc",
+        "normal_tỉnh": "Ba Ria Vung Tau ",
+        "normal_huyện": " Huyen Xuyen Moc",
+        "location_id": 2
+      },
+      {
+        "id": 19,
+        "tỉnh": "Bà Rịa Vũng Tàu ",
+        "huyện": " Huyện Côn Đảo",
+        "normal_tỉnh": "Ba Ria Vung Tau ",
+        "normal_huyện": " Huyen Con Dao",
+        "location_id": 2
+      },
+      {
+        "id": 27,
+        "tỉnh": "Bắc Giang ",
+        "huyện": " Huyện Lục Nam",
+        "normal_tỉnh": "Bac Giang ",
+        "normal_huyện": " Huyen Dong Hai",
+        "location_id": 3
+      },
+      {
+        "id": 28,
+        "tỉnh": "Bắc Giang ",
+        "huyện": " Huyện Lục Ngạn",
+        "normal_tỉnh": "Bac Giang ",
+        "normal_huyện": " Thi xa Gia Rai",
+        "location_id": 3
+      },
+      {
+        "id": 29,
+        "tỉnh": "Bắc Giang ",
+        "huyện": " Huyện Hiệp Hòa",
+        "normal_tỉnh": "Bac Giang ",
+        "normal_huyện": " Huyen Hong Dan",
+        "location_id": 3
+      },
+      {
+        "id": 30,
+        "tỉnh": "Bắc Giang ",
+        "huyện": " Huyện Lạng Giang",
+        "normal_tỉnh": "Bac Giang ",
+        "normal_huyện": " Thanh pho Bac Lieu",
+        "location_id": 3
+      },
+      {
+        "id": 31,
+        "tỉnh": "Bắc Giang ",
+        "huyện": " Huyện Sơn Động",
+        "normal_tỉnh": "Bac Giang ",
+        "normal_huyện": " Huyen Hoa Binh",
+        "location_id": 3
+      },
+      {
+        "id": 32,
+        "tỉnh": "Bắc Giang ",
+        "huyện": " Huyện Tân Yên",
+        "normal_tỉnh": "Bac Giang ",
+        "normal_huyện": " Huyen Phuoc Long",
+        "location_id": 3
+      },
+      {
+        "id": 33,
+        "tỉnh": "Bắc Giang ",
+        "huyện": " Huyện Việt Yên",
+        "normal_tỉnh": "Bac Giang ",
+        "normal_huyện": " Huyen Vinh Loi",
+        "location_id": 3
+      },
+      {
+        "id": 34,
+        "tỉnh": "Bắc Giang ",
+        "huyện": " Huyện Yên Dũng",
+        "normal_tỉnh": "Bac Giang ",
+        "normal_huyện": " Huyen Luc Nam",
+        "location_id": 3
+      },
+      {
+        "id": 35,
+        "tỉnh": "Bắc Giang ",
+        "huyện": " Huyện Yên Thế",
+        "normal_tỉnh": "Bac Giang ",
+        "normal_huyện": " Huyen Luc Ngan",
+        "location_id": 3
+      },
+      {
+        "id": 36,
+        "tỉnh": "Bắc Giang ",
+        "huyện": " Thành phố Bắc Giang",
+        "normal_tỉnh": "Bac Giang ",
+        "normal_huyện": " Huyen Hiep Hoa",
+        "location_id": 3
+      },
+      {
+        "id": 37,
+        "tỉnh": "Bắc Kạn ",
+        "huyện": " Huyện Bạch Thông",
+        "normal_tỉnh": "Bac Kan ",
+        "normal_huyện": " Huyen Lang Giang",
+        "location_id": 4
+      },
+      {
+        "id": 38,
+        "tỉnh": "Bắc Kạn ",
+        "huyện": " Huyện Ba Bể",
+        "normal_tỉnh": "Bac Kan ",
+        "normal_huyện": " Huyen Son Dong",
+        "location_id": 4
+      },
+      {
+        "id": 39,
+        "tỉnh": "Bắc Kạn ",
+        "huyện": " Thành phố Bắc Kạn",
+        "normal_tỉnh": "Bac Kan ",
+        "normal_huyện": " Huyen Tan Yen",
+        "location_id": 4
+      },
+      {
+        "id": 40,
+        "tỉnh": "Bắc Kạn ",
+        "huyện": " Huyện Chợ Đồn",
+        "normal_tỉnh": "Bac Kan ",
+        "normal_huyện": " Huyen Viet Yen",
+        "location_id": 4
+      },
+      {
+        "id": 41,
+        "tỉnh": "Bắc Kạn ",
+        "huyện": " Huyện Chợ Mới",
+        "normal_tỉnh": "Bac Kan ",
+        "normal_huyện": " Huyen Yen Dung",
+        "location_id": 4
+      },
+      {
+        "id": 42,
+        "tỉnh": "Bắc Kạn ",
+        "huyện": " Huyện Na Rì",
+        "normal_tỉnh": "Bac Kan ",
+        "normal_huyện": " Huyen Yen The",
+        "location_id": 4
+      },
+      {
+        "id": 43,
+        "tỉnh": "Bắc Kạn ",
+        "huyện": " Huyện Ngân Sơn",
+        "normal_tỉnh": "Bac Kan ",
+        "normal_huyện": " Thanh pho Bac Giang",
+        "location_id": 4
+      },
+      {
+        "id": 44,
+        "tỉnh": "Bắc Kạn ",
+        "huyện": " Huyện Pác Nặm",
+        "normal_tỉnh": "Bac Kan ",
+        "normal_huyện": " Huyen Bach Thong",
+        "location_id": 4
+      },
+      {
+        "id": 20,
+        "tỉnh": "Bạc Liêu ",
+        "huyện": " Huyện Đông Hải",
+        "normal_tỉnh": "Bac Lieu ",
+        "normal_huyện": " Huyen Ba Be",
+        "location_id": 5
+      },
+      {
+        "id": 21,
+        "tỉnh": "Bạc Liêu ",
+        "huyện": " Thị xã Giá Rai",
+        "normal_tỉnh": "Bac Lieu ",
+        "normal_huyện": " Thanh pho Bac Kan",
+        "location_id": 5
+      },
+      {
+        "id": 22,
+        "tỉnh": "Bạc Liêu ",
+        "huyện": " Huyện Hồng Dân",
+        "normal_tỉnh": "Bac Lieu ",
+        "normal_huyện": " Huyen Cho Don",
+        "location_id": 5
+      },
+      {
+        "id": 23,
+        "tỉnh": "Bạc Liêu ",
+        "huyện": " Thành phố Bạc Liêu",
+        "normal_tỉnh": "Bac Lieu ",
+        "normal_huyện": " Huyen Cho Moi",
+        "location_id": 5
+      },
+      {
+        "id": 24,
+        "tỉnh": "Bạc Liêu ",
+        "huyện": " Huyện Hòa Bình",
+        "normal_tỉnh": "Bac Lieu ",
+        "normal_huyện": " Huyen Na Ri",
+        "location_id": 5
+      },
+      {
+        "id": 25,
+        "tỉnh": "Bạc Liêu ",
+        "huyện": " Huyện Phước Long",
+        "normal_tỉnh": "Bac Lieu ",
+        "normal_huyện": " Huyen Ngan Son",
+        "location_id": 5
+      },
+      {
+        "id": 26,
+        "tỉnh": "Bạc Liêu ",
+        "huyện": " Huyện Vĩnh Lợi",
+        "normal_tỉnh": "Bac Lieu ",
+        "normal_huyện": " Huyen Pac Nam",
+        "location_id": 5
+      },
+      {
+        "id": 45,
+        "tỉnh": "Bắc Ninh ",
+        "huyện": " Thành phố Bắc Ninh",
+        "normal_tỉnh": "Bac Ninh ",
+        "normal_huyện": " Thanh pho Bac Ninh",
+        "location_id": 6
+      },
+      {
+        "id": 46,
+        "tỉnh": "Bắc Ninh ",
+        "huyện": " Huyện Quế Võ",
+        "normal_tỉnh": "Bac Ninh ",
+        "normal_huyện": " Huyen Que Vo",
+        "location_id": 6
+      },
+      {
+        "id": 47,
+        "tỉnh": "Bắc Ninh ",
+        "huyện": " Huyện Tiên Du",
+        "normal_tỉnh": "Bac Ninh ",
+        "normal_huyện": " Huyen Tien Du",
+        "location_id": 6
+      },
+      {
+        "id": 48,
+        "tỉnh": "Bắc Ninh ",
+        "huyện": " Thành phố Từ Sơn",
+        "normal_tỉnh": "Bac Ninh ",
+        "normal_huyện": " Thanh pho Tu Son",
+        "location_id": 6
+      },
+      {
+        "id": 49,
+        "tỉnh": "Bắc Ninh ",
+        "huyện": " Huyện Gia Bình",
+        "normal_tỉnh": "Bac Ninh ",
+        "normal_huyện": " Huyen Gia Binh",
+        "location_id": 6
+      },
+      {
+        "id": 50,
+        "tỉnh": "Bắc Ninh ",
+        "huyện": " Huyện Thuận Thành",
+        "normal_tỉnh": "Bac Ninh ",
+        "normal_huyện": " Huyen Thuan Thanh",
+        "location_id": 6
+      },
+      {
+        "id": 51,
+        "tỉnh": "Bắc Ninh ",
+        "huyện": " Huyện Yên Phong",
+        "normal_tỉnh": "Bac Ninh ",
+        "normal_huyện": " Huyen Yen Phong",
+        "location_id": 6
+      },
+      {
+        "id": 52,
+        "tỉnh": "Bắc Ninh ",
+        "huyện": " Huyện Lương Tài",
+        "normal_tỉnh": "Bac Ninh ",
+        "normal_huyện": " Huyen Luong Tai",
+        "location_id": 6
+      },
+      {
+        "id": 53,
+        "tỉnh": "Bến Tre ",
+        "huyện": " Huyện Giồng Trôm",
+        "normal_tỉnh": "Ben Tre ",
+        "normal_huyện": " Huyen Giong Trom",
+        "location_id": 7
+      },
+      {
+        "id": 54,
+        "tỉnh": "Bến Tre ",
+        "huyện": " Huyện Mỏ Cày Bắc",
+        "normal_tỉnh": "Ben Tre ",
+        "normal_huyện": " Huyen Mo Cay Bac",
+        "location_id": 7
+      },
+      {
+        "id": 55,
+        "tỉnh": "Bến Tre ",
+        "huyện": " Huyện Mỏ Cày Nam",
+        "normal_tỉnh": "Ben Tre ",
+        "normal_huyện": " Huyen Mo Cay Nam",
+        "location_id": 7
+      },
+      {
+        "id": 56,
+        "tỉnh": "Bến Tre ",
+        "huyện": " Huyện Châu Thành",
+        "normal_tỉnh": "Ben Tre ",
+        "normal_huyện": " Huyen Chau Thanh",
+        "location_id": 7
+      },
+      {
+        "id": 57,
+        "tỉnh": "Bến Tre ",
+        "huyện": " Huyện Bình Đại",
+        "normal_tỉnh": "Ben Tre ",
+        "normal_huyện": " Huyen Binh Dai",
+        "location_id": 7
+      },
+      {
+        "id": 58,
+        "tỉnh": "Bến Tre ",
+        "huyện": " Huyện Ba Tri",
+        "normal_tỉnh": "Ben Tre ",
+        "normal_huyện": " Huyen Ba Tri",
+        "location_id": 7
+      },
+      {
+        "id": 59,
+        "tỉnh": "Bến Tre ",
+        "huyện": " Thành phố Bến Tre",
+        "normal_tỉnh": "Ben Tre ",
+        "normal_huyện": " Thanh pho Ben Tre",
+        "location_id": 7
+      },
+      {
+        "id": 60,
+        "tỉnh": "Bến Tre ",
+        "huyện": " Huyện Thạnh Phú",
+        "normal_tỉnh": "Ben Tre ",
+        "normal_huyện": " Huyen Thanh Phu",
+        "location_id": 7
+      },
+      {
+        "id": 61,
+        "tỉnh": "Bến Tre ",
+        "huyện": " Huyện Chợ Lách",
+        "normal_tỉnh": "Ben Tre ",
+        "normal_huyện": " Huyen Cho Lach",
+        "location_id": 7
+      },
+      {
+        "id": 71,
+        "tỉnh": "Bình Định ",
+        "huyện": " Thành phố Quy Nhơn",
+        "normal_tỉnh": "Binh Dinh ",
+        "normal_huyện": " Huyen Bau Bang",
+        "location_id": 8
+      },
+      {
+        "id": 72,
+        "tỉnh": "Bình Định ",
+        "huyện": " Thị xã An Nhơn",
+        "normal_tỉnh": "Binh Dinh ",
+        "normal_huyện": " Thi xa Ben Cat",
+        "location_id": 8
+      },
+      {
+        "id": 73,
+        "tỉnh": "Bình Định ",
+        "huyện": " Huyện Phù Cát",
+        "normal_tỉnh": "Binh Dinh ",
+        "normal_huyện": " Huyen Dau Tieng",
+        "location_id": 8
+      },
+      {
+        "id": 74,
+        "tỉnh": "Bình Định ",
+        "huyện": " Thị xã Hoài Nhơn",
+        "normal_tỉnh": "Binh Dinh ",
+        "normal_huyện": " Thanh pho Thu Dau Mot",
+        "location_id": 8
+      },
+      {
+        "id": 75,
+        "tỉnh": "Bình Định ",
+        "huyện": " Huyện An Lão",
+        "normal_tỉnh": "Binh Dinh ",
+        "normal_huyện": " Thanh pho Di An",
+        "location_id": 8
+      },
+      {
+        "id": 76,
+        "tỉnh": "Bình Định ",
+        "huyện": " Huyện Tuy Phước",
+        "normal_tỉnh": "Binh Dinh ",
+        "normal_huyện": " Thanh pho Thuan An",
+        "location_id": 8
+      },
+      {
+        "id": 77,
+        "tỉnh": "Bình Định ",
+        "huyện": " Huyện Hoài Ân",
+        "normal_tỉnh": "Binh Dinh ",
+        "normal_huyện": " Thi xa Tan Uyen",
+        "location_id": 8
+      },
+      {
+        "id": 78,
+        "tỉnh": "Bình Định ",
+        "huyện": " Huyện Phù Mỹ",
+        "normal_tỉnh": "Binh Dinh ",
+        "normal_huyện": " Huyen Phu Giao",
+        "location_id": 8
+      },
+      {
+        "id": 79,
+        "tỉnh": "Bình Định ",
+        "huyện": " Huyện Tây Sơn",
+        "normal_tỉnh": "Binh Dinh ",
+        "normal_huyện": " Huyen Bac Tan Uyen",
+        "location_id": 8
+      },
+      {
+        "id": 80,
+        "tỉnh": "Bình Định ",
+        "huyện": " Huyện Vân Canh",
+        "normal_tỉnh": "Binh Dinh ",
+        "normal_huyện": " Thanh pho Quy Nhon",
+        "location_id": 8
+      },
+      {
+        "id": 81,
+        "tỉnh": "Bình Định ",
+        "huyện": " Huyện Vĩnh Thạnh",
+        "normal_tỉnh": "Binh Dinh ",
+        "normal_huyện": " Thi xa An Nhon",
+        "location_id": 8
+      },
+      {
+        "id": 62,
+        "tỉnh": "Bình Dương ",
+        "huyện": " Huyện Bàu Bàng",
+        "normal_tỉnh": "Binh Duong ",
+        "normal_huyện": " Huyen Phu Cat",
+        "location_id": 9
+      },
+      {
+        "id": 63,
+        "tỉnh": "Bình Dương ",
+        "huyện": " Thị xã Bến Cát",
+        "normal_tỉnh": "Binh Duong ",
+        "normal_huyện": " Thi xa Hoai Nhon",
+        "location_id": 9
+      },
+      {
+        "id": 64,
+        "tỉnh": "Bình Dương ",
+        "huyện": " Huyện Dầu Tiếng",
+        "normal_tỉnh": "Binh Duong ",
+        "normal_huyện": " Huyen An Lao",
+        "location_id": 9
+      },
+      {
+        "id": 65,
+        "tỉnh": "Bình Dương ",
+        "huyện": " Thành phố Thủ Dầu Một",
+        "normal_tỉnh": "Binh Duong ",
+        "normal_huyện": " Huyen Tuy Phuoc",
+        "location_id": 9
+      },
+      {
+        "id": 66,
+        "tỉnh": "Bình Dương ",
+        "huyện": " Thành phố Dĩ An",
+        "normal_tỉnh": "Binh Duong ",
+        "normal_huyện": " Huyen Hoai An",
+        "location_id": 9
+      },
+      {
+        "id": 67,
+        "tỉnh": "Bình Dương ",
+        "huyện": " Thành phố Thuận An",
+        "normal_tỉnh": "Binh Duong ",
+        "normal_huyện": " Huyen Phu My",
+        "location_id": 9
+      },
+      {
+        "id": 68,
+        "tỉnh": "Bình Dương ",
+        "huyện": " Thị xã Tân Uyên",
+        "normal_tỉnh": "Binh Duong ",
+        "normal_huyện": " Huyen Tay Son",
+        "location_id": 9
+      },
+      {
+        "id": 69,
+        "tỉnh": "Bình Dương ",
+        "huyện": " Huyện Phú Giáo",
+        "normal_tỉnh": "Binh Duong ",
+        "normal_huyện": " Huyen Van Canh",
+        "location_id": 9
+      },
+      {
+        "id": 70,
+        "tỉnh": "Bình Dương ",
+        "huyện": " Huyện Bắc Tân Uyên",
+        "normal_tỉnh": "Binh Duong ",
+        "normal_huyện": " Huyen Vinh Thanh",
+        "location_id": 9
+      },
+      {
+        "id": 82,
+        "tỉnh": "Bình Phước ",
+        "huyện": " Huyện Bù Đăng",
+        "normal_tỉnh": "Binh Phuoc ",
+        "normal_huyện": " Huyen Bu Dang",
+        "location_id": 10
+      },
+      {
+        "id": 83,
+        "tỉnh": "Bình Phước ",
+        "huyện": " Huyện Đồng Phú",
+        "normal_tỉnh": "Binh Phuoc ",
+        "normal_huyện": " Huyen Dong Phu",
+        "location_id": 10
+      },
+      {
+        "id": 84,
+        "tỉnh": "Bình Phước ",
+        "huyện": " Huyện Lộc Ninh",
+        "normal_tỉnh": "Binh Phuoc ",
+        "normal_huyện": " Huyen Loc Ninh",
+        "location_id": 10
+      },
+      {
+        "id": 85,
+        "tỉnh": "Bình Phước ",
+        "huyện": " Thị Xã Chơn Thành",
+        "normal_tỉnh": "Binh Phuoc ",
+        "normal_huyện": " Thi Xa Chon Thanh",
+        "location_id": 10
+      },
+      {
+        "id": 86,
+        "tỉnh": "Bình Phước ",
+        "huyện": " Huyện Hớn Quản",
+        "normal_tỉnh": "Binh Phuoc ",
+        "normal_huyện": " Huyen Hon Quan",
+        "location_id": 10
+      },
+      {
+        "id": 87,
+        "tỉnh": "Bình Phước ",
+        "huyện": " Thị xã Bình Long",
+        "normal_tỉnh": "Binh Phuoc ",
+        "normal_huyện": " Thi xa Binh Long",
+        "location_id": 10
+      },
+      {
+        "id": 88,
+        "tỉnh": "Bình Phước ",
+        "huyện": " Thị xã Phước Long",
+        "normal_tỉnh": "Binh Phuoc ",
+        "normal_huyện": " Thi xa Phuoc Long",
+        "location_id": 10
+      },
+      {
+        "id": 89,
+        "tỉnh": "Bình Phước ",
+        "huyện": " Thành phố Đồng Xoài",
+        "normal_tỉnh": "Binh Phuoc ",
+        "normal_huyện": " Thanh pho Dong Xoai",
+        "location_id": 10
+      },
+      {
+        "id": 90,
+        "tỉnh": "Bình Phước ",
+        "huyện": " Huyện Bù Gia Mập",
+        "normal_tỉnh": "Binh Phuoc ",
+        "normal_huyện": " Huyen Bu Gia Map",
+        "location_id": 10
+      },
+      {
+        "id": 91,
+        "tỉnh": "Bình Phước ",
+        "huyện": " Huyện Bù Đốp",
+        "normal_tỉnh": "Binh Phuoc ",
+        "normal_huyện": " Huyen Bu Dop",
+        "location_id": 10
+      },
+      {
+        "id": 731,
+        "tỉnh": "Bình Phước ",
+        "huyện": " Huyện Phú Riềng",
+        "normal_tỉnh": "Binh Phuoc ",
+        "normal_huyện": " Thanh pho Phan Thiet",
+        "location_id": 10
+      },
+      {
+        "id": 92,
+        "tỉnh": "Bình Thuận ",
+        "huyện": " Thành phố Phan Thiết",
+        "normal_tỉnh": "Binh Thuan ",
+        "normal_huyện": " Huyen Ham Thuan Nam",
+        "location_id": 11
+      },
+      {
+        "id": 93,
+        "tỉnh": "Bình Thuận ",
+        "huyện": " Huyện Hàm Thuận Nam",
+        "normal_tỉnh": "Binh Thuan ",
+        "normal_huyện": " Huyen Ham Thuan Bac",
+        "location_id": 11
+      },
+      {
+        "id": 94,
+        "tỉnh": "Bình Thuận ",
+        "huyện": " Huyện Hàm Thuận Bắc",
+        "normal_tỉnh": "Binh Thuan ",
+        "normal_huyện": " Thi xa La Gi",
+        "location_id": 11
+      },
+      {
+        "id": 95,
+        "tỉnh": "Bình Thuận ",
+        "huyện": " Thị xã La Gi",
+        "normal_tỉnh": "Binh Thuan ",
+        "normal_huyện": " Huyen Duc Linh",
+        "location_id": 11
+      },
+      {
+        "id": 96,
+        "tỉnh": "Bình Thuận ",
+        "huyện": " Huyện Đức Linh",
+        "normal_tỉnh": "Binh Thuan ",
+        "normal_huyện": " Huyen Bac Binh",
+        "location_id": 11
+      },
+      {
+        "id": 97,
+        "tỉnh": "Bình Thuận ",
+        "huyện": " Huyện Bắc Bình",
+        "normal_tỉnh": "Binh Thuan ",
+        "normal_huyện": " Huyen Tuy Phong",
+        "location_id": 11
+      },
+      {
+        "id": 98,
+        "tỉnh": "Bình Thuận ",
+        "huyện": " Huyện Tuy Phong",
+        "normal_tỉnh": "Binh Thuan ",
+        "normal_huyện": " Huyen Tanh Linh",
+        "location_id": 11
+      },
+      {
+        "id": 99,
+        "tỉnh": "Bình Thuận ",
+        "huyện": " Huyện Tánh Linh",
+        "normal_tỉnh": "Binh Thuan ",
+        "normal_huyện": " Huyen Ham Tan",
+        "location_id": 11
+      },
+      {
+        "id": 100,
+        "tỉnh": "Bình Thuận ",
+        "huyện": " Huyện Hàm Tân",
+        "normal_tỉnh": "Binh Thuan ",
+        "normal_huyện": " Huyen Phu Qui",
+        "location_id": 11
+      },
+      {
+        "id": 101,
+        "tỉnh": "Bình Thuận ",
+        "huyện": " Huyện Phú Quí",
+        "normal_tỉnh": "Binh Thuan ",
+        "normal_huyện": " Huyen U Minh",
+        "location_id": 11
+      },
+      {
+        "id": 102,
+        "tỉnh": "Cà Mau ",
+        "huyện": " Huyện U Minh",
+        "normal_tỉnh": "Ca Mau ",
+        "normal_huyện": " Huyen Tran Van Thoi",
+        "location_id": 12
+      },
+      {
+        "id": 103,
+        "tỉnh": "Cà Mau ",
+        "huyện": " Huyện Trần Văn Thời",
+        "normal_tỉnh": "Ca Mau ",
+        "normal_huyện": " Thanh pho Ca Mau",
+        "location_id": 12
+      },
+      {
+        "id": 104,
+        "tỉnh": "Cà Mau ",
+        "huyện": " Thành phố Cà Mau",
+        "normal_tỉnh": "Ca Mau ",
+        "normal_huyện": " Huyen Cai Nuoc",
+        "location_id": 12
+      },
+      {
+        "id": 105,
+        "tỉnh": "Cà Mau ",
+        "huyện": " Huyện Cái Nước",
+        "normal_tỉnh": "Ca Mau ",
+        "normal_huyện": " Huyen Phu Tan",
+        "location_id": 12
+      },
+      {
+        "id": 106,
+        "tỉnh": "Cà Mau ",
+        "huyện": " Huyện Phú Tân",
+        "normal_tỉnh": "Ca Mau ",
+        "normal_huyện": " Huyen Thoi Binh",
+        "location_id": 12
+      },
+      {
+        "id": 107,
+        "tỉnh": "Cà Mau ",
+        "huyện": " Huyện Thới Bình",
+        "normal_tỉnh": "Ca Mau ",
+        "normal_huyện": " Huyen Nam Can",
+        "location_id": 12
+      },
+      {
+        "id": 108,
+        "tỉnh": "Cà Mau ",
+        "huyện": " Huyện Năm Căn",
+        "normal_tỉnh": "Ca Mau ",
+        "normal_huyện": " Huyen Dam Doi",
+        "location_id": 12
+      },
+      {
+        "id": 109,
+        "tỉnh": "Cà Mau ",
+        "huyện": " Huyện Đầm Dơi",
+        "normal_tỉnh": "Ca Mau ",
+        "normal_huyện": " Huyen Ngoc Hien",
+        "location_id": 12
+      },
+      {
+        "id": 110,
+        "tỉnh": "Cà Mau ",
+        "huyện": " Huyện Ngọc Hiển",
+        "normal_tỉnh": "Ca Mau ",
+        "normal_huyện": " Huyen Hoa An",
+        "location_id": 12
+      },
+      {
+        "id": 124,
+        "tỉnh": "Cần Thơ ",
+        "huyện": " Quận Ninh Kiều",
+        "normal_tỉnh": "Can Tho ",
+        "normal_huyện": " Huyen Ha Quang",
+        "location_id": 13
+      },
+      {
+        "id": 125,
+        "tỉnh": "Cần Thơ ",
+        "huyện": " Quận Bình Thủy",
+        "normal_tỉnh": "Can Tho ",
+        "normal_huyện": " Thanh pho Cao Bang",
+        "location_id": 13
+      },
+      {
+        "id": 126,
+        "tỉnh": "Cần Thơ ",
+        "huyện": " Quận Cái Răng",
+        "normal_tỉnh": "Can Tho ",
+        "normal_huyện": " Huyen Bao Lam",
+        "location_id": 13
+      },
+      {
+        "id": 127,
+        "tỉnh": "Cần Thơ ",
+        "huyện": " Quận Ô Môn",
+        "normal_tỉnh": "Can Tho ",
+        "normal_huyện": " Huyen Trung Khanh",
+        "location_id": 13
+      },
+      {
+        "id": 128,
+        "tỉnh": "Cần Thơ ",
+        "huyện": " Quận Thốt Nốt",
+        "normal_tỉnh": "Can Tho ",
+        "normal_huyện": " Huyen Bao Lac",
+        "location_id": 13
+      },
+      {
+        "id": 129,
+        "tỉnh": "Cần Thơ ",
+        "huyện": " Huyện Vĩnh Thạnh",
+        "normal_tỉnh": "Can Tho ",
+        "normal_huyện": " Huyen Ha Lang",
+        "location_id": 13
+      },
+      {
+        "id": 130,
+        "tỉnh": "Cần Thơ ",
+        "huyện": " Huyện Thới Lai",
+        "normal_tỉnh": "Can Tho ",
+        "normal_huyện": " Huyen Nguyen Binh",
+        "location_id": 13
+      },
+      {
+        "id": 131,
+        "tỉnh": "Cần Thơ ",
+        "huyện": " Huyện Phong Điền",
+        "normal_tỉnh": "Can Tho ",
+        "normal_huyện": " Huyen Thach An",
+        "location_id": 13
+      },
+      {
+        "id": 132,
+        "tỉnh": "Cần Thơ ",
+        "huyện": " Huyện Cờ Đỏ",
+        "normal_tỉnh": "Can Tho ",
+        "normal_huyện": " Quan Ninh Kieu",
+        "location_id": 13
+      },
+      {
+        "id": 111,
+        "tỉnh": "Cao Bằng ",
+        "huyện": " Huyện Hòa An",
+        "normal_tỉnh": "Cao Bang ",
+        "normal_huyện": " Quan Binh Thuy",
+        "location_id": 14
+      },
+      {
+        "id": 112,
+        "tỉnh": "Cao Bằng ",
+        "huyện": " Huyện Hà Quảng",
+        "normal_tỉnh": "Cao Bang ",
+        "normal_huyện": " Quan Cai Rang",
+        "location_id": 14
+      },
+      {
+        "id": 113,
+        "tỉnh": "Cao Bằng ",
+        "huyện": " Thành phố Cao Bằng",
+        "normal_tỉnh": "Cao Bang ",
+        "normal_huyện": " Quan O Mon",
+        "location_id": 14
+      },
+      {
+        "id": 114,
+        "tỉnh": "Cao Bằng ",
+        "huyện": " Huyện Bảo Lâm",
+        "normal_tỉnh": "Cao Bang ",
+        "normal_huyện": " Quan Thot Not",
+        "location_id": 14
+      },
+      {
+        "id": 116,
+        "tỉnh": "Cao Bằng ",
+        "huyện": " Huyện Trùng Khánh",
+        "normal_tỉnh": "Cao Bang ",
+        "normal_huyện": " Huyen Vinh Thanh",
+        "location_id": 14
+      },
+      {
+        "id": 117,
+        "tỉnh": "Cao Bằng ",
+        "huyện": " Huyện Bảo Lạc",
+        "normal_tỉnh": "Cao Bang ",
+        "normal_huyện": " Huyen Thoi Lai",
+        "location_id": 14
+      },
+      {
+        "id": 118,
+        "tỉnh": "Cao Bằng ",
+        "huyện": " Huyện Hạ Lang",
+        "normal_tỉnh": "Cao Bang ",
+        "normal_huyện": " Huyen Phong Dien",
+        "location_id": 14
+      },
+      {
+        "id": 119,
+        "tỉnh": "Cao Bằng ",
+        "huyện": " Huyện Nguyên Bình",
+        "normal_tỉnh": "Cao Bang ",
+        "normal_huyện": " Huyen Co Do",
+        "location_id": 14
+      },
+      {
+        "id": 121,
+        "tỉnh": "Cao Bằng ",
+        "huyện": " Huyện Thạch An",
+        "normal_tỉnh": "Cao Bang ",
+        "normal_huyện": " Huyen Hoa Vang",
+        "location_id": 14
+      },
+      {
+        "id": 738,
+        "tỉnh": "Cao Bằng ",
+        "huyện": " Huyện Quảng Hòa",
+        "normal_tỉnh": "Cao Bang ",
+        "normal_huyện": " Quan Hai Chau",
+        "location_id": 14
+      },
+      {
+        "id": 134,
+        "tỉnh": "Đà Nẵng ",
+        "huyện": " Huyện Hòa Vang",
+        "normal_tỉnh": "Da Nang ",
+        "normal_huyện": " Quan Thanh Khe",
+        "location_id": 15
+      },
+      {
+        "id": 135,
+        "tỉnh": "Đà Nẵng ",
+        "huyện": " Quận Hải Châu",
+        "normal_tỉnh": "Da Nang ",
+        "normal_huyện": " Quan Son Tra",
+        "location_id": 15
+      },
+      {
+        "id": 136,
+        "tỉnh": "Đà Nẵng ",
+        "huyện": " Quận Thanh Khê",
+        "normal_tỉnh": "Da Nang ",
+        "normal_huyện": " Quan Ngu Hanh Son",
+        "location_id": 15
+      },
+      {
+        "id": 137,
+        "tỉnh": "Đà Nẵng ",
+        "huyện": " Quận Sơn Trà",
+        "normal_tỉnh": "Da Nang ",
+        "normal_huyện": " Quan Lien Chieu",
+        "location_id": 15
+      },
+      {
+        "id": 138,
+        "tỉnh": "Đà Nẵng ",
+        "huyện": " Quận Ngũ Hành Sơn",
+        "normal_tỉnh": "Da Nang ",
+        "normal_huyện": " Quan Cam Le",
+        "location_id": 15
+      },
+      {
+        "id": 139,
+        "tỉnh": "Đà Nẵng ",
+        "huyện": " Quận Liên Chiểu",
+        "normal_tỉnh": "Da Nang ",
+        "normal_huyện": " Huyen Hoang Sa",
+        "location_id": 15
+      },
+      {
+        "id": 140,
+        "tỉnh": "Đà Nẵng ",
+        "huyện": " Quận Cẩm Lệ",
+        "normal_tỉnh": "Da Nang ",
+        "normal_huyện": " Thanh pho Buon Ma Thuot",
+        "location_id": 15
+      },
+      {
+        "id": 141,
+        "tỉnh": "Đà Nẵng ",
+        "huyện": " Huyện Hoàng Sa",
+        "normal_tỉnh": "Da Nang ",
+        "normal_huyện": " Huyen Krong A Na",
+        "location_id": 15
+      },
+      {
+        "id": 142,
+        "tỉnh": "Đắk Lắk ",
+        "huyện": " Thành phố Buôn Ma Thuột",
+        "normal_tỉnh": "Dak Lak ",
+        "normal_huyện": " Huyen Ea Kar",
+        "location_id": 16
+      },
+      {
+        "id": 143,
+        "tỉnh": "Đắk Lắk ",
+        "huyện": " Huyện Krông A Na",
+        "normal_tỉnh": "Dak Lak ",
+        "normal_huyện": " Huyen Krong Pac",
+        "location_id": 16
+      },
+      {
+        "id": 144,
+        "tỉnh": "Đắk Lắk ",
+        "huyện": " Huyện Ea Kar",
+        "normal_tỉnh": "Dak Lak ",
+        "normal_huyện": " Huyen Buon Don",
+        "location_id": 16
+      },
+      {
+        "id": 145,
+        "tỉnh": "Đắk Lắk ",
+        "huyện": " Huyện Krông Pắc",
+        "normal_tỉnh": "Dak Lak ",
+        "normal_huyện": " Huyen Cu Mgar",
+        "location_id": 16
+      },
+      {
+        "id": 146,
+        "tỉnh": "Đắk Lắk ",
+        "huyện": " Huyện Buôn Đôn",
+        "normal_tỉnh": "Dak Lak ",
+        "normal_huyện": " Huyen Ea Hleo",
+        "location_id": 16
+      },
+      {
+        "id": 147,
+        "tỉnh": "Đắk Lắk ",
+        "huyện": " Huyện Cư M'gar",
+        "normal_tỉnh": "Dak Lak ",
+        "normal_huyện": " Huyen Krong Nang",
+        "location_id": 16
+      },
+      {
+        "id": 148,
+        "tỉnh": "Đắk Lắk ",
+        "huyện": " Huyện Ea H'leo",
+        "normal_tỉnh": "Dak Lak ",
+        "normal_huyện": " Thi xa Buon Ho",
+        "location_id": 16
+      },
+      {
+        "id": 149,
+        "tỉnh": "Đắk Lắk ",
+        "huyện": " Huyện Krông Năng",
+        "normal_tỉnh": "Dak Lak ",
+        "normal_huyện": " Huyen Krong Bong",
+        "location_id": 16
+      },
+      {
+        "id": 150,
+        "tỉnh": "Đắk Lắk ",
+        "huyện": " Thị xã Buôn Hồ",
+        "normal_tỉnh": "Dak Lak ",
+        "normal_huyện": " Huyen MDrak",
+        "location_id": 16
+      },
+      {
+        "id": 151,
+        "tỉnh": "Đắk Lắk ",
+        "huyện": " Huyện Krông Bông",
+        "normal_tỉnh": "Dak Lak ",
+        "normal_huyện": " Huyen Cu Kuin",
+        "location_id": 16
+      },
+      {
+        "id": 152,
+        "tỉnh": "Đắk Lắk ",
+        "huyện": " Huyện M'Đrắk",
+        "normal_tỉnh": "Dak Lak ",
+        "normal_huyện": " Huyen Ea Sup",
+        "location_id": 16
+      },
+      {
+        "id": 153,
+        "tỉnh": "Đắk Lắk ",
+        "huyện": " Huyện Cư Kuin",
+        "normal_tỉnh": "Dak Lak ",
+        "normal_huyện": " Huyen Krong Buk",
+        "location_id": 16
+      },
+      {
+        "id": 154,
+        "tỉnh": "Đắk Lắk ",
+        "huyện": " Huyện Ea Súp",
+        "normal_tỉnh": "Dak Lak ",
+        "normal_huyện": " Huyen Lak",
+        "location_id": 16
+      },
+      {
+        "id": 155,
+        "tỉnh": "Đắk Lắk ",
+        "huyện": " Huyện Krông Búk",
+        "normal_tỉnh": "Dak Lak ",
+        "normal_huyện": " Thanh pho Gia Nghia",
+        "location_id": 16
+      },
+      {
+        "id": 156,
+        "tỉnh": "Đắk Lắk ",
+        "huyện": " Huyện Lắk",
+        "normal_tỉnh": "Dak Lak ",
+        "normal_huyện": " Huyen Dak RLap",
+        "location_id": 16
+      },
+      {
+        "id": 157,
+        "tỉnh": "Đắk Nông ",
+        "huyện": " Thành phố Gia Nghĩa",
+        "normal_tỉnh": "Dak Nong ",
+        "normal_huyện": " Huyen Dak Glong",
+        "location_id": 17
+      },
+      {
+        "id": 158,
+        "tỉnh": "Đắk Nông ",
+        "huyện": " Huyện Đắk R'Lấp",
+        "normal_tỉnh": "Dak Nong ",
+        "normal_huyện": " Huyen Dak Mil",
+        "location_id": 17
+      },
+      {
+        "id": 159,
+        "tỉnh": "Đắk Nông ",
+        "huyện": " Huyện Đăk Glong",
+        "normal_tỉnh": "Dak Nong ",
+        "normal_huyện": " Huyen Cu Jut",
+        "location_id": 17
+      },
+      {
+        "id": 160,
+        "tỉnh": "Đắk Nông ",
+        "huyện": " Huyện Đắk Mil",
+        "normal_tỉnh": "Dak Nong ",
+        "normal_huyện": " Huyen Dak Song",
+        "location_id": 17
+      },
+      {
+        "id": 161,
+        "tỉnh": "Đắk Nông ",
+        "huyện": " Huyện Cư Jút",
+        "normal_tỉnh": "Dak Nong ",
+        "normal_huyện": " Huyen Krong No",
+        "location_id": 17
+      },
+      {
+        "id": 162,
+        "tỉnh": "Đắk Nông ",
+        "huyện": " Huyện Đắk Song",
+        "normal_tỉnh": "Dak Nong ",
+        "normal_huyện": " Huyen Tuy Duc",
+        "location_id": 17
+      },
+      {
+        "id": 163,
+        "tỉnh": "Đắk Nông ",
+        "huyện": " Huyện Krông Nô",
+        "normal_tỉnh": "Dak Nong ",
+        "normal_huyện": " Huyen Tua Chua",
+        "location_id": 17
+      },
+      {
+        "id": 164,
+        "tỉnh": "Đắk Nông ",
+        "huyện": " Huyện Tuy Đức",
+        "normal_tỉnh": "Dak Nong ",
+        "normal_huyện": " Huyen Tuan Giao",
+        "location_id": 17
+      },
+      {
+        "id": 165,
+        "tỉnh": "Điện Biên ",
+        "huyện": " Huyện Tủa Chùa",
+        "normal_tỉnh": "Dien Bien ",
+        "normal_huyện": " Thi xa Muong Lay",
+        "location_id": 18
+      },
+      {
+        "id": 166,
+        "tỉnh": "Điện Biên ",
+        "huyện": " Huyện Tuần Giáo",
+        "normal_tỉnh": "Dien Bien ",
+        "normal_huyện": " Thanh pho Dien Bien Phu",
+        "location_id": 18
+      },
+      {
+        "id": 167,
+        "tỉnh": "Điện Biên ",
+        "huyện": " Thị xã Mường Lay",
+        "normal_tỉnh": "Dien Bien ",
+        "normal_huyện": " Huyen Muong Cha",
+        "location_id": 18
+      },
+      {
+        "id": 168,
+        "tỉnh": "Điện Biên ",
+        "huyện": " Thành phố Điện Biên Phủ",
+        "normal_tỉnh": "Dien Bien ",
+        "normal_huyện": " Huyen Muong Nhe",
+        "location_id": 18
+      },
+      {
+        "id": 169,
+        "tỉnh": "Điện Biên ",
+        "huyện": " Huyện Mường Chà",
+        "normal_tỉnh": "Dien Bien ",
+        "normal_huyện": " Huyen Dien Bien",
+        "location_id": 18
+      },
+      {
+        "id": 170,
+        "tỉnh": "Điện Biên ",
+        "huyện": " Huyện Mường Nhé",
+        "normal_tỉnh": "Dien Bien ",
+        "normal_huyện": " Huyen Dien Bien Dong",
+        "location_id": 18
+      },
+      {
+        "id": 171,
+        "tỉnh": "Điện Biên ",
+        "huyện": " Huyện Điện Biên",
+        "normal_tỉnh": "Dien Bien ",
+        "normal_huyện": " Huyen Vinh Cuu",
+        "location_id": 18
+      },
+      {
+        "id": 172,
+        "tỉnh": "Điện Biên ",
+        "huyện": " Huyện Điện Biên Đông",
+        "normal_tỉnh": "Dien Bien ",
+        "normal_huyện": " Huyen Cam My",
+        "location_id": 18
+      },
+      {
+        "id": 720,
+        "tỉnh": "Điện Biên ",
+        "huyện": " Huyện Mường Ảng",
+        "normal_tỉnh": "Dien Bien ",
+        "normal_huyện": " Huyen Xuan Loc",
+        "location_id": 18
+      },
+      {
+        "id": 721,
+        "tỉnh": "Điện Biên ",
+        "huyện": " Huyện Nậm Pồ",
+        "normal_tỉnh": "Dien Bien ",
+        "normal_huyện": " Huyen Thong Nhat",
+        "location_id": 18
+      },
+      {
+        "id": 173,
+        "tỉnh": "Đồng Nai ",
+        "huyện": " Huyện Vĩnh Cửu",
+        "normal_tỉnh": "Dong Nai ",
+        "normal_huyện": " Huyen Nhon Trach",
+        "location_id": 19
+      },
+      {
+        "id": 174,
+        "tỉnh": "Đồng Nai ",
+        "huyện": " Huyện Cẩm Mỹ",
+        "normal_tỉnh": "Dong Nai ",
+        "normal_huyện": " Huyen Trang Bom",
+        "location_id": 19
+      },
+      {
+        "id": 175,
+        "tỉnh": "Đồng Nai ",
+        "huyện": " Huyện Xuân Lộc",
+        "normal_tỉnh": "Dong Nai ",
+        "normal_huyện": " Huyen Tan Phu",
+        "location_id": 19
+      },
+      {
+        "id": 176,
+        "tỉnh": "Đồng Nai ",
+        "huyện": " Huyện Thống Nhất",
+        "normal_tỉnh": "Dong Nai ",
+        "normal_huyện": " Thanh pho Bien Hoa",
+        "location_id": 19
+      },
+      {
+        "id": 177,
+        "tỉnh": "Đồng Nai ",
+        "huyện": " Huyện Nhơn Trạch",
+        "normal_tỉnh": "Dong Nai ",
+        "normal_huyện": " Huyen Long Thanh",
+        "location_id": 19
+      },
+      {
+        "id": 178,
+        "tỉnh": "Đồng Nai ",
+        "huyện": " Huyện Trảng Bom",
+        "normal_tỉnh": "Dong Nai ",
+        "normal_huyện": " Thanh pho Long Khanh",
+        "location_id": 19
+      },
+      {
+        "id": 179,
+        "tỉnh": "Đồng Nai ",
+        "huyện": " Huyện Tân Phú",
+        "normal_tỉnh": "Dong Nai ",
+        "normal_huyện": " Huyen Dinh Quan",
+        "location_id": 19
+      },
+      {
+        "id": 180,
+        "tỉnh": "Đồng Nai ",
+        "huyện": " Thành phố Biên Hòa",
+        "normal_tỉnh": "Dong Nai ",
+        "normal_huyện": " Huyen Thap Muoi",
+        "location_id": 19
+      },
+      {
+        "id": 181,
+        "tỉnh": "Đồng Nai ",
+        "huyện": " Huyện Long Thành",
+        "normal_tỉnh": "Dong Nai ",
+        "normal_huyện": " Huyen Thanh Binh",
+        "location_id": 19
+      },
+      {
+        "id": 182,
+        "tỉnh": "Đồng Nai ",
+        "huyện": " Thành phố Long Khánh",
+        "normal_tỉnh": "Dong Nai ",
+        "normal_huyện": " Huyen Tan Hong",
+        "location_id": 19
+      },
+      {
+        "id": 183,
+        "tỉnh": "Đồng Nai ",
+        "huyện": " Huyện Định Quán",
+        "normal_tỉnh": "Dong Nai ",
+        "normal_huyện": " Huyen Tam Nong",
+        "location_id": 19
+      },
+      {
+        "id": 184,
+        "tỉnh": "Đồng Tháp ",
+        "huyện": " Huyện Tháp Mười",
+        "normal_tỉnh": "Dong Thap ",
+        "normal_huyện": " Thanh pho Hong Ngu",
+        "location_id": 20
+      },
+      {
+        "id": 185,
+        "tỉnh": "Đồng Tháp ",
+        "huyện": " Huyện Thanh Bình",
+        "normal_tỉnh": "Dong Thap ",
+        "normal_huyện": " Thanh pho Cao Lanh",
+        "location_id": 20
+      },
+      {
+        "id": 186,
+        "tỉnh": "Đồng Tháp ",
+        "huyện": " Huyện Tân Hồng",
+        "normal_tỉnh": "Dong Thap ",
+        "normal_huyện": " Huyen Cao Lanh",
+        "location_id": 20
+      },
+      {
+        "id": 187,
+        "tỉnh": "Đồng Tháp ",
+        "huyện": " Huyện Tam Nông",
+        "normal_tỉnh": "Dong Thap ",
+        "normal_huyện": " Huyen Lai Vung",
+        "location_id": 20
+      },
+      {
+        "id": 188,
+        "tỉnh": "Đồng Tháp ",
+        "huyện": " Thành phố Hồng Ngự",
+        "normal_tỉnh": "Dong Thap ",
+        "normal_huyện": " Thanh pho Sa Dec",
+        "location_id": 20
+      },
+      {
+        "id": 189,
+        "tỉnh": "Đồng Tháp ",
+        "huyện": " Thành phố Cao Lãnh",
+        "normal_tỉnh": "Dong Thap ",
+        "normal_huyện": " Huyen Lap Vo",
+        "location_id": 20
+      },
+      {
+        "id": 190,
+        "tỉnh": "Đồng Tháp ",
+        "huyện": " Huyện Cao Lãnh",
+        "normal_tỉnh": "Dong Thap ",
+        "normal_huyện": " Huyen Chau Thanh",
+        "location_id": 20
+      },
+      {
+        "id": 191,
+        "tỉnh": "Đồng Tháp ",
+        "huyện": " Huyện Lai Vung",
+        "normal_tỉnh": "Dong Thap ",
+        "normal_huyện": " Huyen Hong Ngu",
+        "location_id": 20
+      },
+      {
+        "id": 192,
+        "tỉnh": "Đồng Tháp ",
+        "huyện": " Thành phố Sa Đéc",
+        "normal_tỉnh": "Dong Thap ",
+        "normal_huyện": " Huyen Ia Grai",
+        "location_id": 20
+      },
+      {
+        "id": 193,
+        "tỉnh": "Đồng Tháp ",
+        "huyện": " Huyện Lấp Vò",
+        "normal_tỉnh": "Dong Thap ",
+        "normal_huyện": " Huyen Duc Co",
+        "location_id": 20
+      },
+      {
+        "id": 194,
+        "tỉnh": "Đồng Tháp ",
+        "huyện": " Huyện Châu Thành",
+        "normal_tỉnh": "Dong Thap ",
+        "normal_huyện": " Huyen Chu Prong",
+        "location_id": 20
+      },
+      {
+        "id": 200,
+        "tỉnh": "Đồng Tháp ",
+        "huyện": " Huyện Hồng Ngự",
+        "normal_tỉnh": "Dong Thap ",
+        "normal_huyện": " Huyen Chu Se",
+        "location_id": 20
+      },
+      {
+        "id": 204,
+        "tỉnh": "Gia Lai ",
+        "huyện": " Huyện Ia Grai",
+        "normal_tỉnh": "Gia Lai ",
+        "normal_huyện": " Huyen Phu Thien",
+        "location_id": 21
+      },
+      {
+        "id": 205,
+        "tỉnh": "Gia Lai ",
+        "huyện": " Huyện Đức Cơ",
+        "normal_tỉnh": "Gia Lai ",
+        "normal_huyện": " Thi xa Ayun Pa",
+        "location_id": 21
+      },
+      {
+        "id": 206,
+        "tỉnh": "Gia Lai ",
+        "huyện": " Huyện Chư Prông",
+        "normal_tỉnh": "Gia Lai ",
+        "normal_huyện": " Huyen Ia Pa",
+        "location_id": 21
+      },
+      {
+        "id": 207,
+        "tỉnh": "Gia Lai ",
+        "huyện": " Huyện Chư Sê",
+        "normal_tỉnh": "Gia Lai ",
+        "normal_huyện": " Thi xa An Khe",
+        "location_id": 21
+      },
+      {
+        "id": 208,
+        "tỉnh": "Gia Lai ",
+        "huyện": " Huyện Phú Thiện",
+        "normal_tỉnh": "Gia Lai ",
+        "normal_huyện": " Huyen Chu Pah",
+        "location_id": 21
+      },
+      {
+        "id": 209,
+        "tỉnh": "Gia Lai ",
+        "huyện": " Thị xã Ayun Pa",
+        "normal_tỉnh": "Gia Lai ",
+        "normal_huyện": " Thanh pho Pleiku",
+        "location_id": 21
+      },
+      {
+        "id": 210,
+        "tỉnh": "Gia Lai ",
+        "huyện": " Huyện Ia Pa",
+        "normal_tỉnh": "Gia Lai ",
+        "normal_huyện": " Huyen Dak Doa",
+        "location_id": 21
+      },
+      {
+        "id": 211,
+        "tỉnh": "Gia Lai ",
+        "huyện": " Thị xã An Khê",
+        "normal_tỉnh": "Gia Lai ",
+        "normal_huyện": " Huyen Dak Po",
+        "location_id": 21
+      },
+      {
+        "id": 212,
+        "tỉnh": "Gia Lai ",
+        "huyện": " Huyện Chư Păh",
+        "normal_tỉnh": "Gia Lai ",
+        "normal_huyện": " Huyen KBang",
+        "location_id": 21
+      },
+      {
+        "id": 213,
+        "tỉnh": "Gia Lai ",
+        "huyện": " Thành phố Pleiku",
+        "normal_tỉnh": "Gia Lai ",
+        "normal_huyện": " Huyen Kong Chro",
+        "location_id": 21
+      },
+      {
+        "id": 214,
+        "tỉnh": "Gia Lai ",
+        "huyện": " Huyện Đăk Đoa",
+        "normal_tỉnh": "Gia Lai ",
+        "normal_huyện": " Huyen Krong Pa",
+        "location_id": 21
+      },
+      {
+        "id": 215,
+        "tỉnh": "Gia Lai ",
+        "huyện": " Huyện Đăk Pơ",
+        "normal_tỉnh": "Gia Lai ",
+        "normal_huyện": " Huyen Mang Yang",
+        "location_id": 21
+      },
+      {
+        "id": 216,
+        "tỉnh": "Gia Lai ",
+        "huyện": " Huyện KBang",
+        "normal_tỉnh": "Gia Lai ",
+        "normal_huyện": " Huyen Chu Puh",
+        "location_id": 21
+      },
+      {
+        "id": 217,
+        "tỉnh": "Gia Lai ",
+        "huyện": " Huyện Kông Chro",
+        "normal_tỉnh": "Gia Lai ",
+        "normal_huyện": " Huyen Bac Quang",
+        "location_id": 21
+      },
+      {
+        "id": 218,
+        "tỉnh": "Gia Lai ",
+        "huyện": " Huyện Krông Pa",
+        "normal_tỉnh": "Gia Lai ",
+        "normal_huyện": " Thanh pho Ha Giang",
+        "location_id": 21
+      },
+      {
+        "id": 219,
+        "tỉnh": "Gia Lai ",
+        "huyện": " Huyện Mang Yang",
+        "normal_tỉnh": "Gia Lai ",
+        "normal_huyện": " Huyen Hoang Su Phi",
+        "location_id": 21
+      },
+      {
+        "id": 220,
+        "tỉnh": "Gia Lai ",
+        "huyện": " Huyện Chư Pưh",
+        "normal_tỉnh": "Gia Lai ",
+        "normal_huyện": " Huyen Dong Van",
+        "location_id": 21
+      },
+      {
+        "id": 221,
+        "tỉnh": "Hà Giang ",
+        "huyện": " Huyện Bắc Quang",
+        "normal_tỉnh": "Ha Giang ",
+        "normal_huyện": " Huyen Meo Vac",
+        "location_id": 22
+      },
+      {
+        "id": 222,
+        "tỉnh": "Hà Giang ",
+        "huyện": " Thành phố Hà Giang",
+        "normal_tỉnh": "Ha Giang ",
+        "normal_huyện": " Huyen Xin Man",
+        "location_id": 22
+      },
+      {
+        "id": 223,
+        "tỉnh": "Hà Giang ",
+        "huyện": " Huyện Hoàng Su Phì",
+        "normal_tỉnh": "Ha Giang ",
+        "normal_huyện": " Huyen Yen Minh",
+        "location_id": 22
+      },
+      {
+        "id": 224,
+        "tỉnh": "Hà Giang ",
+        "huyện": " Huyện Đồng Văn",
+        "normal_tỉnh": "Ha Giang ",
+        "normal_huyện": " Huyen Quang Binh",
+        "location_id": 22
+      },
+      {
+        "id": 225,
+        "tỉnh": "Hà Giang ",
+        "huyện": " Huyện Mèo Vạc",
+        "normal_tỉnh": "Ha Giang ",
+        "normal_huyện": " Huyen Quan Ba",
+        "location_id": 22
+      },
+      {
+        "id": 226,
+        "tỉnh": "Hà Giang ",
+        "huyện": " Huyện Xín Mần",
+        "normal_tỉnh": "Ha Giang ",
+        "normal_huyện": " Huyen Bac Me",
+        "location_id": 22
+      },
+      {
+        "id": 227,
+        "tỉnh": "Hà Giang ",
+        "huyện": " Huyện Yên Minh",
+        "normal_tỉnh": "Ha Giang ",
+        "normal_huyện": " Huyen Vi Xuyen",
+        "location_id": 22
+      },
+      {
+        "id": 228,
+        "tỉnh": "Hà Giang ",
+        "huyện": " Huyện Quang Bình",
+        "normal_tỉnh": "Ha Giang ",
+        "normal_huyện": " Huyen Thanh Liem",
+        "location_id": 22
+      },
+      {
+        "id": 229,
+        "tỉnh": "Hà Giang ",
+        "huyện": " Huyện Quản Bạ",
+        "normal_tỉnh": "Ha Giang ",
+        "normal_huyện": " Huyen Ly Nhan",
+        "location_id": 22
+      },
+      {
+        "id": 230,
+        "tỉnh": "Hà Giang ",
+        "huyện": " Huyện Bắc Mê",
+        "normal_tỉnh": "Ha Giang ",
+        "normal_huyện": " Huyen Kim Bang",
+        "location_id": 22
+      },
+      {
+        "id": 231,
+        "tỉnh": "Hà Giang ",
+        "huyện": " Huyện Vị Xuyên",
+        "normal_tỉnh": "Ha Giang ",
+        "normal_huyện": " Thi xa Duy Tien",
+        "location_id": 22
+      },
+      {
+        "id": 232,
+        "tỉnh": "Hà Nam ",
+        "huyện": " Huyện Thanh Liêm",
+        "normal_tỉnh": "Ha Nam ",
+        "normal_huyện": " Huyen Binh Luc",
+        "location_id": 23
+      },
+      {
+        "id": 233,
+        "tỉnh": "Hà Nam ",
+        "huyện": " Huyện Lý Nhân",
+        "normal_tỉnh": "Ha Nam ",
+        "normal_huyện": " Thanh pho Phu Ly",
+        "location_id": 23
+      },
+      {
+        "id": 234,
+        "tỉnh": "Hà Nam ",
+        "huyện": " Huyện Kim Bảng",
+        "normal_tỉnh": "Ha Nam ",
+        "normal_huyện": " Quan Ha Dong",
+        "location_id": 23
+      },
+      {
+        "id": 235,
+        "tỉnh": "Hà Nam ",
+        "huyện": " Thị xã Duy Tiên",
+        "normal_tỉnh": "Ha Nam ",
+        "normal_huyện": " Quan Ba Dinh",
+        "location_id": 23
+      },
+      {
+        "id": 236,
+        "tỉnh": "Hà Nam ",
+        "huyện": " Huyện Bình Lục",
+        "normal_tỉnh": "Ha Nam ",
+        "normal_huyện": " Quan Cau Giay",
+        "location_id": 23
+      },
+      {
+        "id": 237,
+        "tỉnh": "Hà Nam ",
+        "huyện": " Thành phố Phủ Lý",
+        "normal_tỉnh": "Ha Nam ",
+        "normal_huyện": " Quan Dong Da",
+        "location_id": 23
+      },
+      {
+        "id": 238,
+        "tỉnh": "Hà Nội ",
+        "huyện": " Quận Hà Đông",
+        "normal_tỉnh": "Ha Noi ",
+        "normal_huyện": " Quan Hai Ba Trung",
+        "location_id": 24
+      },
+      {
+        "id": 239,
+        "tỉnh": "Hà Nội ",
+        "huyện": " Quận Ba Đình",
+        "normal_tỉnh": "Ha Noi ",
+        "normal_huyện": " Quan Hoan Kiem",
+        "location_id": 24
+      },
+      {
+        "id": 240,
+        "tỉnh": "Hà Nội ",
+        "huyện": " Quận Cầu Giấy",
+        "normal_tỉnh": "Ha Noi ",
+        "normal_huyện": " Quan Hoang Mai",
+        "location_id": 24
+      },
+      {
+        "id": 241,
+        "tỉnh": "Hà Nội ",
+        "huyện": " Quận Đống Đa",
+        "normal_tỉnh": "Ha Noi ",
+        "normal_huyện": " Quan Long Bien",
+        "location_id": 24
+      },
+      {
+        "id": 242,
+        "tỉnh": "Hà Nội ",
+        "huyện": " Quận Hai Bà Trưng",
+        "normal_tỉnh": "Ha Noi ",
+        "normal_huyện": " Quan Tay Ho",
+        "location_id": 24
+      },
+      {
+        "id": 243,
+        "tỉnh": "Hà Nội ",
+        "huyện": " Quận Hoàn Kiếm",
+        "normal_tỉnh": "Ha Noi ",
+        "normal_huyện": " Quan Thanh Xuan",
+        "location_id": 24
+      },
+      {
+        "id": 244,
+        "tỉnh": "Hà Nội ",
+        "huyện": " Quận Hoàng Mai",
+        "normal_tỉnh": "Ha Noi ",
+        "normal_huyện": " Huyen Me Linh",
+        "location_id": 24
+      },
+      {
+        "id": 245,
+        "tỉnh": "Hà Nội ",
+        "huyện": " Quận Long Biên",
+        "normal_tỉnh": "Ha Noi ",
+        "normal_huyện": " Huyen Dong Anh",
+        "location_id": 24
+      },
+      {
+        "id": 246,
+        "tỉnh": "Hà Nội ",
+        "huyện": " Quận Tây Hồ",
+        "normal_tỉnh": "Ha Noi ",
+        "normal_huyện": " Huyen Soc Son",
+        "location_id": 24
+      },
+      {
+        "id": 247,
+        "tỉnh": "Hà Nội ",
+        "huyện": " Quận Thanh Xuân",
+        "normal_tỉnh": "Ha Noi ",
+        "normal_huyện": " Quan Bac Tu Liem",
+        "location_id": 24
+      },
+      {
+        "id": 248,
+        "tỉnh": "Hà Nội ",
+        "huyện": " Huyện Mê Linh",
+        "normal_tỉnh": "Ha Noi ",
+        "normal_huyện": " Huyen Gia Lam",
+        "location_id": 24
+      },
+      {
+        "id": 249,
+        "tỉnh": "Hà Nội ",
+        "huyện": " Huyện Đông Anh",
+        "normal_tỉnh": "Ha Noi ",
+        "normal_huyện": " Huyen Thanh Tri",
+        "location_id": 24
+      },
+      {
+        "id": 250,
+        "tỉnh": "Hà Nội ",
+        "huyện": " Huyện Sóc Sơn",
+        "normal_tỉnh": "Ha Noi ",
+        "normal_huyện": " Thi xa Son Tay",
+        "location_id": 24
+      },
+      {
+        "id": 251,
+        "tỉnh": "Hà Nội ",
+        "huyện": " Quận Bắc Từ Liêm",
+        "normal_tỉnh": "Ha Noi ",
+        "normal_huyện": " Quan Nam Tu Liem",
+        "location_id": 24
+      },
+      {
+        "id": 252,
+        "tỉnh": "Hà Nội ",
+        "huyện": " Huyện Gia Lâm",
+        "normal_tỉnh": "Ha Noi ",
+        "normal_huyện": " Huyen Phu Xuyen",
+        "location_id": 24
+      },
+      {
+        "id": 253,
+        "tỉnh": "Hà Nội ",
+        "huyện": " Huyện Thanh Trì",
+        "normal_tỉnh": "Ha Noi ",
+        "normal_huyện": " Huyen Ba Vi",
+        "location_id": 24
+      },
+      {
+        "id": 254,
+        "tỉnh": "Hà Nội ",
+        "huyện": " Thị xã Sơn Tây",
+        "normal_tỉnh": "Ha Noi ",
+        "normal_huyện": " Huyen Dan Phuong",
+        "location_id": 24
+      },
+      {
+        "id": 255,
+        "tỉnh": "Hà Nội ",
+        "huyện": " Quận Nam Từ Liêm",
+        "normal_tỉnh": "Ha Noi ",
+        "normal_huyện": " Huyen Hoai Duc",
+        "location_id": 24
+      },
+      {
+        "id": 256,
+        "tỉnh": "Hà Nội ",
+        "huyện": " Huyện Phú Xuyên",
+        "normal_tỉnh": "Ha Noi ",
+        "normal_huyện": " Huyen My Duc",
+        "location_id": 24
+      },
+      {
+        "id": 257,
+        "tỉnh": "Hà Nội ",
+        "huyện": " Huyện Ba Vì",
+        "normal_tỉnh": "Ha Noi ",
+        "normal_huyện": " Huyen Phuc Tho",
+        "location_id": 24
+      },
+      {
+        "id": 258,
+        "tỉnh": "Hà Nội ",
+        "huyện": " Huyện Đan Phượng",
+        "normal_tỉnh": "Ha Noi ",
+        "normal_huyện": " Huyen Thach That",
+        "location_id": 24
+      },
+      {
+        "id": 259,
+        "tỉnh": "Hà Nội ",
+        "huyện": " Huyện Hoài Đức",
+        "normal_tỉnh": "Ha Noi ",
+        "normal_huyện": " Huyen Thanh Oai",
+        "location_id": 24
+      },
+      {
+        "id": 260,
+        "tỉnh": "Hà Nội ",
+        "huyện": " Huyện Mỹ Đức",
+        "normal_tỉnh": "Ha Noi ",
+        "normal_huyện": " Huyen Ung Hoa",
+        "location_id": 24
+      },
+      {
+        "id": 261,
+        "tỉnh": "Hà Nội ",
+        "huyện": " Huyện Phúc Thọ",
+        "normal_tỉnh": "Ha Noi ",
+        "normal_huyện": " Huyen Chuong My",
+        "location_id": 24
+      },
+      {
+        "id": 262,
+        "tỉnh": "Hà Nội ",
+        "huyện": " Huyện Thạch Thất",
+        "normal_tỉnh": "Ha Noi ",
+        "normal_huyện": " Huyen Quoc Oai",
+        "location_id": 24
+      },
+      {
+        "id": 263,
+        "tỉnh": "Hà Nội ",
+        "huyện": " Huyện Thanh Oai",
+        "normal_tỉnh": "Ha Noi ",
+        "normal_huyện": " Huyen Thuong Tin",
+        "location_id": 24
+      },
+      {
+        "id": 264,
+        "tỉnh": "Hà Nội ",
+        "huyện": " Huyện Ứng Hòa",
+        "normal_tỉnh": "Ha Noi ",
+        "normal_huyện": " Huyen Loc Ha",
+        "location_id": 24
+      },
+      {
+        "id": 265,
+        "tỉnh": "Hà Nội ",
+        "huyện": " Huyện Chương Mỹ",
+        "normal_tỉnh": "Ha Noi ",
+        "normal_huyện": " Huyen Ky Anh",
+        "location_id": 24
+      },
+      {
+        "id": 266,
+        "tỉnh": "Hà Nội ",
+        "huyện": " Huyện Quốc Oai",
+        "normal_tỉnh": "Ha Noi ",
+        "normal_huyện": " Huyen Huong Khe",
+        "location_id": 24
+      },
+      {
+        "id": 267,
+        "tỉnh": "Hà Nội ",
+        "huyện": " Huyện Thường Tín",
+        "normal_tỉnh": "Ha Noi ",
+        "normal_huyện": " Huyen Nghi Xuan",
+        "location_id": 24
+      },
+      {
+        "id": 268,
+        "tỉnh": "Hà Tĩnh ",
+        "huyện": " Huyện Lộc Hà",
+        "normal_tỉnh": "Ha Tinh ",
+        "normal_huyện": " Thi xa Hong Linh",
+        "location_id": 25
+      },
+      {
+        "id": 269,
+        "tỉnh": "Hà Tĩnh ",
+        "huyện": " Huyện Kỳ Anh",
+        "normal_tỉnh": "Ha Tinh ",
+        "normal_huyện": " Huyen Cam Xuyen",
+        "location_id": 25
+      },
+      {
+        "id": 270,
+        "tỉnh": "Hà Tĩnh ",
+        "huyện": " Huyện Hương Khê",
+        "normal_tỉnh": "Ha Tinh ",
+        "normal_huyện": " Thanh pho Ha Tinh",
+        "location_id": 25
+      },
+      {
+        "id": 271,
+        "tỉnh": "Hà Tĩnh ",
+        "huyện": " Huyện Nghi Xuân",
+        "normal_tỉnh": "Ha Tinh ",
+        "normal_huyện": " Huyen Duc Tho",
+        "location_id": 25
+      },
+      {
+        "id": 272,
+        "tỉnh": "Hà Tĩnh ",
+        "huyện": " Thị xã Hồng Lĩnh",
+        "normal_tỉnh": "Ha Tinh ",
+        "normal_huyện": " Huyen Can Loc",
+        "location_id": 25
+      },
+      {
+        "id": 273,
+        "tỉnh": "Hà Tĩnh ",
+        "huyện": " Huyện Cẩm Xuyên",
+        "normal_tỉnh": "Ha Tinh ",
+        "normal_huyện": " Huyen Thach Ha",
+        "location_id": 25
+      },
+      {
+        "id": 274,
+        "tỉnh": "Hà Tĩnh ",
+        "huyện": " Thành phố Hà Tĩnh",
+        "normal_tỉnh": "Ha Tinh ",
+        "normal_huyện": " Huyen Huong Son",
+        "location_id": 25
+      },
+      {
+        "id": 275,
+        "tỉnh": "Hà Tĩnh ",
+        "huyện": " Huyện Đức Thọ",
+        "normal_tỉnh": "Ha Tinh ",
+        "normal_huyện": " Thanh pho Chi Linh",
+        "location_id": 25
+      },
+      {
+        "id": 276,
+        "tỉnh": "Hà Tĩnh ",
+        "huyện": " Huyện Can Lộc",
+        "normal_tỉnh": "Ha Tinh ",
+        "normal_huyện": " Huyen Nam Sach",
+        "location_id": 25
+      },
+      {
+        "id": 277,
+        "tỉnh": "Hà Tĩnh ",
+        "huyện": " Huyện Thạch Hà",
+        "normal_tỉnh": "Ha Tinh ",
+        "normal_huyện": " Thanh pho Hai Duong",
+        "location_id": 25
+      },
+      {
+        "id": 278,
+        "tỉnh": "Hà Tĩnh ",
+        "huyện": " Huyện Hương Sơn",
+        "normal_tỉnh": "Ha Tinh ",
+        "normal_huyện": " Huyen Binh Giang",
+        "location_id": 25
+      },
+      {
+        "id": 726,
+        "tỉnh": "Hà Tĩnh ",
+        "huyện": " Huyện Vũ Quang",
+        "normal_tỉnh": "Ha Tinh ",
+        "normal_huyện": " Huyen Cam Giang",
+        "location_id": 25
+      },
+      {
+        "id": 727,
+        "tỉnh": "Hà Tĩnh ",
+        "huyện": " Thị xã Kỳ Anh",
+        "normal_tỉnh": "Ha Tinh ",
+        "normal_huyện": " Thi xa Kinh Mon",
+        "location_id": 25
+      },
+      {
+        "id": 279,
+        "tỉnh": "Hải Dương ",
+        "huyện": " Thành phố Chí Linh",
+        "normal_tỉnh": "Hai Duong ",
+        "normal_huyện": " Huyen Kim Thanh",
+        "location_id": 26
+      },
+      {
+        "id": 280,
+        "tỉnh": "Hải Dương ",
+        "huyện": " Huyện Nam Sách",
+        "normal_tỉnh": "Hai Duong ",
+        "normal_huyện": " Huyen Gia Loc",
+        "location_id": 26
+      },
+      {
+        "id": 281,
+        "tỉnh": "Hải Dương ",
+        "huyện": " Thành phố Hải Dương",
+        "normal_tỉnh": "Hai Duong ",
+        "normal_huyện": " Huyen Ninh Giang",
+        "location_id": 26
+      },
+      {
+        "id": 282,
+        "tỉnh": "Hải Dương ",
+        "huyện": " Huyện Bình Giang",
+        "normal_tỉnh": "Hai Duong ",
+        "normal_huyện": " Huyen Thanh Ha",
+        "location_id": 26
+      },
+      {
+        "id": 283,
+        "tỉnh": "Hải Dương ",
+        "huyện": " Huyện Cẩm Giàng",
+        "normal_tỉnh": "Hai Duong ",
+        "normal_huyện": " Huyen Thanh Mien",
+        "location_id": 26
+      },
+      {
+        "id": 284,
+        "tỉnh": "Hải Dương ",
+        "huyện": " Thị xã Kinh Môn",
+        "normal_tỉnh": "Hai Duong ",
+        "normal_huyện": " Huyen Tu Ky",
+        "location_id": 26
+      },
+      {
+        "id": 285,
+        "tỉnh": "Hải Dương ",
+        "huyện": " Huyện Kim Thành",
+        "normal_tỉnh": "Hai Duong ",
+        "normal_huyện": " Quan Duong Kinh",
+        "location_id": 26
+      },
+      {
+        "id": 286,
+        "tỉnh": "Hải Dương ",
+        "huyện": " Huyện Gia Lộc",
+        "normal_tỉnh": "Hai Duong ",
+        "normal_huyện": " Huyen An Duong",
+        "location_id": 26
+      },
+      {
+        "id": 288,
+        "tỉnh": "Hải Dương ",
+        "huyện": " Huyện Ninh Giang",
+        "normal_tỉnh": "Hai Duong ",
+        "normal_huyện": " Huyen An Lao",
+        "location_id": 26
+      },
+      {
+        "id": 289,
+        "tỉnh": "Hải Dương ",
+        "huyện": " Huyện Thanh Hà",
+        "normal_tỉnh": "Hai Duong ",
+        "normal_huyện": " Huyen Tien Lang",
+        "location_id": 26
+      },
+      {
+        "id": 290,
+        "tỉnh": "Hải Dương ",
+        "huyện": " Huyện Thanh Miện",
+        "normal_tỉnh": "Hai Duong ",
+        "normal_huyện": " Huyen Vinh Bao",
+        "location_id": 26
+      },
+      {
+        "id": 291,
+        "tỉnh": "Hải Dương ",
+        "huyện": " Huyện Tứ Kỳ",
+        "normal_tỉnh": "Hai Duong ",
+        "normal_huyện": " Quan Ngo Quyen",
+        "location_id": 26
+      },
+      {
+        "id": 292,
+        "tỉnh": "Hải Phòng ",
+        "huyện": " Quận Dương Kinh",
+        "normal_tỉnh": "Hai Phong ",
+        "normal_huyện": " Quan Le Chan",
+        "location_id": 27
+      },
+      {
+        "id": 293,
+        "tỉnh": "Hải Phòng ",
+        "huyện": " Huyện An Dương",
+        "normal_tỉnh": "Hai Phong ",
+        "normal_huyện": " Quan Kien An",
+        "location_id": 27
+      },
+      {
+        "id": 294,
+        "tỉnh": "Hải Phòng ",
+        "huyện": " Huyện An Lão",
+        "normal_tỉnh": "Hai Phong ",
+        "normal_huyện": " Quan Hai An",
+        "location_id": 27
+      },
+      {
+        "id": 295,
+        "tỉnh": "Hải Phòng ",
+        "huyện": " Huyện Tiên Lãng",
+        "normal_tỉnh": "Hai Phong ",
+        "normal_huyện": " Quan Do Son",
+        "location_id": 27
+      },
+      {
+        "id": 296,
+        "tỉnh": "Hải Phòng ",
+        "huyện": " Huyện Vĩnh Bảo",
+        "normal_tỉnh": "Hai Phong ",
+        "normal_huyện": " Quan Hong Bang",
+        "location_id": 27
+      },
+      {
+        "id": 297,
+        "tỉnh": "Hải Phòng ",
+        "huyện": " Quận Ngô Quyền",
+        "normal_tỉnh": "Hai Phong ",
+        "normal_huyện": " Huyen Thuy Nguyen",
+        "location_id": 27
+      },
+      {
+        "id": 298,
+        "tỉnh": "Hải Phòng ",
+        "huyện": " Quận Lê Chân",
+        "normal_tỉnh": "Hai Phong ",
+        "normal_huyện": " Huyen Bach Long Vi",
+        "location_id": 27
+      },
+      {
+        "id": 299,
+        "tỉnh": "Hải Phòng ",
+        "huyện": " Quận Kiến An",
+        "normal_tỉnh": "Hai Phong ",
+        "normal_huyện": " Huyen Cat Hai",
+        "location_id": 27
+      },
+      {
+        "id": 300,
+        "tỉnh": "Hải Phòng ",
+        "huyện": " Quận Hải An",
+        "normal_tỉnh": "Hai Phong ",
+        "normal_huyện": " Huyen Kien Thuy",
+        "location_id": 27
+      },
+      {
+        "id": 301,
+        "tỉnh": "Hải Phòng ",
+        "huyện": " Quận Đồ Sơn",
+        "normal_tỉnh": "Hai Phong ",
+        "normal_huyện": " Huyen Chau Thanh A",
+        "location_id": 27
+      },
+      {
+        "id": 302,
+        "tỉnh": "Hải Phòng ",
+        "huyện": " Quận Hồng Bàng",
+        "normal_tỉnh": "Hai Phong ",
+        "normal_huyện": " Thanh pho Nga Bay",
+        "location_id": 27
+      },
+      {
+        "id": 303,
+        "tỉnh": "Hải Phòng ",
+        "huyện": " Huyện Thủy Nguyên",
+        "normal_tỉnh": "Hai Phong ",
+        "normal_huyện": " Huyen Phung Hiep",
+        "location_id": 27
+      },
+      {
+        "id": 304,
+        "tỉnh": "Hải Phòng ",
+        "huyện": " Huyện Bạch Long Vĩ",
+        "normal_tỉnh": "Hai Phong ",
+        "normal_huyện": " Thanh pho Vi Thanh",
+        "location_id": 27
+      },
+      {
+        "id": 305,
+        "tỉnh": "Hải Phòng ",
+        "huyện": " Huyện Cát Hải",
+        "normal_tỉnh": "Hai Phong ",
+        "normal_huyện": " Thi Xa Long My",
+        "location_id": 27
+      },
+      {
+        "id": 306,
+        "tỉnh": "Hải Phòng ",
+        "huyện": " Huyện Kiến Thụy",
+        "normal_tỉnh": "Hai Phong ",
+        "normal_huyện": " Huyen Vi Thuy",
+        "location_id": 27
+      },
+      {
+        "id": 307,
+        "tỉnh": "Hậu Giang ",
+        "huyện": " Huyện Châu Thành A",
+        "normal_tỉnh": "Hau Giang ",
+        "normal_huyện": " Huyen Chau Thanh",
+        "location_id": 28
+      },
+      {
+        "id": 308,
+        "tỉnh": "Hậu Giang ",
+        "huyện": " Thành phố Ngã Bảy",
+        "normal_tỉnh": "Hau Giang ",
+        "normal_huyện": " Huyen Tan Lac",
+        "location_id": 28
+      },
+      {
+        "id": 309,
+        "tỉnh": "Hậu Giang ",
+        "huyện": " Huyện Phụng Hiệp",
+        "normal_tỉnh": "Hau Giang ",
+        "normal_huyện": " Thanh pho Hoa Binh",
+        "location_id": 28
+      },
+      {
+        "id": 310,
+        "tỉnh": "Hậu Giang ",
+        "huyện": " Thành phố Vị Thanh",
+        "normal_tỉnh": "Hau Giang ",
+        "normal_huyện": " Huyen Luong Son",
+        "location_id": 28
+      },
+      {
+        "id": 311,
+        "tỉnh": "Hậu Giang ",
+        "huyện": " Thị Xã Long Mỹ",
+        "normal_tỉnh": "Hau Giang ",
+        "normal_huyện": " Huyen Da Bac",
+        "location_id": 28
+      },
+      {
+        "id": 312,
+        "tỉnh": "Hậu Giang ",
+        "huyện": " Huyện Vị Thủy",
+        "normal_tỉnh": "Hau Giang ",
+        "normal_huyện": " Huyen Cao Phong",
+        "location_id": 28
+      },
+      {
+        "id": 313,
+        "tỉnh": "Hậu Giang ",
+        "huyện": " Huyện Châu Thành",
+        "normal_tỉnh": "Hau Giang ",
+        "normal_huyện": " Huyen Kim Boi",
+        "location_id": 28
+      },
+      {
+        "id": 736,
+        "tỉnh": "Hậu Giang ",
+        "huyện": " Huyện Long Mỹ",
+        "normal_tỉnh": "Hau Giang ",
+        "normal_huyện": " Huyen Lac Son",
+        "location_id": 28
+      },
+      {
+        "id": 326,
+        "tỉnh": "Hồ Chí Minh ",
+        "huyện": " Huyện Bình Chánh",
+        "normal_tỉnh": "Ho Chi Minh ",
+        "normal_huyện": " Huyen Lac Thuy",
+        "location_id": 29
+      },
+      {
+        "id": 327,
+        "tỉnh": "Hồ Chí Minh ",
+        "huyện": " Huyện Nhà Bè",
+        "normal_tỉnh": "Ho Chi Minh ",
+        "normal_huyện": " Huyen Mai Chau",
+        "location_id": 29
+      },
+      {
+        "id": 328,
+        "tỉnh": "Hồ Chí Minh ",
+        "huyện": " Quận 1",
+        "normal_tỉnh": "Ho Chi Minh ",
+        "normal_huyện": " Huyen Yen Thuy",
+        "location_id": 29
+      },
+      {
+        "id": 330,
+        "tỉnh": "Hồ Chí Minh ",
+        "huyện": " Quận 3",
+        "normal_tỉnh": "Ho Chi Minh ",
+        "normal_huyện": " Huyen Binh Chanh",
+        "location_id": 29
+      },
+      {
+        "id": 331,
+        "tỉnh": "Hồ Chí Minh ",
+        "huyện": " Quận 4",
+        "normal_tỉnh": "Ho Chi Minh ",
+        "normal_huyện": " Huyen Nha Be",
+        "location_id": 29
+      },
+      {
+        "id": 332,
+        "tỉnh": "Hồ Chí Minh ",
+        "huyện": " Quận 5",
+        "normal_tỉnh": "Ho Chi Minh ",
+        "normal_huyện": " Quan 1",
+        "location_id": 29
+      },
+      {
+        "id": 333,
+        "tỉnh": "Hồ Chí Minh ",
+        "huyện": " Quận 6",
+        "normal_tỉnh": "Ho Chi Minh ",
+        "normal_huyện": " Quan 3",
+        "location_id": 29
+      },
+      {
+        "id": 334,
+        "tỉnh": "Hồ Chí Minh ",
+        "huyện": " Quận 7",
+        "normal_tỉnh": "Ho Chi Minh ",
+        "normal_huyện": " Quan 4",
+        "location_id": 29
+      },
+      {
+        "id": 335,
+        "tỉnh": "Hồ Chí Minh ",
+        "huyện": " Quận 8",
+        "normal_tỉnh": "Ho Chi Minh ",
+        "normal_huyện": " Quan 5",
+        "location_id": 29
+      },
+      {
+        "id": 337,
+        "tỉnh": "Hồ Chí Minh ",
+        "huyện": " Quận 10",
+        "normal_tỉnh": "Ho Chi Minh ",
+        "normal_huyện": " Quan 6",
+        "location_id": 29
+      },
+      {
+        "id": 338,
+        "tỉnh": "Hồ Chí Minh ",
+        "huyện": " Quận 11",
+        "normal_tỉnh": "Ho Chi Minh ",
+        "normal_huyện": " Quan 7",
+        "location_id": 29
+      },
+      {
+        "id": 339,
+        "tỉnh": "Hồ Chí Minh ",
+        "huyện": " Quận 12",
+        "normal_tỉnh": "Ho Chi Minh ",
+        "normal_huyện": " Quan 8",
+        "location_id": 29
+      },
+      {
+        "id": 340,
+        "tỉnh": "Hồ Chí Minh ",
+        "huyện": " Quận Tân Bình",
+        "normal_tỉnh": "Ho Chi Minh ",
+        "normal_huyện": " Quan 10",
+        "location_id": 29
+      },
+      {
+        "id": 341,
+        "tỉnh": "Hồ Chí Minh ",
+        "huyện": " Quận Tân Phú",
+        "normal_tỉnh": "Ho Chi Minh ",
+        "normal_huyện": " Quan 11",
+        "location_id": 29
+      },
+      {
+        "id": 342,
+        "tỉnh": "Hồ Chí Minh ",
+        "huyện": " Quận Phú Nhuận",
+        "normal_tỉnh": "Ho Chi Minh ",
+        "normal_huyện": " Quan 12",
+        "location_id": 29
+      },
+      {
+        "id": 343,
+        "tỉnh": "Hồ Chí Minh ",
+        "huyện": " Quận Bình Tân",
+        "normal_tỉnh": "Ho Chi Minh ",
+        "normal_huyện": " Quan Tan Binh",
+        "location_id": 29
+      },
+      {
+        "id": 344,
+        "tỉnh": "Hồ Chí Minh ",
+        "huyện": " Huyện Hóc Môn",
+        "normal_tỉnh": "Ho Chi Minh ",
+        "normal_huyện": " Quan Tan Phu",
+        "location_id": 29
+      },
+      {
+        "id": 345,
+        "tỉnh": "Hồ Chí Minh ",
+        "huyện": " Huyện Củ Chi",
+        "normal_tỉnh": "Ho Chi Minh ",
+        "normal_huyện": " Quan Phu Nhuan",
+        "location_id": 29
+      },
+      {
+        "id": 346,
+        "tỉnh": "Hồ Chí Minh ",
+        "huyện": " Huyện Cần Giờ",
+        "normal_tỉnh": "Ho Chi Minh ",
+        "normal_huyện": " Quan Binh Tan",
+        "location_id": 29
+      },
+      {
+        "id": 347,
+        "tỉnh": "Hồ Chí Minh ",
+        "huyện": " Quận Gò Vấp",
+        "normal_tỉnh": "Ho Chi Minh ",
+        "normal_huyện": " Huyen Hoc Mon",
+        "location_id": 29
+      },
+      {
+        "id": 348,
+        "tỉnh": "Hồ Chí Minh ",
+        "huyện": " Quận Bình Thạnh",
+        "normal_tỉnh": "Ho Chi Minh ",
+        "normal_huyện": " Huyen Cu Chi",
+        "location_id": 29
+      },
+      {
+        "id": 349,
+        "tỉnh": "Hồ Chí Minh ",
+        "huyện": " Thành phố Thủ Đức",
+        "normal_tỉnh": "Ho Chi Minh ",
+        "normal_huyện": " Huyen Can Gio",
+        "location_id": 29
+      },
+      {
+        "id": 314,
+        "tỉnh": "Hòa Bình ",
+        "huyện": " Huyện Tân Lạc",
+        "normal_tỉnh": "Hoa Binh ",
+        "normal_huyện": " Quan Go Vap",
+        "location_id": 30
+      },
+      {
+        "id": 315,
+        "tỉnh": "Hòa Bình ",
+        "huyện": " Thành phố Hòa Bình",
+        "normal_tỉnh": "Hoa Binh ",
+        "normal_huyện": " Quan Binh Thanh",
+        "location_id": 30
+      },
+      {
+        "id": 316,
+        "tỉnh": "Hòa Bình ",
+        "huyện": " Huyện Lương Sơn",
+        "normal_tỉnh": "Hoa Binh ",
+        "normal_huyện": " Thanh pho Thu Duc",
+        "location_id": 30
+      },
+      {
+        "id": 318,
+        "tỉnh": "Hòa Bình ",
+        "huyện": " Huyện Đà Bắc",
+        "normal_tỉnh": "Hoa Binh ",
+        "normal_huyện": " Huyen An Thi",
+        "location_id": 30
+      },
+      {
+        "id": 319,
+        "tỉnh": "Hòa Bình ",
+        "huyện": " Huyện Cao Phong",
+        "normal_tỉnh": "Hoa Binh ",
+        "normal_huyện": " Huyen Khoai Chau",
+        "location_id": 30
+      },
+      {
+        "id": 320,
+        "tỉnh": "Hòa Bình ",
+        "huyện": " Huyện Kim Bôi",
+        "normal_tỉnh": "Hoa Binh ",
+        "normal_huyện": " Thi xa My Hao",
+        "location_id": 30
+      },
+      {
+        "id": 321,
+        "tỉnh": "Hòa Bình ",
+        "huyện": " Huyện Lạc Sơn",
+        "normal_tỉnh": "Hoa Binh ",
+        "normal_huyện": " Huyen Yen My",
+        "location_id": 30
+      },
+      {
+        "id": 322,
+        "tỉnh": "Hòa Bình ",
+        "huyện": " Huyện Lạc Thủy",
+        "normal_tỉnh": "Hoa Binh ",
+        "normal_huyện": " Thanh pho Hung Yen",
+        "location_id": 30
+      },
+      {
+        "id": 323,
+        "tỉnh": "Hòa Bình ",
+        "huyện": " Huyện Mai Châu",
+        "normal_tỉnh": "Hoa Binh ",
+        "normal_huyện": " Huyen Kim Dong",
+        "location_id": 30
+      },
+      {
+        "id": 324,
+        "tỉnh": "Hòa Bình ",
+        "huyện": " Huyện Yên Thủy",
+        "normal_tỉnh": "Hoa Binh ",
+        "normal_huyện": " Huyen Van Giang",
+        "location_id": 30
+      },
+      {
+        "id": 350,
+        "tỉnh": "Hưng Yên ",
+        "huyện": " Huyện Ân Thi",
+        "normal_tỉnh": "Hung Yen ",
+        "normal_huyện": " Huyen Van Lam",
+        "location_id": 31
+      },
+      {
+        "id": 351,
+        "tỉnh": "Hưng Yên ",
+        "huyện": " Huyện Khoái Châu",
+        "normal_tỉnh": "Hung Yen ",
+        "normal_huyện": " Huyen Phu Cu",
+        "location_id": 31
+      },
+      {
+        "id": 352,
+        "tỉnh": "Hưng Yên ",
+        "huyện": " Thị xã Mỹ Hào",
+        "normal_tỉnh": "Hung Yen ",
+        "normal_huyện": " Huyen Tien Lu",
+        "location_id": 31
+      },
+      {
+        "id": 353,
+        "tỉnh": "Hưng Yên ",
+        "huyện": " Huyện Yên Mỹ",
+        "normal_tỉnh": "Hung Yen ",
+        "normal_huyện": " Thanh pho Ha Tien",
+        "location_id": 31
+      },
+      {
+        "id": 354,
+        "tỉnh": "Hưng Yên ",
+        "huyện": " Thành phố Hưng Yên",
+        "normal_tỉnh": "Hung Yen ",
+        "normal_huyện": " Huyen Hon Dat",
+        "location_id": 31
+      },
+      {
+        "id": 355,
+        "tỉnh": "Hưng Yên ",
+        "huyện": " Huyện Kim Động",
+        "normal_tỉnh": "Hung Yen ",
+        "normal_huyện": " Huyen Kien Luong",
+        "location_id": 31
+      },
+      {
+        "id": 356,
+        "tỉnh": "Hưng Yên ",
+        "huyện": " Huyện Văn Giang",
+        "normal_tỉnh": "Hung Yen ",
+        "normal_huyện": " Huyen An Minh",
+        "location_id": 31
+      },
+      {
+        "id": 357,
+        "tỉnh": "Hưng Yên ",
+        "huyện": " Huyện Văn Lâm",
+        "normal_tỉnh": "Hung Yen ",
+        "normal_huyện": " Huyen Chau Thanh",
+        "location_id": 31
+      },
+      {
+        "id": 358,
+        "tỉnh": "Hưng Yên ",
+        "huyện": " Huyện Phù Cừ",
+        "normal_tỉnh": "Hung Yen ",
+        "normal_huyện": " Huyen Tan Hiep",
+        "location_id": 31
+      },
+      {
+        "id": 359,
+        "tỉnh": "Hưng Yên ",
+        "huyện": " Huyện Tiên Lữ",
+        "normal_tỉnh": "Hung Yen ",
+        "normal_huyện": " Huyen Giong Rieng",
+        "location_id": 31
+      },
+      {
+        "id": 384,
+        "tỉnh": "Khánh Hòa ",
+        "huyện": " Thị xã Ninh Hòa",
+        "normal_tỉnh": "Khanh Hoa ",
+        "normal_huyện": " Huyen An Bien",
+        "location_id": 32
+      },
+      {
+        "id": 385,
+        "tỉnh": "Khánh Hòa ",
+        "huyện": " Thành phố Cam Ranh",
+        "normal_tỉnh": "Khanh Hoa ",
+        "normal_huyện": " Thanh pho Rach Gia",
+        "location_id": 32
+      },
+      {
+        "id": 386,
+        "tỉnh": "Khánh Hòa ",
+        "huyện": " Thành phố Nha Trang",
+        "normal_tỉnh": "Khanh Hoa ",
+        "normal_huyện": " Huyen Go Quao",
+        "location_id": 32
+      },
+      {
+        "id": 387,
+        "tỉnh": "Khánh Hòa ",
+        "huyện": " Huyện Cam Lâm",
+        "normal_tỉnh": "Khanh Hoa ",
+        "normal_huyện": " Huyen Giang Thanh",
+        "location_id": 32
+      },
+      {
+        "id": 388,
+        "tỉnh": "Khánh Hòa ",
+        "huyện": " Huyện Diên Khánh",
+        "normal_tỉnh": "Khanh Hoa ",
+        "normal_huyện": " Huyen Kien Hai",
+        "location_id": 32
+      },
+      {
+        "id": 389,
+        "tỉnh": "Khánh Hòa ",
+        "huyện": " Huyện Vạn Ninh",
+        "normal_tỉnh": "Khanh Hoa ",
+        "normal_huyện": " Thanh pho Phu Quoc",
+        "location_id": 32
+      },
+      {
+        "id": 390,
+        "tỉnh": "Khánh Hòa ",
+        "huyện": " Huyện Khánh Sơn",
+        "normal_tỉnh": "Khanh Hoa ",
+        "normal_huyện": " Huyen Vinh Thuan",
+        "location_id": 32
+      },
+      {
+        "id": 391,
+        "tỉnh": "Khánh Hòa ",
+        "huyện": " Huyện Khánh Vĩnh",
+        "normal_tỉnh": "Khanh Hoa ",
+        "normal_huyện": " Huyen U Minh Thuong",
+        "location_id": 32
+      },
+      {
+        "id": 392,
+        "tỉnh": "Khánh Hòa ",
+        "huyện": " Huyện Trường Sa",
+        "normal_tỉnh": "Khanh Hoa ",
+        "normal_huyện": " Huyen Kon Plong",
+        "location_id": 32
+      },
+      {
+        "id": 360,
+        "tỉnh": "Kiên Giang ",
+        "huyện": " Thành phố Hà Tiên",
+        "normal_tỉnh": "Kien Giang ",
+        "normal_huyện": " Huyen Dak Ha",
+        "location_id": 33
+      },
+      {
+        "id": 361,
+        "tỉnh": "Kiên Giang ",
+        "huyện": " Huyện Hòn Đất",
+        "normal_tỉnh": "Kien Giang ",
+        "normal_huyện": " Huyen Dak Glei",
+        "location_id": 33
+      },
+      {
+        "id": 362,
+        "tỉnh": "Kiên Giang ",
+        "huyện": " Huyện Kiên Lương",
+        "normal_tỉnh": "Kien Giang ",
+        "normal_huyện": " Thanh pho Kon Tum",
+        "location_id": 33
+      },
+      {
+        "id": 363,
+        "tỉnh": "Kiên Giang ",
+        "huyện": " Huyện An Minh",
+        "normal_tỉnh": "Kien Giang ",
+        "normal_huyện": " Huyen Dak To",
+        "location_id": 33
+      },
+      {
+        "id": 364,
+        "tỉnh": "Kiên Giang ",
+        "huyện": " Huyện Châu Thành",
+        "normal_tỉnh": "Kien Giang ",
+        "normal_huyện": " Huyen Kon Ray",
+        "location_id": 33
+      },
+      {
+        "id": 365,
+        "tỉnh": "Kiên Giang ",
+        "huyện": " Huyện Tân Hiệp",
+        "normal_tỉnh": "Kien Giang ",
+        "normal_huyện": " Huyen Ngoc Hoi",
+        "location_id": 33
+      },
+      {
+        "id": 366,
+        "tỉnh": "Kiên Giang ",
+        "huyện": " Huyện Giồng Riềng",
+        "normal_tỉnh": "Kien Giang ",
+        "normal_huyện": " Huyen Sa Thay",
+        "location_id": 33
+      },
+      {
+        "id": 367,
+        "tỉnh": "Kiên Giang ",
+        "huyện": " Huyện An Biên",
+        "normal_tỉnh": "Kien Giang ",
+        "normal_huyện": " Huyen Tu Mo Rong",
+        "location_id": 33
+      },
+      {
+        "id": 368,
+        "tỉnh": "Kiên Giang ",
+        "huyện": " Thành phố Rạch Giá",
+        "normal_tỉnh": "Kien Giang ",
+        "normal_huyện": " Thi xa Ninh Hoa",
+        "location_id": 33
+      },
+      {
+        "id": 369,
+        "tỉnh": "Kiên Giang ",
+        "huyện": " Huyện Gò Quao",
+        "normal_tỉnh": "Kien Giang ",
+        "normal_huyện": " Thanh pho Cam Ranh",
+        "location_id": 33
+      },
+      {
+        "id": 370,
+        "tỉnh": "Kiên Giang ",
+        "huyện": " Huyện Giang Thành",
+        "normal_tỉnh": "Kien Giang ",
+        "normal_huyện": " Thanh pho Nha Trang",
+        "location_id": 33
+      },
+      {
+        "id": 371,
+        "tỉnh": "Kiên Giang ",
+        "huyện": " Huyện Kiên Hải",
+        "normal_tỉnh": "Kien Giang ",
+        "normal_huyện": " Huyen Cam Lam",
+        "location_id": 33
+      },
+      {
+        "id": 372,
+        "tỉnh": "Kiên Giang ",
+        "huyện": " Thành phố Phú Quốc",
+        "normal_tỉnh": "Kien Giang ",
+        "normal_huyện": " Huyen Dien Khanh",
+        "location_id": 33
+      },
+      {
+        "id": 373,
+        "tỉnh": "Kiên Giang ",
+        "huyện": " Huyện Vĩnh Thuận",
+        "normal_tỉnh": "Kien Giang ",
+        "normal_huyện": " Huyen Van Ninh",
+        "location_id": 33
+      },
+      {
+        "id": 374,
+        "tỉnh": "Kiên Giang ",
+        "huyện": " Huyện U Minh Thượng",
+        "normal_tỉnh": "Kien Giang ",
+        "normal_huyện": " Huyen Khanh Son",
+        "location_id": 33
+      },
+      {
+        "id": 375,
+        "tỉnh": "Kon Tum ",
+        "huyện": " Huyện Kon Plông",
+        "normal_tỉnh": "Kon Tum ",
+        "normal_huyện": " Huyen Khanh Vinh",
+        "location_id": 34
+      },
+      {
+        "id": 376,
+        "tỉnh": "Kon Tum ",
+        "huyện": " Huyện Đắk Hà",
+        "normal_tỉnh": "Kon Tum ",
+        "normal_huyện": " Huyen Truong Sa",
+        "location_id": 34
+      },
+      {
+        "id": 377,
+        "tỉnh": "Kon Tum ",
+        "huyện": " Huyện Đắk Glei",
+        "normal_tỉnh": "Kon Tum ",
+        "normal_huyện": " Huyen Nam Nhun",
+        "location_id": 34
+      },
+      {
+        "id": 378,
+        "tỉnh": "Kon Tum ",
+        "huyện": " Thành phố Kon Tum",
+        "normal_tỉnh": "Kon Tum ",
+        "normal_huyện": " Huyen Muong Te",
+        "location_id": 34
+      },
+      {
+        "id": 379,
+        "tỉnh": "Kon Tum ",
+        "huyện": " Huyện Đắk Tô",
+        "normal_tỉnh": "Kon Tum ",
+        "normal_huyện": " Huyen Phong Tho",
+        "location_id": 34
+      },
+      {
+        "id": 380,
+        "tỉnh": "Kon Tum ",
+        "huyện": " Huyện Kon Rẫy",
+        "normal_tỉnh": "Kon Tum ",
+        "normal_huyện": " Thanh pho Lai Chau",
+        "location_id": 34
+      },
+      {
+        "id": 381,
+        "tỉnh": "Kon Tum ",
+        "huyện": " Huyện Ngọc Hồi",
+        "normal_tỉnh": "Kon Tum ",
+        "normal_huyện": " Huyen Tan Uyen",
+        "location_id": 34
+      },
+      {
+        "id": 382,
+        "tỉnh": "Kon Tum ",
+        "huyện": " Huyện Sa Thầy",
+        "normal_tỉnh": "Kon Tum ",
+        "normal_huyện": " Huyen Than Uyen",
+        "location_id": 34
+      },
+      {
+        "id": 383,
+        "tỉnh": "Kon Tum ",
+        "huyện": " Huyện Tu Mơ Rông",
+        "normal_tỉnh": "Kon Tum ",
+        "normal_huyện": " Huyen Tam Duong",
+        "location_id": 34
+      },
+      {
+        "id": 730,
+        "tỉnh": "Kon Tum ",
+        "huyện": " Huyện Ia H' Drai",
+        "normal_tỉnh": "Kon Tum ",
+        "normal_huyện": " Huyen Sin Ho",
+        "location_id": 34
+      },
+      {
+        "id": 393,
+        "tỉnh": "Lai Châu ",
+        "huyện": " Huyện Nậm Nhùn",
+        "normal_tỉnh": "Lai Chau ",
+        "normal_huyện": " Huyen Trang Dinh",
+        "location_id": 35
+      },
+      {
+        "id": 394,
+        "tỉnh": "Lai Châu ",
+        "huyện": " Huyện Mường Tè",
+        "normal_tỉnh": "Lai Chau ",
+        "normal_huyện": " Huyen Dinh Lap",
+        "location_id": 35
+      },
+      {
+        "id": 395,
+        "tỉnh": "Lai Châu ",
+        "huyện": " Huyện Phong Thổ",
+        "normal_tỉnh": "Lai Chau ",
+        "normal_huyện": " Huyen Chi Lang",
+        "location_id": 35
+      },
+      {
+        "id": 396,
+        "tỉnh": "Lai Châu ",
+        "huyện": " Thành phố Lai Châu",
+        "normal_tỉnh": "Lai Chau ",
+        "normal_huyện": " Huyen Cao Loc",
+        "location_id": 35
+      },
+      {
+        "id": 397,
+        "tỉnh": "Lai Châu ",
+        "huyện": " Huyện Tân Uyên",
+        "normal_tỉnh": "Lai Chau ",
+        "normal_huyện": " Thanh pho Lang Son",
+        "location_id": 35
+      },
+      {
+        "id": 398,
+        "tỉnh": "Lai Châu ",
+        "huyện": " Huyện Than Uyên",
+        "normal_tỉnh": "Lai Chau ",
+        "normal_huyện": " Huyen Van Quan",
+        "location_id": 35
+      },
+      {
+        "id": 399,
+        "tỉnh": "Lai Châu ",
+        "huyện": " Huyện Tam Đường",
+        "normal_tỉnh": "Lai Chau ",
+        "normal_huyện": " Huyen Van Lang",
+        "location_id": 35
+      },
+      {
+        "id": 400,
+        "tỉnh": "Lai Châu ",
+        "huyện": " Huyện Sìn Hồ",
+        "normal_tỉnh": "Lai Chau ",
+        "normal_huyện": " Huyen Binh Gia",
+        "location_id": 35
+      },
+      {
+        "id": 423,
+        "tỉnh": "Lâm Đồng ",
+        "huyện": " Huyện Đam Rông",
+        "normal_tỉnh": "Lam Dong ",
+        "normal_huyện": " Huyen Bac Son",
+        "location_id": 36
+      },
+      {
+        "id": 424,
+        "tỉnh": "Lâm Đồng ",
+        "huyện": " Huyện Lạc Dương",
+        "normal_tỉnh": "Lam Dong ",
+        "normal_huyện": " Huyen Huu Lung",
+        "location_id": 36
+      },
+      {
+        "id": 425,
+        "tỉnh": "Lâm Đồng ",
+        "huyện": " Huyện Lâm Hà",
+        "normal_tỉnh": "Lam Dong ",
+        "normal_huyện": " Huyen Loc Binh",
+        "location_id": 36
+      },
+      {
+        "id": 426,
+        "tỉnh": "Lâm Đồng ",
+        "huyện": " Huyện Đơn Dương",
+        "normal_tỉnh": "Lam Dong ",
+        "normal_huyện": " Huyen Van Ban",
+        "location_id": 36
+      },
+      {
+        "id": 427,
+        "tỉnh": "Lâm Đồng ",
+        "huyện": " Huyện Đức Trọng",
+        "normal_tỉnh": "Lam Dong ",
+        "normal_huyện": " Huyen Bao Yen",
+        "location_id": 36
+      },
+      {
+        "id": 428,
+        "tỉnh": "Lâm Đồng ",
+        "huyện": " Thành phố Bảo Lộc",
+        "normal_tỉnh": "Lam Dong ",
+        "normal_huyện": " Huyen Bac Ha",
+        "location_id": 36
+      },
+      {
+        "id": 429,
+        "tỉnh": "Lâm Đồng ",
+        "huyện": " Huyện Bảo Lâm",
+        "normal_tỉnh": "Lam Dong ",
+        "normal_huyện": " Huyen Bat Xat",
+        "location_id": 36
+      },
+      {
+        "id": 430,
+        "tỉnh": "Lâm Đồng ",
+        "huyện": " Thành phố Đà Lạt",
+        "normal_tỉnh": "Lam Dong ",
+        "normal_huyện": " Thanh pho Lao Cai",
+        "location_id": 36
+      },
+      {
+        "id": 431,
+        "tỉnh": "Lâm Đồng ",
+        "huyện": " Huyện Cát Tiên",
+        "normal_tỉnh": "Lam Dong ",
+        "normal_huyện": " Huyen Bao Thang",
+        "location_id": 36
+      },
+      {
+        "id": 432,
+        "tỉnh": "Lâm Đồng ",
+        "huyện": " Huyện Đạ Huoai",
+        "normal_tỉnh": "Lam Dong ",
+        "normal_huyện": " Huyen Muong Khuong",
+        "location_id": 36
+      },
+      {
+        "id": 433,
+        "tỉnh": "Lâm Đồng ",
+        "huyện": " Huyện Đạ Tẻh",
+        "normal_tỉnh": "Lam Dong ",
+        "normal_huyện": " Huyen Si Ma Cai",
+        "location_id": 36
+      },
+      {
+        "id": 434,
+        "tỉnh": "Lâm Đồng ",
+        "huyện": " Huyện Di Linh",
+        "normal_tỉnh": "Lam Dong ",
+        "normal_huyện": " Huyen Dam Rong",
+        "location_id": 36
+      },
+      {
+        "id": 401,
+        "tỉnh": "Lạng Sơn ",
+        "huyện": " Huyện Tràng Định",
+        "normal_tỉnh": "Lang Son ",
+        "normal_huyện": " Huyen Lac Duong",
+        "location_id": 37
+      },
+      {
+        "id": 402,
+        "tỉnh": "Lạng Sơn ",
+        "huyện": " Huyện Đình Lập",
+        "normal_tỉnh": "Lang Son ",
+        "normal_huyện": " Huyen Lam Ha",
+        "location_id": 37
+      },
+      {
+        "id": 403,
+        "tỉnh": "Lạng Sơn ",
+        "huyện": " Huyện Chi Lăng",
+        "normal_tỉnh": "Lang Son ",
+        "normal_huyện": " Huyen Don Duong",
+        "location_id": 37
+      },
+      {
+        "id": 404,
+        "tỉnh": "Lạng Sơn ",
+        "huyện": " Huyện Cao Lộc",
+        "normal_tỉnh": "Lang Son ",
+        "normal_huyện": " Huyen Duc Trong",
+        "location_id": 37
+      },
+      {
+        "id": 405,
+        "tỉnh": "Lạng Sơn ",
+        "huyện": " Thành phố Lạng Sơn",
+        "normal_tỉnh": "Lang Son ",
+        "normal_huyện": " Thanh pho Bao Loc",
+        "location_id": 37
+      },
+      {
+        "id": 406,
+        "tỉnh": "Lạng Sơn ",
+        "huyện": " Huyện Văn Quan",
+        "normal_tỉnh": "Lang Son ",
+        "normal_huyện": " Huyen Bao Lam",
+        "location_id": 37
+      },
+      {
+        "id": 407,
+        "tỉnh": "Lạng Sơn ",
+        "huyện": " Huyện Văn Lãng",
+        "normal_tỉnh": "Lang Son ",
+        "normal_huyện": " Thanh pho Da Lat",
+        "location_id": 37
+      },
+      {
+        "id": 408,
+        "tỉnh": "Lạng Sơn ",
+        "huyện": " Huyện Bình Gia",
+        "normal_tỉnh": "Lang Son ",
+        "normal_huyện": " Huyen Cat Tien",
+        "location_id": 37
+      },
+      {
+        "id": 409,
+        "tỉnh": "Lạng Sơn ",
+        "huyện": " Huyện Bắc Sơn",
+        "normal_tỉnh": "Lang Son ",
+        "normal_huyện": " Huyen Da Huoai",
+        "location_id": 37
+      },
+      {
+        "id": 410,
+        "tỉnh": "Lạng Sơn ",
+        "huyện": " Huyện Hữu Lũng",
+        "normal_tỉnh": "Lang Son ",
+        "normal_huyện": " Huyen Da Teh",
+        "location_id": 37
+      },
+      {
+        "id": 411,
+        "tỉnh": "Lạng Sơn ",
+        "huyện": " Huyện Lộc Bình",
+        "normal_tỉnh": "Lang Son ",
+        "normal_huyện": " Huyen Di Linh",
+        "location_id": 37
+      },
+      {
+        "id": 414,
+        "tỉnh": "Lào Cai ",
+        "huyện": " Huyện Văn Bàn",
+        "normal_tỉnh": "Lao Cai ",
+        "normal_huyện": " Huyen Can Giuoc",
+        "location_id": 38
+      },
+      {
+        "id": 416,
+        "tỉnh": "Lào Cai ",
+        "huyện": " Huyện Bảo Yên",
+        "normal_tỉnh": "Lao Cai ",
+        "normal_huyện": " Huyen Chau Thanh",
+        "location_id": 38
+      },
+      {
+        "id": 417,
+        "tỉnh": "Lào Cai ",
+        "huyện": " Huyện Bắc Hà",
+        "normal_tỉnh": "Lao Cai ",
+        "normal_huyện": " Huyen Duc Hoa",
+        "location_id": 38
+      },
+      {
+        "id": 418,
+        "tỉnh": "Lào Cai ",
+        "huyện": " Huyện Bát Xát",
+        "normal_tỉnh": "Lao Cai ",
+        "normal_huyện": " Huyen Can Duoc",
+        "location_id": 38
+      },
+      {
+        "id": 419,
+        "tỉnh": "Lào Cai ",
+        "huyện": " Thành phố Lào Cai",
+        "normal_tỉnh": "Lao Cai ",
+        "normal_huyện": " Huyen Ben Luc",
+        "location_id": 38
+      },
+      {
+        "id": 420,
+        "tỉnh": "Lào Cai ",
+        "huyện": " Huyện Bảo Thắng",
+        "normal_tỉnh": "Lao Cai ",
+        "normal_huyện": " Thanh pho Tan An",
+        "location_id": 38
+      },
+      {
+        "id": 421,
+        "tỉnh": "Lào Cai ",
+        "huyện": " Huyện Mường Khương",
+        "normal_tỉnh": "Lao Cai ",
+        "normal_huyện": " Huyen Tan Tru",
+        "location_id": 38
+      },
+      {
+        "id": 422,
+        "tỉnh": "Lào Cai ",
+        "huyện": " Huyện Si Ma Cai",
+        "normal_tỉnh": "Lao Cai ",
+        "normal_huyện": " Huyen Thu Thua",
+        "location_id": 38
+      },
+      {
+        "id": 737,
+        "tỉnh": "Lào Cai ",
+        "huyện": " Thị xã Sa Pa",
+        "normal_tỉnh": "Lao Cai ",
+        "normal_huyện": " Huyen Duc Hue",
+        "location_id": 38
+      },
+      {
+        "id": 435,
+        "tỉnh": "Long An ",
+        "huyện": " Huyện Cần Giuộc",
+        "normal_tỉnh": "Long An ",
+        "normal_huyện": " Huyen Moc Hoa",
+        "location_id": 39
+      },
+      {
+        "id": 436,
+        "tỉnh": "Long An ",
+        "huyện": " Huyện Châu Thành",
+        "normal_tỉnh": "Long An ",
+        "normal_huyện": " Huyen Tan Hung",
+        "location_id": 39
+      },
+      {
+        "id": 437,
+        "tỉnh": "Long An ",
+        "huyện": " Huyện Đức Hòa",
+        "normal_tỉnh": "Long An ",
+        "normal_huyện": " Huyen Tan Thanh",
+        "location_id": 39
+      },
+      {
+        "id": 438,
+        "tỉnh": "Long An ",
+        "huyện": " Huyện Cần Đước",
+        "normal_tỉnh": "Long An ",
+        "normal_huyện": " Huyen Thanh Hoa",
+        "location_id": 39
+      },
+      {
+        "id": 439,
+        "tỉnh": "Long An ",
+        "huyện": " Huyện Bến Lức",
+        "normal_tỉnh": "Long An ",
+        "normal_huyện": " Huyen Vinh Hung",
+        "location_id": 39
+      },
+      {
+        "id": 440,
+        "tỉnh": "Long An ",
+        "huyện": " Thành phố Tân An",
+        "normal_tỉnh": "Long An ",
+        "normal_huyện": " Thanh pho Nam Dinh",
+        "location_id": 39
+      },
+      {
+        "id": 441,
+        "tỉnh": "Long An ",
+        "huyện": " Huyện Tân Trụ",
+        "normal_tỉnh": "Long An ",
+        "normal_huyện": " Huyen Hai Hau",
+        "location_id": 39
+      },
+      {
+        "id": 442,
+        "tỉnh": "Long An ",
+        "huyện": " Huyện Thủ Thừa",
+        "normal_tỉnh": "Long An ",
+        "normal_huyện": " Huyen Y Yen",
+        "location_id": 39
+      },
+      {
+        "id": 443,
+        "tỉnh": "Long An ",
+        "huyện": " Huyện Đức Huệ",
+        "normal_tỉnh": "Long An ",
+        "normal_huyện": " Huyen Nam Truc",
+        "location_id": 39
+      },
+      {
+        "id": 444,
+        "tỉnh": "Long An ",
+        "huyện": " Huyện Mộc Hóa",
+        "normal_tỉnh": "Long An ",
+        "normal_huyện": " Huyen Nghia Hung",
+        "location_id": 39
+      },
+      {
+        "id": 445,
+        "tỉnh": "Long An ",
+        "huyện": " Huyện Tân Hưng",
+        "normal_tỉnh": "Long An ",
+        "normal_huyện": " Huyen Xuan Truong",
+        "location_id": 39
+      },
+      {
+        "id": 446,
+        "tỉnh": "Long An ",
+        "huyện": " Huyện Tân Thạnh",
+        "normal_tỉnh": "Long An ",
+        "normal_huyện": " Huyen My Loc",
+        "location_id": 39
+      },
+      {
+        "id": 447,
+        "tỉnh": "Long An ",
+        "huyện": " Huyện Thạnh Hóa",
+        "normal_tỉnh": "Long An ",
+        "normal_huyện": " Huyen Giao Thuy",
+        "location_id": 39
+      },
+      {
+        "id": 448,
+        "tỉnh": "Long An ",
+        "huyện": " Huyện Vĩnh Hưng",
+        "normal_tỉnh": "Long An ",
+        "normal_huyện": " Huyen Vu Ban",
+        "location_id": 39
+      },
+      {
+        "id": 732,
+        "tỉnh": "Long An ",
+        "huyện": " Thị xã Kiến Tường",
+        "normal_tỉnh": "Long An ",
+        "normal_huyện": " Huyen Truc Ninh",
+        "location_id": 39
+      },
+      {
+        "id": 449,
+        "tỉnh": "Nam Định ",
+        "huyện": " Thành phố Nam Định",
+        "normal_tỉnh": "Nam Dinh ",
+        "normal_huyện": " Thanh pho Tam Diep",
+        "location_id": 40
+      },
+      {
+        "id": 450,
+        "tỉnh": "Nam Định ",
+        "huyện": " Huyện Hải Hậu",
+        "normal_tỉnh": "Nam Dinh ",
+        "normal_huyện": " Huyen Yen Khanh",
+        "location_id": 40
+      },
+      {
+        "id": 451,
+        "tỉnh": "Nam Định ",
+        "huyện": " Huyện Ý Yên",
+        "normal_tỉnh": "Nam Dinh ",
+        "normal_huyện": " Huyen Hoa Lu",
+        "location_id": 40
+      },
+      {
+        "id": 452,
+        "tỉnh": "Nam Định ",
+        "huyện": " Huyện Nam Trực",
+        "normal_tỉnh": "Nam Dinh ",
+        "normal_huyện": " Huyen Yen Mo",
+        "location_id": 40
+      },
+      {
+        "id": 453,
+        "tỉnh": "Nam Định ",
+        "huyện": " Huyện Nghĩa Hưng",
+        "normal_tỉnh": "Nam Dinh ",
+        "normal_huyện": " Huyen Kim Son",
+        "location_id": 40
+      },
+      {
+        "id": 454,
+        "tỉnh": "Nam Định ",
+        "huyện": " Huyện Xuân Trường",
+        "normal_tỉnh": "Nam Dinh ",
+        "normal_huyện": " Huyen Nho Quan",
+        "location_id": 40
+      },
+      {
+        "id": 455,
+        "tỉnh": "Nam Định ",
+        "huyện": " Huyện Mỹ Lộc",
+        "normal_tỉnh": "Nam Dinh ",
+        "normal_huyện": " Huyen Gia Vien",
+        "location_id": 40
+      },
+      {
+        "id": 456,
+        "tỉnh": "Nam Định ",
+        "huyện": " Huyện Giao Thủy",
+        "normal_tỉnh": "Nam Dinh ",
+        "normal_huyện": " Thanh pho Ninh Binh",
+        "location_id": 40
+      },
+      {
+        "id": 457,
+        "tỉnh": "Nam Định ",
+        "huyện": " Huyện Vụ Bản",
+        "normal_tỉnh": "Nam Dinh ",
+        "normal_huyện": " Huyen Bac Ai",
+        "location_id": 40
+      },
+      {
+        "id": 458,
+        "tỉnh": "Nam Định ",
+        "huyện": " Huyện Trực Ninh",
+        "normal_tỉnh": "Nam Dinh ",
+        "normal_huyện": " Huyen Ninh Son",
+        "location_id": 40
+      },
+      {
+        "id": 474,
+        "tỉnh": "Nghệ An ",
+        "huyện": " Thị xã Cửa Lò",
+        "normal_tỉnh": "Nghe An ",
+        "normal_huyện": " Thanh pho Phan Rang",
+        "location_id": 41
+      },
+      {
+        "id": 475,
+        "tỉnh": "Nghệ An ",
+        "huyện": " Huyện Đô Lương",
+        "normal_tỉnh": "Nghe An ",
+        "normal_huyện": " Huyen Ninh Hai",
+        "location_id": 41
+      },
+      {
+        "id": 476,
+        "tỉnh": "Nghệ An ",
+        "huyện": " Huyện Anh Sơn",
+        "normal_tỉnh": "Nghe An ",
+        "normal_huyện": " Huyen Ninh Phuoc",
+        "location_id": 41
+      },
+      {
+        "id": 477,
+        "tỉnh": "Nghệ An ",
+        "huyện": " Huyện Tân Kỳ",
+        "normal_tỉnh": "Nghe An ",
+        "normal_huyện": " Huyen Thuan Bac",
+        "location_id": 41
+      },
+      {
+        "id": 478,
+        "tỉnh": "Nghệ An ",
+        "huyện": " Huyện Yên Thành",
+        "normal_tỉnh": "Nghe An ",
+        "normal_huyện": " Huyen Thuan Nam",
+        "location_id": 41
+      },
+      {
+        "id": 479,
+        "tỉnh": "Nghệ An ",
+        "huyện": " Huyện Diễn Châu",
+        "normal_tỉnh": "Nghe An ",
+        "normal_huyện": " Thi xa Cua Lo",
+        "location_id": 41
+      },
+      {
+        "id": 480,
+        "tỉnh": "Nghệ An ",
+        "huyện": " Huyện Quỳnh Lưu",
+        "normal_tỉnh": "Nghe An ",
+        "normal_huyện": " Huyen Do Luong",
+        "location_id": 41
+      },
+      {
+        "id": 481,
+        "tỉnh": "Nghệ An ",
+        "huyện": " Thị xã Hoàng Mai",
+        "normal_tỉnh": "Nghe An ",
+        "normal_huyện": " Huyen Anh Son",
+        "location_id": 41
+      },
+      {
+        "id": 482,
+        "tỉnh": "Nghệ An ",
+        "huyện": " Thị xã Thái Hòa",
+        "normal_tỉnh": "Nghe An ",
+        "normal_huyện": " Huyen Tan Ky",
+        "location_id": 41
+      },
+      {
+        "id": 483,
+        "tỉnh": "Nghệ An ",
+        "huyện": " Huyện Nghĩa Đàn",
+        "normal_tỉnh": "Nghe An ",
+        "normal_huyện": " Huyen Yen Thanh",
+        "location_id": 41
+      },
+      {
+        "id": 484,
+        "tỉnh": "Nghệ An ",
+        "huyện": " Huyện Quỳ Hợp",
+        "normal_tỉnh": "Nghe An ",
+        "normal_huyện": " Huyen Dien Chau",
+        "location_id": 41
+      },
+      {
+        "id": 485,
+        "tỉnh": "Nghệ An ",
+        "huyện": " Huyện Con Cuông",
+        "normal_tỉnh": "Nghe An ",
+        "normal_huyện": " Huyen Quynh Luu",
+        "location_id": 41
+      },
+      {
+        "id": 486,
+        "tỉnh": "Nghệ An ",
+        "huyện": " Huyện Nghi Lộc",
+        "normal_tỉnh": "Nghe An ",
+        "normal_huyện": " Thi xa Hoang Mai",
+        "location_id": 41
+      },
+      {
+        "id": 487,
+        "tỉnh": "Nghệ An ",
+        "huyện": " Thành phố Vinh",
+        "normal_tỉnh": "Nghe An ",
+        "normal_huyện": " Thi xa Thai Hoa",
+        "location_id": 41
+      },
+      {
+        "id": 488,
+        "tỉnh": "Nghệ An ",
+        "huyện": " Huyện Hưng Nguyên",
+        "normal_tỉnh": "Nghe An ",
+        "normal_huyện": " Huyen Nghia Dan",
+        "location_id": 41
+      },
+      {
+        "id": 489,
+        "tỉnh": "Nghệ An ",
+        "huyện": " Huyện Thanh Chương",
+        "normal_tỉnh": "Nghe An ",
+        "normal_huyện": " Huyen Quy Hop",
+        "location_id": 41
+      },
+      {
+        "id": 490,
+        "tỉnh": "Nghệ An ",
+        "huyện": " Huyện Quỳ Châu",
+        "normal_tỉnh": "Nghe An ",
+        "normal_huyện": " Huyen Con Cuong",
+        "location_id": 41
+      },
+      {
+        "id": 491,
+        "tỉnh": "Nghệ An ",
+        "huyện": " Huyện Quế Phong",
+        "normal_tỉnh": "Nghe An ",
+        "normal_huyện": " Huyen Nghi Loc",
+        "location_id": 41
+      },
+      {
+        "id": 492,
+        "tỉnh": "Nghệ An ",
+        "huyện": " Huyện Nam Đàn",
+        "normal_tỉnh": "Nghe An ",
+        "normal_huyện": " Thanh pho Vinh",
+        "location_id": 41
+      },
+      {
+        "id": 493,
+        "tỉnh": "Nghệ An ",
+        "huyện": " Huyện Kỳ Sơn",
+        "normal_tỉnh": "Nghe An ",
+        "normal_huyện": " Huyen Hung Nguyen",
+        "location_id": 41
+      },
+      {
+        "id": 494,
+        "tỉnh": "Nghệ An ",
+        "huyện": " Huyện Tương Dương",
+        "normal_tỉnh": "Nghe An ",
+        "normal_huyện": " Huyen Thanh Chuong",
+        "location_id": 41
+      },
+      {
+        "id": 459,
+        "tỉnh": "Ninh Bình ",
+        "huyện": " Thành phố Tam Điệp",
+        "normal_tỉnh": "Ninh Binh ",
+        "normal_huyện": " Huyen Quy Chau",
+        "location_id": 42
+      },
+      {
+        "id": 460,
+        "tỉnh": "Ninh Bình ",
+        "huyện": " Huyện Yên Khánh",
+        "normal_tỉnh": "Ninh Binh ",
+        "normal_huyện": " Huyen Que Phong",
+        "location_id": 42
+      },
+      {
+        "id": 461,
+        "tỉnh": "Ninh Bình ",
+        "huyện": " Huyện Hoa Lư",
+        "normal_tỉnh": "Ninh Binh ",
+        "normal_huyện": " Huyen Nam Dan",
+        "location_id": 42
+      },
+      {
+        "id": 462,
+        "tỉnh": "Ninh Bình ",
+        "huyện": " Huyện Yên Mô",
+        "normal_tỉnh": "Ninh Binh ",
+        "normal_huyện": " Huyen Ky Son",
+        "location_id": 42
+      },
+      {
+        "id": 463,
+        "tỉnh": "Ninh Bình ",
+        "huyện": " Huyện Kim Sơn",
+        "normal_tỉnh": "Ninh Binh ",
+        "normal_huyện": " Huyen Tuong Duong",
+        "location_id": 42
+      },
+      {
+        "id": 464,
+        "tỉnh": "Ninh Bình ",
+        "huyện": " Huyện Nho Quan",
+        "normal_tỉnh": "Ninh Binh ",
+        "normal_huyện": " Huyen Cam Khe",
+        "location_id": 42
+      },
+      {
+        "id": 465,
+        "tỉnh": "Ninh Bình ",
+        "huyện": " Huyện Gia Viễn",
+        "normal_tỉnh": "Ninh Binh ",
+        "normal_huyện": " Thanh pho Viet Tri",
+        "location_id": 42
+      },
+      {
+        "id": 466,
+        "tỉnh": "Ninh Bình ",
+        "huyện": " Thành phố Ninh Bình",
+        "normal_tỉnh": "Ninh Binh ",
+        "normal_huyện": " Huyen Ha Hoa",
+        "location_id": 42
+      },
+      {
+        "id": 467,
+        "tỉnh": "Ninh Thuận ",
+        "huyện": " Huyện Bác Ái",
+        "normal_tỉnh": "Ninh Thuan ",
+        "normal_huyện": " Huyen Doan Hung",
+        "location_id": 43
+      },
+      {
+        "id": 468,
+        "tỉnh": "Ninh Thuận ",
+        "huyện": " Huyện Ninh Sơn",
+        "normal_tỉnh": "Ninh Thuan ",
+        "normal_huyện": " Huyen Lam Thao",
+        "location_id": 43
+      },
+      {
+        "id": 469,
+        "tỉnh": "Ninh Thuận ",
+        "huyện": " Thành phố Phan Rang",
+        "normal_tỉnh": "Ninh Thuan ",
+        "normal_huyện": " Thi xa Phu Tho",
+        "location_id": 43
+      },
+      {
+        "id": 470,
+        "tỉnh": "Ninh Thuận ",
+        "huyện": " Huyện Ninh Hải",
+        "normal_tỉnh": "Ninh Thuan ",
+        "normal_huyện": " Huyen Phu Ninh",
+        "location_id": 43
+      },
+      {
+        "id": 471,
+        "tỉnh": "Ninh Thuận ",
+        "huyện": " Huyện Ninh Phước",
+        "normal_tỉnh": "Ninh Thuan ",
+        "normal_huyện": " Huyen Thanh Ba",
+        "location_id": 43
+      },
+      {
+        "id": 472,
+        "tỉnh": "Ninh Thuận ",
+        "huyện": " Huyện Thuận Bắc",
+        "normal_tỉnh": "Ninh Thuan ",
+        "normal_huyện": " Huyen Tam Nong",
+        "location_id": 43
+      },
+      {
+        "id": 473,
+        "tỉnh": "Ninh Thuận ",
+        "huyện": " Huyện Thuận Nam",
+        "normal_tỉnh": "Ninh Thuan ",
+        "normal_huyện": " Huyen Tan Son",
+        "location_id": 43
+      },
+      {
+        "id": 495,
+        "tỉnh": "Phú Thọ ",
+        "huyện": " Huyện Cẩm Khê",
+        "normal_tỉnh": "Phu Tho ",
+        "normal_huyện": " Huyen Thanh Son",
+        "location_id": 44
+      },
+      {
+        "id": 496,
+        "tỉnh": "Phú Thọ ",
+        "huyện": " Thành phố Việt Trì",
+        "normal_tỉnh": "Phu Tho ",
+        "normal_huyện": " Huyen Thanh Thuy",
+        "location_id": 44
+      },
+      {
+        "id": 497,
+        "tỉnh": "Phú Thọ ",
+        "huyện": " Huyện Hạ Hòa",
+        "normal_tỉnh": "Phu Tho ",
+        "normal_huyện": " Huyen Yen Lap",
+        "location_id": 44
+      },
+      {
+        "id": 498,
+        "tỉnh": "Phú Thọ ",
+        "huyện": " Huyện Đoan Hùng",
+        "normal_tỉnh": "Phu Tho ",
+        "normal_huyện": " Thanh pho Tuy Hoa",
+        "location_id": 44
+      },
+      {
+        "id": 499,
+        "tỉnh": "Phú Thọ ",
+        "huyện": " Huyện Lâm Thao",
+        "normal_tỉnh": "Phu Tho ",
+        "normal_huyện": " Thi Xa Song Cau",
+        "location_id": 44
+      },
+      {
+        "id": 500,
+        "tỉnh": "Phú Thọ ",
+        "huyện": " Thị xã Phú Thọ",
+        "normal_tỉnh": "Phu Tho ",
+        "normal_huyện": " Huyen Phu Hoa",
+        "location_id": 44
+      },
+      {
+        "id": 501,
+        "tỉnh": "Phú Thọ ",
+        "huyện": " Huyện Phù Ninh",
+        "normal_tỉnh": "Phu Tho ",
+        "normal_huyện": " Thi xa Dong Hoa",
+        "location_id": 44
+      },
+      {
+        "id": 502,
+        "tỉnh": "Phú Thọ ",
+        "huyện": " Huyện Thanh Ba",
+        "normal_tỉnh": "Phu Tho ",
+        "normal_huyện": " Huyen Dong Xuan",
+        "location_id": 44
+      },
+      {
+        "id": 503,
+        "tỉnh": "Phú Thọ ",
+        "huyện": " Huyện Tam Nông",
+        "normal_tỉnh": "Phu Tho ",
+        "normal_huyện": " Huyen Son Hoa",
+        "location_id": 44
+      },
+      {
+        "id": 504,
+        "tỉnh": "Phú Thọ ",
+        "huyện": " Huyện Tân Sơn",
+        "normal_tỉnh": "Phu Tho ",
+        "normal_huyện": " Huyen Song Hinh",
+        "location_id": 44
+      },
+      {
+        "id": 505,
+        "tỉnh": "Phú Thọ ",
+        "huyện": " Huyện Thanh Sơn",
+        "normal_tỉnh": "Phu Tho ",
+        "normal_huyện": " Huyen Tay Hoa",
+        "location_id": 44
+      },
+      {
+        "id": 506,
+        "tỉnh": "Phú Thọ ",
+        "huyện": " Huyện Thanh Thủy",
+        "normal_tỉnh": "Phu Tho ",
+        "normal_huyện": " Huyen Tuy An",
+        "location_id": 44
+      },
+      {
+        "id": 507,
+        "tỉnh": "Phú Thọ ",
+        "huyện": " Huyện Yên Lập",
+        "normal_tỉnh": "Phu Tho ",
+        "normal_huyện": " Huyen Minh Hoa",
+        "location_id": 44
+      },
+      {
+        "id": 508,
+        "tỉnh": "Phú Yên ",
+        "huyện": " Thành phố Tuy Hòa",
+        "normal_tỉnh": "Phu Yen ",
+        "normal_huyện": " Huyen Quang Trach",
+        "location_id": 45
+      },
+      {
+        "id": 509,
+        "tỉnh": "Phú Yên ",
+        "huyện": " Thị Xã Sông Cầu",
+        "normal_tỉnh": "Phu Yen ",
+        "normal_huyện": " Huyen Quang Ninh",
+        "location_id": 45
+      },
+      {
+        "id": 510,
+        "tỉnh": "Phú Yên ",
+        "huyện": " Huyện Phú Hòa",
+        "normal_tỉnh": "Phu Yen ",
+        "normal_huyện": " Huyen Le Thuy",
+        "location_id": 45
+      },
+      {
+        "id": 511,
+        "tỉnh": "Phú Yên ",
+        "huyện": " Thị xã Đông Hòa",
+        "normal_tỉnh": "Phu Yen ",
+        "normal_huyện": " Huyen Bo Trach",
+        "location_id": 45
+      },
+      {
+        "id": 512,
+        "tỉnh": "Phú Yên ",
+        "huyện": " Huyện Đồng Xuân",
+        "normal_tỉnh": "Phu Yen ",
+        "normal_huyện": " Thi xa Ba Don",
+        "location_id": 45
+      },
+      {
+        "id": 513,
+        "tỉnh": "Phú Yên ",
+        "huyện": " Huyện Sơn Hòa",
+        "normal_tỉnh": "Phu Yen ",
+        "normal_huyện": " Thanh pho Dong Hoi",
+        "location_id": 45
+      },
+      {
+        "id": 514,
+        "tỉnh": "Phú Yên ",
+        "huyện": " Huyện Sông Hinh",
+        "normal_tỉnh": "Phu Yen ",
+        "normal_huyện": " Huyen Tuyen Hoa",
+        "location_id": 45
+      },
+      {
+        "id": 515,
+        "tỉnh": "Phú Yên ",
+        "huyện": " Huyện Tây Hòa",
+        "normal_tỉnh": "Phu Yen ",
+        "normal_huyện": " Huyen Que Son",
+        "location_id": 45
+      },
+      {
+        "id": 516,
+        "tỉnh": "Phú Yên ",
+        "huyện": " Huyện Tuy An",
+        "normal_tỉnh": "Phu Yen ",
+        "normal_huyện": " Huyen Phu Ninh",
+        "location_id": 45
+      },
+      {
+        "id": 517,
+        "tỉnh": "Quảng Bình ",
+        "huyện": " Huyện Minh Hóa",
+        "normal_tỉnh": "Quang Binh ",
+        "normal_huyện": " Huyen Duy Xuyen",
+        "location_id": 46
+      },
+      {
+        "id": 518,
+        "tỉnh": "Quảng Bình ",
+        "huyện": " Huyện Quảng Trạch",
+        "normal_tỉnh": "Quang Binh ",
+        "normal_huyện": " Thi xa Dien Ban",
+        "location_id": 46
+      },
+      {
+        "id": 519,
+        "tỉnh": "Quảng Bình ",
+        "huyện": " Huyện Quảng Ninh",
+        "normal_tỉnh": "Quang Binh ",
+        "normal_huyện": " Thanh pho Tam Ky",
+        "location_id": 46
+      },
+      {
+        "id": 520,
+        "tỉnh": "Quảng Bình ",
+        "huyện": " Huyện Lệ Thủy",
+        "normal_tỉnh": "Quang Binh ",
+        "normal_huyện": " Thanh pho Hoi An",
+        "location_id": 46
+      },
+      {
+        "id": 521,
+        "tỉnh": "Quảng Bình ",
+        "huyện": " Huyện Bố Trạch",
+        "normal_tỉnh": "Quang Binh ",
+        "normal_huyện": " Huyen Nui Thanh",
+        "location_id": 46
+      },
+      {
+        "id": 522,
+        "tỉnh": "Quảng Bình ",
+        "huyện": " Thị xã Ba Đồn",
+        "normal_tỉnh": "Quang Binh ",
+        "normal_huyện": " Huyen Dai Loc",
+        "location_id": 46
+      },
+      {
+        "id": 523,
+        "tỉnh": "Quảng Bình ",
+        "huyện": " Thành phố Đồng Hới",
+        "normal_tỉnh": "Quang Binh ",
+        "normal_huyện": " Huyen Bac Tra My",
+        "location_id": 46
+      },
+      {
+        "id": 525,
+        "tỉnh": "Quảng Bình ",
+        "huyện": " Huyện Tuyên Hóa",
+        "normal_tỉnh": "Quang Binh ",
+        "normal_huyện": " Huyen Dong Giang",
+        "location_id": 46
+      },
+      {
+        "id": 526,
+        "tỉnh": "Quảng Nam ",
+        "huyện": " Huyện Quế Sơn",
+        "normal_tỉnh": "Quang Nam ",
+        "normal_huyện": " Huyen Hiep Duc",
+        "location_id": 47
+      },
+      {
+        "id": 527,
+        "tỉnh": "Quảng Nam ",
+        "huyện": " Huyện Phú Ninh",
+        "normal_tỉnh": "Quang Nam ",
+        "normal_huyện": " Huyen Nam Giang",
+        "location_id": 47
+      },
+      {
+        "id": 528,
+        "tỉnh": "Quảng Nam ",
+        "huyện": " Huyện Duy Xuyên",
+        "normal_tỉnh": "Quang Nam ",
+        "normal_huyện": " Huyen Nam Tra My",
+        "location_id": 47
+      },
+      {
+        "id": 529,
+        "tỉnh": "Quảng Nam ",
+        "huyện": " Thị xã Điện Bàn",
+        "normal_tỉnh": "Quang Nam ",
+        "normal_huyện": " Huyen Phuoc Son",
+        "location_id": 47
+      },
+      {
+        "id": 530,
+        "tỉnh": "Quảng Nam ",
+        "huyện": " Thành phố Tam Kỳ",
+        "normal_tỉnh": "Quang Nam ",
+        "normal_huyện": " Huyen Tay Giang",
+        "location_id": 47
+      },
+      {
+        "id": 531,
+        "tỉnh": "Quảng Nam ",
+        "huyện": " Thành phố Hội An",
+        "normal_tỉnh": "Quang Nam ",
+        "normal_huyện": " Huyen Thang Binh",
+        "location_id": 47
+      },
+      {
+        "id": 532,
+        "tỉnh": "Quảng Nam ",
+        "huyện": " Huyện Núi Thành",
+        "normal_tỉnh": "Quang Nam ",
+        "normal_huyện": " Huyen Tien Phuoc",
+        "location_id": 47
+      },
+      {
+        "id": 533,
+        "tỉnh": "Quảng Nam ",
+        "huyện": " Huyện Đại Lộc",
+        "normal_tỉnh": "Quang Nam ",
+        "normal_huyện": " Huyen Nong Son",
+        "location_id": 47
+      },
+      {
+        "id": 534,
+        "tỉnh": "Quảng Nam ",
+        "huyện": " Huyện Bắc Trà My",
+        "normal_tỉnh": "Quang Nam ",
+        "normal_huyện": " Huyen Tien Yen",
+        "location_id": 47
+      },
+      {
+        "id": 535,
+        "tỉnh": "Quảng Nam ",
+        "huyện": " Huyện Đông Giang",
+        "normal_tỉnh": "Quang Nam ",
+        "normal_huyện": " Thi xa Dong Trieu",
+        "location_id": 47
+      },
+      {
+        "id": 536,
+        "tỉnh": "Quảng Nam ",
+        "huyện": " Huyện Hiệp Đức",
+        "normal_tỉnh": "Quang Nam ",
+        "normal_huyện": " Huyen Dam Ha",
+        "location_id": 47
+      },
+      {
+        "id": 537,
+        "tỉnh": "Quảng Nam ",
+        "huyện": " Huyện Nam Giang",
+        "normal_tỉnh": "Quang Nam ",
+        "normal_huyện": " Thi xa Quang Yen",
+        "location_id": 47
+      },
+      {
+        "id": 538,
+        "tỉnh": "Quảng Nam ",
+        "huyện": " Huyện Nam Trà My",
+        "normal_tỉnh": "Quang Nam ",
+        "normal_huyện": " Huyen Ba Che",
+        "location_id": 47
+      },
+      {
+        "id": 539,
+        "tỉnh": "Quảng Nam ",
+        "huyện": " Huyện Phước Sơn",
+        "normal_tỉnh": "Quang Nam ",
+        "normal_huyện": " Huyen Van Don",
+        "location_id": 47
+      },
+      {
+        "id": 540,
+        "tỉnh": "Quảng Nam ",
+        "huyện": " Huyện Tây Giang",
+        "normal_tỉnh": "Quang Nam ",
+        "normal_huyện": " Huyen Hai Ha",
+        "location_id": 47
+      },
+      {
+        "id": 541,
+        "tỉnh": "Quảng Nam ",
+        "huyện": " Huyện Thăng Bình",
+        "normal_tỉnh": "Quang Nam ",
+        "normal_huyện": " Thanh pho Mong Cai",
+        "location_id": 47
+      },
+      {
+        "id": 542,
+        "tỉnh": "Quảng Nam ",
+        "huyện": " Huyện Tiên Phước",
+        "normal_tỉnh": "Quang Nam ",
+        "normal_huyện": " Thanh pho Ha Long",
+        "location_id": 47
+      },
+      {
+        "id": 543,
+        "tỉnh": "Quảng Nam ",
+        "huyện": " Huyện Nông Sơn",
+        "normal_tỉnh": "Quang Nam ",
+        "normal_huyện": " Huyen Binh Lieu",
+        "location_id": 47
+      },
+      {
+        "id": 562,
+        "tỉnh": "Quảng Ngãi ",
+        "huyện": " Huyện Nghĩa Hành",
+        "normal_tỉnh": "Quang Ngai ",
+        "normal_huyện": " Thanh pho Cam Pha",
+        "location_id": 48
+      },
+      {
+        "id": 563,
+        "tỉnh": "Quảng Ngãi ",
+        "huyện": " Thị xã Đức Phổ",
+        "normal_tỉnh": "Quang Ngai ",
+        "normal_huyện": " Thanh pho Uong Bi",
+        "location_id": 48
+      },
+      {
+        "id": 564,
+        "tỉnh": "Quảng Ngãi ",
+        "huyện": " Thành phố Quảng Ngãi",
+        "normal_tỉnh": "Quang Ngai ",
+        "normal_huyện": " Huyen Co To",
+        "location_id": 48
+      },
+      {
+        "id": 565,
+        "tỉnh": "Quảng Ngãi ",
+        "huyện": " Huyện Bình Sơn",
+        "normal_tỉnh": "Quang Ngai ",
+        "normal_huyện": " Huyen Nghia Hanh",
+        "location_id": 48
+      },
+      {
+        "id": 566,
+        "tỉnh": "Quảng Ngãi ",
+        "huyện": " Huyện Sơn Tịnh",
+        "normal_tỉnh": "Quang Ngai ",
+        "normal_huyện": " Thi xa Duc Pho",
+        "location_id": 48
+      },
+      {
+        "id": 567,
+        "tỉnh": "Quảng Ngãi ",
+        "huyện": " Huyện Sơn Hà",
+        "normal_tỉnh": "Quang Ngai ",
+        "normal_huyện": " Thanh pho Quang Ngai",
+        "location_id": 48
+      },
+      {
+        "id": 568,
+        "tỉnh": "Quảng Ngãi ",
+        "huyện": " Huyện Sơn Tây",
+        "normal_tỉnh": "Quang Ngai ",
+        "normal_huyện": " Huyen Binh Son",
+        "location_id": 48
+      },
+      {
+        "id": 569,
+        "tỉnh": "Quảng Ngãi ",
+        "huyện": " Huyện Tư Nghĩa",
+        "normal_tỉnh": "Quang Ngai ",
+        "normal_huyện": " Huyen Son Tinh",
+        "location_id": 48
+      },
+      {
+        "id": 570,
+        "tỉnh": "Quảng Ngãi ",
+        "huyện": " Huyện Trà Bồng",
+        "normal_tỉnh": "Quang Ngai ",
+        "normal_huyện": " Huyen Son Ha",
+        "location_id": 48
+      },
+      {
+        "id": 571,
+        "tỉnh": "Quảng Ngãi ",
+        "huyện": " Huyện Mộ Đức",
+        "normal_tỉnh": "Quang Ngai ",
+        "normal_huyện": " Huyen Son Tay",
+        "location_id": 48
+      },
+      {
+        "id": 572,
+        "tỉnh": "Quảng Ngãi ",
+        "huyện": " Huyện Ba Tơ",
+        "normal_tỉnh": "Quang Ngai ",
+        "normal_huyện": " Huyen Tu Nghia",
+        "location_id": 48
+      },
+      {
+        "id": 728,
+        "tỉnh": "Quảng Ngãi ",
+        "huyện": " Huyện Minh Long",
+        "normal_tỉnh": "Quang Ngai ",
+        "normal_huyện": " Huyen Tra Bong",
+        "location_id": 48
+      },
+      {
+        "id": 729,
+        "tỉnh": "Quảng Ngãi ",
+        "huyện": " Huyện Lý Sơn",
+        "normal_tỉnh": "Quang Ngai ",
+        "normal_huyện": " Huyen Mo Duc",
+        "location_id": 48
+      },
+      {
+        "id": 544,
+        "tỉnh": "Quảng Ninh ",
+        "huyện": " Huyện Tiên Yên",
+        "normal_tỉnh": "Quang Ninh ",
+        "normal_huyện": " Huyen Ba To",
+        "location_id": 49
+      },
+      {
+        "id": 545,
+        "tỉnh": "Quảng Ninh ",
+        "huyện": " Thị xã Đông Triều",
+        "normal_tỉnh": "Quang Ninh ",
+        "normal_huyện": " Huyen Gio Linh",
+        "location_id": 49
+      },
+      {
+        "id": 547,
+        "tỉnh": "Quảng Ninh ",
+        "huyện": " Huyện Đầm Hà",
+        "normal_tỉnh": "Quang Ninh ",
+        "normal_huyện": " Thanh pho Dong Ha",
+        "location_id": 49
+      },
+      {
+        "id": 548,
+        "tỉnh": "Quảng Ninh ",
+        "huyện": " Thị xã Quảng Yên",
+        "normal_tỉnh": "Quang Ninh ",
+        "normal_huyện": " Thi xa Quang Tri",
+        "location_id": 49
+      },
+      {
+        "id": 549,
+        "tỉnh": "Quảng Ninh ",
+        "huyện": " Huyện Ba Chẽ",
+        "normal_tỉnh": "Quang Ninh ",
+        "normal_huyện": " Huyen Huong Hoa",
+        "location_id": 49
+      },
+      {
+        "id": 550,
+        "tỉnh": "Quảng Ninh ",
+        "huyện": " Huyện Vân Đồn",
+        "normal_tỉnh": "Quang Ninh ",
+        "normal_huyện": " Huyen Vinh Linh",
+        "location_id": 49
+      },
+      {
+        "id": 551,
+        "tỉnh": "Quảng Ninh ",
+        "huyện": " Huyện Hải Hà",
+        "normal_tỉnh": "Quang Ninh ",
+        "normal_huyện": " Huyen Cam Lo",
+        "location_id": 49
+      },
+      {
+        "id": 552,
+        "tỉnh": "Quảng Ninh ",
+        "huyện": " Thành phố Móng Cái",
+        "normal_tỉnh": "Quang Ninh ",
+        "normal_huyện": " Huyen Trieu Phong",
+        "location_id": 49
+      },
+      {
+        "id": 553,
+        "tỉnh": "Quảng Ninh ",
+        "huyện": " Thành phố Hạ Long",
+        "normal_tỉnh": "Quang Ninh ",
+        "normal_huyện": " Huyen Con Co",
+        "location_id": 49
+      },
+      {
+        "id": 554,
+        "tỉnh": "Quảng Ninh ",
+        "huyện": " Huyện Bình Liêu",
+        "normal_tỉnh": "Quang Ninh ",
+        "normal_huyện": " Huyen Da Krong",
+        "location_id": 49
+      },
+      {
+        "id": 555,
+        "tỉnh": "Quảng Ninh ",
+        "huyện": " Thành phố Cẩm Phả",
+        "normal_tỉnh": "Quang Ninh ",
+        "normal_huyện": " Huyen Hai Lang",
+        "location_id": 49
+      },
+      {
+        "id": 556,
+        "tỉnh": "Quảng Ninh ",
+        "huyện": " Thành phố Uông Bí",
+        "normal_tỉnh": "Quang Ninh ",
+        "normal_huyện": " Thanh pho Soc Trang",
+        "location_id": 49
+      },
+      {
+        "id": 557,
+        "tỉnh": "Quảng Ninh ",
+        "huyện": " Huyện Cô Tô",
+        "normal_tỉnh": "Quang Ninh ",
+        "normal_huyện": " Huyen My Xuyen",
+        "location_id": 49
+      },
+      {
+        "id": 574,
+        "tỉnh": "Quảng Trị ",
+        "huyện": " Huyện Gio Linh",
+        "normal_tỉnh": "Quang Tri ",
+        "normal_huyện": " Huyen Ke Sach",
+        "location_id": 50
+      },
+      {
+        "id": 575,
+        "tỉnh": "Quảng Trị ",
+        "huyện": " Thành phố Đông Hà",
+        "normal_tỉnh": "Quang Tri ",
+        "normal_huyện": " Huyen Chau Thanh",
+        "location_id": 50
+      },
+      {
+        "id": 576,
+        "tỉnh": "Quảng Trị ",
+        "huyện": " Thị xã Quảng Trị",
+        "normal_tỉnh": "Quang Tri ",
+        "normal_huyện": " Thi xa Nga Nam",
+        "location_id": 50
+      },
+      {
+        "id": 577,
+        "tỉnh": "Quảng Trị ",
+        "huyện": " Huyện Hướng Hóa",
+        "normal_tỉnh": "Quang Tri ",
+        "normal_huyện": " Huyen Tran De",
+        "location_id": 50
+      },
+      {
+        "id": 578,
+        "tỉnh": "Quảng Trị ",
+        "huyện": " Huyện Vĩnh Linh",
+        "normal_tỉnh": "Quang Tri ",
+        "normal_huyện": " Huyen Cu Lao Dung",
+        "location_id": 50
+      },
+      {
+        "id": 579,
+        "tỉnh": "Quảng Trị ",
+        "huyện": " Huyện Cam Lộ",
+        "normal_tỉnh": "Quang Tri ",
+        "normal_huyện": " Huyen Long Phu",
+        "location_id": 50
+      },
+      {
+        "id": 580,
+        "tỉnh": "Quảng Trị ",
+        "huyện": " Huyện Triệu Phong",
+        "normal_tỉnh": "Quang Tri ",
+        "normal_huyện": " Huyen My Tu",
+        "location_id": 50
+      },
+      {
+        "id": 581,
+        "tỉnh": "Quảng Trị ",
+        "huyện": " Huyện Cồn Cỏ",
+        "normal_tỉnh": "Quang Tri ",
+        "normal_huyện": " Huyen Thanh Tri",
+        "location_id": 50
+      },
+      {
+        "id": 582,
+        "tỉnh": "Quảng Trị ",
+        "huyện": " Huyện Đa Krông",
+        "normal_tỉnh": "Quang Tri ",
+        "normal_huyện": " Thi xa Vinh Chau",
+        "location_id": 50
+      },
+      {
+        "id": 583,
+        "tỉnh": "Quảng Trị ",
+        "huyện": " Huyện Hải Lăng",
+        "normal_tỉnh": "Quang Tri ",
+        "normal_huyện": " Huyen Moc Chau",
+        "location_id": 50
+      },
+      {
+        "id": 584,
+        "tỉnh": "Sóc Trăng ",
+        "huyện": " Thành phố Sóc Trăng",
+        "normal_tỉnh": "Soc Trang ",
+        "normal_huyện": " Huyen Mai Son",
+        "location_id": 51
+      },
+      {
+        "id": 585,
+        "tỉnh": "Sóc Trăng ",
+        "huyện": " Huyện Mỹ Xuyên",
+        "normal_tỉnh": "Soc Trang ",
+        "normal_huyện": " Thanh pho Son La",
+        "location_id": 51
+      },
+      {
+        "id": 586,
+        "tỉnh": "Sóc Trăng ",
+        "huyện": " Huyện Kế Sách",
+        "normal_tỉnh": "Soc Trang ",
+        "normal_huyện": " Huyen Thuan Chau",
+        "location_id": 51
+      },
+      {
+        "id": 587,
+        "tỉnh": "Sóc Trăng ",
+        "huyện": " Huyện Châu Thành",
+        "normal_tỉnh": "Soc Trang ",
+        "normal_huyện": " Huyen Song Ma",
+        "location_id": 51
+      },
+      {
+        "id": 588,
+        "tỉnh": "Sóc Trăng ",
+        "huyện": " Thị xã Ngã Năm",
+        "normal_tỉnh": "Soc Trang ",
+        "normal_huyện": " Huyen Phu Yen",
+        "location_id": 51
+      },
+      {
+        "id": 589,
+        "tỉnh": "Sóc Trăng ",
+        "huyện": " Huyện Trần Đề",
+        "normal_tỉnh": "Soc Trang ",
+        "normal_huyện": " Huyen Sop Cop",
+        "location_id": 51
+      },
+      {
+        "id": 590,
+        "tỉnh": "Sóc Trăng ",
+        "huyện": " Huyện Cù Lao Dung",
+        "normal_tỉnh": "Soc Trang ",
+        "normal_huyện": " Huyen Muong La",
+        "location_id": 51
+      },
+      {
+        "id": 591,
+        "tỉnh": "Sóc Trăng ",
+        "huyện": " Huyện Long Phú",
+        "normal_tỉnh": "Soc Trang ",
+        "normal_huyện": " Huyen Bac Yen",
+        "location_id": 51
+      },
+      {
+        "id": 592,
+        "tỉnh": "Sóc Trăng ",
+        "huyện": " Huyện Mỹ Tú",
+        "normal_tỉnh": "Soc Trang ",
+        "normal_huyện": " Huyen Quynh Nhai",
+        "location_id": 51
+      },
+      {
+        "id": 593,
+        "tỉnh": "Sóc Trăng ",
+        "huyện": " Huyện Thạnh Trị",
+        "normal_tỉnh": "Soc Trang ",
+        "normal_huyện": " Huyen Yen Chau",
+        "location_id": 51
+      },
+      {
+        "id": 594,
+        "tỉnh": "Sóc Trăng ",
+        "huyện": " Thị xã Vĩnh Châu",
+        "normal_tỉnh": "Soc Trang ",
+        "normal_huyện": " Thanh pho Tay Ninh",
+        "location_id": 51
+      },
+      {
+        "id": 595,
+        "tỉnh": "Sơn La ",
+        "huyện": " Huyện Mộc Châu",
+        "normal_tỉnh": "Son La ",
+        "normal_huyện": " Huyen Chau Thanh",
+        "location_id": 52
+      },
+      {
+        "id": 596,
+        "tỉnh": "Sơn La ",
+        "huyện": " Huyện Mai Sơn",
+        "normal_tỉnh": "Son La ",
+        "normal_huyện": " Thi xa Hoa Thanh",
+        "location_id": 52
+      },
+      {
+        "id": 597,
+        "tỉnh": "Sơn La ",
+        "huyện": " Thành phố Sơn La",
+        "normal_tỉnh": "Son La ",
+        "normal_huyện": " Huyen Tan Bien",
+        "location_id": 52
+      },
+      {
+        "id": 598,
+        "tỉnh": "Sơn La ",
+        "huyện": " Huyện Thuận Châu",
+        "normal_tỉnh": "Son La ",
+        "normal_huyện": " Huyen Tan Chau",
+        "location_id": 52
+      },
+      {
+        "id": 599,
+        "tỉnh": "Sơn La ",
+        "huyện": " Huyện Sông Mã",
+        "normal_tỉnh": "Son La ",
+        "normal_huyện": " Huyen Duong Minh Chau",
+        "location_id": 52
+      },
+      {
+        "id": 600,
+        "tỉnh": "Sơn La ",
+        "huyện": " Huyện Phù Yên",
+        "normal_tỉnh": "Son La ",
+        "normal_huyện": " Huyen Ben Cau",
+        "location_id": 52
+      },
+      {
+        "id": 601,
+        "tỉnh": "Sơn La ",
+        "huyện": " Huyện Sốp Cộp",
+        "normal_tỉnh": "Son La ",
+        "normal_huyện": " Huyen Go Dau",
+        "location_id": 52
+      },
+      {
+        "id": 602,
+        "tỉnh": "Sơn La ",
+        "huyện": " Huyện Mường La",
+        "normal_tỉnh": "Son La ",
+        "normal_huyện": " Thi xa Trang Bang",
+        "location_id": 52
+      },
+      {
+        "id": 603,
+        "tỉnh": "Sơn La ",
+        "huyện": " Huyện Bắc Yên",
+        "normal_tỉnh": "Son La ",
+        "normal_huyện": " Thi xa Cai Lay",
+        "location_id": 52
+      },
+      {
+        "id": 605,
+        "tỉnh": "Sơn La ",
+        "huyện": " Huyện Quỳnh Nhai",
+        "normal_tỉnh": "Son La ",
+        "normal_huyện": " Thi xa Go Cong",
+        "location_id": 52
+      },
+      {
+        "id": 606,
+        "tỉnh": "Sơn La ",
+        "huyện": " Huyện Yên Châu",
+        "normal_tỉnh": "Son La ",
+        "normal_huyện": " Thanh pho My Tho",
+        "location_id": 52
+      },
+      {
+        "id": 722,
+        "tỉnh": "Sơn La ",
+        "huyện": " Huyện Vân Hồ",
+        "normal_tỉnh": "Son La ",
+        "normal_huyện": " Huyen Cai Be",
+        "location_id": 52
+      },
+      {
+        "id": 607,
+        "tỉnh": "Tây Ninh ",
+        "huyện": " Thành phố Tây Ninh",
+        "normal_tỉnh": "Tay Ninh ",
+        "normal_huyện": " Huyen Chau Thanh",
+        "location_id": 53
+      },
+      {
+        "id": 608,
+        "tỉnh": "Tây Ninh ",
+        "huyện": " Huyện Châu Thành",
+        "normal_tỉnh": "Tay Ninh ",
+        "normal_huyện": " Huyen Cho Gao",
+        "location_id": 53
+      },
+      {
+        "id": 609,
+        "tỉnh": "Tây Ninh ",
+        "huyện": " Thị xã Hòa Thành",
+        "normal_tỉnh": "Tay Ninh ",
+        "normal_huyện": " Huyen Go Cong Dong",
+        "location_id": 53
+      },
+      {
+        "id": 610,
+        "tỉnh": "Tây Ninh ",
+        "huyện": " Huyện Tân Biên",
+        "normal_tỉnh": "Tay Ninh ",
+        "normal_huyện": " Huyen Go Cong Tay",
+        "location_id": 53
+      },
+      {
+        "id": 611,
+        "tỉnh": "Tây Ninh ",
+        "huyện": " Huyện Tân Châu",
+        "normal_tỉnh": "Tay Ninh ",
+        "normal_huyện": " Huyen Tan Phuoc",
+        "location_id": 53
+      },
+      {
+        "id": 612,
+        "tỉnh": "Tây Ninh ",
+        "huyện": " Huyện Dương Minh Châu",
+        "normal_tỉnh": "Tay Ninh ",
+        "normal_huyện": " Huyen Na Hang",
+        "location_id": 53
+      },
+      {
+        "id": 613,
+        "tỉnh": "Tây Ninh ",
+        "huyện": " Huyện Bến Cầu",
+        "normal_tỉnh": "Tay Ninh ",
+        "normal_huyện": " Huyen Lam Binh",
+        "location_id": 53
+      },
+      {
+        "id": 614,
+        "tỉnh": "Tây Ninh ",
+        "huyện": " Huyện Gò Dầu",
+        "normal_tỉnh": "Tay Ninh ",
+        "normal_huyện": " Huyen Ham Yen",
+        "location_id": 53
+      },
+      {
+        "id": 615,
+        "tỉnh": "Tây Ninh ",
+        "huyện": " Thị xã Trảng Bàng",
+        "normal_tỉnh": "Tay Ninh ",
+        "normal_huyện": " Thanh pho Tuyen Quang",
+        "location_id": 53
+      },
+      {
+        "id": 632,
+        "tỉnh": "Thái Bình ",
+        "huyện": " Huyện Kiến Xương",
+        "normal_tỉnh": "Thai Binh ",
+        "normal_huyện": " Huyen Yen Son",
+        "location_id": 54
+      },
+      {
+        "id": 633,
+        "tỉnh": "Thái Bình ",
+        "huyện": " Huyện Đông Hưng",
+        "normal_tỉnh": "Thai Binh ",
+        "normal_huyện": " Huyen Chiem Hoa",
+        "location_id": 54
+      },
+      {
+        "id": 634,
+        "tỉnh": "Thái Bình ",
+        "huyện": " Huyện Vũ Thư",
+        "normal_tỉnh": "Thai Binh ",
+        "normal_huyện": " Huyen Son Duong",
+        "location_id": 54
+      },
+      {
+        "id": 635,
+        "tỉnh": "Thái Bình ",
+        "huyện": " Thành phố Thái Bình",
+        "normal_tỉnh": "Thai Binh ",
+        "normal_huyện": " Huyen Kien Xuong",
+        "location_id": 54
+      },
+      {
+        "id": 636,
+        "tỉnh": "Thái Bình ",
+        "huyện": " Huyện Hưng Hà",
+        "normal_tỉnh": "Thai Binh ",
+        "normal_huyện": " Huyen Dong Hung",
+        "location_id": 54
+      },
+      {
+        "id": 637,
+        "tỉnh": "Thái Bình ",
+        "huyện": " Huyện Quỳnh Phụ",
+        "normal_tỉnh": "Thai Binh ",
+        "normal_huyện": " Huyen Vu Thu",
+        "location_id": 54
+      },
+      {
+        "id": 638,
+        "tỉnh": "Thái Bình ",
+        "huyện": " Huyện Thái Thụy",
+        "normal_tỉnh": "Thai Binh ",
+        "normal_huyện": " Thanh pho Thai Binh",
+        "location_id": 54
+      },
+      {
+        "id": 639,
+        "tỉnh": "Thái Bình ",
+        "huyện": " Huyện Tiền Hải",
+        "normal_tỉnh": "Thai Binh ",
+        "normal_huyện": " Huyen Hung Ha",
+        "location_id": 54
+      },
+      {
+        "id": 640,
+        "tỉnh": "Thái Nguyên ",
+        "huyện": " Huyện Đại Từ",
+        "normal_tỉnh": "Thai Nguyen ",
+        "normal_huyện": " Huyen Quynh Phu",
+        "location_id": 55
+      },
+      {
+        "id": 641,
+        "tỉnh": "Thái Nguyên ",
+        "huyện": " Thành phố Sông Công",
+        "normal_tỉnh": "Thai Nguyen ",
+        "normal_huyện": " Huyen Thai Thuy",
+        "location_id": 55
+      },
+      {
+        "id": 642,
+        "tỉnh": "Thái Nguyên ",
+        "huyện": " Thị xã Phổ Yên",
+        "normal_tỉnh": "Thai Nguyen ",
+        "normal_huyện": " Huyen Tien Hai",
+        "location_id": 55
+      },
+      {
+        "id": 643,
+        "tỉnh": "Thái Nguyên ",
+        "huyện": " Huyện Phú Bình",
+        "normal_tỉnh": "Thai Nguyen ",
+        "normal_huyện": " Huyen Dai Tu",
+        "location_id": 55
+      },
+      {
+        "id": 644,
+        "tỉnh": "Thái Nguyên ",
+        "huyện": " Huyện Định Hóa",
+        "normal_tỉnh": "Thai Nguyen ",
+        "normal_huyện": " Thanh pho Song Cong",
+        "location_id": 55
+      },
+      {
+        "id": 645,
+        "tỉnh": "Thái Nguyên ",
+        "huyện": " Thành phố Thái Nguyên",
+        "normal_tỉnh": "Thai Nguyen ",
+        "normal_huyện": " Thi xa Pho Yen",
+        "location_id": 55
+      },
+      {
+        "id": 646,
+        "tỉnh": "Thái Nguyên ",
+        "huyện": " Huyện Đồng Hỷ",
+        "normal_tỉnh": "Thai Nguyen ",
+        "normal_huyện": " Huyen Phu Binh",
+        "location_id": 55
+      },
+      {
+        "id": 647,
+        "tỉnh": "Thái Nguyên ",
+        "huyện": " Huyện Võ Nhai",
+        "normal_tỉnh": "Thai Nguyen ",
+        "normal_huyện": " Huyen Dinh Hoa",
+        "location_id": 55
+      },
+      {
+        "id": 648,
+        "tỉnh": "Thái Nguyên ",
+        "huyện": " Huyện Phú Lương",
+        "normal_tỉnh": "Thai Nguyen ",
+        "normal_huyện": " Thanh pho Thai Nguyen",
+        "location_id": 55
+      },
+      {
+        "id": 649,
+        "tỉnh": "Thanh Hóa ",
+        "huyện": " Huyện Hậu Lộc",
+        "normal_tỉnh": "Thanh Hoa ",
+        "normal_huyện": " Huyen Dong Hy",
+        "location_id": 56
+      },
+      {
+        "id": 650,
+        "tỉnh": "Thanh Hóa ",
+        "huyện": " Huyện Đông Sơn",
+        "normal_tỉnh": "Thanh Hoa ",
+        "normal_huyện": " Huyen Vo Nhai",
+        "location_id": 56
+      },
+      {
+        "id": 651,
+        "tỉnh": "Thanh Hóa ",
+        "huyện": " Huyện Quảng Xương",
+        "normal_tỉnh": "Thanh Hoa ",
+        "normal_huyện": " Huyen Phu Luong",
+        "location_id": 56
+      },
+      {
+        "id": 652,
+        "tỉnh": "Thanh Hóa ",
+        "huyện": " Huyện Hoằng Hóa",
+        "normal_tỉnh": "Thanh Hoa ",
+        "normal_huyện": " Huyen Hau Loc",
+        "location_id": 56
+      },
+      {
+        "id": 653,
+        "tỉnh": "Thanh Hóa ",
+        "huyện": " Thành phố Sầm Sơn",
+        "normal_tỉnh": "Thanh Hoa ",
+        "normal_huyện": " Huyen Dong Son",
+        "location_id": 56
+      },
+      {
+        "id": 654,
+        "tỉnh": "Thanh Hóa ",
+        "huyện": " Thành phố Thanh Hóa",
+        "normal_tỉnh": "Thanh Hoa ",
+        "normal_huyện": " Huyen Quang Xuong",
+        "location_id": 56
+      },
+      {
+        "id": 655,
+        "tỉnh": "Thanh Hóa ",
+        "huyện": " Thị xã Nghi Sơn",
+        "normal_tỉnh": "Thanh Hoa ",
+        "normal_huyện": " Huyen Hoang Hoa",
+        "location_id": 56
+      },
+      {
+        "id": 656,
+        "tỉnh": "Thanh Hóa ",
+        "huyện": " Huyện Như Xuân",
+        "normal_tỉnh": "Thanh Hoa ",
+        "normal_huyện": " Thanh pho Sam Son",
+        "location_id": 56
+      },
+      {
+        "id": 657,
+        "tỉnh": "Thanh Hóa ",
+        "huyện": " Huyện Thường Xuân",
+        "normal_tỉnh": "Thanh Hoa ",
+        "normal_huyện": " Thanh pho Thanh Hoa",
+        "location_id": 56
+      },
+      {
+        "id": 658,
+        "tỉnh": "Thanh Hóa ",
+        "huyện": " Huyện Thọ Xuân",
+        "normal_tỉnh": "Thanh Hoa ",
+        "normal_huyện": " Thi xa Nghi Son",
+        "location_id": 56
+      },
+      {
+        "id": 659,
+        "tỉnh": "Thanh Hóa ",
+        "huyện": " Huyện Ngọc Lặc",
+        "normal_tỉnh": "Thanh Hoa ",
+        "normal_huyện": " Huyen Nhu Xuan",
+        "location_id": 56
+      },
+      {
+        "id": 660,
+        "tỉnh": "Thanh Hóa ",
+        "huyện": " Huyện Yên Định",
+        "normal_tỉnh": "Thanh Hoa ",
+        "normal_huyện": " Huyen Thuong Xuan",
+        "location_id": 56
+      },
+      {
+        "id": 661,
+        "tỉnh": "Thanh Hóa ",
+        "huyện": " Thị xã Bỉm Sơn",
+        "normal_tỉnh": "Thanh Hoa ",
+        "normal_huyện": " Huyen Tho Xuan",
+        "location_id": 56
+      },
+      {
+        "id": 662,
+        "tỉnh": "Thanh Hóa ",
+        "huyện": " Huyện Hà Trung",
+        "normal_tỉnh": "Thanh Hoa ",
+        "normal_huyện": " Huyen Ngoc Lac",
+        "location_id": 56
+      },
+      {
+        "id": 663,
+        "tỉnh": "Thanh Hóa ",
+        "huyện": " Huyện Mường Lát",
+        "normal_tỉnh": "Thanh Hoa ",
+        "normal_huyện": " Huyen Yen Dinh",
+        "location_id": 56
+      },
+      {
+        "id": 664,
+        "tỉnh": "Thanh Hóa ",
+        "huyện": " Huyện Quan Hóa",
+        "normal_tỉnh": "Thanh Hoa ",
+        "normal_huyện": " Thi xa Bim Son",
+        "location_id": 56
+      },
+      {
+        "id": 665,
+        "tỉnh": "Thanh Hóa ",
+        "huyện": " Huyện Thạch Thành",
+        "normal_tỉnh": "Thanh Hoa ",
+        "normal_huyện": " Huyen Ha Trung",
+        "location_id": 56
+      },
+      {
+        "id": 666,
+        "tỉnh": "Thanh Hóa ",
+        "huyện": " Huyện Vĩnh Lộc",
+        "normal_tỉnh": "Thanh Hoa ",
+        "normal_huyện": " Huyen Muong Lat",
+        "location_id": 56
+      },
+      {
+        "id": 667,
+        "tỉnh": "Thanh Hóa ",
+        "huyện": " Huyện Quan Sơn",
+        "normal_tỉnh": "Thanh Hoa ",
+        "normal_huyện": " Huyen Quan Hoa",
+        "location_id": 56
+      },
+      {
+        "id": 668,
+        "tỉnh": "Thanh Hóa ",
+        "huyện": " Huyện Bá Thước",
+        "normal_tỉnh": "Thanh Hoa ",
+        "normal_huyện": " Huyen Thach Thanh",
+        "location_id": 56
+      },
+      {
+        "id": 669,
+        "tỉnh": "Thanh Hóa ",
+        "huyện": " Huyện Cẩm Thủy",
+        "normal_tỉnh": "Thanh Hoa ",
+        "normal_huyện": " Huyen Vinh Loc",
+        "location_id": 56
+      },
+      {
+        "id": 670,
+        "tỉnh": "Thanh Hóa ",
+        "huyện": " Huyện Lang Chánh",
+        "normal_tỉnh": "Thanh Hoa ",
+        "normal_huyện": " Huyen Quan Son",
+        "location_id": 56
+      },
+      {
+        "id": 671,
+        "tỉnh": "Thanh Hóa ",
+        "huyện": " Huyện Như Thanh",
+        "normal_tỉnh": "Thanh Hoa ",
+        "normal_huyện": " Huyen Ba Thuoc",
+        "location_id": 56
+      },
+      {
+        "id": 672,
+        "tỉnh": "Thanh Hóa ",
+        "huyện": " Huyện Nông Cống",
+        "normal_tỉnh": "Thanh Hoa ",
+        "normal_huyện": " Huyen Cam Thuy",
+        "location_id": 56
+      },
+      {
+        "id": 673,
+        "tỉnh": "Thanh Hóa ",
+        "huyện": " Huyện Thiệu Hóa",
+        "normal_tỉnh": "Thanh Hoa ",
+        "normal_huyện": " Huyen Lang Chanh",
+        "location_id": 56
+      },
+      {
+        "id": 674,
+        "tỉnh": "Thanh Hóa ",
+        "huyện": " Huyện Triệu Sơn",
+        "normal_tỉnh": "Thanh Hoa ",
+        "normal_huyện": " Huyen Nhu Thanh",
+        "location_id": 56
+      },
+      {
+        "id": 725,
+        "tỉnh": "Thanh Hóa ",
+        "huyện": " Huyện Nga Sơn",
+        "normal_tỉnh": "Thanh Hoa ",
+        "normal_huyện": " Huyen Nong Cong",
+        "location_id": 56
+      },
+      {
+        "id": 675,
+        "tỉnh": "Thừa Thiên Huế ",
+        "huyện": " Huyện Phú Vang",
+        "normal_tỉnh": "Thua Thien Hue ",
+        "normal_huyện": " Huyen Thieu Hoa",
+        "location_id": 57
+      },
+      {
+        "id": 676,
+        "tỉnh": "Thừa Thiên Huế ",
+        "huyện": " Huyện A Lưới",
+        "normal_tỉnh": "Thua Thien Hue ",
+        "normal_huyện": " Huyen Trieu Son",
+        "location_id": 57
+      },
+      {
+        "id": 677,
+        "tỉnh": "Thừa Thiên Huế ",
+        "huyện": " Huyện Phú Lộc",
+        "normal_tỉnh": "Thua Thien Hue ",
+        "normal_huyện": " Huyen Phu Vang",
+        "location_id": 57
+      },
+      {
+        "id": 678,
+        "tỉnh": "Thừa Thiên Huế ",
+        "huyện": " Thành phố Huế",
+        "normal_tỉnh": "Thua Thien Hue ",
+        "normal_huyện": " Huyen A Luoi",
+        "location_id": 57
+      },
+      {
+        "id": 679,
+        "tỉnh": "Thừa Thiên Huế ",
+        "huyện": " Thị xã Hương Trà",
+        "normal_tỉnh": "Thua Thien Hue ",
+        "normal_huyện": " Huyen Phu Loc",
+        "location_id": 57
+      },
+      {
+        "id": 680,
+        "tỉnh": "Thừa Thiên Huế ",
+        "huyện": " Thị xã Hương Thủy",
+        "normal_tỉnh": "Thua Thien Hue ",
+        "normal_huyện": " Thanh pho Hue",
+        "location_id": 57
+      },
+      {
+        "id": 681,
+        "tỉnh": "Thừa Thiên Huế ",
+        "huyện": " Huyện Nam Đông",
+        "normal_tỉnh": "Thua Thien Hue ",
+        "normal_huyện": " Thi xa Huong Tra",
+        "location_id": 57
+      },
+      {
+        "id": 682,
+        "tỉnh": "Thừa Thiên Huế ",
+        "huyện": " Huyện Phong Điền",
+        "normal_tỉnh": "Thua Thien Hue ",
+        "normal_huyện": " Thi xa Huong Thuy",
+        "location_id": 57
+      },
+      {
+        "id": 683,
+        "tỉnh": "Thừa Thiên Huế ",
+        "huyện": " Huyện Quảng Điền",
+        "normal_tỉnh": "Thua Thien Hue ",
+        "normal_huyện": " Huyen Nam Dong",
+        "location_id": 57
+      },
+      {
+        "id": 616,
+        "tỉnh": "Tiền Giang ",
+        "huyện": " Thị xã Cai Lậy",
+        "normal_tỉnh": "Tien Giang ",
+        "normal_huyện": " Huyen Phong Dien",
+        "location_id": 58
+      },
+      {
+        "id": 617,
+        "tỉnh": "Tiền Giang ",
+        "huyện": " Thị xã Gò Công",
+        "normal_tỉnh": "Tien Giang ",
+        "normal_huyện": " Huyen Quang Dien",
+        "location_id": 58
+      },
+      {
+        "id": 618,
+        "tỉnh": "Tiền Giang ",
+        "huyện": " Thành phố Mỹ Tho",
+        "normal_tỉnh": "Tien Giang ",
+        "normal_huyện": " Huyen Tra Cu",
+        "location_id": 58
+      },
+      {
+        "id": 619,
+        "tỉnh": "Tiền Giang ",
+        "huyện": " Huyện Cái Bè",
+        "normal_tỉnh": "Tien Giang ",
+        "normal_huyện": " Huyen Tieu Can",
+        "location_id": 58
+      },
+      {
+        "id": 620,
+        "tỉnh": "Tiền Giang ",
+        "huyện": " Huyện Châu Thành",
+        "normal_tỉnh": "Tien Giang ",
+        "normal_huyện": " Thanh pho Tra Vinh",
+        "location_id": 58
+      },
+      {
+        "id": 621,
+        "tỉnh": "Tiền Giang ",
+        "huyện": " Huyện Chợ Gạo",
+        "normal_tỉnh": "Tien Giang ",
+        "normal_huyện": " Huyen Cau Ngang",
+        "location_id": 58
+      },
+      {
+        "id": 622,
+        "tỉnh": "Tiền Giang ",
+        "huyện": " Huyện Gò Công Đông",
+        "normal_tỉnh": "Tien Giang ",
+        "normal_huyện": " Huyen Chau Thanh",
+        "location_id": 58
+      },
+      {
+        "id": 623,
+        "tỉnh": "Tiền Giang ",
+        "huyện": " Huyện Gò Công Tây",
+        "normal_tỉnh": "Tien Giang ",
+        "normal_huyện": " Huyen Cang Long",
+        "location_id": 58
+      },
+      {
+        "id": 624,
+        "tỉnh": "Tiền Giang ",
+        "huyện": " Huyện Tân Phước",
+        "normal_tỉnh": "Tien Giang ",
+        "normal_huyện": " Huyen Cau Ke",
+        "location_id": 58
+      },
+      {
+        "id": 718,
+        "tỉnh": "Tiền Giang ",
+        "huyện": " Huyện Cai Lậy",
+        "normal_tỉnh": "Tien Giang ",
+        "normal_huyện": " Thi xa Duyen Hai",
+        "location_id": 58
+      },
+      {
+        "id": 733,
+        "tỉnh": "Tiền Giang ",
+        "huyện": " Huyện Tân Phú Đông",
+        "normal_tỉnh": "Tien Giang ",
+        "normal_huyện": " Huyen Long Ho",
+        "location_id": 58
+      },
+      {
+        "id": 684,
+        "tỉnh": "Trà Vinh ",
+        "huyện": " Huyện Trà Cú",
+        "normal_tỉnh": "Tra Vinh ",
+        "normal_huyện": " Thanh pho Vinh Long",
+        "location_id": 59
+      },
+      {
+        "id": 685,
+        "tỉnh": "Trà Vinh ",
+        "huyện": " Huyện Tiểu Cần",
+        "normal_tỉnh": "Tra Vinh ",
+        "normal_huyện": " Thi xa Binh Minh",
+        "location_id": 59
+      },
+      {
+        "id": 686,
+        "tỉnh": "Trà Vinh ",
+        "huyện": " Thành phố Trà Vinh",
+        "normal_tỉnh": "Tra Vinh ",
+        "normal_huyện": " Huyen Tra On",
+        "location_id": 59
+      },
+      {
+        "id": 687,
+        "tỉnh": "Trà Vinh ",
+        "huyện": " Huyện Cầu Ngang",
+        "normal_tỉnh": "Tra Vinh ",
+        "normal_huyện": " Huyen Tam Binh",
+        "location_id": 59
+      },
+      {
+        "id": 688,
+        "tỉnh": "Trà Vinh ",
+        "huyện": " Huyện Châu Thành",
+        "normal_tỉnh": "Tra Vinh ",
+        "normal_huyện": " Huyen Binh Tan",
+        "location_id": 59
+      },
+      {
+        "id": 689,
+        "tỉnh": "Trà Vinh ",
+        "huyện": " Huyện Càng Long",
+        "normal_tỉnh": "Tra Vinh ",
+        "normal_huyện": " Huyen Mang Thit",
+        "location_id": 59
+      },
+      {
+        "id": 690,
+        "tỉnh": "Trà Vinh ",
+        "huyện": " Huyện Cầu Kè",
+        "normal_tỉnh": "Tra Vinh ",
+        "normal_huyện": " Huyen Vung Liem",
+        "location_id": 59
+      },
+      {
+        "id": 691,
+        "tỉnh": "Trà Vinh ",
+        "huyện": " Thị xã Duyên Hải",
+        "normal_tỉnh": "Tra Vinh ",
+        "normal_huyện": " Huyen Tam Duong",
+        "location_id": 59
+      },
+      {
+        "id": 734,
+        "tỉnh": "Trà Vinh ",
+        "huyện": " Huyện Duyên Hải",
+        "normal_tỉnh": "Tra Vinh ",
+        "normal_huyện": " Huyen Tam Dao",
+        "location_id": 59
+      },
+      {
+        "id": 625,
+        "tỉnh": "Tuyên Quang ",
+        "huyện": " Huyện Nà Hang",
+        "normal_tỉnh": "Tuyen Quang ",
+        "normal_huyện": " Huyen Song Lo",
+        "location_id": 60
+      },
+      {
+        "id": 626,
+        "tỉnh": "Tuyên Quang ",
+        "huyện": " Huyện Lâm Bình",
+        "normal_tỉnh": "Tuyen Quang ",
+        "normal_huyện": " Thanh pho Phuc Yen",
+        "location_id": 60
+      },
+      {
+        "id": 627,
+        "tỉnh": "Tuyên Quang ",
+        "huyện": " Huyện Hàm Yên",
+        "normal_tỉnh": "Tuyen Quang ",
+        "normal_huyện": " Huyen Lap Thach",
+        "location_id": 60
+      },
+      {
+        "id": 628,
+        "tỉnh": "Tuyên Quang ",
+        "huyện": " Thành phố Tuyên Quang",
+        "normal_tỉnh": "Tuyen Quang ",
+        "normal_huyện": " Thanh pho Vinh Yen",
+        "location_id": 60
+      },
+      {
+        "id": 629,
+        "tỉnh": "Tuyên Quang ",
+        "huyện": " Huyện Yên Sơn",
+        "normal_tỉnh": "Tuyen Quang ",
+        "normal_huyện": " Huyen Binh Xuyen",
+        "location_id": 60
+      },
+      {
+        "id": 630,
+        "tỉnh": "Tuyên Quang ",
+        "huyện": " Huyện Chiêm Hóa",
+        "normal_tỉnh": "Tuyen Quang ",
+        "normal_huyện": " Huyen Vinh Tuong",
+        "location_id": 60
+      },
+      {
+        "id": 631,
+        "tỉnh": "Tuyên Quang ",
+        "huyện": " Huyện Sơn Dương",
+        "normal_tỉnh": "Tuyen Quang ",
+        "normal_huyện": " Huyen Yen Lac",
+        "location_id": 60
+      },
+      {
+        "id": 692,
+        "tỉnh": "Vĩnh Long ",
+        "huyện": " Huyện Long Hồ",
+        "normal_tỉnh": "Vinh Long ",
+        "normal_huyện": " Huyen Tran Yen",
+        "location_id": 61
+      },
+      {
+        "id": 693,
+        "tỉnh": "Vĩnh Long ",
+        "huyện": " Thành phố Vĩnh Long",
+        "normal_tỉnh": "Vinh Long ",
+        "normal_huyện": " Huyen Van Yen",
+        "location_id": 61
+      },
+      {
+        "id": 694,
+        "tỉnh": "Vĩnh Long ",
+        "huyện": " Thị xã Bình Minh",
+        "normal_tỉnh": "Vinh Long ",
+        "normal_huyện": " Huyen Van Chan",
+        "location_id": 61
+      },
+      {
+        "id": 695,
+        "tỉnh": "Vĩnh Long ",
+        "huyện": " Huyện Trà Ôn",
+        "normal_tỉnh": "Vinh Long ",
+        "normal_huyện": " Thi xa Nghia Lo",
+        "location_id": 61
+      },
+      {
+        "id": 696,
+        "tỉnh": "Vĩnh Long ",
+        "huyện": " Huyện Tam Bình",
+        "normal_tỉnh": "Vinh Long ",
+        "normal_huyện": " Thanh pho Yen Bai",
+        "location_id": 61
+      },
+      {
+        "id": 697,
+        "tỉnh": "Vĩnh Long ",
+        "huyện": " Huyện Bình Tân",
+        "normal_tỉnh": "Vinh Long ",
+        "normal_huyện": " Huyen Mu Cang Chai",
+        "location_id": 61
+      },
+      {
+        "id": 698,
+        "tỉnh": "Vĩnh Long ",
+        "huyện": " Huyện Mang Thít",
+        "normal_tỉnh": "Vinh Long ",
+        "normal_huyện": " Huyen Luc Yen",
+        "location_id": 61
+      },
+      {
+        "id": 699,
+        "tỉnh": "Vĩnh Long ",
+        "huyện": " Huyện Vũng Liêm",
+        "normal_tỉnh": "Vinh Long ",
+        "normal_huyện": " Huyen Tram Tau",
+        "location_id": 61
+      },
+      {
+        "id": 700,
+        "tỉnh": "Vĩnh Phúc ",
+        "huyện": " Huyện Tam Dương",
+        "normal_tỉnh": "Vinh Phuc ",
+        "normal_huyện": " Huyen Yen Binh",
+        "location_id": 62
+      },
+      {
+        "id": 701,
+        "tỉnh": "Vĩnh Phúc ",
+        "huyện": " Huyện Tam Đảo",
+        "normal_tỉnh": "Vinh Phuc ",
+        "normal_huyện": " Huyen Cai Lay",
+        "location_id": 62
+      },
+      {
+        "id": 702,
+        "tỉnh": "Vĩnh Phúc ",
+        "huyện": " Huyện Sông Lô",
+        "normal_tỉnh": "Vinh Phuc ",
+        "normal_huyện": " Huyen Muong Ang",
+        "location_id": 62
+      },
+      {
+        "id": 703,
+        "tỉnh": "Vĩnh Phúc ",
+        "huyện": " Thành phố Phúc Yên",
+        "normal_tỉnh": "Vinh Phuc ",
+        "normal_huyện": " Huyen Nam Po",
+        "location_id": 62
+      },
+      {
+        "id": 704,
+        "tỉnh": "Vĩnh Phúc ",
+        "huyện": " Huyện Lập Thạch",
+        "normal_tỉnh": "Vinh Phuc ",
+        "normal_huyện": " Huyen Van Ho",
+        "location_id": 62
+      },
+      {
+        "id": 705,
+        "tỉnh": "Vĩnh Phúc ",
+        "huyện": " Thành phố Vĩnh Yên",
+        "normal_tỉnh": "Vinh Phuc ",
+        "normal_huyện": " Huyen Nga Son",
+        "location_id": 62
+      },
+      {
+        "id": 706,
+        "tỉnh": "Vĩnh Phúc ",
+        "huyện": " Huyện Bình Xuyên",
+        "normal_tỉnh": "Vinh Phuc ",
+        "normal_huyện": " Huyen Vu Quang",
+        "location_id": 62
+      },
+      {
+        "id": 707,
+        "tỉnh": "Vĩnh Phúc ",
+        "huyện": " Huyện Vĩnh Tường",
+        "normal_tỉnh": "Vinh Phuc ",
+        "normal_huyện": " Thi xa Ky Anh",
+        "location_id": 62
+      },
+      {
+        "id": 708,
+        "tỉnh": "Vĩnh Phúc ",
+        "huyện": " Huyện Yên Lạc",
+        "normal_tỉnh": "Vinh Phuc ",
+        "normal_huyện": " Huyen Minh Long",
+        "location_id": 62
+      },
+      {
+        "id": 709,
+        "tỉnh": "Yên Bái ",
+        "huyện": " Huyện Trấn Yên",
+        "normal_tỉnh": "Yen Bai ",
+        "normal_huyện": " Huyen Ly Son",
+        "location_id": 63
+      },
+      {
+        "id": 710,
+        "tỉnh": "Yên Bái ",
+        "huyện": " Huyện Văn Yên",
+        "normal_tỉnh": "Yen Bai ",
+        "normal_huyện": " Huyen Ia HDrai",
+        "location_id": 63
+      },
+      {
+        "id": 711,
+        "tỉnh": "Yên Bái ",
+        "huyện": " Huyện Văn Chấn",
+        "normal_tỉnh": "Yen Bai ",
+        "normal_huyện": " Huyen Phu Rieng",
+        "location_id": 63
+      },
+      {
+        "id": 712,
+        "tỉnh": "Yên Bái ",
+        "huyện": " Thị xã Nghĩa Lộ",
+        "normal_tỉnh": "Yen Bai ",
+        "normal_huyện": " Thi xa Kien Tuong",
+        "location_id": 63
+      },
+      {
+        "id": 713,
+        "tỉnh": "Yên Bái ",
+        "huyện": " Thành phố Yên Bái",
+        "normal_tỉnh": "Yen Bai ",
+        "normal_huyện": " Huyen Tan Phu Dong",
+        "location_id": 63
+      },
+      {
+        "id": 714,
+        "tỉnh": "Yên Bái ",
+        "huyện": " Huyện Mù Căng Chải",
+        "normal_tỉnh": "Yen Bai ",
+        "normal_huyện": " Huyen Duyen Hai",
+        "location_id": 63
+      },
+      {
+        "id": 715,
+        "tỉnh": "Yên Bái ",
+        "huyện": " Huyện Lục Yên",
+        "normal_tỉnh": "Yen Bai ",
+        "normal_huyện": " Huyen Long My",
+        "location_id": 63
+      },
+      {
+        "id": 716,
+        "tỉnh": "Yên Bái ",
+        "huyện": " Huyện Trạm Tấu",
+        "normal_tỉnh": "Yen Bai ",
+        "normal_huyện": " Thi xa Sa Pa",
+        "location_id": 63
+      },
+      {
+        "id": 717,
+        "tỉnh": "Yên Bái ",
+        "huyện": " Huyện Yên Bình",
+        "normal_tỉnh": "Yen Bai ",
+        "normal_huyện": " Huyen Quang Hoa",
+        "location_id": 63
+      }
+    ]
+  }

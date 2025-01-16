@@ -124,14 +124,11 @@ const fakeOrders: Order[] = [
   }
 ];
 
-// OrderHistory component
 const OrderHistory = () => {
   const [activeTab, setActiveTab] = useState<'Active' | 'Completed' | 'Cancelled'>('Active');
 
-  // Filter orders based on active tab
   const filteredOrders = fakeOrders.filter(order => order.status === activeTab);
 
-  // Render individual order
   const renderOrder = ({ item }: { item: Order }) => (
     <View style={styles.orderContainer}>
       <Image source={{ uri: item.imageUrl }} style={styles.productImage} />
@@ -140,24 +137,24 @@ const OrderHistory = () => {
         <Text style={styles.productInfo}>
           Size: {item.size} | Qty: {item.qty}
         </Text>
-        <Text style={styles.oderStyle}>
-            <Text style={styles.price}>{item.price}$</Text>
-            {activeTab === 'Active' && (
+        <View style={styles.oderStyle}>
+          <Text style={styles.price}>{item.price}$</Text>
+          {activeTab === 'Active' && (
             <TouchableOpacity style={styles.button}>
-                <Text style={styles.buttonText}>Track Order</Text>
+              <Text style={styles.buttonText}>Track Order</Text>
             </TouchableOpacity>
-            )}
-            {activeTab === 'Completed' && (
+          )}
+          {activeTab === 'Completed' && (
             <TouchableOpacity style={styles.button}>
-                <Text style={styles.buttonText}>Leave Review</Text>
+              <Text style={styles.buttonText}>Leave Review</Text>
             </TouchableOpacity>
-            )}
-            {activeTab === 'Cancelled' && (
+          )}
+          {activeTab === 'Cancelled' && (
             <TouchableOpacity style={styles.button}>
-                <Text style={styles.buttonText}>Re-Order</Text>
+              <Text style={styles.buttonText}>Re-Order</Text>
             </TouchableOpacity>
-            )}
-        </Text>
+          )}
+        </View>
       </View>
     </View>
   );
@@ -206,6 +203,7 @@ const styles = StyleSheet.create({
     borderBottomColor: '#000',
   },
   orderContainer: {
+    width: '100%',
     flexDirection: 'row',
     marginBottom: 15,
     padding: 10,
@@ -213,18 +211,20 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   productImage: {
-    width: 100,
+    width: '30%',
     height: 100,
     borderRadius: 8,
   },
   orderDetails: {
+    flex: 1,
     marginLeft: 15,
     justifyContent: 'space-between',
   },
   oderStyle: {
-    width: 250,
-    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
     justifyContent: 'space-between',
+    marginTop: 5,
   },
   productName: {
     fontSize: 16,
@@ -237,7 +237,7 @@ const styles = StyleSheet.create({
   price: {
     fontSize: 16,
     fontWeight: 'bold',
-    marginVertical: 5,
+    color: '#333',
   },
   button: {
     paddingVertical: 5,
