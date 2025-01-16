@@ -8,11 +8,11 @@ interface Banner {
 }
 
 const banners: Banner[] = [
-    {id: 1, image: require('../../assets/images/banner_3.webp')},
-    {id: 2, image: require('../../assets/images/banner_2.jpg')},
-    {id: 3, image: require('../../assets/images/banner_5.jpg')},
-    {id: 4, image: require('../../assets/images/banner_1.jpeg')},
-    {id: 5, image: require('../../assets/images/banner_4.jpeg')},
+    {id: 1, image: require('../../assets/images/banner_3.jpg')},
+    {id: 2, image: require('../../assets/images/banner_1.jpg')},
+    {id: 3, image: require('../../assets/images/banner_2.jpg')},
+    {id: 4, image: require('../../assets/images/banner_5.jpg')},
+    {id: 5, image: require('../../assets/images/banner_4.jpg')},
 ];
 
 const {width} = Dimensions.get('window');

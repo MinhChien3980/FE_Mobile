@@ -7,13 +7,19 @@ import {
   TouchableOpacity,
   Image,
 } from "react-native";
+import * as SecureStore from "expo-secure-store";
 import { Picker } from "@react-native-picker/picker";
 import { Ionicons } from "@expo/vector-icons";
 import { NavigationProp, useNavigation } from "@react-navigation/native";
 import * as ImagePicker from "expo-image-picker";
+import { useAuth } from "../../components/Navigator/Auth";
 import { RootStackParamList } from "../../App";
+import axios from "axios";
+import { post } from "../../api/ApiService";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const ProfileCompletionScreen = () => {
+  const { setIsLoggedIn } = useAuth();
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
   const [name, setName] = useState<string>("John Doe");
   const [phoneNumber, setPhoneNumber] = useState<string>("");
@@ -38,7 +44,7 @@ const ProfileCompletionScreen = () => {
   useEffect(() => {
     (async () => {
       const { status } =
-          await ImagePicker.requestMediaLibraryPermissionsAsync();
+        await ImagePicker.requestMediaLibraryPermissionsAsync();
       if (status !== "granted") {
         alert("Sorry, we need camera roll permissions to make this work!");
       }
@@ -49,7 +55,9 @@ const ProfileCompletionScreen = () => {
 
   const fetchProvinces = async () => {
     try {
-      const response = await fetch("https://provinces.open-api.vn/api/?depth=3");
+      const response = await fetch(
+        "https://provinces.open-api.vn/api/?depth=3"
+      );
       const data = await response.json();
       setProvinces(data);
     } catch (error) {
@@ -60,7 +68,7 @@ const ProfileCompletionScreen = () => {
   useEffect(() => {
     if (province !== "Select") {
       const selectedProvince = provinces.find(
-          (prov) => prov.code === Number(province)
+        (prov) => prov.code === Number(province)
       );
       setDistricts(selectedProvince?.districts || []);
       setDistrict("Select");
@@ -71,7 +79,7 @@ const ProfileCompletionScreen = () => {
   useEffect(() => {
     if (district !== "Select") {
       const selectedDistrict = districts.find(
-          (dist) => dist.code === Number(district)
+        (dist) => dist.code === Number(district)
       );
       setWards(selectedDistrict?.wards || []);
       setWard("Select");
@@ -124,112 +132,146 @@ const ProfileCompletionScreen = () => {
       setAvatarUrl(result.assets[0].uri);
     }
   };
+  const handleLogout = async () => {
+    AsyncStorage.removeItem("fName");
+    const token = await SecureStore.getItemAsync("userToken");
+    console.log("🚀 ~ handleLogout ~ token:", token);
+    await SecureStore.deleteItemAsync("userToken");
+    try {
+      if (token) {
+        const resp = await post("api/auth/logout", { token: token }); // Sử dụng post() cho việc gọi API logout
+
+        if (resp.status === 200) {
+          console.log("🚀 ~ Logout request sent successfully to the server.");
+
+          navigation.navigate("Login");
+
+          setIsLoggedIn(false);
+        } else {
+          console.error("🚨 Logout failed:", resp.status);
+        }
+      }
+    } catch (error) {
+      console.error("Error during logout:", error);
+    }
+  };
 
   return (
-      <View style={styles.container}>
-        <TouchableOpacity style={styles.backButton}>
-          <Text onPress={() => navigation.goBack()}>
-            <Ionicons name="arrow-back" size={24} color="black" />
+    <View style={styles.container}>
+      {/* <TouchableOpacity style={styles.backButton}>
+        <Text onPress={() => navigation.goBack()}>
+          <Ionicons name="arrow-back" size={24} color="black" />
+        </Text>
+      </TouchableOpacity> */}
+
+      <Text style={styles.title}>Complete Your Profile</Text>
+
+      <View style={styles.avatarContainer}>
+        <Image source={{ uri: avatarUrl }} style={styles.avatar} />
+        <TouchableOpacity style={styles.editIconContainer}>
+          <Text onPress={handleChangeAvatar}>
+            <Ionicons name="pencil" size={16} color="white" />
           </Text>
         </TouchableOpacity>
-
-        <Text style={styles.title}>Complete Your Profile</Text>
-
-        <View style={styles.avatarContainer}>
-          <Image source={{ uri: avatarUrl }} style={styles.avatar} />
-          <TouchableOpacity style={styles.editIconContainer}>
-            <Text onPress={handleChangeAvatar}>
-              <Ionicons name="pencil" size={16} color="white" />
-            </Text>
-          </TouchableOpacity>
-        </View>
-
-        <Text>Tên</Text>
-        <TextInput
-            style={[styles.input, nameError && styles.errorInput]}
-            placeholder="Name"
-            value={name}
-            onChangeText={setName}
-        />
-        {nameError && <Text style={styles.errorText}>* Thông tin này là bắt buộc</Text>}
-
-        <Text>Số điện thoại</Text>
-        <TextInput
-            style={[styles.input, phoneNumberError && styles.errorInput]}
-            placeholder="Enter Phone Number"
-            value={phoneNumber}
-            onChangeText={setPhoneNumber}
-            keyboardType="numeric"
-        />
-        {phoneNumberError && <Text style={styles.errorText}>* Thông tin này là bắt buộc</Text>}
-
-        <Text>Giới tính</Text>
-        <Picker
-            selectedValue={gender}
-            onValueChange={(itemValue) => setGender(itemValue)}
-            style={styles.picker}
-        >
-          <Picker.Item label="Chọn" value="Select" />
-          <Picker.Item label="Nam" value="Male" />
-          <Picker.Item label="Nữ" value="Female" />
-          <Picker.Item label="Khác" value="Other" />
-        </Picker>
-        {genderError && <Text style={styles.errorText}>* Thông tin này là bắt buộc</Text>}
-
-        <Text style={styles.address}>Tỉnh/Thành phố</Text>
-        <Picker
-            selectedValue={province}
-            onValueChange={(itemValue) => setProvince(itemValue)}
-            style={styles.picker}
-        >
-          <Picker.Item label="Chọn Tỉnh/Thành phố" value="Select" />
-          {provinces.map((prov) => (
-              <Picker.Item
-                  key={prov.code}
-                  label={prov.name}
-                  value={String(prov.code)}
-              />
-          ))}
-        </Picker>
-
-        <Text style={styles.address}>Quận/Huyện</Text>
-        <Picker
-            selectedValue={district}
-            onValueChange={(itemValue) => setDistrict(itemValue)}
-            style={styles.picker}
-            enabled={province !== "Select"}
-        >
-          <Picker.Item label="Chọn Quận/Huyện" value="Select" />
-          {districts.map((dist) => (
-              <Picker.Item
-                  key={dist.code}
-                  label={dist.name}
-                  value={String(dist.code)}
-              />
-          ))}
-        </Picker>
-
-        <Text style = {styles.address} >Phường/Xã</Text>
-        <Picker
-            selectedValue={ward}
-            onValueChange={(itemValue) => setWard(itemValue)}
-            style={styles.picker}
-            enabled={district !== "Select"}
-        >
-          <Picker.Item label="Chọn Phường/Xã" value="Select" />
-          {wards.map((w) => (
-              <Picker.Item key={w.code} label={w.name} value={String(w.code)} />
-          ))}
-        </Picker>
-        {addressError && <Text style={styles.errorText}>* Thông tin địa chỉ là bắt buộc</Text>}
-
-        <TouchableOpacity
-            style={styles.completeButton}
-            onPress={handleCompleteProfile}
-        >
-          <Text style={styles.completeButtonText}>Xác nhận</Text>
-        </TouchableOpacity>
       </View>
+
+      <Text>Tên</Text>
+      <TextInput
+        style={[styles.input, nameError && styles.errorInput]}
+        placeholder="Name"
+        value={name}
+        onChangeText={setName}
+      />
+      {nameError && (
+        <Text style={styles.errorText}>* Thông tin này là bắt buộc</Text>
+      )}
+
+      <Text>Số điện thoại</Text>
+      <TextInput
+        style={[styles.input, phoneNumberError && styles.errorInput]}
+        placeholder="Enter Phone Number"
+        value={phoneNumber}
+        onChangeText={setPhoneNumber}
+        keyboardType="numeric"
+      />
+      {phoneNumberError && (
+        <Text style={styles.errorText}>* Thông tin này là bắt buộc</Text>
+      )}
+
+      <Text>Giới tính</Text>
+      <Picker
+        selectedValue={gender}
+        onValueChange={(itemValue) => setGender(itemValue)}
+        style={styles.picker}
+      >
+        <Picker.Item label="Chọn" value="Select" />
+        <Picker.Item label="Nam" value="Male" />
+        <Picker.Item label="Nữ" value="Female" />
+        <Picker.Item label="Khác" value="Other" />
+      </Picker>
+      {genderError && (
+        <Text style={styles.errorText}>* Thông tin này là bắt buộc</Text>
+      )}
+
+      <Text style={styles.address}>Tỉnh/Thành phố</Text>
+      <Picker
+        selectedValue={province}
+        onValueChange={(itemValue) => setProvince(itemValue)}
+        style={styles.picker}
+      >
+        <Picker.Item label="Chọn Tỉnh/Thành phố" value="Select" />
+        {provinces.map((prov) => (
+          <Picker.Item
+            key={prov.code}
+            label={prov.name}
+            value={String(prov.code)}
+          />
+        ))}
+      </Picker>
+
+      <Text style={styles.address}>Quận/Huyện</Text>
+      <Picker
+        selectedValue={district}
+        onValueChange={(itemValue) => setDistrict(itemValue)}
+        style={styles.picker}
+        enabled={province !== "Select"}
+      >
+        <Picker.Item label="Chọn Quận/Huyện" value="Select" />
+        {districts.map((dist) => (
+          <Picker.Item
+            key={dist.code}
+            label={dist.name}
+            value={String(dist.code)}
+          />
+        ))}
+      </Picker>
+
+      <Text style={styles.address}>Phường/Xã</Text>
+      <Picker
+        selectedValue={ward}
+        onValueChange={(itemValue) => setWard(itemValue)}
+        style={styles.picker}
+        enabled={district !== "Select"}
+      >
+        <Picker.Item label="Chọn Phường/Xã" value="Select" />
+        {wards.map((w) => (
+          <Picker.Item key={w.code} label={w.name} value={String(w.code)} />
+        ))}
+      </Picker>
+      {addressError && (
+        <Text style={styles.errorText}>* Thông tin địa chỉ là bắt buộc</Text>
+      )}
+
+      <TouchableOpacity
+        style={styles.completeButton}
+        onPress={handleCompleteProfile}
+      >
+        <Text style={styles.completeButtonText}>Xác nhận</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.completeButton} onPress={handleLogout}>
+        <Text style={styles.completeButtonText}>Logout</Text>
+      </TouchableOpacity>
+    </View>
   );
 };
 
@@ -289,7 +331,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     paddingVertical: 14,
     alignItems: "center",
-    marginTop: 10
+    marginTop: 10,
   },
   completeButtonText: {
     color: "#fff",
@@ -306,8 +348,8 @@ const styles = StyleSheet.create({
     borderColor: "red",
   },
   address: {
-    marginTop: 10
-  }
+    marginTop: 10,
+  },
 });
 
 export default ProfileCompletionScreen;

@@ -18,7 +18,8 @@ interface SearchBarProps {
 export const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   return (
     <Input
-      w="75%"
+      // ml="3"
+      w="80%"
       placeholder="Tìm kiếm"
       borderRadius="100"
       py="1"

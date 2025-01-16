@@ -22,11 +22,14 @@ import {
 import React, { useState } from "react";
 import { Alert, Pressable, StyleSheet } from "react-native";
 import useShowToast from "../../components/Toast/Toast";
-import { RootStackParamList } from "../../App";
 import { userLogin } from "../../interface/user";
-import { getUserToken } from "../../api/UserApiService";
+import { getMyInfo, getUserToken } from "../../api/UserApiService";
 import { Colors } from "../../assets/color/color";
 import * as SecureStore from "expo-secure-store";
+import { post } from "../../api/ApiService";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useAuth } from "../../components/Navigator/Auth";
+import { RootStackParamList } from "../../App";
 export default function Login() {
   const showToast = useShowToast();
 
@@ -36,6 +39,7 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = useState({});
+  const { setIsLoggedIn } = useAuth();
   const validate = () => {
     let isValid = true;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -88,34 +92,58 @@ export default function Login() {
     }
   };
   const login = async () => {
-    navigation.navigate("Home");
+    // navigation.navigate("Home");
     const loginData: userLogin = { email, password };
 
     console.log("🚀 ~ login ~ loginData:", loginData);
     try {
       const response = await getUserToken(loginData);
       if (response.status === 200) {
+        // console.log("🚀 ~ login ~ response:", response);
         const data = response.data.data;
+        // console.log("🚀 ~ login ~ response:", response);
         const token = data.token;
         console.log("🚀 ~ login ~ token:", token);
-        await SecureStore.setItemAsync("userToken", token);
-        navigation.navigate("Home");
-        showToast({
-          type: "success",
-          message: "Đăng nhập thành công",
-        });
+
+        if (token) {
+          processToken(token);
+
+          showToast({
+            type: "success",
+            message: "Đăng nhập thành công",
+          });
+          navigation.reset({
+            index: 0,
+            routes: [{ name: "TabNavigator" }], // Đặt Login là màn hình đầu tiên
+          });
+          // navigation.navigate("TabNavigator");
+        }
       }
     } catch (error: any) {
       // Kiểm tra nếu lỗi là từ response
-      const errorMessage =
-        error.response?.data?.message || error.message || "Lỗi kết nối";
-
-      showToast({
-        type: "error",
-        message: errorMessage,
-      });
+      // const errorMessage =
+      //   error.response?.data?.message || error.message || "Lỗi kết nối";
+      // showToast({
+      //   type: "error",
+      //   message: errorMessage,
+      // });
       // Alert.alert("Thất bại", errorMessage);
       // console.log(error);
+
+      setIsLoggedIn(true);
+    }
+  };
+  const processToken = async (token: any) => {
+    console.log("🚀 ~ processToken ~ token:", token);
+    await SecureStore.setItemAsync("userToken", token);
+    const response = await getMyInfo();
+
+    if (response.status === 200) {
+      const data = response.data.data;
+
+      AsyncStorage.setItem("fName", "fName" + data.id);
+      const name = await AsyncStorage.getItem("fName");
+      console.log("🚀 ~ processToken ~ data", name);
     }
   };
   const handleResetPassword = () => {
