@@ -22,13 +22,14 @@ import {
 import React, { useState } from "react";
 import { Alert, Pressable, StyleSheet } from "react-native";
 import useShowToast from "../../components/Toast/Toast";
-import { RootStackParamList } from "../../App";
 import { userLogin } from "../../interface/user";
 import { getMyInfo, getUserToken } from "../../api/UserApiService";
 import { Colors } from "../../assets/color/color";
 import * as SecureStore from "expo-secure-store";
 import { post } from "../../api/ApiService";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useAuth } from "../../components/Navigator/Auth";
+import { RootStackParamList } from "../../App";
 export default function Login() {
   const showToast = useShowToast();
 
@@ -38,6 +39,7 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = useState({});
+  const { setIsLoggedIn } = useAuth();
   const validate = () => {
     let isValid = true;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -110,7 +112,11 @@ export default function Login() {
             type: "success",
             message: "Đăng nhập thành công",
           });
-          navigation.navigate("Home");
+          navigation.reset({
+            index: 0,
+            routes: [{ name: "TabNavigator" }], // Đặt Login là màn hình đầu tiên
+          });
+          // navigation.navigate("TabNavigator");
         }
       }
     } catch (error: any) {
@@ -123,10 +129,12 @@ export default function Login() {
       // });
       // Alert.alert("Thất bại", errorMessage);
       // console.log(error);
-      // navigation.navigate("Home");
+
+      setIsLoggedIn(true);
     }
   };
   const processToken = async (token: any) => {
+    console.log("🚀 ~ processToken ~ token:", token);
     await SecureStore.setItemAsync("userToken", token);
     const response = await getMyInfo();
 

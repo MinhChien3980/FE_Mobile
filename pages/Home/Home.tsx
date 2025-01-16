@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -26,17 +27,15 @@ const Home = () => {
         setFilters(newFilters);
     };
 
-    const handleClearFilters = () => {
-        setSearchQuery('');
-        setFilters({});
-    };
+  const handleApplyFilter = (newFilters: any) => {
+    setFilters(newFilters);
+  };
 
-    useEffect(() => {
-        const extractCategories = () => {
-            const categorySet = new Set<string>();
-            productData.forEach((product) => {
-                categorySet.add(product.category);
-            });
+  const handleClearFilters = () => {
+    setSearchQuery("");
+    setFilters({});
+  };
+
 
             const extractedCategories = Array.from(categorySet).map((categoryName, index) => ({
                 id: index + 1,

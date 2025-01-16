@@ -1,16 +1,16 @@
 import React, { useEffect, useState, useCallback, useMemo, lazy } from "react";
 import { SafeAreaView } from "react-native";
-import { Box, HStack, IconButton, Icon } from "native-base";
+import { Box, HStack, IconButton, Icon, Pressable, Text } from "native-base";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Ionicons } from "@expo/vector-icons";
 import { NavigationProp, useNavigation } from "@react-navigation/native";
-import { RootStackParamList } from "../../App";
 import { Product } from "../../interface/product";
 import { productData } from "../../data/products/ProductData";
 import { SearchBar } from "../../components/SearchBar/SearchBar";
 import SortBar from "../../components/SortBar/SortBar";
 import ProductList from "../../components/Product/ProductList/ProductList";
 import * as SecureStore from "expo-secure-store";
+import { RootStackParamList } from "../../App";
 
 const Products: React.FC = () => {
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
@@ -92,6 +92,7 @@ const Products: React.FC = () => {
   return (
     <SafeAreaView style={{ flex: 1, width: "100%" }}>
       <HStack
+        // mt="15%"
         ml="10"
         m="2%"
         w="100%"
@@ -110,18 +111,18 @@ const Products: React.FC = () => {
         <ProductList products={filteredProductsList} />
       </Box>
 
-      <IconButton
+      {/* <IconButton
         icon={<Icon as={Ionicons} name="heart" />}
         position="absolute"
-        bottom={10}
-        right={10}
+        bottom={20}
+        right={3}
         borderRadius="full"
         size="lg"
         zIndex={1}
         colorScheme="white"
         backgroundColor="#704F38"
-        onPress={() => navigation.navigate("Favorites")}
-      />
+        onPress={() => navigation.navigate("Home")}
+      /> */}
     </SafeAreaView>
   );
 };
